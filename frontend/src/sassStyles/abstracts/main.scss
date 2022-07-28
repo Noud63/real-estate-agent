@@ -1,0 +1,37 @@
+@import './global';
+@import './variables';
+@import './mixins';
+
+.homepage_image {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .your_dream {
+        @include center-content-column;
+        font-family:'Arial';
+        font-size: 2rem;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-image: linear-gradient(to top,rgb(255, 255, 255), rgb(255, 255, 255, 0)) ;
+        color: rgb(129, 108, 129);
+        height: 20%;
+        word-spacing: 5px;
+        letter-spacing: 5px;
+        font-weight: bold;
+    }
+
+    .luxury_real_estate {
+        font-family:'Arial';
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .c5_image {
+    width: 100%;
+    height: auto;
+    }
+}

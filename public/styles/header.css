@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0px 2px 5px rgb(69, 60, 80);
+  z-index: 999;
+  transition: 0.5s ease-in-out;
+}
+.header .header_hide {
+  top: -140px;
+}
+.header_france {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(37, 30, 44);
+  color: rgb(197, 175, 197);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+.header_content {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-direction: row;
+  padding: 0 50px;
+}
+.header_content .header_content_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.header_content .header_content_iconandtitle {
+  display: flex;
+  flex-direction: row;
+}
+.header_content .header_content_ellieName {
+  font-family: "Chopin";
+  color: rgb(55, 39, 75);
+  font-size: 3rem;
+}
+.header_content .header_content_your_castle {
+  position: absolute;
+  font-size: 15px;
+  font-family: "Times";
+  top: 65px;
+}
+
+.buttons {
+  width: 340px;
+}
+.buttons_btn {
+  width: 100px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px 50px;
+  border: 2px solid rgb(82, 66, 82);
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+.buttons_btn:hover {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(177, 135, 177, 0));
+  border: 2px solid white;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 2px 4px rgb(96, 77, 102);
+}

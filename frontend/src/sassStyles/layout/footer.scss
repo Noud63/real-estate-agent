@@ -1,0 +1,32 @@
+@import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
+
+.footer {
+    width: 100%;
+    height: 30rem;
+    background-color: rgb(38, 32, 49);
+    @include center-content-column;
+
+    &_content_iconandtitle {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &_content_title {
+            @include center-content-column;
+            margin-bottom: 20px;
+        }
+       
+        &_content_ellieName {
+          font-family: $elliefont;
+          color: $elliecolorlight;
+          font-size: 3rem;
+      }
+
+        &_content_your_castle {
+          font-size: 15px;
+          color: $elliecolorlight;
+          font-family:'Times';
+          top: 65px;
+      }
+}

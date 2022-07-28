@@ -1,0 +1,9 @@
+@import '../../sassStyles/abstracts/variables';
+@import '../../sassStyles/abstracts/mixins';
+
+.content {
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(255, 255, 255);
+    @include center-content-column;
+}

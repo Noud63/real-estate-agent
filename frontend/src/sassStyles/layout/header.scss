@@ -1,0 +1,87 @@
+@import '../abstracts/variables.scss';
+@import '../abstracts/mixins.scss';
+
+.header {
+    width: 100%;
+     @include center-content-column;
+    position: fixed;
+    top: 0;
+    height: 140px;
+    background-color: rgba(255, 255, 255, .35);
+    box-shadow: 0px 2px 5px rgb(69, 60, 80);
+    z-index: 999;
+    transition: top .5s ease-in-out;
+
+    &_hide {
+    top: -140px;
+    }
+
+    &_france {
+        width: 100%;
+        height: 50px;
+        @include center-content-column;
+        background-color: rgb(37, 30, 44);
+        color: rgb(197, 175, 197);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .8rem;
+    }
+
+    &_content{
+        width: 100%;
+        height: 120px;
+        position: relative;
+        @include spacebetween-content;
+        flex-direction: row;
+        padding: 0 50px;
+    }
+
+        &_content_title {
+            @include center-content-column;
+            margin-bottom: 20px;
+        }
+
+        &_content_iconandtitle {
+            display: flex;
+            flex-direction: row;
+        }
+       
+        &_content_ellieName {
+          font-family: $elliefont;
+          color: $elliecolor;
+          font-size: 3rem;
+      }
+
+        &_content_your_castle {
+          position: absolute;
+          font-size: 15px;
+          font-family:'Times';
+          top: 65px;
+      }
+    
+}
+
+// .header_hide {
+//     top: -140px;
+// }
+
+.buttons {
+    width: 340px;
+
+    &_btn {
+        width: 100px;
+        margin-right: 10px;
+        padding: 10px;
+        border-radius: 5px calc(5px * 10);
+        border: 2px solid rgb(82, 66, 82);
+        background-color: transparent;
+        color:  rgb(0, 0, 0);
+        cursor: pointer;
+    }
+
+    &_btn:hover {
+        background-image: linear-gradient(to bottom, rgb(255, 255, 255, 0),rgb(177, 135, 177, 0));
+        border: 2px solid white;
+        transition: .3s ease-in-out;
+        box-shadow: 0px 2px 4px rgb(96, 77, 102);
+    }
+}
