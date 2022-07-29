@@ -1,33 +1,54 @@
-@import './global';
-@import './variables';
-@import './mixins';
+@import '../abstracts/global';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
 
 .homepage_image {
     width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
-
+    
     .your_dream {
+
         @include center-content-column;
+
         font-family:'Arial';
         font-size: 2rem;
-        color: white;
         position: absolute;
         bottom: 0;
         width: 100%;
-        background-image: linear-gradient(to top,rgb(255, 255, 255), rgb(255, 255, 255, 0)) ;
+        background-image: linear-gradient(to top,rgb(255, 255, 255), transparent) ;
         color: rgb(129, 108, 129);
         height: 20%;
         word-spacing: 5px;
         letter-spacing: 5px;
         font-weight: bold;
+
+        @include respond(md) {
+        font-size: 1.4rem
+    }
     }
 
     .luxury_real_estate {
         font-family:'Arial';
         font-size: 1rem;
         margin-top: 10px;
+        width: 700px;
+        border-bottom: 1px solid;
+        padding-bottom: 10px;
+
+        @include center-content-row;
+
+        @include respond(md) {
+        font-size: .8rem;
+        width: 500px;
+        word-spacing: 0;
+        letter-spacing: 3px;
+    }
+    }
+
+    .castlesandchateaux {
+        color:rgb(97, 73, 97);
     }
 
     .c5_image {

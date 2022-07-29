@@ -6,10 +6,13 @@ const dotenv = require('dotenv')
 const router = express.Router()
 const colors = require('colors')
 const PORT = process.env.PORT || 5000
+const connectDB = require('./config/db')
 
 app.use(cors())
 app.use(express.json())
 dotenv.config()
+
+connectDB()
 
 app.get('/', (req, res) => {
    console.log('Api up and running!')

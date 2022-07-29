@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
+  -ms-overflow-style: none; /* Edge */
   scrollbar-width: none; /* Firefox */
 }
 
@@ -40,6 +40,10 @@
   font-family: "Alex";
   src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
 .homepage_image {
   width: 100%;
   position: relative;
@@ -51,18 +55,45 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: "Alex";
+  font-family: "Arial";
   font-size: 2rem;
-  color: white;
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-image: linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(to top, rgb(255, 255, 255), transparent);
   color: rgb(129, 108, 129);
   height: 20%;
   word-spacing: 5px;
   letter-spacing: 5px;
   font-weight: bold;
+}
+@media only screen and (max-width: 800px) {
+  .homepage_image .your_dream {
+    font-size: 1.4rem;
+  }
+}
+.homepage_image .luxury_real_estate {
+  font-family: "Arial";
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 700px;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+@media only screen and (max-width: 800px) {
+  .homepage_image .luxury_real_estate {
+    font-size: 0.8rem;
+    width: 500px;
+    word-spacing: 0;
+    letter-spacing: 3px;
+  }
+}
+.homepage_image .castlesandchateaux {
+  color: rgb(97, 73, 97);
 }
 .homepage_image .c5_image {
   width: 100%;

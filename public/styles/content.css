@@ -6,6 +6,10 @@
   font-family: "Alex";
   src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
 .content {
   width: 100%;
   height: 1000px;

@@ -4,13 +4,14 @@
     box-sizing: border-box;
 }
 
+
 .container {
     width: 100%;
     height: auto;
 }
 
 
-//Chrome & Safari ( scrolbar is hidden by default )
+//Chrome & Safari ( scrollbar is hidden by default )
 ::-webkit-scrollbar {
   width: 12px; 
   background-color: #bfb5c2;
@@ -18,8 +19,8 @@
 }
 
 ::-webkit-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* Edge */
+    scrollbar-width: none;     /* Firefox */
 }
 
 ::-webkit-scrollbar-thumb {
