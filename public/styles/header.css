@@ -133,9 +133,9 @@
   width: 100%;
   bottom: 0;
   top: 0;
-  right: -1920px;
+  right: -100%;
   background-color: rgba(96, 83, 109, 0.7);
-  transition: 0.7s ease-in-out;
+  transition: 0.3s ease-in-out;
   z-index: 1;
 }
 

@@ -31,6 +31,7 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll)
     }, []);
 
+    
     useEffect(() => {
         const handleResize = () => {
             setSize({
