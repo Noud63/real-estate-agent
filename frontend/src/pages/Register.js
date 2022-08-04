@@ -12,6 +12,7 @@ const Register = () => {
 
     const submitForm = (data) => {
         console.log(data)
+        
     }
 
     const onErrors = errors => console.error(errors);
@@ -19,10 +20,11 @@ const Register = () => {
     return (
 
         <div className="container2">
+            <div className="wrapper2">
             <div className="register">Register</div>
         <form action="" onSubmit={handleSubmit(submitForm, onErrors)} className="form">
 
-            <div className="firstname">
+            <div className="name">
                 <div className="textInput"><label htmlFor="firstname" className="pass">Firstname: </label>
                     <input type="text" placeholder="" name="firstname" {...register("firstname", { required: 'firstname required!' })} />
                 </div>
@@ -31,7 +33,7 @@ const Register = () => {
                 </div>
             </div>
 
-            <div className="lastname">
+            <div className="name">
                 <div className="textInput"><label htmlFor="lastname" className="pass">Lastname: </label>
                     <input type="text" placeholder="" name="lastname" {...register("lastname", { required: 'lastname required!' })} />
                 </div>
@@ -140,9 +142,10 @@ const Register = () => {
                 </div>
             </div> : ""}
 
-            <button type="submit" className="btn">Submit</button>
+            <button type="submit" className="submitBtn">Submit</button>
 
         </form>
+        </div>
         </div>
     )
 }

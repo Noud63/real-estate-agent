@@ -1,5 +1,232 @@
-.login {
-  margin-top: 20px;
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
   width: 100%;
-  height: 100vh;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #bfb5c2;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #625469;
+  box-shadow: inset 0 0 10px rgb(11, 6, 12);
+  border-radius: 50px;
+}
+
+@-moz-document url-prefix() {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #544a61;
+  }
+}
+.container3 {
+  margin: 80px auto;
+  width: 315px;
+  min-height: 100vh;
+}
+
+.wrapper3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1170px) {
+  .container3 {
+    margin: 180px auto;
+  }
+}
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(87, 77, 99);
+  margin-bottom: 10px;
+  color: rgb(197, 197, 197);
+  height: 50px;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.name2, .pw {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input[name=username3] {
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  border-bottom: 1px solid gray;
+  caret-color: rgb(187, 187, 187);
+  color: rgb(201, 201, 201);
+  font-size: 1rem;
+}
+
+input[name=password3] {
+  width: 100%;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  border-bottom: 1px solid gray;
+  caret-color: rgb(187, 187, 187);
+  color: rgb(201, 201, 201);
+  font-size: 1rem;
+}
+
+.btn {
+  margin-top: 10px;
+  height: 50px;
+  background-color: rgb(87, 77, 99);
+  width: 315px;
+  border-style: none;
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(212, 203, 223);
+}
+
+::placeholder {
+  color: rgb(179, 179, 179);
+}
+
+label {
+  color: rgb(63, 56, 73);
+  width: 10%;
+}
+
+.showPass {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(63, 56, 73);
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
+.error {
+  font-size: 1rem;
+  color: red;
+}
+
+.loginSuccess {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  color: white;
+}
+
+.overlayShow {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeinout 5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.registerednameShow {
+  margin: 200px auto;
+  width: 300px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(221, 125, 0);
+  border-radius: 10px;
+  font-size: 1.4rem;
+  color: rgb(34, 34, 34);
+  padding: 15px;
+  border: 1px solid rgb(34, 34, 34);
+  box-shadow: 0px 2px 18px rgb(53, 53, 53);
+  opacity: 0;
+  animation: fadeinout 5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.welcome {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

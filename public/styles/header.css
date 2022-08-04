@@ -102,6 +102,7 @@
   background-color: transparent;
   color: rgb(0, 0, 0);
   cursor: pointer;
+  font-size: 0.8rem;
 }
 .buttons_btn:hover {
   border: 2px solid white;
@@ -153,6 +154,7 @@
   background-color: rgb(70, 54, 77);
   color: rgb(206, 188, 214);
   cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .buttons_btnOverlay:hover {

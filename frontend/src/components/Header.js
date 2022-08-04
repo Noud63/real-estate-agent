@@ -86,7 +86,6 @@ const Header = () => {
                         <span className="header_content_ellieName">Ellie Castelli</span>
                         <span className="header_content_your_castle">- Your Castle is your Home -</span>
                     </div>
-                                
                 </div>
                       
                 <div className="hamburger menu">
