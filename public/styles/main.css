@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 100%;
-  height: auto;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
   background-color: #bfb5c2;
@@ -44,8 +39,14 @@
   font-family: "Digi";
   src: url("../../fonts/Digizen.ttf") format("truetype");
 }
-.homepage_image {
+.container {
   width: 100%;
+  height: auto;
+  margin-bottom: 2%;
+}
+
+.homepage_image {
+  max-width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -59,30 +60,57 @@
   font-size: 2rem;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  background-image: linear-gradient(to top, rgb(255, 255, 255), transparent);
+  width: 1040px;
+  background-image: transparent;
   color: rgb(129, 108, 129);
-  height: 20%;
   word-spacing: 5px;
   letter-spacing: 5px;
   font-weight: bold;
+  border-bottom: 1px solid;
+}
+@media only screen and (max-width: 1080px) {
+  .homepage_image .your_dream {
+    width: 445px;
+    font-size: 1.6rem;
+  }
 }
 @media only screen and (max-width: 800px) {
   .homepage_image .your_dream {
     font-size: 1.4rem;
+    width: 420px;
   }
+}
+@media only screen and (max-width: 530px) {
+  .homepage_image .your_dream {
+    font-size: 1.2rem;
+    width: 320px;
+  }
+}
+.homepage_image .castlesandchateaux {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: rgb(97, 73, 97);
+  width: 100%;
 }
 .homepage_image .luxury_real_estate {
   font-family: "Arial";
   font-size: 1rem;
   margin-top: 10px;
-  width: 700px;
-  border-bottom: 1px solid;
+  width: 100%;
   padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+}
+@media only screen and (max-width: 1080px) {
+  .homepage_image .luxury_real_estate {
+    width: 500px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
 }
 @media only screen and (max-width: 800px) {
   .homepage_image .luxury_real_estate {
@@ -92,8 +120,12 @@
     letter-spacing: 3px;
   }
 }
-.homepage_image .castlesandchateaux {
-  color: rgb(97, 73, 97);
+@media only screen and (max-width: 530px) {
+  .homepage_image .luxury_real_estate {
+    font-size: 0.7rem;
+    width: 350px;
+    letter-spacing: 2px;
+  }
 }
 .homepage_image .c5_image {
   width: 100%;

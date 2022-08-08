@@ -1,9 +1,154 @@
 @import '../../sassStyles/abstracts/variables';
 @import '../../sassStyles/abstracts/mixins';
 
-.content {
-    width: 100%;
-    height: 1000px;
-    background-color: rgb(255, 255, 255);
-    @include center-content-column;
+
+.content2 {
+    max-width: 1080px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    color: rgb(76, 61, 78);
+    font-family: Arial, Helvetica, sans-serif;
+
+    &_property {
+        margin-bottom: 20px;
+        @include spacebetween-content;
+        width: 96%;
+        box-shadow: 0px 1px 3px rgb(145, 140, 148);
+        background-color: rgb(240, 236, 245);
+        border-bottom: 2px solid rgb(159, 140, 173);
+        @include respond5(contentBreak){
+            width: 305px;
+             @include center-content-column;
+        }
+    }
+
+    &_castleImage {
+        padding: 10px;
+        display: block;
+        width: 300px;
+    }
+
+    &_info {
+        width: 30%;
+        height: auto;
+        margin: 10px 0;
+        @include center-content-column-start-top;
+        @include respond5(contentBreak){
+            width: 100%;
+            margin-left: 20px;
+            margin-bottom: 0;
+        }
+      
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            @include respond5(contentBreak){
+            margin-bottom: 10px;
+        }
+
+            & h4 {
+                color: rgb(81, 61, 90);
+            }
+        }
+
+        .location {
+            line-height: 1.6;
+            font-size: .8rem;
+
+            & span {
+                font-weight: bold;
+            }
+        }
+
+
+        .icons {
+            margin-top: 20px; 
+            @include center-content-row;
+
+            & :not(:first-child) {
+                border-left: 1px solid rgb(50, 42, 59);
+                padding-left: 10px;
+            }
+
+            & .icon {
+                height: 20px;
+                padding-right: 10px;
+                @include center-content-row;
+
+            & img {
+                margin-left: 5px;
+            }
+        }
+        }
+
+        .price {
+            margin-top: 20px;
+            
+            & span {
+                font-weight: bold;
+            }
+        }
+    }
 }
+
+.mapEnquiryBox {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    @include respond5(contentBreak){
+            flex: none; 
+            width: 100%;
+            align-items: flex-start;
+            padding: 0 10px
+        }
+}
+
+.map {
+    position: relative;
+    height: 150px;
+    @include center-content;
+    @include respond5(contentBreak){
+            height: 120px;
+        }
+
+    .regionName {
+     position: absolute;
+     @include center-content;
+     background-image: linear-gradient(to top, rgb(119, 0, 0), red);
+     color: white;
+     border-radius: 5px;
+     width: 100%;
+     height: 25px;
+     font-size: .8rem;
+     opacity: 1;
+     transition: all .3s ease-in-out;
+     box-shadow: 0px 2px 4px rgb(64, 55, 68);
+
+     &.hide {
+       opacity:0;
+     }
+}
+
+}
+
+.enquiry {
+    width: 100px;
+    height: 30px;
+    background-image: linear-gradient(to top, rgb(119, 0, 0), red);
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    @include respond5(contentBreak){
+            width: 100%;
+            margin-bottom: 10px;
+        }
+}
+

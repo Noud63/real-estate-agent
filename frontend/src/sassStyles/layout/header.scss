@@ -11,7 +11,7 @@
     box-shadow: 0px 2px 5px rgb(69, 60, 80);
     z-index: 999;
     transition: top .5s ease-in-out;
-    @include respond(md) {
+    @include respond(hamburgermenu) {
         background-color: rgba(255, 255, 255, .5);
         height: 90px;
     }
@@ -29,7 +29,7 @@
         font-family: Arial, Helvetica, sans-serif;
         font-size: .8rem;
 
-        @include respond(md) {
+        @include respond(hamburgermenu) {
         display: none;
         }
     }
@@ -46,6 +46,9 @@
         &_content_title {
             @include center-content-column;
             margin-bottom: 20px;
+            @include respond4(ellielogo){
+              margin-bottom: 0;
+            }
         }
 
         &_content_iconandtitle {
@@ -53,11 +56,20 @@
             flex-direction: row;
             cursor: pointer;
         }
+
+        &_content_iconandtitle > img {
+            @include respond4(ellielogo){
+               display: none;
+            }
+        }
        
         &_content_ellieName {
           font-family: $elliefont;
           color: $elliecolor;
           font-size: 3rem;
+           @include respond4(ellielogo){
+                font-size: 2.6rem;
+            }
       }
 
         &_content_your_castle {
@@ -65,9 +77,12 @@
           font-size: 15px;
           font-family:'Times';
           top: 65px;
-          @include respond(md) {
+          @include respond(hamburgermenu) {
           top: 60px;
         }
+        @include respond4(ellielogo){
+              display: none;
+            }
       }
 }
 
@@ -93,14 +108,14 @@
         box-shadow: 0px 2px 4px rgb(96, 77, 102);
     }
 
-    @include respond(md) {
+    @include respond(hamburgermenu) {
         display: none;
     }
 }
 
 .hamburger {
     display: none;
-    @include respond(md) {
+    @include respond(hamburgermenu) {
         display: flex;
     }
     cursor: pointer;

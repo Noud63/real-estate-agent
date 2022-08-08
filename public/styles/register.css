@@ -16,11 +16,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 100%;
-  height: auto;
-}
-
 ::-webkit-scrollbar {
   width: 12px;
   background-color: #bfb5c2;

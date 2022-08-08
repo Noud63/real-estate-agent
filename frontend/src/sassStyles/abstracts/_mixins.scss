@@ -1,8 +1,28 @@
 //Position content
+@mixin center-content {
+  display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
 @mixin center-content-column {
  display: flex;
  align-items: center;
  justify-content: center;
+ flex-direction: column;
+}
+
+@mixin center-content-column-start {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-around;
+ flex-direction: column;
+}
+
+@mixin center-content-column-start-top {
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-start;
  flex-direction: column;
 }
 
@@ -13,6 +33,21 @@
  flex-direction:row;
 }
 
+@mixin center-content-row-start {
+ display: flex;
+ align-items: center;
+ justify-content: flex-start;
+ flex-direction:row;
+}
+
+@mixin center-content-row-start-top {
+ display: flex;
+ align-items: flex-start;
+ justify-content: flex-start;
+ flex-direction:row;
+}
+
+
 @mixin spacebetween-content {
  display: flex;
  align-items: center;
@@ -22,20 +57,41 @@
 
 //Media queries
 
-//Header buttons
-// @mixin respondFrance($breakpoint) { 
-//   @if $breakpoint == tablet {    
-//     @media only screen and (max-width: 820px) {
-//       @content;
-//     }
-//   }
-// }
+@mixin respond2($breakpoint) { 
+  @if $breakpoint == gridcontainer {    
+    @media only screen and (max-width: 1080px) {
+      @content;
+    }
+  }
+}
 
+@mixin respond5($breakpoint) { 
+  @if $breakpoint == contentBreak {    
+    @media only screen and (max-width: 750px) {
+      @content;
+    }
+  }
+}
 
-//Castles & Chateaux
 @mixin respond($breakpoint) { 
-  @if $breakpoint == md {    
+  @if $breakpoint == hamburgermenu {    
     @media only screen and (max-width: 800px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond3($breakpoint) { 
+  @if $breakpoint == smallest {    
+    @media only screen and (max-width: 530px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond4($breakpoint) { 
+  @if $breakpoint == ellielogo {    
+    @media only screen and (max-width: 480px) {
       @content;
     }
   }

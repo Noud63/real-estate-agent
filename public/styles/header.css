@@ -68,15 +68,30 @@
   flex-direction: column;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 480px) {
+  .header_content_title {
+    margin-bottom: 0;
+  }
+}
 .header_content_iconandtitle {
   display: flex;
   flex-direction: row;
   cursor: pointer;
 }
+@media only screen and (max-width: 480px) {
+  .header_content_iconandtitle > img {
+    display: none;
+  }
+}
 .header_content_ellieName {
   font-family: "Chopin";
   color: rgb(55, 39, 75);
   font-size: 3rem;
+}
+@media only screen and (max-width: 480px) {
+  .header_content_ellieName {
+    font-size: 2.6rem;
+  }
 }
 .header_content_your_castle {
   position: absolute;
@@ -87,6 +102,11 @@
 @media only screen and (max-width: 800px) {
   .header_content_your_castle {
     top: 60px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .header_content_your_castle {
+    display: none;
   }
 }
 

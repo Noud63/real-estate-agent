@@ -2,8 +2,15 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-.homepage_image {
+
+.container {
     width: 100%;
+    height: auto;
+    margin-bottom: 2%;
+}
+
+.homepage_image {
+    max-width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -16,39 +23,62 @@
         font-size: 2rem;
         position: absolute;
         bottom: 0;
-        width: 100%;
-        background-image: linear-gradient(to top,rgb(255, 255, 255), transparent) ;
+        width: 1040px;
+        background-image: transparent ;
         color: rgb(129, 108, 129);
-        height: 20%;
         word-spacing: 5px;
         letter-spacing: 5px;
         font-weight: bold;
+        border-bottom: 1px solid;
 
-        @include respond(md) {
-        font-size: 1.4rem
+        @include respond2(gridcontainer){
+              width: 445px;
+              font-size: 1.6rem;
+        }
+
+        @include respond(hamburgermenu) {
+        font-size: 1.4rem;
+         width: 420px;
+        }
+
+        @include respond3(smallest){
+            font-size: 1.2rem;
+         width: 320px;
+        }
     }
+
+    .castlesandchateaux {
+         @include center-content-row;
+        color:rgb(97, 73, 97);
+        width: 100%;
     }
 
     .luxury_real_estate {
         font-family:'Arial';
         font-size: 1rem;
         margin-top: 10px;
-        width: 700px;
-        border-bottom: 1px solid;
+        width: 100%;
         padding-bottom: 10px;
 
         @include center-content-row;
 
-        @include respond(md) {
+         @include respond2(gridcontainer){
+             width: 500px;
+              font-size: .9rem;
+              letter-spacing: 2px;
+        }
+
+        @include respond(hamburgermenu) {
         font-size: .8rem;
         width: 500px;
         word-spacing: 0;
         letter-spacing: 3px;
     }
-    }
-
-    .castlesandchateaux {
-        color:rgb(97, 73, 97);
+    @include respond3(smallest){
+        font-size: .7rem;
+         width: 350px;
+         letter-spacing: 2px;
+        }
     }
 
     .c5_image {
