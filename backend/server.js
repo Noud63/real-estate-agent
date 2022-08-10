@@ -7,16 +7,20 @@ const router = express.Router()
 const colors = require('colors')
 const PORT = process.env.PORT || 5000
 const connectDB = require('./config/db')
+const addDataToCollection = require('./seeder')
 
+dotenv.config()
 app.use(cors())
 app.use(express.json())
-dotenv.config()
+app.use(express.urlencoded({ extended: true }));
+
 
 connectDB()
+addDataToCollection()
 
 app.get('/', (req, res) => {
-   console.log('Api up and running!')
-   res.send({ message: 'Api up and Running!'})
+   console.log('Server up and and running....')
+   res.send({message: 'Got it!'})
 })
 
 // app.use('/castles', require('./routes/castlesRoute'))

@@ -1,6 +1,5 @@
 const data = [
     {
-        id: 0,
         name: 'Château des Milandes',
         img: '/assets/images/c1.jpg',
         price: '6.980.000',
@@ -15,7 +14,6 @@ const data = [
         located: 'South'
     },
     {
-        id: 1,
         name: 'Château de Chenonceau',
         img: '/assets/images/c2.jpg',
         price: '25.980.000',
@@ -30,7 +28,6 @@ const data = [
         located: 'Centre'
     },
     {
-        id: 2,
         name: 'Château de Parthey',
         img: '/assets/images/c3.jpg',
         price: '5.500.000',
@@ -45,7 +42,6 @@ const data = [
         located: 'Centre'
     },
     {
-        id: 3,
         name: 'Château d\'azay le Rideau',
         img: '/assets/images/c4.jpg',
         price: '11.890.500',
@@ -60,7 +56,6 @@ const data = [
         located: 'Centre'
     },
     {
-        id: 4,
         name: 'Château de Chantilly',
         img: '/assets/images/c5.jpg',
         price: '19.800.000',
@@ -75,7 +70,6 @@ const data = [
         located: 'North'
     },
     {
-        id: 5,
         name: 'Château d\'Amboise',
         img: '/assets/images/c6.jpg',
         price: '7.569.500',
@@ -90,7 +84,6 @@ const data = [
         located: 'Centre'
     },
     {
-        id: 6,
         name: 'château de pierrefonds',
         img: '/assets/images/c7.jpg',
         price: '145.890.000',
@@ -105,7 +98,6 @@ const data = [
         located: 'South'
     },
     {
-        id: 7,
         name: 'Château d\'Usse',
         img: '/assets/images/c8.jpg',
         price: '18.750.000',
@@ -120,7 +112,6 @@ const data = [
         located: 'Centre'
     },
     {
-        id: 8,
         name: 'Château de Fougères',
         img: '/assets/images/c9.jpg',
         price: '13.950.000',
@@ -135,7 +126,6 @@ const data = [
         located: 'Centre'
     },
     {
-        id: 9,
         name: 'Château de Carcassonne',
         img: '/assets/images/c10.jpg',
         price: 'Not for Sale',
@@ -149,9 +139,8 @@ const data = [
         map: '/assets/maps/occitanie.png',
         located: 'South'
     }
-
 ]
 
-export default data
-
-
+module.exports = data 
+     
+    

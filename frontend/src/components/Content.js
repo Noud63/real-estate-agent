@@ -56,7 +56,7 @@ const Content = () => {
                                 <div className="icon">{livingspace}<img src={livingspaceIcon} alt="" /></div>
                                 <div className="icon">{area}ha<img src={areaIcon} alt="" /></div>
                             </div>
-                            <div className="price"><span>Price:</span> $ {price},-</div>
+                            <div className="price"><span>Price:</span> {item.price === 'Not for Sale' ? price : `$${price},-` }</div>
                         </div>
 
                         <Map region={region} map={map}/>

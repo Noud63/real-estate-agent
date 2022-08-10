@@ -116,6 +116,7 @@
 .map {
     position: relative;
     height: 150px;
+    cursor: pointer;
     @include center-content;
     @include respond5(contentBreak){
             height: 120px;
@@ -156,7 +157,7 @@
 
 .btns {
     margin: 20px auto;
-    width: 220px;
+    width: 165px;
     @include spacebetween-content;
 }
 
