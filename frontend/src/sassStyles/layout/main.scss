@@ -2,11 +2,13 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-
 .container {
     width: 100%;
     height: auto;
-    margin-bottom: 2%;
+    margin-bottom: 40px;
+    @include respond5(contentBreak){
+           margin-bottom: 50px;
+        }
 }
 
 .homepage_image {
@@ -16,9 +18,7 @@
     justify-content: center;
     
     .your_dream {
-
         @include center-content-column;
-
         font-family:'Arial';
         font-size: 2rem;
         position: absolute;
@@ -36,6 +36,14 @@
               font-size: 1.6rem;
         }
 
+        @include respond5(contentBreak){
+           bottom: -20px;
+        }
+
+        @include respond6(castlesandchateaux){
+           bottom: -30px;
+        }
+
         @include respond(hamburgermenu) {
         font-size: 1.4rem;
          width: 420px;
@@ -43,7 +51,7 @@
 
         @include respond3(smallest){
             font-size: 1.2rem;
-         width: 320px;
+         width: 310px;
         }
     }
 
@@ -74,10 +82,11 @@
         word-spacing: 0;
         letter-spacing: 3px;
     }
+
     @include respond3(smallest){
-        font-size: .7rem;
-         width: 350px;
-         letter-spacing: 2px;
+         font-size: .7rem;
+         width: 320px;
+         letter-spacing: 1px;
         }
     }
 

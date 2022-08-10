@@ -4,7 +4,7 @@ import '../sassStyles/pages/buy.scss'
 const Buy = () => {
     return (
         <div className="buy">
-            Buy here
+            Buying a home is likely to be the largest financial commitment you make in your life
         </div>
     )
 }

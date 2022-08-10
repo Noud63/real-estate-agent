@@ -42,7 +42,12 @@
 .container {
   width: 100%;
   height: auto;
-  margin-bottom: 2%;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 710px) {
+  .container {
+    margin-bottom: 50px;
+  }
 }
 
 .homepage_image {
@@ -74,16 +79,26 @@
     font-size: 1.6rem;
   }
 }
+@media only screen and (max-width: 710px) {
+  .homepage_image .your_dream {
+    bottom: -20px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .homepage_image .your_dream {
+    bottom: -30px;
+  }
+}
 @media only screen and (max-width: 800px) {
   .homepage_image .your_dream {
     font-size: 1.4rem;
     width: 420px;
   }
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 510px) {
   .homepage_image .your_dream {
     font-size: 1.2rem;
-    width: 320px;
+    width: 310px;
   }
 }
 .homepage_image .castlesandchateaux {
@@ -120,11 +135,11 @@
     letter-spacing: 3px;
   }
 }
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 510px) {
   .homepage_image .luxury_real_estate {
     font-size: 0.7rem;
-    width: 350px;
-    letter-spacing: 2px;
+    width: 320px;
+    letter-spacing: 1px;
   }
 }
 .homepage_image .c5_image {

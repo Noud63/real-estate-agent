@@ -56,7 +56,6 @@
 }
 
 //Media queries
-
 @mixin respond2($breakpoint) { 
   @if $breakpoint == gridcontainer {    
     @media only screen and (max-width: 1080px) {
@@ -67,7 +66,7 @@
 
 @mixin respond5($breakpoint) { 
   @if $breakpoint == contentBreak {    
-    @media only screen and (max-width: 750px) {
+    @media only screen and (max-width: 710px) {
       @content;
     }
   }
@@ -83,7 +82,7 @@
 
 @mixin respond3($breakpoint) { 
   @if $breakpoint == smallest {    
-    @media only screen and (max-width: 530px) {
+    @media only screen and (max-width: 510px) {
       @content;
     }
   }
@@ -91,7 +90,23 @@
 
 @mixin respond4($breakpoint) { 
   @if $breakpoint == ellielogo {    
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 510px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond6($breakpoint) { 
+  @if $breakpoint == castlesandchateaux {    
+    @media only screen and (max-width: 510px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond7($breakpoint) { 
+  @if $breakpoint == headername {    
+    @media only screen and (max-width: 410px) {
       @content;
     }
   }

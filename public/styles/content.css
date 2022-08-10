@@ -33,7 +33,7 @@
   background-color: rgb(240, 236, 245);
   border-bottom: 2px solid rgb(159, 140, 173);
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 710px) {
   .content2_property {
     width: 305px;
     display: flex;
@@ -56,7 +56,7 @@
   justify-content: flex-start;
   flex-direction: column;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 710px) {
   .content2_info {
     width: 100%;
     margin-left: 20px;
@@ -67,7 +67,7 @@
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 710px) {
   .content2_info .title {
     margin-bottom: 10px;
   }
@@ -119,7 +119,7 @@
   flex-direction: column;
   padding: 10px;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 710px) {
   .mapEnquiryBox {
     flex: none;
     width: 100%;
@@ -135,7 +135,7 @@
   align-items: center;
   justify-content: center;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 710px) {
   .map {
     height: 120px;
   }
@@ -167,7 +167,7 @@
   border-style: none;
   cursor: pointer;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 710px) {
   .enquiry {
     width: 100%;
     margin-bottom: 10px;

@@ -30,6 +30,11 @@
     height: 90px;
   }
 }
+@media only screen and (max-width: 410px) {
+  .header {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
 .header_hide {
   top: -140px;
 }
@@ -61,6 +66,11 @@
   flex-direction: row;
   padding: 0 50px;
 }
+@media only screen and (max-width: 410px) {
+  .header_content {
+    padding: 0 10px;
+  }
+}
 .header_content_title {
   display: flex;
   align-items: center;
@@ -68,7 +78,7 @@
   flex-direction: column;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 510px) {
   .header_content_title {
     margin-bottom: 0;
   }
@@ -78,7 +88,7 @@
   flex-direction: row;
   cursor: pointer;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 510px) {
   .header_content_iconandtitle > img {
     display: none;
   }
@@ -88,7 +98,7 @@
   color: rgb(55, 39, 75);
   font-size: 3rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 510px) {
   .header_content_ellieName {
     font-size: 2.6rem;
   }
@@ -104,7 +114,7 @@
     top: 60px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 510px) {
   .header_content_your_castle {
     display: none;
   }

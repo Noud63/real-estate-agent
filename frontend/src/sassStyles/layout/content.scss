@@ -13,6 +13,7 @@
     margin: 0 auto;
     color: rgb(76, 61, 78);
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 100px;
 
     &_property {
         margin-bottom: 20px;
@@ -20,6 +21,7 @@
         width: 96%;
         box-shadow: 0px 1px 3px rgb(145, 140, 148);
         background-color: rgb(240, 236, 245);
+        // background-image: linear-gradient(to top, rgb(223, 219, 226), rgb(255, 255, 255));
         border-bottom: 2px solid rgb(159, 140, 173);
         @include respond5(contentBreak){
             width: 305px;
@@ -125,7 +127,7 @@
      background-image: linear-gradient(to top, rgb(119, 0, 0), red);
      color: white;
      border-radius: 5px;
-     width: 100%;
+     width: 120px;
      height: 25px;
      font-size: .8rem;
      opacity: 1;
@@ -152,3 +154,25 @@
         }
 }
 
+.btns {
+    margin: 20px auto;
+    width: 220px;
+    @include spacebetween-content;
+}
+
+.paginationBtn {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    color: rgb(91, 81, 105);
+    background-color: rgb(240, 236, 245);
+    box-shadow: 0px 1px 2px rgb(132, 116, 141);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+
+    &.active {
+        background-color: rgb(169, 149, 173);
+         color: white;
+    }
+}
