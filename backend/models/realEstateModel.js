@@ -53,5 +53,5 @@ const realEstateSchema = mongoose.Schema({
     timestamps: true
 })
 
-const RealEstates = mongoose.model('RealEstates', realEstateSchema)
+const RealEstates = mongoose.model('realestates', realEstateSchema)
 module.exports = RealEstates

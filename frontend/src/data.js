@@ -91,7 +91,7 @@ const data = [
     },
     {
         id: 6,
-        name: 'château de pierrefonds',
+        name: 'château de Pierrefonds',
         img: '/assets/images/c7.jpg',
         price: '145.890.000',
         region: 'Hauts de France',

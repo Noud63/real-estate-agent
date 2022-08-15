@@ -139,6 +139,7 @@ const data = [
         map: '/assets/maps/occitanie.png',
         located: 'South'
     }
+    
 ]
 
 module.exports = data 
