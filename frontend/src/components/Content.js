@@ -17,14 +17,11 @@ const Content = () => {
 
     const realestates = useSelector(state => state.realestate)
     const { loading, realestate, error } = realestates
-
+     
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchData())
-        if(realestate){
-           setShow(true)
-        }
     }, [dispatch, realestate])
 
 
@@ -52,7 +49,7 @@ const Content = () => {
 
     return (
         <div className="content2">
-            {!loading ? <Loader /> : newList.map(item => {
+            {loading ? newList.map(item => {
 
                 const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price } = item;
 
@@ -79,7 +76,7 @@ const Content = () => {
 
                     </div>
                 )
-            })}
+            }) : <Loader />}
 
             <div className="btns">
                 {pageNumbers.map((number, index) => {
