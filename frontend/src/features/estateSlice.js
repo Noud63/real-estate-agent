@@ -9,7 +9,7 @@ export const estateSlice = createSlice({
     initialState,
     reducers: {
         getRealEstates: (state) => {
-            state.loading = true   
+            state.loading = true
         },
         gotRealEstates: (state, action) => {
             state.loading = false

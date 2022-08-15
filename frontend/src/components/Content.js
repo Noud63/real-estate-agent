@@ -11,7 +11,7 @@ import Loader from '../features/Loader'
 
 const Content = () => {
 
-    const [ show, setShow ] = useState(false)
+    const [show, setShow ] = useState(false)
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
 
@@ -25,7 +25,7 @@ const Content = () => {
         if(realestate){
            setShow(true)
         }
-    }, [fetchData])
+    }, [dispatch, realestate])
 
 
     const pageNumbers = []
@@ -52,13 +52,12 @@ const Content = () => {
 
     return (
         <div className="content2">
-            {newList.map(item => {
+            {!loading ? <Loader /> : newList.map(item => {
 
                 const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price } = item;
 
                 return (
-                    <>
-                    {!loading ? <div className="content2_property" key={_id}>
+                       <div className="content2_property" key={_id}>
                         <div className="content2_castleImageBox"><img src={img} alt="" className="content2_castleImage" /></div>
                         <div className="content2_info">
                             <div className="title"><h5>{name}</h5></div>
@@ -78,8 +77,7 @@ const Content = () => {
 
                         <Map region={region} map={map} />
 
-                    </div > : <Loader />}
-                    </>
+                    </div>
                 )
             })}
 
