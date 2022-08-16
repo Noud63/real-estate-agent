@@ -8,12 +8,15 @@ import Map from './Map'
 import { useSelector, useDispatch } from 'react-redux'
 import fetchData from '../features/ApiService'
 import Loader from '../features/Loader'
+import EnquiryForm from '../components/EnquiryForm'
 
 const Content = () => {
 
     const [show, setShow ] = useState(false)
+    const [showForm, setShowForm ] = useState(false)
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
+    const [errorMessage, setErrorMessage] = useState(false)
 
     const realestates = useSelector(state => state.realestate)
     const { loading, realestate, error } = realestates
@@ -22,7 +25,14 @@ const Content = () => {
 
     useEffect(() => {
         dispatch(fetchData())
-    }, [dispatch, realestate])
+        if(realestate){
+            setShow(true)
+        }
+        if(error){
+            setErrorMessage(true)
+            setShow(false)
+        }
+    }, [dispatch, error, realestate])
 
 
     const pageNumbers = []
@@ -47,9 +57,12 @@ const Content = () => {
         slicedList()
     }, [slicedList])
 
+    
+
     return (
         <div className="content2">
-            {loading ? newList.map(item => {
+            {errorMessage ? <div>{error}</div> : ""}
+            {show ? newList.map(item => {
 
                 const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price } = item;
 
@@ -73,6 +86,7 @@ const Content = () => {
                         </div>
 
                         <Map region={region} map={map} />
+                        {/* <EnquiryForm /> */}
 
                     </div>
                 )

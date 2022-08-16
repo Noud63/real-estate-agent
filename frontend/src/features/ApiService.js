@@ -9,7 +9,7 @@ const ApiService = () => async (dispatch) => {
         dispatch(gotRealEstates(data))
     } catch (error) {
         console.error(error.response.data);
-        dispatch(noRealEstates({ message: "No data found!" }))
+        dispatch(noRealEstates({ message: "No data retrieved!" }))
     }
 }
 

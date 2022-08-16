@@ -7,7 +7,7 @@ const getRealEstates = async (req, res) => {
                 const realestates = await RealEstates.find({});
                 res.send(realestates);
         } catch (error) {
-              console.error(error)  
+                console.error(error)
         }
 }
 

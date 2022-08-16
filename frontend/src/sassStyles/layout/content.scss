@@ -3,7 +3,7 @@
 
 
 .content2 {
-    max-width: 1080px;
+    width: 1080px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -16,12 +16,12 @@
     margin-bottom: 100px;
 
     &_property {
+        position: relative;
         margin-bottom: 20px;
         @include spacebetween-content;
         width: 96%;
         box-shadow: 0px 1px 3px rgb(145, 140, 148);
         background-color: rgb(240, 236, 245);
-        // background-image: linear-gradient(to top, rgb(223, 219, 226), rgb(255, 255, 255));
         border-bottom: 2px solid rgb(159, 140, 173);
         @include respond5(contentBreak){
             width: 305px;
@@ -96,63 +96,6 @@
             }
         }
     }
-}
-
-.mapEnquiryBox {
-    display: flex;
-    flex: 1;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
-    @include respond5(contentBreak){
-            flex: none; 
-            width: 100%;
-            align-items: flex-start;
-            padding: 0 10px
-        }
-}
-
-.map {
-    position: relative;
-    height: 150px;
-    cursor: pointer;
-    @include center-content;
-    @include respond5(contentBreak){
-            height: 120px;
-        }
-
-    .regionName {
-     position: absolute;
-     @include center-content;
-     background-image: linear-gradient(to top, rgb(119, 0, 0), red);
-     color: white;
-     border-radius: 5px;
-     width: 120px;
-     height: 25px;
-     font-size: .8rem;
-     opacity: 1;
-     transition: all .3s ease-in-out;
-     box-shadow: 0px 2px 4px rgb(64, 55, 68);
-
-     &.hide {
-       opacity:0;
-     }
-}
-
-}
-
-.enquiry {
-    width: 100px;
-    height: 30px;
-    background-image: linear-gradient(to top, rgb(119, 0, 0), red);
-    color: white;
-    border-style: none;
-    cursor: pointer;
-    @include respond5(contentBreak){
-            width: 100%;
-            margin-bottom: 10px;
-        }
 }
 
 .btns {
