@@ -1,36 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import '../sassStyles/layout/content.scss'
-import bedroomsIcon from '../assets/icons/bedrooms.png'
-import bathroomsIcon from '../assets/icons/bathrooms.png'
-import livingspaceIcon from '../assets/icons/livingspace.png'
-import areaIcon from '../assets/icons/area.png'
-import Map from './Map'
 import { useSelector, useDispatch } from 'react-redux'
 import fetchData from '../features/ApiService'
-import Loader from '../features/Loader'
-import EnquiryForm from '../components/EnquiryForm'
+import ListItems from './ListItems'
 
 const Content = () => {
 
-    const [show, setShow ] = useState(false)
-    const [showForm, setShowForm ] = useState(false)
+    const [show, setShow] = useState(false)
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
 
     const realestates = useSelector(state => state.realestate)
     const { loading, realestate, error } = realestates
-     
+
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchData())
-        if(realestate){
+        if (realestate.length > 0) {
             setShow(true)
         }
-        if(error){
+        if (error) {
             setErrorMessage(true)
-            setShow(false)
         }
     }, [dispatch, error, realestate])
 
@@ -50,6 +42,7 @@ const Content = () => {
     const slicedList = useCallback(() => {
         const data2 = realestate.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
         setNewList(data2)
+        
     }, [currentNumber, realestate])
 
 
@@ -57,40 +50,12 @@ const Content = () => {
         slicedList()
     }, [slicedList])
 
-    
 
     return (
         <div className="content2">
             {errorMessage ? <div>{error}</div> : ""}
-            {show ? newList.map(item => {
 
-                const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price } = item;
-
-                return (
-                       <div className="content2_property" key={_id}>
-                        <div className="content2_castleImageBox"><img src={img} alt="" className="content2_castleImage" /></div>
-                        <div className="content2_info">
-                            <div className="title"><h5>{name}</h5></div>
-                            <div className="location">
-                                <div><span>Region:</span> {region}</div>
-                                <div><span>Departement:</span> {departement}</div>
-                                <div><span>City:</span> {city}</div>
-                            </div>
-                            <div className="icons">
-                                <div className="icon">{bedrooms}<img src={bedroomsIcon} alt="" /></div>
-                                <div className="icon">{bathrooms} <img src={bathroomsIcon} alt="" /></div>
-                                <div className="icon">{livingspace}<img src={livingspaceIcon} alt="" /></div>
-                                <div className="icon">{area}ha<img src={areaIcon} alt="" /></div>
-                            </div>
-                            <div className="price"><span>Price:</span> {item.price === 'Not for Sale' ? price : `$${price},-`}</div>
-                        </div>
-
-                        <Map region={region} map={map} />
-                        {/* <EnquiryForm /> */}
-
-                    </div>
-                )
-            }) : <Loader />}
+           <ListItems newList={newList} show={show}/>
 
             <div className="btns">
                 {pageNumbers.map((number, index) => {
@@ -103,3 +68,18 @@ const Content = () => {
 }
 
 export default Content
+
+
+// {pageNumbersArray.map(pageNumber => (
+//     < PaginationButton key={ pageNumber } active={ pageNumber === currentPage} disabled={ false} onClick = {() => handlePageChange(pageNumber)} title={ pageNumber }/>
+//           ))}
+
+// export default function PaginationButton({ title, onClick, active, disabled }) {
+//     return (
+//         <button onClick={disabled ? null : onClick}>
+//             <span>
+//                 {title}
+//             </span>
+//         </button>
+//     );
+// }

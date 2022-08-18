@@ -1,13 +1,150 @@
-.enquiryForm {
-    display: block;
+@import '../../sassStyles/abstracts/variables';
+@import '../../sassStyles/abstracts/mixins';
+
+.enquiryForm{
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-width: 0 10px 10px 10px;
+    border-color:  rgb(240, 236, 245);
+    border-style: solid;
+    top:0;
     width: 100%;
-    height: 207px;
-    background-color: rgb(226, 152, 152);
+    height: 205px;
+    background-color: rgb(168, 0, 0);
+    box-shadow: 0px 1px 3px rgb(145, 140, 148);
+    z-index: 1;
+    animation: show-form .5s ease-in-out;
+    opacity: 0;
+    color: white;
 
+    &.show {
+    top: 205px;
+      @keyframes show-form {
+           0% {
+             opacity: 0;
+           }
+           100% {
+             opacity: 1;
+           }
+      }
+    opacity: 1;
+    }
+}
 
-    // &.show {
-    //     top: 207px;
-    //     z-index: 5;
-    // }
+.enquiryForm_close {
+       width: 100%;
+       height: 35px;
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: row;
+       padding: 0 10px;
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: .9rem;
+       border-bottom: 1px solid rgb(240, 236, 245);
 
+       & :nth-child(1) {
+       display:flex;
+       align-items: center;
+       justify-content: flex-start;
+       width: 5%;
+       height: 30px;
+    }
+
+       & :nth-child(2) {
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       width: 90%;
+       height: 30px;
+
+       & :nth-child(1) {
+         display:flex;
+       align-items: center;
+       justify-content: flex-end;
+         color: rgb(255, 255, 255);
+         width: 50%;
+       }
+
+       & :nth-child(2) {
+         display:flex;
+       align-items: center;
+       justify-content: flex-start;
+       font-weight: bold;
+         color: rgb(255, 255, 255);
+         width: 50%;
+       }
+    }
+
+       & :nth-child(3) {
+       display:flex;
+       align-items: center;
+       justify-content: flex-end;
+       width: 5%;
+       height: 30px;
+
+       .closeBtn {
+       cursor: pointer;
+       width: 20px;
+       height: 20px;
+    }
+  }
+
+}
+
+.form {
+  width: 100%;
+}
+
+.enquiryForm_inputfields {
+       width: 100%;
+       display:flex;
+       align-items: flex-start;
+       justify-content: center;
+       flex-direction: row;
+       padding: 0 10px;
+      
+
+       &_name {
+         width: 50%;
+        display:flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+
+       .sendRequestBtn {
+         width: 90%;
+    
+       & button {
+           width: 100%;
+           height: 33px;
+           margin-top: 26px;
+           border-style: none;
+           outline: none;
+           background-image: linear-gradient(to top, rgb(102, 0, 0), red);
+           color: white;
+         }
+       }
+       }
+
+       & label {
+         width: 90%;
+         display:block;
+         color: white;
+         font-size: .9rem;
+         margin-bottom: 10px;
+       }
+
+       & input {
+         width: 90%;
+         margin-bottom: 10px;
+         height: 30px;
+         padding-left: 5px;
+         border-style: none;
+         outline: none;
+         font-size: .9rem;
+       }
 }

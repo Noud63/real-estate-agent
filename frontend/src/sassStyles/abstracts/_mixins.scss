@@ -55,6 +55,13 @@
  flex-direction: row;
 }
 
+@mixin spacebetween-content-top {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ flex-direction: row;
+}
+
 //Media queries
 @mixin respond2($breakpoint) { 
   @if $breakpoint == gridcontainer {    

@@ -1,0 +1,101 @@
+@import '../../sassStyles/abstracts/variables';
+@import '../../sassStyles/abstracts/mixins';
+
+
+.content2_property {
+        position: relative;
+        margin-bottom: 20px;
+        @include spacebetween-content-top;
+        width: 96%;
+        box-shadow: 0px 1px 3px rgb(145, 140, 148);
+        background-color: rgb(240, 236, 245);
+        height: 205px;
+        border-bottom: 2px solid rgb(159, 140, 173);
+        transition: all .5s ease-in-out;
+        // z-index: 1;
+        @include respond5(contentBreak){
+            width: 305px;
+            height: auto;
+             @include center-content-column;
+        }
+
+        &_castleImage {
+        padding: 10px;
+        display: block;
+        width: 300px;
+        }
+
+        &_castleImage {
+        padding: 10px;
+        display: block;
+        width: 300px;
+    }
+
+    &_info {
+        width: 30%;
+        height: auto;
+        margin: 15px 0;
+        @include center-content-column-start-top;
+        @include respond5(contentBreak){
+            width: 100%;
+            margin-left: 25px;
+            margin-bottom: 0;
+        }
+      
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            @include respond5(contentBreak){
+            margin-bottom: 10px;
+        }
+
+            & h4 {
+                color: rgb(81, 61, 90);
+            }
+        }
+
+        .location {
+            line-height: 1.6;
+            font-size: .8rem;
+
+            & span {
+                font-weight: bold;
+            }
+        }
+
+
+        .icons {
+            margin-top: 20px; 
+            @include center-content-row;
+
+            & :not(:first-child) {
+                border-left: 1px solid rgb(50, 42, 59);
+                padding-left: 10px;
+            }
+
+            & .icon {
+                height: 20px;
+                padding-right: 10px;
+                @include center-content-row;
+
+            & img {
+                margin-left: 5px;
+            }
+        }
+        }
+
+        .price {
+            margin-top: 20px;
+            color: rgb(187, 0, 0);
+            
+            & span {
+                font-weight: bold;
+            }
+        }
+    }
+
+}
+
+.enlarge {
+        height: 410px;
+    }
