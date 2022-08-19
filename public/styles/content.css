@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+.content2 {
+  max-width: 1080px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+  color: rgb(76, 61, 78);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 100px;
+}
+
+.btns {
+  margin: 20px auto;
+  width: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.paginationBtn {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  color: rgb(91, 81, 105);
+  background-color: rgb(240, 236, 245);
+  box-shadow: 0px 1px 2px rgb(132, 116, 141);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.paginationBtn.active {
+  background-color: rgb(169, 149, 173);
+  color: white;
+}

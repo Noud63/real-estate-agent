@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import '../sassStyles/layout/content.scss'
+import '../sassStyles/pages/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import fetchData from '../features/ApiService'
 import ListItems from '../components/ListItems'
+import north from '../assets/images/maps/north.png'
 
 const Content = () => {
 
@@ -53,6 +54,7 @@ const Content = () => {
 
     return (
         <div className="content2">
+
             {errorMessage ? <div>{error}</div> : ""}
 
           <ListItems newList={newList} show={show}/>

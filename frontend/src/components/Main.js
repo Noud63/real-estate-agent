@@ -10,7 +10,7 @@ const Main = () => {
                 <div className="your_dream">
                     <span className="castlesandchateaux">Castles & Chateaux</span>
                     <span className="luxury_real_estate">Luxury real estate in France with Ellie Castelli</span>
-                    </div>
+                </div>
                 <img src={header} alt="" className="c5_image" />
             </div>
         </div>

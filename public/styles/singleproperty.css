@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+.content2_property {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 96%;
+  box-shadow: 0px 1px 3px rgb(145, 140, 148);
+  background-color: rgb(240, 236, 245);
+  height: 205px;
+  border-bottom: 2px solid rgb(159, 140, 173);
+  transition: all 0.5s ease-in-out;
+}
+.content2_property.enlarge {
+  height: 410px;
+}
+@media only screen and (max-width: 710px) {
+  .content2_property {
+    width: 305px;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .content2_property.enlarge {
+    height: 550px;
+  }
+}
+.content2_property_castleImage {
+  padding: 10px;
+  display: block;
+  width: 300px;
+}
+.content2_property_castleImage {
+  padding: 10px;
+  display: block;
+  width: 300px;
+}
+.content2_property_info {
+  width: 30%;
+  height: auto;
+  margin: 15px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+@media only screen and (max-width: 710px) {
+  .content2_property_info {
+    width: 100%;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+.content2_property_info .title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 710px) {
+  .content2_property_info .title {
+    margin-bottom: 10px;
+  }
+}
+.content2_property_info .title h4 {
+  color: rgb(81, 61, 90);
+}
+.content2_property_info .location {
+  line-height: 1.6;
+  font-size: 0.8rem;
+}
+.content2_property_info .location span {
+  font-weight: bold;
+}
+.content2_property_info .icons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.content2_property_info .icons :not(:first-child) {
+  border-left: 1px solid rgb(50, 42, 59);
+  padding-left: 10px;
+}
+.content2_property_info .icons .icon {
+  height: 20px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.content2_property_info .icons .icon img {
+  margin-left: 5px;
+}
+.content2_property_info .price {
+  margin-top: 20px;
+  color: rgb(187, 0, 0);
+}
+.content2_property_info .price span {
+  font-weight: bold;
+}

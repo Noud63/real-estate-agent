@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../sassStyles/utils/EnquiryForm.scss'
 import closeIcon from '../assets/icons/close.png'
 import logo from '../assets/icons/ellielogo4.png'
@@ -8,6 +8,9 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [telephone, setTelephone] = useState("");
+    const [success, setSuccess] = useState(false);
+
+    const btnRef = useRef(null)
 
     const closeForm = () => {
         setShowForm(false)
@@ -22,10 +25,27 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
             telephoneNumber: telephone,
             propertyName
         }
+
         console.log(data)
+
         setName("")
         setEmail("")
         setTelephone("")
+
+        if(!data){
+            setSuccess(true)
+            const timer = setTimeout(() => {
+                setSuccess(false)
+            }, 4000)
+            return () => clearTimeout(timer)
+        }else{
+            btnRef.current.textContent = 'Request not Sent!'
+            const timer = setTimeout(() => {
+                btnRef.current.textContent = 'Sent Request'
+            }, 4000)
+            return () => clearTimeout(timer)
+        }
+
     }
 
     return (
@@ -56,7 +76,7 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
                     <div className="enquiryForm_inputfields_name">
                         <label>Email:</label>
                         <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-                        <div className="sendRequestBtn"><button type="submit">Send Request</button></div>
+                        <div className="sendRequestBtn"><button type="submit" ref={btnRef}>{success ? 'Sent Successfully' : 'Sent Request'}</button></div>
                     </div>
 
                 </div>

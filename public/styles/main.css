@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #bfb5c2;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #625469;
+  box-shadow: inset 0 0 10px rgb(11, 6, 12);
+  border-radius: 50px;
+}
+
+@-moz-document url-prefix() {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #544a61;
+  }
+}
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+.container {
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 710px) {
+  .container {
+    margin-bottom: 50px;
+  }
+}
+
+.homepage_image {
+  max-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.homepage_image .your_dream {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Arial";
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0;
+  width: 1040px;
+  background-image: transparent;
+  color: rgb(129, 108, 129);
+  word-spacing: 5px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+@media only screen and (max-width: 1080px) {
+  .homepage_image .your_dream {
+    width: 445px;
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 710px) {
+  .homepage_image .your_dream {
+    bottom: -20px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .homepage_image .your_dream {
+    bottom: -30px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .homepage_image .your_dream {
+    font-size: 1.4rem;
+    width: 420px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .homepage_image .your_dream {
+    font-size: 1.2rem;
+    width: 310px;
+  }
+}
+.homepage_image .castlesandchateaux {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: rgb(97, 73, 97);
+  width: 100%;
+}
+.homepage_image .luxury_real_estate {
+  font-family: "Arial";
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 100%;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+@media only screen and (max-width: 1080px) {
+  .homepage_image .luxury_real_estate {
+    width: 500px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .homepage_image .luxury_real_estate {
+    font-size: 0.8rem;
+    width: 500px;
+    word-spacing: 0;
+    letter-spacing: 3px;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .homepage_image .luxury_real_estate {
+    font-size: 0.7rem;
+    width: 320px;
+    letter-spacing: 1px;
+  }
+}
+.homepage_image .c5_image {
+  width: 100%;
+  height: auto;
+}

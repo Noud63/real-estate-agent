@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+.footer {
+  width: 100%;
+  height: 30rem;
+  background-color: rgb(20, 17, 26);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer_content_iconandtitle {
+  display: flex;
+  flex-direction: row;
+}
+.footer_content_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.footer_content_ellieName {
+  font-family: "Chopin";
+  color: rgb(134, 120, 151);
+  font-size: 3rem;
+}
+.footer_content_your_castle {
+  font-size: 15px;
+  color: rgb(134, 120, 151);
+  font-family: "Times";
+  top: 65px;
+}
