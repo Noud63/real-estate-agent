@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../sassStyles/utils/EnquiryForm.scss'
 import closeIcon from '../assets/icons/close.png'
-import logo from '../assets/icons/ellielogo3.png'
+import logo from '../assets/icons/ellielogo4.png'
 
 const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
 
@@ -61,7 +61,7 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
 
                 </div>
             </form>
-                              <img src={logo} alt="logo"  className="logo"/>
+                    <img src={logo} alt="logo" className="logo"/>
         </div>
     )
 }

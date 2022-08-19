@@ -11,7 +11,7 @@ Back-end&nbsp;  : Express - MongoDB - Mongoose - Node<br><br>
 
 <h6>Enquiry form:</h6>
 
-![elliecastelliduo2](https://user-images.githubusercontent.com/38325801/185565545-ab3a1cb4-5f8f-4695-bcf6-ee27a8d84f9f.png)<br><br><br>
+![elliecastelliduo2](https://user-images.githubusercontent.com/38325801/185597695-7a72ee7b-c93b-4bd1-883b-9a504bce616a.png)<br><br><br>
 
 <h6>Hamburger Menu overlay:</h6>
 

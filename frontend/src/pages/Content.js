@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import '../sassStyles/layout/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import fetchData from '../features/ApiService'
-import ListItems from './ListItems'
+import ListItems from '../components/ListItems'
 
 const Content = () => {
 
@@ -55,7 +55,7 @@ const Content = () => {
         <div className="content2">
             {errorMessage ? <div>{error}</div> : ""}
 
-           <ListItems newList={newList} show={show}/>
+          <ListItems newList={newList} show={show}/>
 
             <div className="btns">
                 {pageNumbers.map((number, index) => {
@@ -71,7 +71,7 @@ export default Content
 
 
 // {pageNumbersArray.map(pageNumber => (
-//     < PaginationButton key={ pageNumber } active={ pageNumber === currentPage} disabled={ false} onClick = {() => handlePageChange(pageNumber)} title={ pageNumber }/>
+//     < PaginationButton key={pageNumber} active={pageNumber === currentPage} disabled={false} onClick = {() => handlePageChange(pageNumber)} title={pageNumber}/>
 //           ))}
 
 // export default function PaginationButton({ title, onClick, active, disabled }) {
