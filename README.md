@@ -5,7 +5,7 @@ Front-end => React Redux-Toolkit - SASS css pre-processor <br>
 Back-end  => Express - MongoDB - Mongoose - Node<br><br>
 
 
-<h3>Homepage with default selection of real estate properties</h3>
+<h5>Homepage with default selection of real estate properties</h5>
 
 ![elliecastelli9](https://user-images.githubusercontent.com/38325801/185565594-6ac60926-d914-48b0-beaa-8d09db70eb68.png)<br><br><br>
 
