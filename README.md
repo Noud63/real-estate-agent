@@ -4,11 +4,6 @@
 Front-end => React Redux-Toolkit - SASS css pre-processor <br>
 Back-end  => Express - MongoDB - Mongoose - Node<br><br>
 
-<style>
-H1{color:Blue !important;}
-H4{color:DarkOrange !important;}
-p{color:Black !important;}
-</style>
 
 <h4>Homepage with default selection of real estate properties</h4>
 
