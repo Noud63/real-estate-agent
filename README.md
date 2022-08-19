@@ -1,6 +1,6 @@
 <h1>Real Estate Agent, Ellie Castelli</h1>
 
-<h2>MERN Stack application</h2><br>
+<h2>MERN Stack application</h2>
 Front-end => React Redux-Toolkit - SASS css pre-processor <br>
 Back-end  => Express - MongoDB - Mongoose - Node<br><br>
 
