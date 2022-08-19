@@ -12,11 +12,18 @@
         height: 205px;
         border-bottom: 2px solid rgb(159, 140, 173);
         transition: all .5s ease-in-out;
+        &.enlarge {
+        height: 410px;
+       }
         // z-index: 1;
         @include respond5(contentBreak){
             width: 305px;
-            height: auto;
-             @include center-content-column;
+            height: 550px;
+             @include center-content-column-top;
+             &.enlarge {
+              height: 550px;
+        }
+    
         }
 
         &_castleImage {
@@ -96,6 +103,5 @@
 
 }
 
-.enlarge {
-        height: 410px;
-    }
+
+    

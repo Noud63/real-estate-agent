@@ -12,9 +12,10 @@ const Map = ({ region, map, setExpand, expand, setShowForm }) => {
 
     const makeEnquiry = () => {
         setExpand(true)
-        setTimeout(()=> {
+        const timer = setTimeout(()=> {
             setShowForm(true)
         }, 500)
+        return () => clearTimeout(timer);
     }
 
     return (

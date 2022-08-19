@@ -14,10 +14,10 @@
     width: 100%;
     height: 205px;
     background-color: rgb(168, 0, 0);
-    box-shadow: 0px 1px 3px rgb(145, 140, 148);
+    box-shadow: 0px 2px 3px rgb(196, 192, 199);
     z-index: 1;
-    animation: show-form .5s ease-in-out;
-    opacity: 0;
+    animation: show-form .8s ease-in-out;
+    opacity: 1;
     color: white;
 
     &.show {
@@ -30,7 +30,11 @@
              opacity: 1;
            }
       }
-    opacity: 1;
+       @include respond5(contentBreak){
+            top: 10px;
+            height: 540px;
+        }
+
     }
 }
 
@@ -45,6 +49,10 @@
        font-family: Arial, Helvetica, sans-serif;
        font-size: .9rem;
        border-bottom: 1px solid rgb(240, 236, 245);
+        @include respond5(contentBreak){
+             border-bottom: 0;
+             padding: 0;
+        }
 
        & :nth-child(1) {
        display:flex;
@@ -60,6 +68,9 @@
        justify-content: center;
        width: 90%;
        height: 30px;
+        @include respond5(contentBreak){
+            display:none;
+        }
 
        & :nth-child(1) {
          display:flex;
@@ -76,6 +87,10 @@
        font-weight: bold;
          color: rgb(255, 255, 255);
          width: 50%;
+         @include respond5(contentBreak){
+            display:none;
+            width: 0;
+        }
        }
     }
 
@@ -90,10 +105,38 @@
        cursor: pointer;
        width: 20px;
        height: 20px;
+       @include respond5(contentBreak){
+            margin-top: 10px;
+        }
     }
   }
-
+       
 }
+
+.enquiryFormHeader {
+       display:none;
+       align-items: center;
+       justify-content: center;
+      margin: 10px 0;
+      @include respond5(contentBreak){
+       display: flex;
+       flex-direction: column;
+      
+      & span {
+        margin-top: 10px;
+      }
+      & .makeEnquiry {
+        font-size: 1rem;
+      }
+      & .castleName {
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+}
+}
+
+
+
 
 .form {
   width: 100%;
@@ -106,7 +149,9 @@
        justify-content: center;
        flex-direction: row;
        padding: 0 10px;
-      
+       @include respond5(contentBreak){
+             flex-direction: column;
+        }
 
        &_name {
          width: 50%;
@@ -114,7 +159,9 @@
        align-items: center;
        justify-content: center;
        flex-direction: column;
-
+      @include respond5(contentBreak){
+              width: 100%;
+        }
        .sendRequestBtn {
          width: 90%;
     
@@ -126,8 +173,12 @@
            outline: none;
            background-image: linear-gradient(to top, rgb(102, 0, 0), red);
            color: white;
+            @include respond5(contentBreak){
+              height: 43px;
+              margin-top: 20px;
+            }
          }
-       }
+        }
        }
 
        & label {
@@ -148,3 +199,15 @@
          font-size: .9rem;
        }
 }
+
+.logo {
+  display: none;
+
+  @include respond5(contentBreak){
+              display: flex;
+              width: 70px;
+              margin-top: 35px;
+            }
+}
+
+ 
