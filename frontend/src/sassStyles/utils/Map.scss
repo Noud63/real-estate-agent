@@ -51,6 +51,7 @@
     background-image: linear-gradient(to top, rgb(119, 0, 0), red);
     color: white;
     border-style: none;
+    outline: none;
     cursor: pointer;
     @include respond5(contentBreak){
             width: 100%;

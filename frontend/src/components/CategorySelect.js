@@ -3,9 +3,9 @@ import Select from 'react-select'
 import '../sassStyles/layout/categorySelect.scss'
 
 const regions = [
-    { value: 'North', label: 'Northern Region' },
-    { value: 'Centre', label: 'Centre Region' },
-    { value: 'South', label: 'Southern Region' }
+    { value: 'North', label: 'North' },
+    { value: 'Centre', label: 'Centre' },
+    { value: 'South', label: 'South' }
 ]
 
 const livingSpace = [
