@@ -1,0 +1,31 @@
+@import '../abstracts/global';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.selectMenus {
+    width: 96%;
+    margin-bottom : 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.select {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+    height: 38px;
+    border-radius: 4px;
+    // background-image: linear-gradient(to top,rgb(229, 223, 235), rgb(251, 249, 253));
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6e566e;
+    border: 1px solid #967e96;
+    letter-spacing: 1px;
+}
+
+.selectBox {
+   width: 250px;
+}

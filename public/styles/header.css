@@ -167,7 +167,7 @@
   right: -100%;
   background-color: rgba(96, 83, 109, 0.7);
   transition: 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 2;
 }
 
 .show {

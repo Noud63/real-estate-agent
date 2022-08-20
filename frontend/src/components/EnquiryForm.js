@@ -26,13 +26,11 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
             propertyName
         }
 
-        console.log(data)
-
         setName("")
         setEmail("")
         setTelephone("")
 
-        if(!data){
+        if(data){
             setSuccess(true)
             const timer = setTimeout(() => {
                 setSuccess(false)
@@ -45,8 +43,7 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
             }, 4000)
             return () => clearTimeout(timer)
         }
-
-    }
+}
 
     return (
         <div className={!showForm ? "enquiryForm" : "enquiryForm show"}>

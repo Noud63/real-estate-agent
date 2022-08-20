@@ -7,10 +7,10 @@
         margin-bottom: 20px;
         @include spacebetween-content-top;
         width: 96%;
-        box-shadow: 0px 1px 3px rgb(145, 140, 148);
-        background-color: rgb(240, 236, 245);
+        box-shadow: 0px 1px 2px rgb(156, 151, 160);
+        background-image: linear-gradient(to top,rgb(233, 228, 238), rgb(251, 249, 253));
         height: 205px;
-        border-bottom: 2px solid rgb(159, 140, 173);
+        border-bottom: 1px solid rgb(159, 140, 173);
         transition: all .5s ease-in-out;
         &.enlarge {
         height: 410px;

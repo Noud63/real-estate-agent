@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import fetchData from '../features/ApiService'
 import ListItems from '../components/ListItems'
 import north from '../assets/images/maps/north.png'
+import CategorySelect from '../components/CategorySelect'
 
 const Content = () => {
 
@@ -54,6 +55,8 @@ const Content = () => {
 
     return (
         <div className="content2">
+
+                <CategorySelect/>
 
             {errorMessage ? <div>{error}</div> : ""}
 

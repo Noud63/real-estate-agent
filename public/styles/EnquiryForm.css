@@ -28,6 +28,7 @@
   animation: show-form 0.8s ease-in-out;
   opacity: 1;
   color: white;
+  background-image: linear-gradient(to top, rgb(136, 1, 1), rgb(189, 0, 0));
 }
 .enquiryForm.show {
   top: 205px;
