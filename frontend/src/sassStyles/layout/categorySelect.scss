@@ -2,6 +2,7 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
+
 .selectMenus {
     width: 96%;
     margin-bottom : 30px;
@@ -9,6 +10,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    @include respond5(contentBreak){
+            flex-direction: column;
+        }
 }
 
 .select {
@@ -25,8 +29,20 @@
     border: 1px solid #967e96;
     letter-spacing: 5px;
     word-spacing: 5px;
+    @include respond2(gridcontainer){
+            font-size: .9rem;
+            letter-spacing: 2px;
+        }
+     @include respond5(contentBreak){
+            width: 300px;
+            font-size: .8rem;
+        }
 }
 
 .selectBox {
    width: 250px;
+   @include respond5(contentBreak){
+            width: 300px;
+            margin-top: 10px;
+        }
 }

@@ -3,8 +3,8 @@ import '../sassStyles/pages/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import fetchData from '../features/ApiService'
 import ListItems from '../components/ListItems'
-import north from '../assets/images/maps/north.png'
 import CategorySelect from '../components/CategorySelect'
+import Pagination from '../components/Pagination'
 
 const Content = () => {
 
@@ -44,7 +44,7 @@ const Content = () => {
     const slicedList = useCallback(() => {
         const data2 = realestate.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
         setNewList(data2)
-        
+
     }, [currentNumber, realestate])
 
 
@@ -56,35 +56,20 @@ const Content = () => {
     return (
         <div className="content2">
 
-                <CategorySelect/>
+            <CategorySelect />
 
             {errorMessage ? <div>{error}</div> : ""}
 
-          <ListItems newList={newList} show={show}/>
+            <ListItems newList={newList} show={show} />
 
             <div className="btns">
-                {pageNumbers.map((number, index) => {
-                    return (number === currentNumber) ? <button className="paginationBtn active" onClick={() => pagination(number)} key={index} >{number}</button> :
-                        <button className="paginationBtn" onClick={() => pagination(number)} key={index} >{number}</button>
+                {pageNumbers.map(number => {
+                    return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
                 })}
             </div>
+
         </div>
     )
 }
 
 export default Content
-
-
-// {pageNumbersArray.map(pageNumber => (
-//     < PaginationButton key={pageNumber} active={pageNumber === currentPage} disabled={false} onClick = {() => handlePageChange(pageNumber)} title={pageNumber}/>
-//           ))}
-
-// export default function PaginationButton({ title, onClick, active, disabled }) {
-//     return (
-//         <button onClick={disabled ? null : onClick}>
-//             <span>
-//                 {title}
-//             </span>
-//         </button>
-//     );
-// }
