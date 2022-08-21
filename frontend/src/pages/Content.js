@@ -28,7 +28,6 @@ const Content = () => {
         }
     }, [dispatch, error, realestate])
 
-
     const pageNumbers = []
     const resultsPerPage = 4
     const pages = Math.ceil(realestate.length / resultsPerPage)
@@ -44,7 +43,6 @@ const Content = () => {
     const slicedList = useCallback(() => {
         const data2 = realestate.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
         setNewList(data2)
-
     }, [currentNumber, realestate])
 
 

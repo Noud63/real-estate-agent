@@ -1,29 +1,79 @@
-@import '../abstracts/variables.scss';
-@import '../abstracts/mixins.scss';
+@import '../abstracts/global';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
 
 .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 30rem;
     background-color: rgb(20, 17, 26);
     @include center-content-column;
+    @include respond2(gridcontainer) {
+          height: 42rem;
+    }
 
-    &_content_iconandtitle {
+    @include respond5(contentBreak) {
+          height: 82rem;
+    }
+    
+    &_content_gridContainer {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: rgb(150, 126, 156);
+    gap: 1px;
+
+    @include respond2(gridcontainer) {
+          grid-template-columns: repeat( 2, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include respond5(contentBreak) {
+          grid-template-columns: repeat( 1, 1fr);
+          grid-template-rows: repeat(6, 1fr);
+    }
+    }
+    
+    &_content_box {
             display: flex;
+            align-items: center;
+            justify-content: center;
             flex-direction: row;
-        }
+            height: 13rem;
+            // color: rgb(187, 161, 187);
+            background-color: rgb(20, 17, 26);
 
-        &_content_title {
+            &.icontitle  img {
+               width: 75px;
+               margin-top: 12px;
+            }
+
+            &.icontitle {
+              align-items: flex-start;
+              justify-content: flex-start;
+
+              @include respond5(contentBreak) {
+              align-items: flex-start;
+              justify-content: center;
+    }
+            }
+    }
+
+    &_content_title {
             @include center-content-column;
             margin-bottom: 20px;
         }
        
-        &_content_ellieName {
+    &_content_ellieName {
           font-family: $elliefont;
           color: $elliecolorlight;
           font-size: 3rem;
       }
 
-        &_content_your_castle {
+    &_content_your_castle {
           font-size: 15px;
           color: $elliecolorlight;
           font-family:'Times';

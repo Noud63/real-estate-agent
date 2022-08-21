@@ -16,7 +16,6 @@ const livingSpace = [
     { value: '1500', label: '1500 m\xB2' },
     { value: '2000', label: '2000 m\xB2' },
     { value: '>2000', label: '>2000 m\xB2' },
-
 ]
 
 const plotSize = [
@@ -35,14 +34,13 @@ const customTheme = (theme) => {
         colors: {
             ...theme.colors,
             primary25: '#f0ecf5',  // highlight options on hover
-            primary: 'green',      // active
+            primary: 'green',      // border active
             neutral20: '#a892a8',  // border on hover
             neutral30: '#967e96',
             neutral50: '#a892a8',  // placeholder
         }
     }
 }
-
 
 const CategorySelect = () => {
     return (
@@ -52,7 +50,6 @@ const CategorySelect = () => {
             <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" />
             <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox" />
         </div>
-
     )
 }
 
