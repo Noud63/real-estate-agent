@@ -9,6 +9,7 @@ const PORT = process.env.REACT_APP_PORT || 5000
 const connectDB = require('./config/db')
 const addDataToCollection = require('./seeder')
 const castleRoute = require('./routes/castleRoute')
+const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 app.use(cors())
 app.use(express.json())
@@ -24,6 +25,10 @@ addDataToCollection()
 app.use('/castles', castleRoute)
 // app.use('/users', require('./routes/registerRoute'))
 // app.use('/login', require('./routes/loginRoute'))
+// app.use('/enquiries', require('./routes/enquiriesRoute'))
+
+app.use(notFound)
+app.use(errorHandler)
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`.yellow)

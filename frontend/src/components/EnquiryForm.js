@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import '../sassStyles/utils/EnquiryForm.scss'
+import '../sassStyles/layout/EnquiryForm.scss'
 import closeIcon from '../assets/icons/close.png'
 import logo from '../assets/icons/ellielogo4.png'
 

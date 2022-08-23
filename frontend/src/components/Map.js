@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../sassStyles/pages/content.scss'
-import '../sassStyles/utils/Map.scss'
+import '../sassStyles/layout/Map.scss'
 
 const Map = ({ region, map, setExpand, expand, setShowForm }) => {
 

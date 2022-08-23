@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Select from 'react-select'
 import '../sassStyles/layout/categorySelect.scss'
+
 
 const regions = [
     { value: 'North', label: 'North' },
@@ -12,10 +13,9 @@ const livingSpace = [
     { value: '500', label: '500 m\xB2' },
     { value: '750', label: '750 m\xB2' },
     { value: '1000', label: '1000 m\xB2' },
-    { value: '1250', label: '1250 m\xB2' },
+    { value: '1200', label: '1200 m\xB2' },
     { value: '1500', label: '1500 m\xB2' },
-    { value: '2000', label: '2000 m\xB2' },
-    { value: '>2000', label: '>2000 m\xB2' },
+    { value: '2000', label: '2000 m\xB2' }
 ]
 
 const plotSize = [
@@ -24,9 +24,9 @@ const plotSize = [
     { value: '3', label: '3 ha' },
     { value: '4', label: '4 ha' },
     { value: '5', label: '5 ha' },
-    { value: '6', label: '6 ha' },
-    { value: '>6', label: '>6 ha' },
+    { value: '6', label: '6 ha' }
 ]
+
 
 const customTheme = (theme) => {
     return {
@@ -42,13 +42,25 @@ const customTheme = (theme) => {
     }
 }
 
+
 const CategorySelect = () => {
-    return (
+
+    const onChangeHandler = (value, actionMeta) => {
+        console.log(value)
+        console.log(actionMeta)
+    }
+
+    const handleInputChange = (inputValue, actionMeta) => {
+         console.log(inputValue)
+         console.log(actionMeta)
+    }
+
+return (
         <div className="selectMenus">
             <div className="select">search options</div>
-            <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" />
-            <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" />
-            <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox" />
+            <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" onChange={onChangeHandler} onInputChange={handleInputChange} name={'Region'}/>
+        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" onChange={onChangeHandler} name={'living Space'}/>
+        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox" onChange={onChangeHandler} name={'Plot Size'}/>
         </div>
     )
 }

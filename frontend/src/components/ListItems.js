@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Loader from '../features/Loader'
 import SingleProperty from './SingleProperty'
 
 const ListItems = ({ newList, show }) => {
+
     return ( 
         <>
         {show ? newList.map(item => {
