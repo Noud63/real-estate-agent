@@ -4,7 +4,7 @@
 
 .content2_property {
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         @include spacebetween-content-top;
         width: 96%;
         box-shadow: 0px 1px 2px rgb(156, 151, 160);
@@ -38,7 +38,7 @@
         width: 300px;
     }
 
-    &_info {
+        &_info {
         width: 30%;
         height: auto;
         margin: 15px 0;
@@ -100,8 +100,21 @@
                 font-weight: bold;
             }
         }
-    }
 
+    }
+        .like {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            &_icon {
+                width: 100%;
+                height: auto;
+            }
+        }
 }
 
 

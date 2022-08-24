@@ -5,6 +5,7 @@ import fetchData from '../features/ApiService'
 import ListItems from '../components/ListItems'
 import CategorySelect from '../components/CategorySelect'
 import Pagination from '../components/Pagination'
+import { useLocation, useNavigate } from "react-router-dom"
 
 const Content = () => {
 
@@ -13,6 +14,11 @@ const Content = () => {
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const path = window.location.pathname;
+
+   
     const realestates = useSelector(state => state.realestate)
     const { loading, realestate, error } = realestates
 
@@ -48,7 +54,11 @@ const Content = () => {
 
     useEffect(() => {
         slicedList()
-    }, [slicedList])
+    }, [slicedList, ])
+
+    useEffect(() => {
+        navigate(`${path}?page=${currentNumber}`);
+    }, [currentNumber, path, navigate])
 
 
     return (
@@ -63,6 +73,7 @@ const Content = () => {
             <div className="btns">
                 {pageNumbers.map(number => {
                     return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
+
                 })}
             </div>
 

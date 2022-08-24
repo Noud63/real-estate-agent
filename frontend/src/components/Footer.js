@@ -8,7 +8,7 @@ const Footer = () => {
 
             <div className="footer_content_gridContainer">
 
-                <div className="footer_content_box icontitle">
+                <div className="footer_content_box">
                     
                     <div className="footer_content_title">
                         <img src={ellieLogo} alt="elliecastelli" />
