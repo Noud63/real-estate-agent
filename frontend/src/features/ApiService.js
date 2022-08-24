@@ -13,7 +13,6 @@ const ApiService = () => async (dispatch) => {
 
     } catch (error) {
         console.error(error.response.data);
-
         dispatch(noRealEstates({ message: "No data retrieved!" }))
     }
 }

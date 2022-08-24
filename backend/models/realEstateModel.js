@@ -48,6 +48,10 @@ const realEstateSchema = mongoose.Schema({
     located: {
         type: String,
         required: true
+    },
+    like: {
+        type: Boolean,
+        required: true
     }
 }, {
     timestamps: true

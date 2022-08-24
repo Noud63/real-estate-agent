@@ -5,7 +5,7 @@ import fetchData from '../features/ApiService'
 import ListItems from '../components/ListItems'
 import CategorySelect from '../components/CategorySelect'
 import Pagination from '../components/Pagination'
-import { useLocation, useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 
 const Content = () => {
 
@@ -13,17 +13,26 @@ const Content = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
+    
 
-    const location = useLocation();
+    // add page number to url
     const navigate = useNavigate();
     const path = window.location.pathname;
 
-   
+    useEffect(() => {
+        navigate(`${path}?page=${currentNumber}`);
+    }, [currentNumber, path, navigate])
+
+
+    // store
     const realestates = useSelector(state => state.realestate)
     const { loading, realestate, error } = realestates
 
+
     const dispatch = useDispatch()
 
+
+    //dispatch data fetched from server
     useEffect(() => {
         dispatch(fetchData())
         if (realestate.length > 0) {
@@ -34,6 +43,8 @@ const Content = () => {
         }
     }, [dispatch, error, realestate])
 
+
+    // pagination 
     const pageNumbers = []
     const resultsPerPage = 4
     const pages = Math.ceil(realestate.length / resultsPerPage)
@@ -54,11 +65,7 @@ const Content = () => {
 
     useEffect(() => {
         slicedList()
-    }, [slicedList, ])
-
-    useEffect(() => {
-        navigate(`${path}?page=${currentNumber}`);
-    }, [currentNumber, path, navigate])
+    }, [slicedList])
 
 
     return (

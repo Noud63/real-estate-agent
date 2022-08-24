@@ -11,7 +11,8 @@ const data = [
         livingspace: '1200',
         area: '6',
         map: '/assets/maps/nouvelleaquitaine.png',
-        located: 'South'
+        located: 'South',
+        like: false,
     },
     {
         name: 'Château de Chenonceau',
@@ -25,7 +26,8 @@ const data = [
         livingspace: '2800',
         area: '10',
         map: '/assets/maps/centrevaldeloire.png',
-        located: 'Centre'
+        located: 'Centre',
+        like: false,
     },
     {
         name: 'Château de Parthey',
@@ -39,7 +41,8 @@ const data = [
         livingspace: '1800',
         area: '8',
         map: '/assets/maps/bourgognefranchecomte.png',
-        located: 'Centre'
+        located: 'Centre',
+        like: false,
     },
     {
         name: 'Château d\'azay le Rideau',
@@ -53,7 +56,8 @@ const data = [
         livingspace: '2100',
         area: '18',
         map: '/assets/maps/centrevaldeloire.png',
-        located: 'Centre'
+        located: 'Centre',
+        like: false,
     },
     {
         name: 'Château de Chantilly',
@@ -67,7 +71,8 @@ const data = [
         livingspace: '2600',
         area: '6',
         map: '/assets/maps/hautsdefrance.png',
-        located: 'North'
+        located: 'North',
+        like: false,
     },
     {
         name: 'Château d\'Amboise',
@@ -81,7 +86,8 @@ const data = [
         livingspace: '1800',
         area: '9',
         map: '/assets/maps/centrevaldeloire.png',
-        located: 'Centre'
+        located: 'Centre',
+        like: false,
     },
     {
         name: 'château de pierrefonds',
@@ -95,7 +101,8 @@ const data = [
         livingspace: '15000',
         area: '15000',
         map: '/assets/maps/hautsdefrance.png',
-        located: 'South'
+        located: 'South',
+        like: false,
     },
     {
         name: 'Château d\'Usse',
@@ -109,7 +116,8 @@ const data = [
         livingspace: '4860',
         area: '2',
         map: '/assets/maps/centrevaldeloire.png',
-        located: 'Centre'
+        located: 'Centre',
+        like: false,
     },
     {
         name: 'Château de Fougères',
@@ -123,7 +131,8 @@ const data = [
         livingspace: '800',
         area: '2',
         map: '/assets/maps/bretagne.png',
-        located: 'Centre'
+        located: 'Centre',
+        like: false,
     },
     {
         name: 'Château de Carcassonne',
@@ -137,11 +146,12 @@ const data = [
         livingspace: '400',
         area: '3',
         map: '/assets/maps/occitanie.png',
-        located: 'South'
+        located: 'South',
+        like: false,
     }
-    
+
 ]
 
-module.exports = data 
-     
-    
+module.exports = data
+
+

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import bedroomsIcon from '../assets/icons/bedrooms.png'
 import bathroomsIcon from '../assets/icons/bathrooms.png'
 import livingspaceIcon from '../assets/icons/livingspace.png'
@@ -6,19 +6,15 @@ import areaIcon from '../assets/icons/area.png'
 import Map from './Map'
 import EnquiryForm from './EnquiryForm'
 import '../sassStyles/layout/singleproperty.scss'
-import like from '../assets/icons/like.png'
+import liked from '../assets/icons/like.png'
 import likeRed from '../assets/icons/likeRed.png'
-import { useSelector, useDispatch } from 'react-redux'
 
 
-const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price }) => {
+const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price, like }) => {
 
     const [expand, setExpand] = useState(false)
     const [showForm, setShowForm] = useState(false)
     const [likes, setLikes] = useState(false)
-
-    const realestates = useSelector(state => state.realestate)
-    const { realestate } = realestates
 
     const likesHandler = () => {
         setLikes(prev => !prev)
@@ -28,7 +24,7 @@ const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, regi
         <div className={!expand ? "content2_property" : "content2_property enlarge"} key={id}>
 
             <div className="like" onClick={likesHandler}>
-                <img src={!likes ? like : likeRed} alt="" className="like_icon" />
+                <img src={likes ? likeRed : liked} alt="" className="like_icon" />
             </div>
 
             <div className="content2_property_castleImageBox"><img src={img} alt="castle" className="content2_property_castleImage" /></div>
