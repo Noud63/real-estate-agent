@@ -7,7 +7,7 @@ Back-end&nbsp;  : Express - MongoDB - Mongoose - Node<br><br>
 
 <h6>Homepage with default selection of real estate properties:</h6>
 
-![elliecastelli9](https://user-images.githubusercontent.com/38325801/185747838-f4308289-bca7-4a01-9fbf-7dfb4e316b78.png)<br><br><br>
+![elliecastelli14](https://user-images.githubusercontent.com/38325801/186914597-9317f38b-191d-4565-a4aa-a96e64bbb693.png)<br><br><br>
 
 <h6>Enquiry form:</h6>
 
