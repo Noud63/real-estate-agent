@@ -70,6 +70,14 @@
 }
 
 //Media queries
+
+@mixin respond1($breakpoint) { 
+  @if $breakpoint == removeSidebar {    
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
 @mixin respond2($breakpoint) { 
   @if $breakpoint == gridcontainer {    
     @media only screen and (max-width: 1080px) {
@@ -80,7 +88,7 @@
 
 @mixin respond5($breakpoint) { 
   @if $breakpoint == contentBreak {    
-    @media only screen and (max-width: 710px) {
+    @media only screen and (max-width: 750px) {
       @content;
     }
   }

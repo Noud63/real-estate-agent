@@ -24,7 +24,7 @@ const Content = () => {
     }, [currentNumber, path, navigate])
 
 
-    // store
+    // get data from state
     const realestates = useSelector(state => state.realestate)
     const { loading, realestate, error } = realestates
 
@@ -69,22 +69,33 @@ const Content = () => {
 
 
     return (
-        <div className="content2">
+             <>
+           <div className="borderTop">
+               <div className="border"></div>
+           </div>
+                <div className="sidebarContentWrapper">
 
-            <CategorySelect />
+            <div className="sidebar"></div>
+            
+            <div className="content2">
 
-            {errorMessage ? <div>{error}</div> : ""}
+                <CategorySelect />
 
-            <ListItems newList={newList} show={show} />
+                {errorMessage ? <div>{error}</div> : ""}
 
-            <div className="btns">
-                {pageNumbers.map(number => {
-                    return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
+                <ListItems newList={newList} show={show} />
 
-                })}
+                <div className="btns">
+                    {pageNumbers.map(number => {
+                        return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
+
+                    })}
+                </div>
+
             </div>
-
-        </div>
+            <div className="sidebar2"></div>
+          </div>
+        </>
     )
 }
 

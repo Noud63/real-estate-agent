@@ -15,10 +15,10 @@
         &.enlarge {
         height: 410px;
        }
-        // z-index: 1;
+
         @include respond5(contentBreak){
-            width: 305px;
-            height: 550px;
+            width: 300px;
+            height: 560px;
              @include center-content-column-top;
              &.enlarge {
               height: 550px;

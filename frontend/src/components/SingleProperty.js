@@ -6,27 +6,20 @@ import areaIcon from '../assets/icons/area.png'
 import Map from './Map'
 import EnquiryForm from './EnquiryForm'
 import '../sassStyles/layout/singleproperty.scss'
-import liked from '../assets/icons/like.png'
-import likeRed from '../assets/icons/likeRed.png'
 
+import Likes from './Likes'
 
 const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price, like }) => {
 
     const [expand, setExpand] = useState(false)
     const [showForm, setShowForm] = useState(false)
-    const [likes, setLikes] = useState(false)
-
-    const likesHandler = () => {
-        setLikes(prev => !prev)
-    }
+    
 
     return (
         <div className={!expand ? "content2_property" : "content2_property enlarge"} key={id}>
 
-            <div className="like" onClick={likesHandler}>
-                <img src={likes ? likeRed : liked} alt="" className="like_icon" />
-            </div>
-
+             <Likes id={id}/>
+            
             <div className="content2_property_castleImageBox"><img src={img} alt="castle" className="content2_property_castleImage" /></div>
 
             <div className="content2_property_info">

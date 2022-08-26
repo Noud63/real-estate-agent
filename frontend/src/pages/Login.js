@@ -1,6 +1,7 @@
 import React from 'react'
 import '../sassStyles/pages/login.scss'
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom'
 
 const SigninForm = () => {
 
@@ -58,6 +59,9 @@ const SigninForm = () => {
             <button type="submit" className="btn">Submit</button>
 
         </form>
+            <div className="goToRegister">
+                <Link to='/register' style={{ textDecoration: 'none' }}>Not registered? Go to Register.</Link>
+            </div>
         </div>
     )
 }

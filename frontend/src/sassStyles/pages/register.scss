@@ -10,11 +10,21 @@
 }
 
 .wrapper2 {
+    background-image:url('../../assets/icons/ellielogo.png');
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
+
+    @include respond5(contentBreak){
+            background-image:url('');
+        
+    }
 }
+
+
 
 .register {
     display: flex;
@@ -230,3 +240,9 @@ select:-webkit-autofill:focus {
     font-family:Arial, Helvetica, sans-serif;
 }
 
+.goToLogin {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    @include center-content;
+}

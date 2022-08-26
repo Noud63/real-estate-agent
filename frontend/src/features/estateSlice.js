@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const data = localStorage.getItem('REAL-ESTATE-DATA')
+
 const initialState = {
-    realestate: localStorage.getItem('REAL-ESTATE-DATA') ? JSON.parse(localStorage.getItem('REAL-ESTATE-DATA')) : [],
+    realestate: data ? JSON.parse(data) : [],
 }
 
 export const estateSlice = createSlice({

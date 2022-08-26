@@ -1,9 +1,54 @@
 @import '../../sassStyles/abstracts/variables';
 @import '../../sassStyles/abstracts/mixins';
 
+.borderTop {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.border {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid rgb(87, 74, 92);
+}
+.sidebarContentWrapper {
+    width: 100%;
+    display: flex;
+    height: auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.sidebar {
+    background-image: url('../../assets/images/campagne4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    height: 980px;
+    margin-right: 10px;
+
+    @include respond1(removeSidebar){
+          display: none;
+        }
+}
+
+.sidebar2 {
+    background-image: url('../../assets/images/campagne5.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    height: 980px;
+    margin-left: 10px;
+   @include respond1(removeSidebar){
+          display: none;
+        }
+}
 
 .content2 {
-    max-width: 1080px;
+    width: 60%;
     background-color: white;
     display: flex;
     align-items: center;
@@ -14,6 +59,10 @@
     color: rgb(76, 61, 78);
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 100px;
+
+     @include respond1(removeSidebar){
+          width: 96%;
+        }
 }
 
 .btns {
