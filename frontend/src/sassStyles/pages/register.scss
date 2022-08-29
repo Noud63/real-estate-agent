@@ -19,8 +19,7 @@
     width: 100%;
 
     @include respond5(contentBreak){
-            background-image:url('');
-        
+        background-image: none;
     }
 }
 

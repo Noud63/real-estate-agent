@@ -20,6 +20,7 @@ const Footer = () => {
 
                 <div className="footer_content_box">2</div>
                 <div className="footer_content_box">3</div>
+                <div className="footer_content_box">4</div>
                 <div className="footer_content_box">
                     <div>
                         <div className="footer_content_your_castle">
@@ -33,10 +34,43 @@ const Footer = () => {
                             &copy;2022 Ellie Castelli. All rights reserved.
                         </div>
                     </div>
-
                 </div>
-                <div className="footer_content_box">5</div>
                 <div className="footer_content_box">6</div>
+            </div>
+
+            <div className="offices">
+                <div className="office">
+                    <div className="loc-address">Ellie Castelli<br />
+                                16 Rue Jean-Charles<br />
+                        <div className="office_region">
+                            <img alt="Monaco_office" src="https://www.ennessglobal.com/download_file/2746/0" style={{ height: '12px' }} />98080 Monaco
+                        </div> 
+                    </div>
+                </div>
+                <div className="office">
+                    <div className="loc-address">Ellie Castelli<br />
+                                23 Quai Jean-Charles Rey<br />
+                        <div className="office_region">
+                            <img alt="London_office" src="https://www.ennessglobal.com/application/files/9416/3777/8951/UK.svg" style={{ height: '12px' }} />89564 London
+                        </div>
+                    </div>
+                </div>
+                <div className="office">
+                    <div className="loc-address">Ellie Castelli<br />
+                                5 Izbid Str.<br />
+                        <div className="office_region">
+                            <img alt="AbuDhabi_office" src="https://www.ennessglobal.com/application/files/9016/3777/9123/dubai.svg" style={{ height: '12px' }} />10980 Abu Dhabi
+                        </div>
+                    </div>
+                </div>
+                <div className="office">
+                    <div className="loc-address bern">Ellie Castelli<br />
+                                78 KrammGasse<br />
+                        <div className="office_region">
+                            <img alt="Bern_office" src="https://www.ennessglobal.com/application/files/4716/3777/9215/swiss.svg" style={{ height: '12px' }} />89010 Bern
+                        </div>
+                    </div>
+                </div>
             </div>
             
        </div>

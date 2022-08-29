@@ -51,8 +51,8 @@ const CategorySelect = () => {
     }
 
     const handleInputChange = (inputValue, actionMeta) => {
-         console.log(inputValue)
-         console.log(actionMeta)
+        console.log(inputValue)
+        console.log(actionMeta)
     }
 
 return (

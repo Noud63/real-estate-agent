@@ -21,12 +21,12 @@
 }
 
 .sidebar {
-    background-image: url('../../assets/images/campagne4.jpg');
+    background-image: url('../../assets/images/campagne1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 20%;
-    height: 980px;
+    height: 1410px;
     margin-right: 10px;
 
     @include respond1(removeSidebar){
@@ -35,12 +35,12 @@
 }
 
 .sidebar2 {
-    background-image: url('../../assets/images/campagne5.jpg');
+    background-image: url('../../assets/images/campagne2.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 20%;
-    height: 980px;
+    height: 1410px;
     margin-left: 10px;
    @include respond1(removeSidebar){
           display: none;
@@ -49,7 +49,6 @@
 
 .content2 {
     width: 60%;
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: flex-start;
