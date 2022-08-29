@@ -1,6 +1,10 @@
 import React from 'react'
 import '../sassStyles/layout/footer.scss'
 import ellieLogo from '../assets/icons/ellielogo1.png'
+import facebook from '../assets/icons/facebook.png'
+import instagram from '../assets/icons/instagram.png'
+import twitter from '../assets/icons/twitter.png'
+import linkedin from '../assets/icons/linkedin.png'
 
 const Footer = () => {
     return (
@@ -35,7 +39,14 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="footer_content_box">6</div>
+                <div className="footer_content_box">
+                    <div className="icons">
+                        <div className="icon"><img src={facebook} alt="facebook" style={{ width: '40px' }} /></div>
+                        <div className="icon"><img src={instagram} alt="facebook" style={{ width: '40px' }} /></div>
+                        <div className="icon"><img src={twitter} alt="facebook" style={{ width: '40px' }} /></div>
+                        <div className="icon"><img src={linkedin} alt="facebook" style={{ width: '40px' }} /></div>
+                    </div>
+                </div>
             </div>
 
             <div className="offices">
@@ -49,7 +60,7 @@ const Footer = () => {
                 </div>
                 <div className="office">
                     <div className="loc-address">Ellie Castelli<br />
-                                23 Quai Jean-Charles Rey<br />
+                                97 Beaconsfield Road<br />
                         <div className="office_region">
                             <img alt="London_office" src="https://www.ennessglobal.com/application/files/9416/3777/8951/UK.svg" style={{ height: '12px' }} />89564 London
                         </div>
@@ -65,9 +76,9 @@ const Footer = () => {
                 </div>
                 <div className="office">
                     <div className="loc-address bern">Ellie Castelli<br />
-                                78 KrammGasse<br />
+                                49 KrammGasse<br />
                         <div className="office_region">
-                            <img alt="Bern_office" src="https://www.ennessglobal.com/application/files/4716/3777/9215/swiss.svg" style={{ height: '12px' }} />89010 Bern
+                            <img alt="Bern_office" src="https://www.ennessglobal.com/application/files/4716/3777/9215/swiss.svg" style={{ height: '12px' }} />03011 Bern
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 
 const registerSchema = mongoose.Schema({
     firstname: {
@@ -55,6 +56,14 @@ const registerSchema = mongoose.Schema({
     {
         timestamps: true
     })
+
+registerSchema.pre('save', async function() {
+    if (!this.isModified('password')) {
+        next()
+    }
+    const salt = await bcrypt.genSalt(10)
+    this.password = await bcrypt.hash(this.password, salt)
+})
 
 const User = mongoose.model('users', registerSchema)
 

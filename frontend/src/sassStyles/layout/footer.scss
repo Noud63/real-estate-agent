@@ -49,6 +49,14 @@
             padding: 20px;
             background-color: rgb(20, 17, 26);
 
+            .icons {
+                  @include center-content-row;
+
+                  .icon {
+                        padding: 5px;
+                  }
+            }
+
             & img {
                width: 75px;
                margin-top: 12px;
@@ -95,14 +103,16 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
-      background-color: blueviolet;
+      // background-color: rgb(124, 109, 134);
       height: 10rem;
-      border-top: 1px solid rgb(103, 84, 107);
-      background-color: rgb(20, 17, 26);
+     border-top: 1px solid rgb(120, 106, 131);
+      // background-color: rgb(20, 17, 26);
       display: grid;
       grid-template-columns: repeat( 4, 1fr);
       grid-template-rows: repeat(1, 1fr);
       color:  rgb(146, 124, 151);
+      // background-color: rgb(19, 15, 20);
+      gap: 1px;  
       @include respond5(contentBreak) {
           grid-template-columns: repeat( 2, 1fr);
           grid-template-rows: repeat(2, 1fr);
@@ -121,7 +131,7 @@
                  flex-direction: column;
 
                  &.bern {
-                       padding-right: 45px;
+                       padding-right: 25px;
                  }
            }
 
