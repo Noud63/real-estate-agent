@@ -26,7 +26,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 20%;
-    height: 1410px;
+    height: 1420px;
     margin-right: 10px;
 
     @include respond1(removeSidebar){
@@ -40,7 +40,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 20%;
-    height: 1410px;
+    height: 1420px;
     margin-left: 10px;
    @include respond1(removeSidebar){
           display: none;

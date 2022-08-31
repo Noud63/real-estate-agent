@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import '../sassStyles/pages/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import fetchData from '../features/ApiService'
+import { getRealEstates } from '../features/estateSlice'
 import ListItems from '../components/ListItems'
 import CategorySelect from '../components/CategorySelect'
 import Pagination from '../components/Pagination'
-import {useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Content = () => {
 
@@ -13,7 +13,7 @@ const Content = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
-    
+
 
     // add page number to url
     const navigate = useNavigate();
@@ -24,24 +24,21 @@ const Content = () => {
     }, [currentNumber, path, navigate])
 
 
-    // get data from state
-    const realestates = useSelector(state => state.realestate)
-    const { loading, realestate, error } = realestates
 
+    const realestates = useSelector(state => state.realestate)
+    const { isLoading, realestate, isError, message, isSuccess} = realestates
 
     const dispatch = useDispatch()
 
-
-    //dispatch data fetched from server
     useEffect(() => {
-        dispatch(fetchData())
-        if (realestate.length > 0) {
-            setShow(true)
-        }
-        if (error) {
-            setErrorMessage(true)
-        }
-    }, [dispatch, error, realestate])
+        dispatch(getRealEstates())
+            if(realestate){
+                setShow(true)
+            }else{
+                console.log('No data retrieved')
+            }
+
+    }, [dispatch, isError, realestate, message])
 
 
     // pagination 
@@ -69,32 +66,32 @@ const Content = () => {
 
 
     return (
-             <>
-           <div className="borderTop">
-               <div className="border"></div>
-           </div>
-                <div className="sidebarContentWrapper">
-
-            <div className="sidebar"></div>
-            
-            <div className="content2">
-
-                <CategorySelect />
-
-                {errorMessage ? <div>{error}</div> : ""}
-
-                <ListItems newList={newList} show={show} />
-
-                <div className="btns">
-                    {pageNumbers.map(number => {
-                        return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
-
-                    })}
-                </div>
-
+        <>
+            <div className="borderTop">
+                <div className="border"></div>
             </div>
-            <div className="sidebar2"></div>
-          </div>
+            <div className="sidebarContentWrapper">
+
+                <div className="sidebar"></div>
+
+                <div className="content2">
+
+                    <CategorySelect />
+
+                    {/* {errorMessage ? <div>{isError}</div> : ""} */}
+
+                    <ListItems newList={newList} show={show}/>
+
+                    <div className="btns">
+                        {pageNumbers.map(number => {
+                            return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
+
+                        })}
+                    </div>
+
+                </div>
+                <div className="sidebar2"></div>
+            </div>
         </>
     )
 }

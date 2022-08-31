@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 // Register user
 const register = async (userData) => {
-    const response = await axios.post('/users/', userData)
+    const response = await axios.post('/users', userData)
     if (response.data) {
         localStorage.setItem('user', JSON.stringify(response.data))
     }
@@ -22,7 +22,7 @@ const initialState = {
 }
 
 // Register user
-export const registerUser = createAsyncThunk('auth/register', async (user, thunkAPI) => {
+export const registerUser = createAsyncThunk('auth/registerUser', async (user, thunkAPI) => {
     try {
         return await register(user)
     } catch (error) {
@@ -51,7 +51,7 @@ export const registerSlice = createSlice({
             })
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.isLoading = false
-                state.success = true
+                state.isSuccess = true
                 state.user = action.payload
             })
             .addCase(registerUser.rejected, (state, action) => {

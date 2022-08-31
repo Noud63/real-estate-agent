@@ -1,20 +1,12 @@
-import axios from 'axios'
-import { getRealEstates, gotRealEstates, noRealEstates } from '../features/estateSlice'
+// import axios from 'axios'
 
-const ApiService = () => async (dispatch) => {
+// const getEstates = async () => {
+//         const response = await axios.get('castles')
+//         // localStorage.setItem('REAL-ESTATE-DATA', JSON.stringify(response.data))
+//         console.log('Data:', response.data)
+//         return  response.data
+       
+    
+// } 
 
-    dispatch(getRealEstates())
-
-    try {
-        const response = await axios.get('castles')
-        const data = response.data
-        localStorage.setItem('REAL-ESTATE-DATA', JSON.stringify(data))
-        dispatch(gotRealEstates(data))
-
-    } catch (error) {
-        console.error(error.response.data);
-        dispatch(noRealEstates({ message: "No data retrieved!" }))
-    }
-}
-
-export default ApiService;
+// export default getEstates;

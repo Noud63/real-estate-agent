@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import '../sassStyles/pages/register.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { registerUser } from '../features/registerSlice'
+import { registerUser, reset } from '../features/registerSlice'
 import { Link } from 'react-router-dom'
 
 const Register = () => {
@@ -18,16 +18,29 @@ const Register = () => {
 
     console.log(user)
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (error) {
+                setError(false)
+            }
+            if (error2) {
+                setError2(false)
+            }
+        }, 5000)
+        return () => clearTimeout(timer);
+    }, [error, error2])
+
+
     const submitForm = (data) => {
 
-        if (data.password !== data.repeatpassword) {
-            alert('Passwords don\'t match!')
-        }else{
-            console.log('Data has been send!')
+        if(data.password !== data.repeatpassword){
+            setError(true)
+            return
         }
         dispatch(registerUser(data))
         reset()
     }
+
 
     const onErrors = errors => console.error(errors);
 
@@ -142,17 +155,17 @@ const Register = () => {
                         </div>
                     </div>
 
-                    {error ? <div className="overlayShow">
-                        <div className="registerednameShow">
+                    {error ? <div className="overlayShowReg">
+                        <div className="registerednameShowReg">
                             <div>{`Oooops!`}</div>
-                            <div className="welcome">Passwords don't match!</div>
+                            <div className="welcomeReg">Passwords don't match!</div>
                         </div>
                     </div> : ""}
 
-                    {error2 ? <div className="overlayShow">
-                        <div className="registerednameShow">
+                    {error2 ? <div className="overlayShowReg">
+                        <div className="registerednameShowReg">
                             <div>{`Oooops!`}</div>
-                            <div className="welcome"><span>Password must be at least</span><span>8 characters long!</span></div>
+                            <div className="welcomeReg"><span>Password must be at least</span><span>8 characters long!</span></div>
                         </div>
                     </div> : ""}
 
@@ -161,7 +174,7 @@ const Register = () => {
                 </form>
             </div>
             <div className="goToLogin">
-                <Link to='/login' style={{textDecoration: 'none'}}>Already registered? Go to Login</Link>
+                <Link to='/login' style={{ textDecoration: 'none' }}>Already registered? Go to Login</Link>
             </div>
         </div>
     )

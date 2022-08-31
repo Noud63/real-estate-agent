@@ -1,28 +1,48 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-const data = localStorage.getItem('REAL-ESTATE-DATA')
+import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import axios from 'axios'
 
 const initialState = {
-    realestate: data ? JSON.parse(data) : [],
+    realestate:  [],
+    isSuccess: false,
+    isLoading: false,
+    message: '',
 }
+
+export const getRealEstates = createAsyncThunk(
+    'realestate/getRealEstates', async () => {
+        try {
+            const response = await axios.get('castles')
+            return response.data
+        } catch (error) {
+            console.log(error)
+        }
+    }
+)
+
 
 export const estateSlice = createSlice({
     name: 'realestate',    // Reducer name
     initialState,
     reducers: {
-        getRealEstates: (state) => {
-            state.loading = true
-        },
-        gotRealEstates: (state, action) => {
-            state.loading = false
+        reset: (state) => initialState,
+    },
+    extraReducers: (builder) => {
+        
+        builder.addCase(getRealEstates.pending, (state) => {
+            state.isLoading = true
+        })
+        builder.addCase(getRealEstates.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.isSuccess = true
             state.realestate = action.payload
-        },
-        noRealEstates: (state, action) => {
-            state.loading = false
-            state.error = action.payload.message
-        }
+        })
+         builder.addCase(getRealEstates.rejected, (state, action) => {
+            state.isLoading = false
+            state.isError = true
+            state.message = action.payload
+        })
     }
 })
 
-export const { getRealEstates, gotRealEstates, noRealEstates } = estateSlice.actions
+export const { reset } = estateSlice.actions
 export default estateSlice.reducer

@@ -6,6 +6,6 @@ import registerReducer from '../features/registerSlice'
 export const store = configureStore({
   reducer: {
     realestate: realestateReducer,
-    registered: registerReducer
+    registered: registerReducer,
   },
 });
