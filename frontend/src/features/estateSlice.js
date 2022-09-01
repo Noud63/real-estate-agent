@@ -9,12 +9,18 @@ const initialState = {
 }
 
 export const getRealEstates = createAsyncThunk(
-    'realestate/getRealEstates', async () => {
+    'realestate/getRealEstates', async (_, thunkAPI) => {
         try {
             const response = await axios.get('castles')
             return response.data
         } catch (error) {
-            console.log(error)
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            return thunkAPI.rejectWithValue();
         }
     }
 )

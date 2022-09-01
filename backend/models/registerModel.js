@@ -36,7 +36,7 @@ const registerSchema = mongoose.Schema({
         unique: true
     },
     number: {
-        type: Number,
+        type: String,
         required: true
     },
     username: {
@@ -57,7 +57,7 @@ const registerSchema = mongoose.Schema({
         timestamps: true
     })
 
-registerSchema.pre('save', async function() {
+registerSchema.pre('save', async function () {
     if (!this.isModified('password')) {
         next()
     }

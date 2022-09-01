@@ -5,24 +5,20 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 // Register user
 const register = async (userData) => {
     const response = await axios.post('/users', userData)
-    if (response.data) {
-        localStorage.setItem('user', JSON.stringify(response.data))
-    }
     return response.data
 }
 
-const user = JSON.parse(localStorage.getItem('user'))
-
 const initialState = {
-    user: user ? user : null,
+    user: {address: "",city: "",country: "",email: "",firstname: "",lastname: "",number: "",telephone: "",username: "",password: "",zip: ""},
     isError: false,
-    isSuccess: false,
+    isRegistered: false,
     isLoading: false,
     message: ''
 }
 
 // Register user
-export const registerUser = createAsyncThunk('auth/registerUser', async (user, thunkAPI) => {
+export const registerUser = createAsyncThunk('auth/registerUser', async (user, 
+    thunkAPI) => {
     try {
         return await register(user)
     } catch (error) {
@@ -39,7 +35,7 @@ export const registerSlice = createSlice({
     reducers: {
         reset: (state) => {
             state.isLoading = false
-            state.isSuccess = false
+            state.isRegistered = false
             state.isError = false
             state.message = ''
         }
@@ -48,15 +44,17 @@ export const registerSlice = createSlice({
         builder
             .addCase(registerUser.pending, (state) => {
                 state.isLoading = true
+                
             })
             .addCase(registerUser.fulfilled, (state, action) => {
                 state.isLoading = false
-                state.isSuccess = true
+                state.isRegistered = true
                 state.user = action.payload
             })
             .addCase(registerUser.rejected, (state, action) => {
                 state.isLoading = false
                 state.isError = true
+               
                 state.message = action.payload
                 state.user = null
             })

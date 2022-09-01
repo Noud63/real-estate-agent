@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import '../sassStyles/pages/register.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { registerUser, reset } from '../features/registerSlice'
+import { registerUser } from '../features/registerSlice'
 import { Link } from 'react-router-dom'
 
 const Register = () => {
@@ -14,9 +14,8 @@ const Register = () => {
 
     const dispatch = useDispatch()
 
-    const { user, isLoading, isSuccess, isError, message } = useSelector(state => state.registered)
-
-    console.log(user)
+    const registeredUser = useSelector(state => state.registered)
+    const { user, isError, isRegistered, isLoading, message} = registeredUser
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -38,7 +37,9 @@ const Register = () => {
             return
         }
         dispatch(registerUser(data))
-        reset()
+        console.log(registeredUser)
+       
+        // reset()
     }
 
 
