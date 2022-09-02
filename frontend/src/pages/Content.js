@@ -12,23 +12,20 @@ const Content = () => {
     const [show, setShow] = useState(false)
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
-    const [errorMessage, setErrorMessage] = useState(false)
-
 
     // add page number to url
     const navigate = useNavigate();
     const path = window.location.pathname;
 
+    const dispatch = useDispatch()
+
     useEffect(() => {
         navigate(`${path}?page=${currentNumber}`);
     }, [currentNumber, path, navigate])
 
-
-
     const realestates = useSelector(state => state.realestate)
     const { isLoading, realestate, isError, message, isSuccess} = realestates
 
-    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getRealEstates())
@@ -37,8 +34,7 @@ const Content = () => {
             }else{
                 console.log('No data retrieved')
             }
-
-    }, [dispatch, isError, realestate, message])
+    }, [dispatch])
 
 
     // pagination 
@@ -57,7 +53,7 @@ const Content = () => {
     const slicedList = useCallback(() => {
         const data2 = realestate.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
         setNewList(data2)
-    }, [currentNumber, realestate])
+    }, [currentNumber, realestate, resultsPerPage])
 
 
     useEffect(() => {
@@ -77,8 +73,6 @@ const Content = () => {
                 <div className="content2">
 
                     <CategorySelect />
-
-                    {/* {errorMessage ? <div>{isError}</div> : ""} */}
 
                     <ListItems newList={newList} show={show}/>
 

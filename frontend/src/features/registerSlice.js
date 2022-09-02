@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 
 
 // Register user
@@ -27,6 +27,8 @@ export const registerUser = createAsyncThunk('auth/registerUser', async (user,
     }
 })
 
+export const resetState = createAction('auth/logout')
+
 // Create slice
 
 export const registerSlice = createSlice({
@@ -42,6 +44,9 @@ export const registerSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            .addCase(resetState, () => {
+                return initialState
+            })
             .addCase(registerUser.pending, (state) => {
                 state.isLoading = true
                 

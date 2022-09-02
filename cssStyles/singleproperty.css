@@ -12,24 +12,24 @@
 }
 .content2_property {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
   width: 96%;
-  box-shadow: 0px 1px 3px rgb(145, 140, 148);
-  background-color: rgb(240, 236, 245);
+  box-shadow: 0px 1px 2px rgb(156, 151, 160);
+  background-image: linear-gradient(to top, rgb(233, 228, 238), rgb(251, 249, 253));
   height: 205px;
-  border-bottom: 2px solid rgb(159, 140, 173);
+  border-bottom: 1px solid rgb(159, 140, 173);
   transition: all 0.5s ease-in-out;
 }
 .content2_property.enlarge {
   height: 410px;
 }
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 750px) {
   .content2_property {
-    width: 305px;
+    width: 300px;
     height: 550px;
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@
   justify-content: flex-start;
   flex-direction: column;
 }
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 750px) {
   .content2_property_info {
     width: 100%;
     margin-left: 25px;
@@ -71,7 +71,7 @@
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 750px) {
   .content2_property_info .title {
     margin-bottom: 10px;
   }
@@ -114,4 +114,17 @@
 }
 .content2_property_info .price span {
   font-weight: bold;
+}
+.content2_property .like {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+.content2_property .like_icon {
+  width: 100%;
+  height: auto;
 }

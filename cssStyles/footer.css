@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #bfb5c2;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #625469;
+  box-shadow: inset 0 0 10px rgb(11, 6, 12);
+  border-radius: 50px;
+}
+
+@-moz-document url-prefix() {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #544a61;
+  }
+}
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+.footer {
+  position: relative;
+  width: 100%;
+  height: 38rem;
+  padding-top: 2rem;
+  background-color: rgb(20, 17, 26);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+@media only screen and (max-width: 1080px) {
+  .footer {
+    height: 51rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .footer {
+    height: 90rem;
+  }
+}
+.footer_content_gridContainer {
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: rgb(103, 84, 107);
+  gap: 1px;
+}
+@media only screen and (max-width: 1080px) {
+  .footer_content_gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .footer_content_gridContainer :nth-of-type(5) {
+    order: 1;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .footer_content_gridContainer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+.footer_content_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 13rem;
+  color: rgb(148, 129, 156);
+  padding: 20px;
+  background-color: rgb(20, 17, 26);
+}
+.footer_content_box .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.footer_content_box .icons .icon {
+  padding: 5px;
+}
+.footer_content_box img {
+  width: 75px;
+  margin-top: 12px;
+}
+.footer_content_box.icontitle {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+@media only screen and (max-width: 750px) {
+  .footer_content_box.icontitle {
+    align-items: center;
+    justify-content: center;
+  }
+}
+.footer_content_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.footer_content_ellieName {
+  font-family: "Chopin";
+  color: rgb(134, 120, 151);
+  font-size: 3rem;
+}
+.footer_content_your_castle {
+  font-size: 15px;
+  color: rgb(134, 120, 151);
+  font-family: "Times";
+  top: 65px;
+}
+
+.offices {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 10rem;
+  border-top: 1px solid rgb(120, 106, 131);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  color: rgb(146, 124, 151);
+  gap: 1px;
+}
+@media only screen and (max-width: 750px) {
+  .offices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 12px;
+  }
+}
+.offices .office {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.offices .office .loc-address {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.offices .office .loc-address.bern {
+  padding-right: 25px;
+}
+.offices .office_region {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

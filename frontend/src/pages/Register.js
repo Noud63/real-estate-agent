@@ -2,8 +2,10 @@ import React, {useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import '../sassStyles/pages/register.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { registerUser } from '../features/registerSlice'
+import { registerUser, resetState } from '../features/registerSlice'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
@@ -30,6 +32,14 @@ const Register = () => {
     }, [error, error2])
 
 
+    useEffect(() => {
+        if (isError) {
+            toast.error(message);
+        }
+        dispatch(resetState())
+    }, [isError, message, dispatch])
+
+
     const submitForm = (data) => {
 
         if(data.password !== data.repeatpassword){
@@ -37,9 +47,8 @@ const Register = () => {
             return
         }
         dispatch(registerUser(data))
+        reset()
         console.log(registeredUser)
-       
-        // reset()
     }
 
 
@@ -48,6 +57,13 @@ const Register = () => {
     return (
 
         <div className="container2">
+            <ToastContainer theme='dark' position="top-right"
+                autoClose={5000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+            />
             <div className="wrapper2">
                 <div className="register">Register</div>
                 <form action="" onSubmit={handleSubmit(submitForm, onErrors)} className="form">

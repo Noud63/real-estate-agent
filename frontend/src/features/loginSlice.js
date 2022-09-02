@@ -3,15 +3,15 @@ import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 
 const userLoginData = async (loginData) => {
     const response = await axios.post('login', loginData)
-    console.log(response.data.userlogin)
-    if (response.data.userlogin.token) {
-        localStorage.setItem('loginuser', JSON.stringify(response.data.userlogin))
+    console.log(response.data)
+    if (response.data.token) {
+        localStorage.setItem('loginuser', JSON.stringify(response.data))
     }
-    return response.data.userlogin
+    return response.data
 }
 
 const initialState = {
-    login: { username: "", password: "" },
+    login: { username: "", password: ""},
     isError: false,
     isLoggedIn: false,
     isLoading: false,
@@ -46,16 +46,17 @@ export const loginSlice = createSlice({
             .addCase(loginUser.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(loginUser.fulfilled, (state, action) => {
+            .addCase(loginUser.fulfilled, (state, {payload}) => {
+                console.log('Payload:',payload)
                 state.isLoading = false
                 state.isLoggedIn = true
-                state.user = action.payload
+                state.login = payload
+               
             })
-            .addCase(loginUser.rejected, (state, action) => {
-                console.log(action)
+            .addCase(loginUser.rejected, (state, { payload }) => {
                 state.isLoading = false
                 state.isError = true
-                state.message = action.payload
+                state.message = payload
                 state.user = null
             })
     }

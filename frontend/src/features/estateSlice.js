@@ -30,7 +30,7 @@ export const estateSlice = createSlice({
     name: 'realestate',    // Reducer name
     initialState,
     reducers: {
-        reset: (state) => initialState,
+        reset: () => initialState,
     },
     extraReducers: (builder) => {
         

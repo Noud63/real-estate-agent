@@ -42,9 +42,9 @@
 .container {
   width: 100%;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 750px) {
   .container {
     margin-bottom: 50px;
   }
@@ -65,13 +65,12 @@
   font-size: 2rem;
   position: absolute;
   bottom: 0;
-  width: 1040px;
+  width: 100%;
   background-image: transparent;
   color: rgb(129, 108, 129);
   word-spacing: 5px;
   letter-spacing: 5px;
   font-weight: bold;
-  border-bottom: 1px solid;
 }
 @media only screen and (max-width: 1080px) {
   .homepage_image .your_dream {
@@ -79,7 +78,7 @@
     font-size: 1.6rem;
   }
 }
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 750px) {
   .homepage_image .your_dream {
     bottom: -20px;
   }

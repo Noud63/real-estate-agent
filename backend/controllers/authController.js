@@ -65,26 +65,23 @@ const registerUser = asyncHandler(async (req, res) => {
 // @access  Public
 const login = asyncHandler(async (req, res) => {
     const { username, password } = req.body
-
     if (!username || !password) {
-        res.status(500).json({ message: 'Please provide all values!' })
+        res.status(400).json({ message: 'Please provide all values!' })
     }
 
     const user = await User.findOne({ username })
 
     if (!user) {
-        return res.status(401).json({ message: 'User doesn\'t exist!' })
+        return res.status(400).json({ message: 'User doesn\'t exist!' })
     }
 
     if (user && await bcrypt.compare(password, user.password)) {
-        let userlogin = await Login.create({
-            id: user._id,
+        res.json({
+            _id: user._id,
             username: user.username,
             password: user.password,
             token: generateToken(user._id)
         })
-
-        return res.status(200).json({ userlogin })
 
     } else {
         res.status(400)

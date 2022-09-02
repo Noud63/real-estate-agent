@@ -10,18 +10,73 @@
   font-family: "Digi";
   src: url("../../fonts/Digizen.ttf") format("truetype");
 }
+.borderTop {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.border {
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid rgb(87, 74, 92);
+}
+
+.sidebarContentWrapper {
+  width: 100%;
+  display: flex;
+  height: auto;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.sidebar {
+  background-image: url("../../assets/images/campagne1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20%;
+  height: 1420px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 1200px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.sidebar2 {
+  background-image: url("../../assets/images/campagne2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20%;
+  height: 1420px;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 1200px) {
+  .sidebar2 {
+    display: none;
+  }
+}
+
 .content2 {
-  max-width: 1080px;
-  background-color: white;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   min-height: 100vh;
+  background-color: transparent;
   margin: 0 auto;
   color: rgb(76, 61, 78);
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 100px;
+}
+@media only screen and (max-width: 1200px) {
+  .content2 {
+    width: 96%;
+  }
 }
 
 .btns {

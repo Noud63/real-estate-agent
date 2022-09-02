@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginUser, logout } from '../features/loginSlice'
-import { ToastContainer, toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -15,13 +15,34 @@ const SigninForm = () => {
 
     const [passwordShown, setPasswordShown] = React.useState(false);
     const [password, setPassword] = React.useState('');
-    const [showMessage, setShowMessage] = React.useState(false);
+    const [logOut, setLogOut] = React.useState(false);
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const logins = useSelector(state => state.login)
     const { login, isError, isLoggedIn, message, isLoading } = logins
+
+    const submitForm = (data) => {
+        dispatch(logout())
+        dispatch(loginUser(data))
+           reset()
+    };
+
+    useEffect(()=> {
+        console.log(logins)
+        if(isLoggedIn){
+            navigate('/')
+        }
+    },[logins])
+
+    useEffect(() => {
+        if (isError) {
+            toast.error(message);
+            dispatch(logout())
+        } 
+    }, [isError, message, dispatch])
+
 
     const togglePasswordVisiblity = (e) => {
         if (!password && e.target.checked === true) {
@@ -31,21 +52,8 @@ const SigninForm = () => {
         setPasswordShown(!passwordShown);
     };
 
-    useEffect(() => {
-        if (isError) {
-            toast.error(message);
-        } 
-        dispatch(logout())
-    }, [isError, message ])
 
-
-    const submitForm = (data) => {
-        dispatch(loginUser(data))
-        reset()
-    };
-
-
-    const onErrors = errors => console.error(errors);
+const onErrors = errors => console.error(errors);
 
     return (
 
@@ -57,7 +65,7 @@ const SigninForm = () => {
                 closeOnClick
                 rtl={false}
             />
-            <div className="login">Login</div>
+            <div className="login">login</div>
             <form onSubmit={handleSubmit(submitForm, onErrors)} className="form">
 
                 <div className="name2">
@@ -85,7 +93,7 @@ const SigninForm = () => {
 
             </form>
 
-            {showMessage ? <div>You are already logged in!</div> : ""}
+            {/* {showMessage ? <div>You are already logged in!</div> : ""} */}
 
             <div className="goToRegister">
                 <Link to='/register' style={{ textDecoration: 'none' }}>Not registered? Go to Register.</Link>
