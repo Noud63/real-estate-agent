@@ -1,22 +1,16 @@
 import axios from 'axios'
 import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 
+
 const userLoginData = async (loginData) => {
     const response = await axios.post('login', loginData)
-    console.log(response.data)
-    if (response.data.token) {
-        localStorage.setItem('loginuser', JSON.stringify(response.data))
+    const token = response.data.token
+    if (token) {
+        localStorage.setItem('userToken', JSON.stringify(token))
     }
     return response.data
 }
 
-const initialState = {
-    login: { username: "", password: ""},
-    isError: false,
-    isLoggedIn: false,
-    isLoading: false,
-    message: ''
-}
 
 
 export const loginUser = createAsyncThunk(
@@ -30,28 +24,38 @@ export const loginUser = createAsyncThunk(
     }
 )
 
+
 export const logout = createAction('auth/logout')
+
+
+const initialState = {
+    login: { username: "", password: "" },
+    isError: false,
+    isLoggedIn: false,
+    isLoading: false,
+    message: ''
+}
+
 
 export const loginSlice = createSlice({
     name: 'login',
     initialState,
     reducers: {
-    reset: () => initialState
-       },
+        reset: () => initialState
+    },
     extraReducers: (builder) => {
         builder
-            .addCase(logout, () => { 
-                 return initialState
+            .addCase(logout, () => {
+                return initialState
             })
             .addCase(loginUser.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(loginUser.fulfilled, (state, {payload}) => {
-                console.log('Payload:',payload)
+            .addCase(loginUser.fulfilled, (state, { payload }) => {
                 state.isLoading = false
                 state.isLoggedIn = true
                 state.login = payload
-               
+
             })
             .addCase(loginUser.rejected, (state, { payload }) => {
                 state.isLoading = false

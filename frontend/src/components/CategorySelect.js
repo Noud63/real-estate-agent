@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Select from 'react-select'
 import '../sassStyles/layout/categorySelect.scss'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { filteredProperties } from '../features/estateSlice'
 
 
 const regions = [
@@ -26,6 +28,8 @@ const plotSize = [
     { value: '5', label: '5 ha' },
     { value: '6', label: '6 ha' }
 ]
+
+
 
 
 const customTheme = (theme) => {
@@ -59,8 +63,8 @@ return (
         <div className="selectMenus">
             <div className="select">search options</div>
             <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" onChange={onChangeHandler} onInputChange={handleInputChange} name={'Region'}/>
-        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" onChange={onChangeHandler} name={'living Space'}/>
-        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox" onChange={onChangeHandler} name={'Plot Size'}/>
+        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" onChange={onChangeHandler}  onInputChange={handleInputChange} name={'Living Space'}/>
+        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox" onChange={onChangeHandler}  onInputChange={handleInputChange} name={'Plot Size'}/>
         </div>
     )
 }

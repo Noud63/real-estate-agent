@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt')
 // @route   POST /users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-
+console.log(req.user)
     const { firstname, lastname, address, country, zip, city,
         telephone, email, number, username, password, isAdmin } = req.body;
 
@@ -64,6 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // @route   POST /users
 // @access  Public
 const login = asyncHandler(async (req, res) => {
+
     const { username, password } = req.body
     if (!username || !password) {
         res.status(400).json({ message: 'Please provide all values!' })
@@ -76,13 +77,13 @@ const login = asyncHandler(async (req, res) => {
     }
 
     if (user && await bcrypt.compare(password, user.password)) {
-        res.json({
+        const token = generateToken(user._id)
+        return res.json({
             _id: user._id,
             username: user.username,
             password: user.password,
-            token: generateToken(user._id)
+            token: token
         })
-
     } else {
         res.status(400)
         return res.json({ message: 'Invalid credentials!' })

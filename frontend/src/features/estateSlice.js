@@ -5,6 +5,7 @@ const initialState = {
     realestate:  [],
     isSuccess: false,
     isLoading: false,
+    filter: [],
     message: '',
 }
 
@@ -31,6 +32,9 @@ export const estateSlice = createSlice({
     initialState,
     reducers: {
         reset: () => initialState,
+        filteredProperties: (state, action) => {
+            state.filter = action.payload;
+        }
     },
     extraReducers: (builder) => {
         
@@ -50,5 +54,5 @@ export const estateSlice = createSlice({
     }
 })
 
-export const { reset } = estateSlice.actions
+export const { reset, filteredProperties } = estateSlice.actions
 export default estateSlice.reducer

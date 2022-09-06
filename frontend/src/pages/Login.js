@@ -15,26 +15,33 @@ const SigninForm = () => {
 
     const [passwordShown, setPasswordShown] = React.useState(false);
     const [password, setPassword] = React.useState('');
-    const [logOut, setLogOut] = React.useState(false);
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const logins = useSelector(state => state.login)
-    const { login, isError, isLoggedIn, message, isLoading } = logins
+    const { isError, isLoggedIn, message } = logins
 
     const submitForm = (data) => {
         dispatch(logout())
+        
         dispatch(loginUser(data))
-           reset()
+        reset()
     };
 
     useEffect(()=> {
-        console.log(logins)
         if(isLoggedIn){
-            navigate('/')
+            toast.success('Logged in successfully!')
+            const timer = setTimeout(()=> {
+                navigate('/?page=1')
+            },4200)
+            return () => {
+                clearTimeout(timer);
+            };
         }
-    },[logins])
+        console.log(logins)
+    }, [logins, isLoggedIn, navigate])
+
 
     useEffect(() => {
         if (isError) {
@@ -59,7 +66,7 @@ const onErrors = errors => console.error(errors);
 
         <div className="container3">
             <ToastContainer theme='dark' position="top-right"
-                autoClose={5000}
+                autoClose={3000}
                 hideProgressBar={true}
                 newestOnTop={false}
                 closeOnClick

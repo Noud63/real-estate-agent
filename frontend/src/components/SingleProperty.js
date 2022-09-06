@@ -15,14 +15,13 @@ const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, regi
     const [showForm, setShowForm] = useState(false)
     
 
-    return (
-        <div className={!expand ? "content2_property" : "content2_property enlarge"} key={id}>
+    return <div className={!expand ? "content2_property" : "content2_property enlarge"} key={id}>
 
              <Likes id={id}/>
             
             <div className="content2_property_castleImageBox"><img src={img} alt="castle" className="content2_property_castleImage" /></div>
 
-            <div className="content2_property_info">
+            <div className="content2_property_info" >
 
                 <div className="title"><h5>{name}</h5></div>
 
@@ -45,10 +44,10 @@ const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, regi
 
             <Map region={region} map={map} setExpand={setExpand} setShowForm={setShowForm} />
 
-            {showForm ? <EnquiryForm showForm={showForm} setShowForm={setShowForm} setExpand={setExpand} propertyName={name} /> : ""}
+        {showForm ? <EnquiryForm showForm={showForm} setShowForm={setShowForm} setExpand={setExpand} propertyName={name} /> : ""}
 
         </div>
-    )
+    
 }
 
 export default SingleProperty

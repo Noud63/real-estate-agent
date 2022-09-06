@@ -18,10 +18,9 @@ const Header = () => {
     const dispatch = useDispatch()
 
     const logins = useSelector(state => state.login)
-    const { login, isError, isLoggedIn, message, isLoading } = logins
+    const { login, isLoggedIn } = logins
 
     useEffect(() => {
-        
         if (isLoggedIn) {
             setLogOut(true)
         }

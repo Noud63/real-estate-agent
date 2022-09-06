@@ -4,6 +4,7 @@ import '../sassStyles/pages/register.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { registerUser, resetState } from '../features/registerSlice'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,25 +12,35 @@ const Register = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const [error, setError] = React.useState(false)
-    const [error2, setError2] = React.useState(false)
-
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const registeredUser = useSelector(state => state.registered)
-    const { user, isError, isRegistered, isLoading, message} = registeredUser
+    const { user, isError, isRegistered, message} = registeredUser
+
+    const submitForm = (data) => {
+        dispatch(resetState())
+        if (data.password !== data.repeatpassword) {
+            toast.error('passwords don\'t match!')
+            return
+        }
+        dispatch(registerUser(data))
+        reset()
+        console.log(registeredUser)
+    }
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            if (error) {
-                setError(false)
-            }
-            if (error2) {
-                setError2(false)
-            }
-        }, 5000)
-        return () => clearTimeout(timer);
-    }, [error, error2])
+        if (isRegistered) {
+            toast.success('Successfully registered!')
+            const timer = setTimeout(() => {
+                navigate('/login')
+            }, 4200)
+            return () => {
+                clearTimeout(timer);
+            };
+        }
+        console.log(user)
+    }, [user, isRegistered,navigate])
 
 
     useEffect(() => {
@@ -40,25 +51,13 @@ const Register = () => {
     }, [isError, message, dispatch])
 
 
-    const submitForm = (data) => {
-
-        if(data.password !== data.repeatpassword){
-            setError(true)
-            return
-        }
-        dispatch(registerUser(data))
-        reset()
-        console.log(registeredUser)
-    }
-
-
     const onErrors = errors => console.error(errors);
 
     return (
 
         <div className="container2">
             <ToastContainer theme='dark' position="top-right"
-                autoClose={5000}
+                autoClose={3000}
                 hideProgressBar={true}
                 newestOnTop={false}
                 closeOnClick
@@ -171,20 +170,6 @@ const Register = () => {
                             {errors.repeatpassword && <div>{errors.repeatpassword.message}</div>}
                         </div>
                     </div>
-
-                    {error ? <div className="overlayShowReg">
-                        <div className="registerednameShowReg">
-                            <div>{`Oooops!`}</div>
-                            <div className="welcomeReg">Passwords don't match!</div>
-                        </div>
-                    </div> : ""}
-
-                    {error2 ? <div className="overlayShowReg">
-                        <div className="registerednameShowReg">
-                            <div>{`Oooops!`}</div>
-                            <div className="welcomeReg"><span>Password must be at least</span><span>8 characters long!</span></div>
-                        </div>
-                    </div> : ""}
 
                     <button type="submit" className="submitBtn">Submit</button>
 

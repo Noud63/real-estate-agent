@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import '../sassStyles/pages/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { getRealEstates } from '../features/estateSlice'
+import { filteredProperties, getRealEstates } from '../features/estateSlice'
 import ListItems from '../components/ListItems'
 import CategorySelect from '../components/CategorySelect'
 import Pagination from '../components/Pagination'
@@ -23,18 +23,19 @@ const Content = () => {
         navigate(`${path}?page=${currentNumber}`);
     }, [currentNumber, path, navigate])
 
-    const realestates = useSelector(state => state.realestate)
-    const { isLoading, realestate, isError, message, isSuccess} = realestates
 
+    const realestates = useSelector(state => state.realestate)
+    const { isLoading, realestate, filter, isError, message, isSuccess} = realestates;
 
     useEffect(() => {
         dispatch(getRealEstates())
-            if(realestate){
-                setShow(true)
-            }else{
-                console.log('No data retrieved')
-            }
+        if (realestate) {
+            setShow(true)
+        } else {
+            console.log('No data retrieved')
+        }
     }, [dispatch])
+
 
 
     // pagination 

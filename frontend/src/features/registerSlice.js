@@ -8,17 +8,9 @@ const register = async (userData) => {
     return response.data
 }
 
-const initialState = {
-    user: {address: "",city: "",country: "",email: "",firstname: "",lastname: "",number: "",telephone: "",username: "",password: "",zip: ""},
-    isError: false,
-    isRegistered: false,
-    isLoading: false,
-    message: ''
-}
 
 // Register user
-export const registerUser = createAsyncThunk('auth/registerUser', async (user, 
-    thunkAPI) => {
+export const registerUser = createAsyncThunk('auth/registerUser', async (user, thunkAPI) => {
     try {
         return await register(user)
     } catch (error) {
@@ -28,6 +20,14 @@ export const registerUser = createAsyncThunk('auth/registerUser', async (user,
 })
 
 export const resetState = createAction('auth/logout')
+
+const initialState = {
+    user: { address: "", city: "", country: "", email: "", firstname: "", lastname: "", number: "", telephone: "", username: "", password: "", zip: "" },
+    isError: false,
+    isRegistered: false,
+    isLoading: false,
+    message: ''
+}
 
 // Create slice
 

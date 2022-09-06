@@ -2,15 +2,15 @@ import React, { useState, useRef } from 'react'
 import '../sassStyles/layout/EnquiryForm.scss'
 import closeIcon from '../assets/icons/close.png'
 import logo from '../assets/icons/ellielogo4.png'
+import emailjs from '@emailjs/browser';
 
 const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [telephone, setTelephone] = useState("");
-    const [success, setSuccess] = useState(false);
+    
+    const [success, setSuccess] = useState("Submit");
 
     const btnRef = useRef(null)
+    const form = useRef();
 
     const closeForm = () => {
         setShowForm(false)
@@ -19,30 +19,20 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = {
-            name: name,
-            email: email,
-            telephoneNumber: telephone,
-            propertyName
-        }
+        setSuccess('Sending....')
 
-        setName("")
-        setEmail("")
-        setTelephone("")
-
-        if(data){
-            setSuccess(true)
-            const timer = setTimeout(() => {
-                setSuccess(false)
-            }, 4000)
-            return () => clearTimeout(timer)
-        }else{
-            btnRef.current.textContent = 'Request not Sent!'
-            const timer = setTimeout(() => {
-                btnRef.current.textContent = 'Sent Request'
-            }, 4000)
-            return () => clearTimeout(timer)
-        }
+        emailjs.sendForm('service_uajwvyh', 'template_7uflv8h', form.current, 'user_hmFUVd309vqUiRXCpAWNG')
+            .then((result) => {
+                console.log(result.text)
+                setSuccess('Message successfully sent!')
+                let timer = setTimeout(() => {
+                    setSuccess("submit")
+                    clearTimeout(timer)
+                }, 5000)
+            }, (error) => {
+                console.log(error.text);
+            });
+        form.current.reset()
 }
 
     return (
@@ -59,21 +49,21 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
                 <span className="castleName">{propertyName}</span>
             </div>
 
-            <form onSubmit={handleSubmit} className="form">
+            <form onSubmit={handleSubmit} className="form" ref={form} autoComplete="off">
                 <div className="enquiryForm_inputfields">
 
                     <div className="enquiryForm_inputfields_name">
                         <label>Name:</label>
-                        <input type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} required/>
+                        <input type="text" placeholder="name" name="from_name" required/>
 
                         <label>Telephone number:</label>
-                        <input type="text" placeholder="telephone" value={telephone} onChange={(e) => setTelephone(e.target.value)} required/>
+                        <input type="text" placeholder="telephone" name="from_telephone" required/>
                     </div>
 
                     <div className="enquiryForm_inputfields_name">
                         <label>Email:</label>
-                        <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-                        <div className="sendRequestBtn"><button type="submit" ref={btnRef}>{success ? 'Sent Successfully' : 'Sent Request'}</button></div>
+                        <input type="email" placeholder="email" name="from_email" required/>
+                        <div className="sendRequestBtn"><button type="submit" value="send" ref={btnRef}>{success}</button></div>
                     </div>
 
                 </div>

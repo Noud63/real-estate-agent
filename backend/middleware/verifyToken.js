@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken')
 
-const verify = (req, res, next) =>  {
-    const authHeader = req.headers.token;
-    console.log(authHeader)
+const verifyToken = (req, res, next) =>  {
+    const authHeader = req.headers['Authorization']
+   console.log(authHeader)
     if (authHeader) {
         const token = authHeader.split(" ")[1];
         jwt.verify(token, process.env.REACT_APP_JWT_SECRET, (err, user) => {
@@ -15,4 +15,14 @@ const verify = (req, res, next) =>  {
     }
 }
 
-module.exports = verify;
+const admin = (req, res, next) => {
+    if (req.user && req.user.isAdmin) {
+        console.log(req.user)
+        next()
+    } else {
+        res.status(401)
+        throw new Error('Not authorized as an admin')
+    }
+}
+
+module.exports = {verifyToken, admin}
