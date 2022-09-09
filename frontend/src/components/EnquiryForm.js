@@ -6,7 +6,6 @@ import emailjs from '@emailjs/browser';
 
 const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
 
-    
     const [success, setSuccess] = useState("Submit");
 
     const btnRef = useRef(null)

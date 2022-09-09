@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Select from 'react-select'
 import '../sassStyles/layout/categorySelect.scss'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { filteredProperties } from '../features/estateSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { filteredProperties } from '../features/estateSlice'
 
 
 const regions = [
+    { value: 'All Regions', label: 'All Regions' },
     { value: 'North', label: 'North' },
     { value: 'Centre', label: 'Centre' },
     { value: 'South', label: 'South' }
@@ -30,8 +31,6 @@ const plotSize = [
 ]
 
 
-
-
 const customTheme = (theme) => {
     return {
         ...theme,
@@ -47,25 +46,38 @@ const customTheme = (theme) => {
 }
 
 
-const CategorySelect = () => {
+const CategorySelect = ({setCurrentNumber}) => {
 
-    const onChangeHandler = (value, actionMeta) => {
-        console.log(value)
-        console.log(actionMeta)
+    const dispatch = useDispatch()
+
+    const realestates = useSelector(state => state.realestate)
+    let { realestate  } = realestates;
+
+    const changeSearch = (value) => {
+        
+        for(let region of regions){
+            if (region.value === value.value) {
+                const filteredEst = realestate.filter(el => el.located === value.value)
+                dispatch(filteredProperties(filteredEst))
+            }
+        }
+
+        if(value.value === 'All Regions'){
+            dispatch(filteredProperties(realestate))
+            setCurrentNumber(1)
+        }
+        if (value.value === 'Centre'){
+                 setCurrentNumber(1)
+        }
     }
-
-    const handleInputChange = (inputValue, actionMeta) => {
-        console.log(inputValue)
-        console.log(actionMeta)
-    }
-
+    
 return (
-        <div className="selectMenus">
-            <div className="select">search options</div>
-            <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" onChange={onChangeHandler} onInputChange={handleInputChange} name={'Region'}/>
-        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" onChange={onChangeHandler}  onInputChange={handleInputChange} name={'Living Space'}/>
-        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox" onChange={onChangeHandler}  onInputChange={handleInputChange} name={'Plot Size'}/>
-        </div>
+    <div className="selectMenus">
+        <div className="select">search options</div>
+        <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" onChange={changeSearch}  name={'Region'} />
+        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" onChange={changeSearch} name={'Living Space'} />
+        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox"  onChange={changeSearch} name={'Plot Size'} />
+    </div>
     )
 }
 

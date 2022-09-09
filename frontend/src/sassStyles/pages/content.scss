@@ -67,7 +67,7 @@
 
 .btns {
     margin: 20px auto;
-    width: 165px;
+    width: auto;
     @include spacebetween-content;
 }
 
@@ -81,6 +81,7 @@
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
+    margin-right: 5px;
 
     &.active {
         background-color: rgb(169, 149, 173);

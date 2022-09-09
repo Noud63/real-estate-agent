@@ -99,9 +99,9 @@ const data = [
         bedrooms: '48',
         bathrooms: '12',
         livingspace: '15000',
-        area: '15000',
+        area: '15',
         map: '/assets/maps/hautsdefrance.png',
-        located: 'South',
+        located: 'North',
         like: false,
     },
     {

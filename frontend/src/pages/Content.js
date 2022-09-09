@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import '../sassStyles/pages/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
-import { filteredProperties, getRealEstates } from '../features/estateSlice'
+import { getRealEstates } from '../features/estateSlice'
 import ListItems from '../components/ListItems'
 import CategorySelect from '../components/CategorySelect'
 import Pagination from '../components/Pagination'
@@ -25,41 +25,28 @@ const Content = () => {
 
 
     const realestates = useSelector(state => state.realestate)
-    const { isLoading, realestate, filter, isError, message, isSuccess} = realestates;
+    let { isLoading, realestate, filtered, isError, message, isSuccess } = realestates;
+
+    console.log('filtered', filtered)
+    console.log('newList:', newList)
 
     useEffect(() => {
         dispatch(getRealEstates())
-        if (realestate) {
+        if (filtered) {
             setShow(true)
         } else {
             console.log('No data retrieved')
         }
     }, [dispatch])
 
-
-
-    // pagination 
+    //Pagination
     const pageNumbers = []
     const resultsPerPage = 4
-    const pages = Math.ceil(realestate.length / resultsPerPage)
+    const pages = Math.ceil(filtered.length / resultsPerPage)
 
     for (let i = 1; i <= pages; i++) {
         pageNumbers.push(i)
     }
-
-    const pagination = (number) => {
-        setCurrentNumber(number)
-    }
-
-    const slicedList = useCallback(() => {
-        const data2 = realestate.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
-        setNewList(data2)
-    }, [currentNumber, realestate, resultsPerPage])
-
-
-    useEffect(() => {
-        slicedList()
-    }, [slicedList])
 
 
     return (
@@ -73,14 +60,21 @@ const Content = () => {
 
                 <div className="content2">
 
-                    <CategorySelect />
+                    <CategorySelect setCurrentNumber={setCurrentNumber} />
 
-                    <ListItems newList={newList} show={show}/>
+                    <ListItems newList={newList} show={show} />
 
                     <div className="btns">
                         {pageNumbers.map(number => {
-                            return <Pagination key={number} active={number === currentNumber} onClick={() => pagination(number)} title={number} />
-
+                            return <Pagination key={number} 
+                                                number={number} 
+                                                filtered={filtered} 
+                                                currentNumber={currentNumber} 
+                                                setCurrentNumber={setCurrentNumber} 
+                                                resultsPerPage={resultsPerPage}
+                                                newList={newList}
+                                                setNewList={setNewList}
+                            />
                         })}
                     </div>
 

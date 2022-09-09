@@ -1,13 +1,6 @@
-import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const initialState = {
-    realestate:  [],
-    isSuccess: false,
-    isLoading: false,
-    filter: [],
-    message: '',
-}
 
 export const getRealEstates = createAsyncThunk(
     'realestate/getRealEstates', async (_, thunkAPI) => {
@@ -26,6 +19,13 @@ export const getRealEstates = createAsyncThunk(
     }
 )
 
+const initialState = {
+    realestate: [],
+    isSuccess: false,
+    isLoading: false,
+    filtered: [],
+    message: '',
+    }
 
 export const estateSlice = createSlice({
     name: 'realestate',    // Reducer name
@@ -33,11 +33,11 @@ export const estateSlice = createSlice({
     reducers: {
         reset: () => initialState,
         filteredProperties: (state, action) => {
-            state.filter = action.payload;
+            state.filtered = action.payload
         }
-    },
+    },  
     extraReducers: (builder) => {
-        
+
         builder.addCase(getRealEstates.pending, (state) => {
             state.isLoading = true
         })
@@ -45,8 +45,9 @@ export const estateSlice = createSlice({
             state.isLoading = false
             state.isSuccess = true
             state.realestate = action.payload
+            state.filtered = action.payload
         })
-         builder.addCase(getRealEstates.rejected, (state, action) => {
+        builder.addCase(getRealEstates.rejected, (state, action) => {
             state.isLoading = false
             state.isError = true
             state.message = action.payload
@@ -54,5 +55,5 @@ export const estateSlice = createSlice({
     }
 })
 
-export const { reset, filteredProperties } = estateSlice.actions
+export const { filteredProperties, reset } = estateSlice.actions
 export default estateSlice.reducer

@@ -1,10 +1,30 @@
-import React from 'react'
+import React, {useEffect, useCallback} from 'react'
 
-const Pagination = ({ active, onClick, title }) => {
+const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, resultsPerPage, setNewList }) => {
+
+    const pagination = (number) => {
+        setCurrentNumber(number)
+    }
+
+    const slicedList = useCallback(() => {
+        if (filtered.length > resultsPerPage) {
+            const data2 = filtered.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
+            setNewList(data2)
+        }
+        if (filtered.length <= resultsPerPage) {
+            setNewList(filtered)
+        }
+    }, [currentNumber, filtered, resultsPerPage])
+
+    useEffect(() => {
+        slicedList()
+    }, [slicedList])
+
+
     return (
-        <button onClick={onClick} className={active ? "paginationBtn active" : "paginationBtn"}>
+        <button onClick={() => pagination(number)} className={number === currentNumber ? "paginationBtn active" : "paginationBtn"}>
             <span>
-                {title}
+                {number}
             </span>
         </button>
     );
