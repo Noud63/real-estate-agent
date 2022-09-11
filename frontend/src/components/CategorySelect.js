@@ -6,30 +6,32 @@ import { filteredProperties } from '../features/estateSlice'
 
 
 const regions = [
-    { value: 'All Regions', label: 'All Regions' },
-    { value: 'North', label: 'North' },
-    { value: 'Centre', label: 'Centre' },
-    { value: 'South', label: 'South' }
+    { value: 'All Regions', label: 'All Regions',  category: 'region'},
+    { value: 'North', label: 'North', category: 'region'},
+    { value: 'Centre', label: 'Centre', category: 'region'},
+    { value: 'South', label: 'South', category: 'region'}
 ]
 
 const livingSpace = [
-    { value: '500', label: '500 m\xB2' },
-    { value: '750', label: '750 m\xB2' },
-    { value: '1000', label: '1000 m\xB2' },
-    { value: '1200', label: '1200 m\xB2' },
-    { value: '1500', label: '1500 m\xB2' },
-    { value: '2000', label: '2000 m\xB2' }
+    { value: '500', label: '500 m\xB2', category: 'space' },
+    { value: '750', label: '750 m\xB2', category: 'space' },
+    { value: '1000', label: '1000 m\xB2', category: 'space' },
+    { value: '1200', label: '1200 m\xB2', category: 'space' },
+    { value: '1500', label: '1500 m\xB2', category: 'space' },
+    { value: '2000', label: '2000 m\xB2', category: 'space' }
 ]
 
 const plotSize = [
-    { value: '1', label: '1 ha' },
-    { value: '2', label: '2 ha' },
-    { value: '3', label: '3 ha' },
-    { value: '4', label: '4 ha' },
-    { value: '5', label: '5 ha' },
-    { value: '6', label: '6 ha' }
+    { value: '1', label: '1 ha', category: 'plot' },
+    { value: '2', label: '2 ha', category: 'plot' },
+    { value: '3', label: '3 ha', category: 'plot' },
+    { value: '4', label: '4 ha', category: 'plot' },
+    { value: '5', label: '5 ha', category: 'plot' },
+    { value: '6', label: '6 ha', category: 'plot' }
 ]
 
+const allFilters = [...regions, ...livingSpace, ...plotSize]
+// console.log(allFilters)
 
 const customTheme = (theme) => {
     return {
@@ -51,16 +53,35 @@ const CategorySelect = ({setCurrentNumber}) => {
     const dispatch = useDispatch()
 
     const realestates = useSelector(state => state.realestate)
-    let { realestate  } = realestates;
+    let { realestate, filtered  } = realestates;
 
     const changeSearch = (value) => {
         
-        for(let region of regions){
-            if (region.value === value.value) {
-                const filteredEst = realestate.filter(el => el.located === value.value)
+        let estate;
+        for(let filter of allFilters){
+
+            if (filtered.length === realestate.length){
+                estate = realestate
+            } else if (filtered.length < realestate.length){
+                estate = filtered
+            }
+            
+            if (filter.value === value.value && filter.category === 'region') {
+               let filteredEst = estate.filter(el => el.located === value.value) 
+                dispatch(filteredProperties(filteredEst))
+            }
+
+            if (filter.value === value.value && filter.category === 'space') {
+                let filteredEst = estate.filter(el => el.livingspace === value.value)
+                dispatch(filteredProperties(filteredEst))
+            } 
+
+            if (filter.value === value.value && filter.category === 'plot') {
+                let filteredEst = estate.filter(el => el.area === value.value)
                 dispatch(filteredProperties(filteredEst))
             }
         }
+
 
         if(value.value === 'All Regions'){
             dispatch(filteredProperties(realestate))
@@ -70,13 +91,14 @@ const CategorySelect = ({setCurrentNumber}) => {
                  setCurrentNumber(1)
         }
     }
+
     
 return (
     <div className="selectMenus">
         <div className="select">search options</div>
-        <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" onChange={changeSearch}  name={'Region'} />
-        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" onChange={changeSearch} name={'Living Space'} />
-        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox"  onChange={changeSearch} name={'Plot Size'} />
+        <Select theme={customTheme} options={regions} placeholder="Region" className="selectBox" value={null} onChange={(e) => changeSearch(e)}  name={'Region'} />
+        <Select theme={customTheme} options={livingSpace} placeholder="Living Space" className="selectBox" value={null} onChange={changeSearch} name={'Living Space'} />
+        <Select theme={customTheme} options={plotSize} placeholder="Plot Size" className="selectBox"  value={null} onChange={changeSearch} name={'Plot Size'} />
     </div>
     )
 }

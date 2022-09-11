@@ -1,5 +1,6 @@
-@import '../../sassStyles/abstracts/variables';
-@import '../../sassStyles/abstracts/mixins';
+@import '../abstracts/variables';
+@import '../abstracts/global';
+@import '../abstracts/mixins';
 
 .borderTop {
     width: 100%;
@@ -21,12 +22,12 @@
 }
 
 .sidebar {
-    background-image: url('../../assets/images/campagne1.jpg');
+    background-image: url('../../assets/images/campagne3.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 20%;
-    height: 1420px;
+    height: 2000px;
     margin-right: 10px;
 
     @include respond1(removeSidebar){
@@ -35,12 +36,12 @@
 }
 
 .sidebar2 {
-    background-image: url('../../assets/images/campagne2.jpg');
+    background-image: url('../../assets/images/campagne4.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 20%;
-    height: 1420px;
+    height: 2000px;
     margin-left: 10px;
    @include respond1(removeSidebar){
           display: none;

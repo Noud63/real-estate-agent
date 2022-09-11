@@ -1,0 +1,55 @@
+@import '../abstracts/variables';
+@import '../abstracts/global';
+@import '../abstracts/mixins';
+
+
+.searchFields {
+    max-width: 96%;
+    @include center-content-row;
+    margin: 0px  20px 30px 20px;
+    @include respond5(contentBreak){
+            flex-direction: column;
+        }
+}
+
+.searchOptions {
+    width: 300px;
+    height: 40px;
+    font-size: 1rem;
+    color: rgb(101, 86, 110);
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-radius: 5px;
+     @include center-content;
+     border: 1px solid rgb(117, 102, 126);
+}
+
+.selectop {
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: rgb(117, 102, 126);
+    @include respond5(contentBreak){
+           width: 300px;
+        }
+}
+
+.searchbtn {
+    width: 120px;
+    height: 40px;
+    background-image: linear-gradient(to top, rgb(119, 0, 0), red);
+    border-radius: 5px;
+    border-style: none;
+     @include respond5(contentBreak){
+           width: 300px;
+        }
+}
+
+.resetIcon {
+    width: 18px;
+    transition: .5s ease-in-out;
+}
+
+.turn {
+    transform: rotate(360deg);
+}

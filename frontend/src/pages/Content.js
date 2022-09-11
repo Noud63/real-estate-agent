@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getRealEstates } from '../features/estateSlice'
 import ListItems from '../components/ListItems'
 import CategorySelect from '../components/CategorySelect'
+import SearchEstates from '../components/SearchEstates'
 import Pagination from '../components/Pagination'
 import { useNavigate } from "react-router-dom"
 
@@ -28,7 +29,6 @@ const Content = () => {
     let { isLoading, realestate, filtered, isError, message, isSuccess } = realestates;
 
     console.log('filtered', filtered)
-    console.log('newList:', newList)
 
     useEffect(() => {
         dispatch(getRealEstates())
@@ -39,9 +39,10 @@ const Content = () => {
         }
     }, [dispatch])
 
+
     //Pagination
     const pageNumbers = []
-    const resultsPerPage = 4
+    const resultsPerPage = 5
     const pages = Math.ceil(filtered.length / resultsPerPage)
 
     for (let i = 1; i <= pages; i++) {
@@ -60,20 +61,20 @@ const Content = () => {
 
                 <div className="content2">
 
-                    <CategorySelect setCurrentNumber={setCurrentNumber} />
+                    <SearchEstates/>
 
                     <ListItems newList={newList} show={show} />
 
                     <div className="btns">
                         {pageNumbers.map(number => {
-                            return <Pagination key={number} 
-                                                number={number} 
-                                                filtered={filtered} 
-                                                currentNumber={currentNumber} 
-                                                setCurrentNumber={setCurrentNumber} 
-                                                resultsPerPage={resultsPerPage}
-                                                newList={newList}
-                                                setNewList={setNewList}
+                            return <Pagination key={number}
+                                number={number}
+                                filtered={filtered}
+                                currentNumber={currentNumber}
+                                setCurrentNumber={setCurrentNumber}
+                                resultsPerPage={resultsPerPage}
+                                newList={newList}
+                                setNewList={setNewList}
                             />
                         })}
                     </div>

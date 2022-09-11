@@ -2,7 +2,7 @@ import React, {useEffect, useCallback} from 'react'
 
 const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, resultsPerPage, setNewList }) => {
 
-    const pagination = (number) => {
+    const paginate = (number) => {
         setCurrentNumber(number)
     }
 
@@ -14,7 +14,7 @@ const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, results
         if (filtered.length <= resultsPerPage) {
             setNewList(filtered)
         }
-    }, [currentNumber, filtered, resultsPerPage])
+    }, [currentNumber, filtered, resultsPerPage, setNewList])
 
     useEffect(() => {
         slicedList()
@@ -22,7 +22,7 @@ const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, results
 
 
     return (
-        <button onClick={() => pagination(number)} className={number === currentNumber ? "paginationBtn active" : "paginationBtn"}>
+        <button onClick={() => paginate(number)} className={number === currentNumber ? "paginationBtn active" : "paginationBtn"}>
             <span>
                 {number}
             </span>

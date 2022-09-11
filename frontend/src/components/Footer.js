@@ -13,33 +13,30 @@ const Footer = () => {
             <div className="footer_content_gridContainer">
 
                 <div className="footer_content_box">
-                    
+
                     <div className="footer_content_title">
                         <img src={ellieLogo} alt="elliecastelli" />
                         <span className="footer_content_ellieName">Ellie Castelli</span>
                         <span className="footer_content_your_castle">- Your Castle is your Home -</span>
                     </div>
-                   
+
                 </div>
 
-                <div className="footer_content_box">2</div>
-                <div className="footer_content_box">3</div>
-                <div className="footer_content_box">4</div>
-                <div className="footer_content_box">
+                <div className="footer_content_box two">more info</div>
+                <div className="footer_content_box three">more info</div>
+                <div className="footer_content_box four">more info</div>
+                <div className="footer_content_box five">
                     <div>
-                        <div className="footer_content_your_castle">
+                        <div className="footer_content_rules">
                             Ellie Castelli is a Real Estate broker liscened by the state of France<br></br>
                             Ellie Castelli abides by Equal Housing Opportunity laws.<br></br>
                             License Number 01974638.<br />
-                        </div>
-                        <div className="footer_content_your_castle">
                             Changes in price, condition, sale or withdrawal may be made without notice.<br></br>
                             All measurements and square footage are approximate.<br></br>
-                            &copy;2022 Ellie Castelli. All rights reserved.
                         </div>
                     </div>
                 </div>
-                <div className="footer_content_box">
+                <div className="footer_content_box six">
                     <div className="icons">
                         <div className="icon"><img src={facebook} alt="facebook" style={{ width: '40px' }} /></div>
                         <div className="icon"><img src={instagram} alt="facebook" style={{ width: '40px' }} /></div>
@@ -50,12 +47,13 @@ const Footer = () => {
             </div>
 
             <div className="offices">
+
                 <div className="office">
                     <div className="loc-address">Ellie Castelli<br />
                                 16 Rue Jean-Charles<br />
                         <div className="office_region">
                             <img alt="Monaco_office" src="https://www.ennessglobal.com/download_file/2746/0" style={{ height: '12px' }} />98080 Monaco
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div className="office">
@@ -82,9 +80,10 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-       </div>
+            <div className="allrightsreserved"> &copy;2022 Ellie Castelli. All rights reserved.</div>
+        </div>
     )
 }
 

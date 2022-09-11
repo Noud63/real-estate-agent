@@ -5,29 +5,30 @@
 .footer {
     position: relative;
     width: 100%;
-    height: 38rem;
-    padding-top: 2rem;
+    height: 48rem;
     background-color: rgb(20, 17, 26);
     @include center-content-column-top;
     @include respond2(gridcontainer) {
-          height: 51rem;
+          height: 65rem;
     }
 
     @include respond5(contentBreak) {
-          height: 90rem;
+          height: 125rem;
     }
     
     &_content_gridContainer {
-    width: 95%;
+    width: 100%;
+    box-shadow: 0px 12px 18px black;
     display: grid;
     grid-template-columns: repeat( 3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    background-color: rgb(103, 84, 107);
-    gap: 1px;  
+    grid-template-rows: repeat(2, 1fr); 
+    
 
     @include respond2(gridcontainer) {
           grid-template-columns: repeat( 2, 1fr);
           grid-template-rows: repeat(3, 1fr);
+          gap: 1px; 
+          background-color: rgb(70, 59, 80);
           & :nth-of-type(5){
           order:1;
         }
@@ -36,6 +37,15 @@
     @include respond5(contentBreak) {
           grid-template-columns: repeat( 1, 1fr);
           grid-template-rows: repeat(6, 1fr);
+          gap: 1px; 
+          background-color: rgb(70, 59, 80);
+    }
+    }
+
+    &_content_box.two, .four,.six{
+          background-color: rgb(35, 26, 39);
+          @include respond2(gridcontainer) {
+          background-color: rgb(20, 17, 26);
     }
     }
     
@@ -44,7 +54,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: row;
-            height: 13rem;
+            height: 18rem;
             color: rgb(148, 129, 156);
             padding: 20px;
             background-color: rgb(20, 17, 26);
@@ -92,37 +102,46 @@
           font-family:'Times';
           top: 65px;
       }
+
+      .allrightsreserved {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 30px;
+            background-color: black;
+            color:rgb(88, 71, 92);
+            @include center-content;
+            font-size: .8rem;
+      }
 }
 
 
 .offices {
       position: absolute;
-      bottom: 0;
+      bottom: 50px;
       width: 95%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-      // background-color: rgb(124, 109, 134);
-      height: 10rem;
-     border-top: 1px solid rgb(120, 106, 131);
-      // background-color: rgb(20, 17, 26);
+      @include center-content-row;
+      height: 7rem;
       display: grid;
       grid-template-columns: repeat( 4, 1fr);
       grid-template-rows: repeat(1, 1fr);
       color:  rgb(146, 124, 151);
-      // background-color: rgb(19, 15, 20);
       gap: 1px;  
       @include respond5(contentBreak) {
           grid-template-columns: repeat( 2, 1fr);
           grid-template-rows: repeat(2, 1fr);
           font-size: 12px;
+          bottom: 90px;
+           height: 9rem;
     }
       & .office {
            display: flex;
            align-items: center;
            justify-content: center;
            width: 100%;
+            @include respond5(contentBreak) {
+           padding: 20px;
+    }
 
            .loc-address {
                  display: flex;
