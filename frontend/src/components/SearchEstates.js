@@ -14,10 +14,10 @@ const SearchEstates = () => {
     const dispatch = useDispatch()
 
     const realestates = useSelector(state => state.realestate)
-    let { realestate } = realestates;
+    let { realestate, filtered } = realestates;
 
     useEffect(() => {
-        
+
         const foundRegion = (region || "");
         const foundLivingSpace = (livingSpace || "");
         const foundPlotSize = (plotSize || "");
@@ -28,6 +28,7 @@ const SearchEstates = () => {
                 est.area.includes(foundPlotSize)
 
         });
+        
         dispatch(filteredProperties(result))
     }, [dispatch, livingSpace, plotSize, realestate, region]);
 
@@ -39,7 +40,7 @@ const SearchEstates = () => {
         dispatch(filteredProperties(realestate))
     }
 
-   return (
+    return (
         <div className="searchFields">
 
             <div className="searchOptions">Search Options</div>

@@ -28,7 +28,7 @@ const Content = () => {
     const realestates = useSelector(state => state.realestate)
     let { isLoading, realestate, filtered, isError, message, isSuccess } = realestates;
 
-    console.log('filtered', filtered)
+    //console.log('filtered', filtered)
 
     useEffect(() => {
         dispatch(getRealEstates())
