@@ -69,6 +69,13 @@
  flex-direction: row;
 }
 
+@mixin spacearound-content-top {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-around;
+ flex-direction: row;
+}
+
 //Media queries
 
 @mixin respond1($breakpoint) { 
@@ -86,6 +93,14 @@
   }
 }
 
+@mixin respond($breakpoint) { 
+  @if $breakpoint == hamburgermenu {    
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  }
+}
+
 @mixin respond5($breakpoint) { 
   @if $breakpoint == contentBreak {    
     @media only screen and (max-width: 750px) {
@@ -94,9 +109,18 @@
   }
 }
 
-@mixin respond($breakpoint) { 
-  @if $breakpoint == hamburgermenu {    
-    @media only screen and (max-width: 800px) {
+
+@mixin respond8($breakpoint) { 
+  @if $breakpoint == removeaward {    
+    @media only screen and (max-width: 700px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond9($breakpoint) { 
+  @if $breakpoint == sidebarDelete {    
+    @media only screen and (max-width: 650px) {
       @content;
     }
   }

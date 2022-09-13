@@ -1,18 +1,20 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../sassStyles/pages/content.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { getRealEstates } from '../features/estateSlice'
 import ListItems from '../components/ListItems'
-import CategorySelect from '../components/CategorySelect'
 import SearchEstates from '../components/SearchEstates'
 import Pagination from '../components/Pagination'
 import { useNavigate } from "react-router-dom"
+
 
 const Content = () => {
 
     const [show, setShow] = useState(false)
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
+    const [errorMessage, setErrorMessage] = useState(false)
+    const [resPerPage, setResPerpage ] = useState(6)
 
     // add page number to url
     const navigate = useNavigate();
@@ -26,23 +28,22 @@ const Content = () => {
 
 
     const realestates = useSelector(state => state.realestate)
-    let { isLoading, realestate, filtered, isError, message, isSuccess } = realestates;
+    let { isLoading, realestate, filtered, isError, isSuccess, message } = realestates;
 
-    //console.log('filtered', filtered)
 
     useEffect(() => {
         dispatch(getRealEstates())
-        if (filtered) {
+        if (isSuccess) {
             setShow(true)
         } else {
-            console.log('No data retrieved')
+            console.log('No data!')
         }
-    }, [dispatch])
+    }, [dispatch, isSuccess])
 
 
     //Pagination
     const pageNumbers = []
-    const resultsPerPage = 5
+    const resultsPerPage = resPerPage
     const pages = Math.ceil(filtered.length / resultsPerPage)
 
     for (let i = 1; i <= pages; i++) {
@@ -50,20 +51,39 @@ const Content = () => {
     }
 
 
+    // Show message when filtered list is empty
+    useEffect(() => {
+        if (filtered.length === 0) {
+            setNewList([])
+            setErrorMessage(true)
+        } else {
+            setErrorMessage(false)
+        }
+    }, [filtered.length])
+
     return (
         <>
             <div className="borderTop">
-                <div className="border"></div>
+                <div className="headerMenu">
+                    <div className="headerMenu_item">Home</div>
+                    <div className="headerMenu_item">Buy</div>
+                    <div className="headerMenu_item">Service</div>
+                    <div className="headerMenu_item">Finance</div>
+                    <div className="headerMenu_item">News</div>
+                    <div className="headerMenu_item">Currency</div>
+                </div>
             </div>
             <div className="sidebarContentWrapper">
-
-                <div className="sidebar"></div>
-
+                <div className="sidebar">
+                <div className="frame"></div>
+                </div>
                 <div className="content2">
 
-                    <SearchEstates/>
+                    <SearchEstates />
 
-                    <ListItems newList={newList} show={show} />
+                    {errorMessage ? <div>No results match your search criteria!</div> : ""}
+
+                    <ListItems newList={newList} show={show}/>
 
                     <div className="btns">
                         {pageNumbers.map(number => {
@@ -78,9 +98,11 @@ const Content = () => {
                             />
                         })}
                     </div>
-
                 </div>
-                <div className="sidebar2"></div>
+                <div className="sidebar2">
+                    <div className="frame"></div>
+                    <div className="frame2"></div>
+                </div>
             </div>
         </>
     )

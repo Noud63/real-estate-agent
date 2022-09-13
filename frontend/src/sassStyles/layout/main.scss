@@ -5,9 +5,9 @@
 .container {
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     @include respond5(contentBreak){
-           margin-bottom: 50px;
+           margin-bottom: 0px;
         }
 }
 
@@ -16,6 +16,30 @@
     position: relative;
     display: flex;
     justify-content: center;
+
+    .awards {
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+         @include respond8(removeaward){
+              display: none;
+        }
+        .award {
+            width: 180px;
+            transform: rotate(-15deg);
+            -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
+              filter: drop-shadow(0px 4px 1px rgb(64, 57, 71, .8));
+              @include respond1(removeSidebar){
+                   width: 120px;
+              @include respond2(gridcontainer){
+                   width: 100px;
+              @include respond(hamburgermenu){
+                   width: 80px;
+        }
+        }
+        }
+        }
+    }
     
     .your_dream {
         @include center-content-column;
@@ -24,12 +48,11 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        background-image: transparent ;
+        heighT: 100px;
         color: rgb(129, 108, 129);
         word-spacing: 5px;
         letter-spacing: 5px;
         font-weight: bold;
-        // border-bottom: 1px solid;
 
         @include respond2(gridcontainer){
               width: 445px;
@@ -37,7 +60,7 @@
         }
 
         @include respond5(contentBreak){
-           bottom: -20px;
+           bottom: -10px;
         }
 
         @include respond6(castlesandchateaux){
@@ -49,9 +72,17 @@
          width: 420px;
         }
 
+         @include respond9(sidebarDelete){
+           bottom: -40px;
+        }
+
         @include respond3(smallest){
             font-size: 1.2rem;
          width: 310px;
+        }
+
+        @include respond8(removeaward){
+              font-size: 1.2rem;
         }
     }
 
@@ -67,13 +98,13 @@
         margin-top: 10px;
         width: 100%;
         padding-bottom: 10px;
-
         @include center-content-row;
 
          @include respond2(gridcontainer){
              width: 500px;
               font-size: .9rem;
               letter-spacing: 2px;
+              padding-bottom: 0px;
         }
 
         @include respond(hamburgermenu) {
@@ -83,14 +114,22 @@
         letter-spacing: 3px;
     }
 
-    @include respond3(smallest){
-         font-size: .7rem;
-         width: 320px;
-         letter-spacing: 1px;
+        @include respond9(removeaward){
+              letter-spacing: px;
+        }
+
+        @include respond3(smallest){
+         font-size: .8rem;
+         width: 340px;
+         letter-spacing: 0px;
         }
     }
 
-    .c5_image {
+        @include respond4(ellielogo){
+             margin-bottom: 20px;
+        }
+
+.c5_image {
     width: 100%;
     height: auto;
     }

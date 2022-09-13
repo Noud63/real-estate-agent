@@ -4,13 +4,41 @@
 
 .borderTop {
     width: 100%;
-    padding: 0 10px;
-}
+    margin-bottom: 50px;
+    @include center-content-row;
+    @include respond(hamburgermenu){
+                   margin-bottom: 30px;
+    }
+     @include respond9(sidebarDelete){
+           margin-top: 30px;
+        }
+     
 
-.border {
+.headerMenu {
     width: 100%;
     height: 40px;
-    border-top: 1px solid rgb(87, 74, 92);
+    @include center-content-row;
+    box-shadow: 0 4px 4px -4px rgb(157, 153, 161);
+
+    &_item {
+        width: 20%;
+        height: 40px;
+        font-size: .9rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        letter-spacing: 2px;
+        color: rgb(89, 74, 100);
+        @include center-content;
+        border-left: 1px solid rgb(202, 191, 211);
+        border-bottom: 1px solid rgb(182, 170, 192);
+        cursor: pointer;
+        background-image: linear-gradient(4deg,rgb(221, 214, 228), rgb(251, 249, 253));
+        transition: .5s ease-in-out;
+}      
+    }
+    &_item:hover{
+        color:rgb(255, 255, 255);
+        text-shadow: 0px 0px 1px rgb(17, 1, 24);
+    }
 }
 .sidebarContentWrapper {
     width: 100%;
@@ -21,16 +49,38 @@
     flex-direction: row;
 }
 
+ 
+
 .sidebar {
     background-image: url('../../assets/images/campagne3.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include center-content-column-top ;
     width: 20%;
     height: 2000px;
     margin-right: 10px;
 
+    .frame {
+        width: 80%;
+        height: 1800px;
+        border: 2px solid rgb(218, 209, 221);
+        margin-bottom: 20px;
+        padding: 20px;
+        @include center-content-column-top;
+    }
+
+
     @include respond1(removeSidebar){
+          display: none;
+        }
+         @include respond5(contentBreak){
+           background-image: url('../../assets/images/campagne5.jpg');
+           display: flex;
+            height: 4000px;
+           width: 50%;
+        }
+        @include respond9(sidebarDelete){
           display: none;
         }
 }
@@ -40,10 +90,32 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include center-content-column-top ;
     width: 20%;
     height: 2000px;
     margin-left: 10px;
+    .frame {
+        width: 80%;
+        height: 1800px;
+        border: 2px solid rgb(218, 209, 221);
+        margin-bottom: 20px;
+    }
+
+    .frame2 {
+        width: 80%;
+        height: 200px;
+        border: 2px solid rgb(218, 209, 221);
+    }
    @include respond1(removeSidebar){
+          display: none;
+        }
+        @include respond5(contentBreak){
+            background-image: url('../../assets/images/campagne6.jpg');
+           display: flex;
+            width: 50%;
+            height: 4000px;
+        }
+        @include respond9(sidebarDelete){
           display: none;
         }
 }

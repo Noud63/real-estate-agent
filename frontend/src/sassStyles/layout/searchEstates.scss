@@ -16,30 +16,38 @@
     width: 300px;
     height: 40px;
     font-size: 1rem;
-    color: rgb(101, 86, 110);
+    color: rgb(132, 116, 141);
     letter-spacing: 1px;
     font-weight: bold;
     border-radius: 5px;
      @include center-content;
-     border: 1px solid rgb(117, 102, 126);
+     border: 1px solid rgb(171, 158, 179);
+      @include respond5(contentBreak){
+           margin-bottom: 10px;
+        }
 }
 
 .selectop {
     width: 240px;
     height: 40px;
+    color: rgb(111, 94, 122);
     border-radius: 5px;
-    border-color: rgb(117, 102, 126);
+    outline: none;
+     border: 1px solid rgb(171, 158, 179);
+    border-color: rgb(171, 158, 179);
     @include respond5(contentBreak){
            width: 300px;
+           margin-bottom: 10px;
         }
 }
 
 .searchbtn {
     width: 120px;
     height: 40px;
-    background-image: linear-gradient(to top, rgb(119, 0, 0), red);
+    background-image: linear-gradient(to top, rgb(50, 39, 59), rgb(187, 172, 199));
     border-radius: 5px;
     border-style: none;
+    outline: none;
      @include respond5(contentBreak){
            width: 300px;
         }

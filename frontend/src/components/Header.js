@@ -86,6 +86,26 @@ const Header = () => {
         setShowMenu(false)
     }
 
+    const buttons = () => {
+        return (  
+            <>
+                <button className="buttons_btn" onClick={buy}>Buy</button>
+                <button className="buttons_btn" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+                <button className="buttons_btn" onClick={register}>Register</button>
+            </>
+        )
+    }
+
+    const buttonsOverlay = () => {
+        return (
+            <>
+                <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
+                <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+                <button className="buttons_btnOverlay" onClick={register}>Register</button>
+            </>
+        )
+    }
+
 
     return (
         <>
@@ -107,9 +127,7 @@ const Header = () => {
                     </div>
 
                     <div className="buttons">
-                        <button className="buttons_btn" onClick={buy}>Buy</button>
-                        <button className="buttons_btn" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                        <button className="buttons_btn" onClick={register}>Register</button>
+                       {buttons()}
                     </div>
                 </div>
 
@@ -117,13 +135,9 @@ const Header = () => {
             </div>
 
             {showMenu && size.width <= 800 ? <div className="menuOverlay show">
-                <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
-                <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                <button className="buttons_btnOverlay" onClick={register}>Register</button>
+                    {buttonsOverlay()}
             </div> : <div className="menuOverlay">
-                <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
-                <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                <button className="buttons_btnOverlay" onClick={register}>Register</button>
+                    {buttonsOverlay()}
             </div>}
         </>
     )
