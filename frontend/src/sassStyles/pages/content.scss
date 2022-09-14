@@ -4,7 +4,7 @@
 
 .borderTop {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     @include center-content-row;
     @include respond(hamburgermenu){
                    margin-bottom: 30px;
@@ -12,16 +12,25 @@
      @include respond9(sidebarDelete){
            margin-top: 30px;
         }
+    @include respond4(ellielogo){
+        margin-bottom: 60px;
+    }
      
 
 .headerMenu {
     width: 100%;
     height: 40px;
-    @include center-content-row;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     box-shadow: 0 4px 4px -4px rgb(157, 153, 161);
+    @include respond4(ellielogo){
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+        }    
 
     &_item {
-        width: 20%;
+        position: relative;
         height: 40px;
         font-size: .9rem;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -34,12 +43,21 @@
         background-image: linear-gradient(4deg,rgb(221, 214, 228), rgb(251, 249, 253));
         transition: .5s ease-in-out;
 }      
+        .top {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            height: 40px;
+            width: 100%;
+        }
+        .top:hover {
+                border-bottom: 3px solid rgb(99, 86, 119);
+            }
     }
-    &_item:hover{
-        color:rgb(255, 255, 255);
-        text-shadow: 0px 0px 1px rgb(17, 1, 24);
-    }
+    
 }
+
+
 .sidebarContentWrapper {
     width: 100%;
     display: flex;
@@ -50,7 +68,6 @@
 }
 
  
-
 .sidebar {
     background-image: url('../../assets/images/campagne3.jpg');
     background-position: center;
@@ -59,17 +76,7 @@
     @include center-content-column-top ;
     width: 20%;
     height: 2000px;
-    margin-right: 10px;
-
-    .frame {
-        width: 80%;
-        height: 1800px;
-        border: 2px solid rgb(218, 209, 221);
-        margin-bottom: 20px;
-        padding: 20px;
-        @include center-content-column-top;
-    }
-
+    margin-right: 0px;
 
     @include respond1(removeSidebar){
           display: none;
@@ -93,19 +100,8 @@
     @include center-content-column-top ;
     width: 20%;
     height: 2000px;
-    margin-left: 10px;
-    .frame {
-        width: 80%;
-        height: 1800px;
-        border: 2px solid rgb(218, 209, 221);
-        margin-bottom: 20px;
-    }
-
-    .frame2 {
-        width: 80%;
-        height: 200px;
-        border: 2px solid rgb(218, 209, 221);
-    }
+    margin-left: 0px;
+    
    @include respond1(removeSidebar){
           display: none;
         }
@@ -121,6 +117,9 @@
 }
 
 .content2 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 60%;
     display: flex;
     align-items: center;

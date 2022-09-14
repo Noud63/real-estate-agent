@@ -14,7 +14,7 @@ const Content = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
-    const [resPerPage, setResPerpage ] = useState(6)
+    const [resPerPage, setResPerpage ] = useState(5)
 
     // add page number to url
     const navigate = useNavigate();
@@ -35,7 +35,7 @@ const Content = () => {
         dispatch(getRealEstates())
         if (isSuccess) {
             setShow(true)
-        } else {
+        } else if (isError){
             console.log('No data!')
         }
     }, [dispatch, isSuccess])
@@ -65,7 +65,7 @@ const Content = () => {
         <>
             <div className="borderTop">
                 <div className="headerMenu">
-                    <div className="headerMenu_item">Home</div>
+                    <div className="headerMenu_item">Home<div className="top"></div></div>
                     <div className="headerMenu_item">Buy</div>
                     <div className="headerMenu_item">Service</div>
                     <div className="headerMenu_item">Finance</div>
@@ -73,6 +73,7 @@ const Content = () => {
                     <div className="headerMenu_item">Currency</div>
                 </div>
             </div>
+
             <div className="sidebarContentWrapper">
                 <div className="sidebar">
                 <div className="frame"></div>
@@ -101,7 +102,6 @@ const Content = () => {
                 </div>
                 <div className="sidebar2">
                     <div className="frame"></div>
-                    <div className="frame2"></div>
                 </div>
             </div>
         </>

@@ -42,11 +42,19 @@
     }
     }
 
+    &_content_box.three {
+          @include center-content-column;
+
+          .winner {
+                margin-top: 10px;
+          }
+    }
+
     &_content_box.two, .four,.six{
           background-color: rgb(35, 26, 39);
           @include respond2(gridcontainer) {
           background-color: rgb(20, 17, 26);
-    }
+        }
     }
     
     &_content_box {
@@ -58,11 +66,17 @@
             color: rgb(148, 129, 156);
             padding: 20px;
             background-color: rgb(20, 17, 26);
+            
+
+            &.contact {
+                  font-size: 1.2rem;
+                  display: flex;
+                  justify-content: space-around;
+            }
 
             .icons {
                   @include center-content-row;
-
-                  .icon {
+                    .icon {
                         padding: 5px;
                   }
             }

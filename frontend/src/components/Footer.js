@@ -5,6 +5,7 @@ import facebook from '../assets/icons/facebook.png'
 import instagram from '../assets/icons/instagram.png'
 import twitter from '../assets/icons/twitter.png'
 import linkedin from '../assets/icons/linkedin.png'
+import award from '../assets/icons/award.png'
 
 const Footer = () => {
     return (
@@ -23,16 +24,21 @@ const Footer = () => {
                 </div>
 
                 <div className="footer_content_box two">more info</div>
-                <div className="footer_content_box three">more info</div>
-                <div className="footer_content_box four">more info</div>
+                <div className="footer_content_box three">
+                    <img src={award} alt="" style={{ width: '120px', height: 'auto'}}/>
+                    <div className="winner">Winner Best Broker Award 2021</div>
+                    </div>
+                <div className="footer_content_box contact four"><span>Contact a branch</span><span>Contact us</span>
+                
+                </div>
                 <div className="footer_content_box five">
                     <div>
                         <div className="footer_content_rules">
                             Ellie Castelli is a Real Estate broker liscened by the state of France<br></br>
                             Ellie Castelli abides by Equal Housing Opportunity laws.<br></br>
                             License Number 01974638.<br />
-                            Changes in price, condition, sale or withdrawal may be made without notice.<br></br>
-                            All measurements and square footage are approximate.<br></br>
+                            {/* Changes in price, condition, sale or withdrawal may be made without notice.<br></br>
+                            All measurements and square footage are approximate.<br></br> */}
                         </div>
                     </div>
                 </div>

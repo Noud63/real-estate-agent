@@ -19,25 +19,32 @@
 
     .awards {
         position: absolute;
-        bottom: 10%;
-        left: 10%;
+        bottom: 35%;
+        left: 8%;
+        @include respond1(removeSidebar){
+                   bottom: 35%;
+              }
+              @include respond2(gridcontainer){
+                   bottom: 25%;
+              }
          @include respond8(removeaward){
               display: none;
         }
         .award {
             width: 180px;
-            transform: rotate(-15deg);
+            rotate: -15deg;
             -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
               filter: drop-shadow(0px 4px 1px rgb(64, 57, 71, .8));
               @include respond1(removeSidebar){
                    width: 120px;
+              }
               @include respond2(gridcontainer){
                    width: 100px;
+              }
+
               @include respond(hamburgermenu){
                    width: 80px;
-        }
-        }
-        }
+              }
         }
     }
     
@@ -46,7 +53,7 @@
         font-family:'Arial';
         font-size: 2rem;
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         width: 100%;
         heighT: 100px;
         color: rgb(129, 108, 129);
@@ -57,6 +64,7 @@
         @include respond2(gridcontainer){
               width: 445px;
               font-size: 1.6rem;
+               bottom: 0px;
         }
 
         @include respond5(contentBreak){
