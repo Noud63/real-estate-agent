@@ -77,6 +77,13 @@
 }
 
 //Media queries
+@mixin respond10($breakpoint) { 
+  @if $breakpoint == thirteenhundred {    
+    @media only screen and (max-width: 1300px) {
+      @content;
+    }
+  }
+}
 
 @mixin respond1($breakpoint) { 
   @if $breakpoint == removeSidebar {    

@@ -6,7 +6,7 @@ import ListItems from '../components/ListItems'
 import SearchEstates from '../components/SearchEstates'
 import Pagination from '../components/Pagination'
 import { useNavigate } from "react-router-dom"
-import provence from '../assets/images/provence2.jpg'
+import NewsLetter from '../components/NewsLetter'
 
 
 const Content = () => {
@@ -76,9 +76,11 @@ const Content = () => {
             </div>
                
             <div className="sidebarContentWrapper">
+
                 <div className="sidebar">
-                <div className="frame"></div>
+                    <div className="frame"><NewsLetter /></div>
                 </div>
+
                 <div className="content2">
                     <SearchEstates />
 
@@ -101,9 +103,9 @@ const Content = () => {
                             </div>
                 </div>
 
-                        <div className="sidebar2">
+                        {/* <div className="sidebar2">
                             <div className="frame"></div>
-                        </div>
+                        </div> */}
                 
             </div>
             <div className="blockBottom"></div>

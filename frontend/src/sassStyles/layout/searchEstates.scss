@@ -19,9 +19,9 @@
     color: rgb(132, 116, 141);
     letter-spacing: 1px;
     font-weight: bold;
-    border-radius: 5px;
-     @include center-content;
-     border: 1px solid rgb(171, 158, 179);
+    @include center-content;
+    border: 1px solid rgb(149, 136, 158);
+    border-right: 0;
       @include respond5(contentBreak){
            margin-bottom: 10px;
         }
@@ -31,23 +31,27 @@
     width: 240px;
     height: 40px;
     color: rgb(111, 94, 122);
-     background-color: rgb(20, 17, 26);
-    border-radius: 5px;
+    background-color: transparent;
+    border-right: 0px;
     outline: none;
     color: rgb(153, 142, 168);
-     border: 1px solid rgb(171, 158, 179);
-    border-color: rgb(171, 158, 179);
+    border-color: rgb(124, 110, 134);
     @include respond5(contentBreak){
            width: 300px;
            margin-bottom: 10px;
+           border: 1px solid rgb(149, 136, 158);
         }
+}
+
+select {
+      border: 1px solid rgb(73, 62, 80);
 }
 
 .searchbtn {
     width: 120px;
     height: 40px;
     background-image: linear-gradient(to top, rgb(50, 39, 59), rgb(187, 172, 199));
-    border-radius: 5px;
+    // border-radius: 5px;
     border-style: none;
     outline: none;
      @include respond5(contentBreak){

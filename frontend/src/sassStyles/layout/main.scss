@@ -3,10 +3,69 @@
 @import '../abstracts/mixins';
 
 .container {
+    position: relative;
     width: 100%;
     height: auto;
     margin-bottom: 0px;
+
+    .vote {
+   position: absolute;
+   @include center-content-column-start;
+   width: 55px;
+   height: 200px;
+   top: 37%;
+   left: 0;
+   z-index: 999;
+   border-bottom-right-radius: 20px;
+   border-top-right-radius: 20px;
+   background-color: rgb(60, 49, 73);
+
+   &_number {
+        @include center-content-column;
+       width: 100%;
+       height: 33%;
+       background-color: rgb(103, 92, 121);
+       padding-right: 5px;
+       .rating {
+          color: rgb(104, 185, 177);
+          font-size: 1.4rem;
+          font-weight:  bold;
+       }
+
+       .rate-us {
+          color: rgb(163, 163, 163);
+          font-size: .8rem;
+       }
+   }
+
+   &_share {
+       @include center-content-column;
+       width: 100%;
+       height: 33%;
+       background-color: rgb(75, 66, 88);
+       padding-right: 5px;
+       .rate-us {
+          color: rgb(163, 163, 163);
+          font-size: .8rem;
+       }
+   }
+
+   &_like {
+       @include center-content-column;
+       width: 100%;
+       height: 33%;
+       background-color: rgb(57, 49, 68);
+       padding-right: 5px;
+       color:rgb(163, 163, 163);
+        .rate-us {
+          color: rgb(136, 136, 136);
+          font-size: .8rem;
+       }
+   }
 }
+}
+
+
 
 .homepage_image {
     max-width: 100%;
@@ -17,7 +76,7 @@
     .awards {
         position: absolute;
         bottom: 35%;
-        left: 8%;
+        right: 8%;
         @include respond1(removeSidebar){
                    bottom: 35%;
               }
@@ -29,9 +88,13 @@
         }
         .award {
             width: 180px;
-            rotate: -15deg;
+            rotate: 15deg;
             -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
-              filter: drop-shadow(0px 4px 1px rgb(64, 57, 71, .8));
+              filter: drop-shadow(0px 5px 1px rgb(49, 44, 54));
+
+              @include respond10(thirteenhundred){
+                   width: 130px;
+              }
               @include respond1(removeSidebar){
                    width: 120px;
               }
