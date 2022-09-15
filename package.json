@@ -22,7 +22,6 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.6",
-    "nodemon": "^2.0.19",
-    "slick-carousel": "^1.8.1"
+    "nodemon": "^2.0.19"
   }
 }

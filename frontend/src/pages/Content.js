@@ -6,6 +6,7 @@ import ListItems from '../components/ListItems'
 import SearchEstates from '../components/SearchEstates'
 import Pagination from '../components/Pagination'
 import { useNavigate } from "react-router-dom"
+import provence from '../assets/images/provence2.jpg'
 
 
 const Content = () => {
@@ -14,7 +15,7 @@ const Content = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
-    const [resPerPage, setResPerpage ] = useState(5)
+    const [resPerPage, setResPerpage ] = useState(7)
 
     // add page number to url
     const navigate = useNavigate();
@@ -65,7 +66,7 @@ const Content = () => {
         <>
             <div className="borderTop">
                 <div className="headerMenu">
-                    <div className="headerMenu_item">Home<div className="top"></div></div>
+                    <div className="headerMenu_item">Home</div>
                     <div className="headerMenu_item">Buy</div>
                     <div className="headerMenu_item">Service</div>
                     <div className="headerMenu_item">Finance</div>
@@ -73,37 +74,40 @@ const Content = () => {
                     <div className="headerMenu_item">Currency</div>
                 </div>
             </div>
-
+               
             <div className="sidebarContentWrapper">
                 <div className="sidebar">
                 <div className="frame"></div>
                 </div>
                 <div className="content2">
-
                     <SearchEstates />
 
                     {errorMessage ? <div>No results match your search criteria!</div> : ""}
 
                     <ListItems newList={newList} show={show}/>
 
-                    <div className="btns">
-                        {pageNumbers.map(number => {
-                            return <Pagination key={number}
-                                number={number}
-                                filtered={filtered}
-                                currentNumber={currentNumber}
-                                setCurrentNumber={setCurrentNumber}
-                                resultsPerPage={resultsPerPage}
-                                newList={newList}
-                                setNewList={setNewList}
-                            />
-                        })}
-                    </div>
+                            <div className="btns">
+                                {pageNumbers.map(number => {
+                                    return <Pagination key={number}
+                                        number={number}
+                                        filtered={filtered}
+                                        currentNumber={currentNumber}
+                                        setCurrentNumber={setCurrentNumber}
+                                        resultsPerPage={resultsPerPage}
+                                        newList={newList}
+                                        setNewList={setNewList}
+                                    />
+                                })}
+                            </div>
                 </div>
-                <div className="sidebar2">
-                    <div className="frame"></div>
-                </div>
+
+                        <div className="sidebar2">
+                            <div className="frame"></div>
+                        </div>
+                
             </div>
+            <div className="blockBottom"></div>
+            <div className="blockBottom"></div>
         </>
     )
 }

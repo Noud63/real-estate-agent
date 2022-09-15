@@ -10,15 +10,17 @@
     @include center-content-column-top;
     @include respond2(gridcontainer) {
           height: 65rem;
+           border-top: 1px solid rgb(84, 73, 95);
     }
 
     @include respond5(contentBreak) {
           height: 125rem;
+         
     }
     
     &_content_gridContainer {
     width: 100%;
-    box-shadow: 0px 12px 18px black;
+    box-shadow: 0px 28px 28px -28px black;
     display: grid;
     grid-template-columns: repeat( 3, 1fr);
     grid-template-rows: repeat(2, 1fr); 

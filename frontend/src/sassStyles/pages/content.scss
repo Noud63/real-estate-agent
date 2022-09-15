@@ -4,16 +4,13 @@
 
 .borderTop {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     @include center-content-row;
-    @include respond(hamburgermenu){
-                   margin-bottom: 30px;
-    }
      @include respond9(sidebarDelete){
            margin-top: 30px;
         }
     @include respond4(ellielogo){
-        margin-bottom: 60px;
+        margin-bottom:40px;
     }
      
 
@@ -37,81 +34,83 @@
         letter-spacing: 2px;
         color: rgb(89, 74, 100);
         @include center-content;
-        border-left: 1px solid rgb(202, 191, 211);
+        border-left: 1px solid rgb(157, 145, 167);
         border-bottom: 1px solid rgb(182, 170, 192);
         cursor: pointer;
-        background-image: linear-gradient(4deg,rgb(221, 214, 228), rgb(251, 249, 253));
-        transition: .5s ease-in-out;
-}      
-        .top {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            height: 40px;
+        background: rgb(215, 210, 221);
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background: rgb(162, 154, 172);
+            color: white;
+        }
+       } 
+
+      }
+    }
+
+.blockTop {
+    height: 450px;
+    @include center-content-row-start;
+    background-image: linear-gradient(to top, rgb(20, 17, 26),  rgb(42, 36, 49));
+    border-bottom: 1px solid rgb(110, 101, 124);
+    &_imageBox {
+        width: 100%;
+         margin-left: 40px;
+          @include center-content-row-start;
+        &_image {
             width: 100%;
         }
-        .top:hover {
-                border-bottom: 3px solid rgb(99, 86, 119);
-            }
+        &_fulfill {
+            width: 500px;
+        }
     }
-    
 }
 
+.blockBottom {
+    height: 500px;
+    background-color: rgb(20, 17, 26);
+    border-top: 1px solid rgb(110, 101, 124);
+}
 
 .sidebarContentWrapper {
     width: 100%;
     display: flex;
-    height: auto;
+    height: 2070px;
     align-items: flex-start;
     justify-content: center;
     flex-direction: row;
+    //   border: 1px solid red;
+       background-color: rgb(20, 17, 26);
+
+      @include respond5(contentBreak){
+          height: 4000px;
+        }
 }
 
  
 .sidebar {
-    background-image: url('../../assets/images/campagne3.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(20, 17, 26);
     @include center-content-column-top ;
     width: 20%;
-    height: 2000px;
+    height: 2030px;
     margin-right: 0px;
+    margin-top: 20px;
 
     @include respond1(removeSidebar){
-          display: none;
-        }
-         @include respond5(contentBreak){
-           background-image: url('../../assets/images/campagne5.jpg');
-           display: flex;
-            height: 4000px;
-           width: 50%;
-        }
-        @include respond9(sidebarDelete){
           display: none;
         }
 }
 
 .sidebar2 {
-    background-image: url('../../assets/images/campagne4.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+   background-color: rgb(20, 17, 26);
     @include center-content-column-top ;
     width: 20%;
-    height: 2000px;
+    height: 2030px;
     margin-left: 0px;
+    margin-top: 20px;
     
    @include respond1(removeSidebar){
-          display: none;
-        }
-        @include respond5(contentBreak){
-            background-image: url('../../assets/images/campagne6.jpg');
-           display: flex;
-            width: 50%;
-            height: 4000px;
-        }
-        @include respond9(sidebarDelete){
           display: none;
         }
 }
@@ -125,15 +124,19 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    min-height: 100vh;
+    height: 2020px;
     background-color: transparent;
-    margin: 0 auto;
+    margin: 60px auto;
     color: rgb(76, 61, 78);
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 100px;
+    //   border: 1px solid red;
 
      @include respond1(removeSidebar){
           width: 96%;
+        }
+     @include respond5(contentBreak){
+          height: 4000px;
         }
 }
 
@@ -147,8 +150,8 @@
     width: 50px;
     height: 50px;
     border-style: none;
-    color: rgb(91, 81, 105);
-    background-color: rgb(240, 236, 245);
+    color: rgb(52, 44, 63);
+    background-color: rgb(158, 145, 173);
     box-shadow: 0px 1px 2px rgb(132, 116, 141);
     font-size: 1rem;
     cursor: pointer;
@@ -156,7 +159,7 @@
     margin-right: 5px;
 
     &.active {
-        background-color: rgb(169, 149, 173);
-         color: white;
+        background-color: rgb(90, 69, 94);
+         color: rgb(222, 208, 224);
     }
 }

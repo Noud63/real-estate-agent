@@ -31,8 +31,10 @@
     width: 240px;
     height: 40px;
     color: rgb(111, 94, 122);
+     background-color: rgb(20, 17, 26);
     border-radius: 5px;
     outline: none;
+    color: rgb(153, 142, 168);
      border: 1px solid rgb(171, 158, 179);
     border-color: rgb(171, 158, 179);
     @include respond5(contentBreak){
