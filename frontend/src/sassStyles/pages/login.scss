@@ -4,7 +4,7 @@
 
 
 .container3 {
-    margin: 80px auto;
+    margin: 50px auto;
     width: 315px;
     min-height: 100vh;
 }
@@ -27,9 +27,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgb(87, 77, 99);
+    border: 1px solid rgb(148, 133, 156); 
+    color: rgb(168, 151, 179);
     margin-bottom: 10px;
-    color: rgb(197, 197, 197);
     height: 50px;
     font-size: 1.2rem;
     font-family:Arial, Helvetica, sans-serif;
@@ -50,6 +50,11 @@
     flex-direction: column;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.pass2 {
+  width: 100%;
+  color: rgb(168, 156, 180);
 }
 
 input[name="username3"]{
@@ -83,10 +88,12 @@ input[name="password3"] {
     height: 50px;
     background-color: rgb(87, 77, 99);
     width: 315px;
+    color: rgb(177, 164, 184);
     border-style: none;
+    border-top: 2px solid rgb(117, 106, 131);
+    border-bottom: 2px solid rgb(49, 45, 56);
     font-size: 1.2rem;
-    font-family:Arial, Helvetica, sans-serif;
-    color:rgb(212, 203, 223)
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 ::placeholder {
@@ -104,7 +111,7 @@ label {
     justify-content: flex-start;
     margin-top: 10px;
     margin-bottom: 10px;
-   color: rgb(63, 56, 73);
+  color: rgb(168, 156, 180);
 }
 
 input[type="checkbox"] {
@@ -199,3 +206,13 @@ input[type="checkbox"] {
     height: 40px;
     @include center-content;
 }
+
+.goToRegisterText {
+    color: rgb(151, 133, 163);
+}
+
+
+ input[type="checkbox"] {
+  filter: invert(100%) hue-rotate(8deg) brightness(1.7);
+}
+

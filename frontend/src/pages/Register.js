@@ -176,7 +176,7 @@ const Register = () => {
                 </form>
             </div>
             <div className="goToLogin">
-                <Link to='/login' style={{ textDecoration: 'none' }}>Already registered? Go to Login</Link>
+                <Link to='/login' style={{ textDecoration: 'none' }} className="goToLoginText ">Already registered? Go to Login</Link>
             </div>
         </div>
     )

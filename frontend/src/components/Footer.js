@@ -5,7 +5,7 @@ import facebook from '../assets/icons/facebook.png'
 import instagram from '../assets/icons/instagram.png'
 import twitter from '../assets/icons/twitter.png'
 import linkedin from '../assets/icons/linkedin.png'
-import award from '../assets/icons/award.png'
+import award from '../assets/icons/award2.png'
 
 const Footer = () => {
     return (
@@ -26,9 +26,20 @@ const Footer = () => {
                 <div className="footer_content_box two">more info</div>
                 <div className="footer_content_box three">
                     <img src={award} alt="" style={{ width: '120px', height: 'auto'}}/>
-                    <div className="winner">Winner Best Broker Award 2021</div>
+                    <div className="winner">Winner Best Broker Award 2019 & 2021</div>
                     </div>
-                <div className="footer_content_box contact four"><span>Contact a branch</span><span>Contact us</span>
+                <div className="footer_content_box contact four">
+                    <div className="contactInfo headOffice">
+                        <span className="contactInfo_title">Head office:</span>
+                        <span className="contactInfo_address">Monaco</span>
+                    </div>
+                    <div className="contactInfo branch">
+                        <span className="contactInfo_title">Contact a branch:</span>
+                        <span className="contactInfo_address">London</span>
+                        <span className="contactInfo_address">Abu Dhabi</span>
+                        <span className="contactInfo_address">Bern</span>
+                    </div>
+                    
                 
                 </div>
                 <div className="footer_content_box five">

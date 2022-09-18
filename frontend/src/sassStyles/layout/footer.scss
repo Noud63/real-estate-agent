@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     height: 48rem;
-    background-color: rgb(20, 17, 26);
+    background-color: rgb(27, 22, 34);
     @include center-content-column-top;
     @include respond2(gridcontainer) {
           height: 65rem;
@@ -24,7 +24,9 @@
     display: grid;
     grid-template-columns: repeat( 3, 1fr);
     grid-template-rows: repeat(2, 1fr); 
-    
+    gap: 1px;
+    background-color: rgb(130, 116, 151);
+    border-top: 1px solid  rgb(130, 116, 151);
 
     @include respond2(gridcontainer) {
           grid-template-columns: repeat( 2, 1fr);
@@ -46,17 +48,36 @@
 
     &_content_box.three {
           @include center-content-column;
-
           .winner {
                 margin-top: 10px;
           }
     }
 
-    &_content_box.two, .four,.six{
-          background-color: rgb(35, 26, 39);
-          @include respond2(gridcontainer) {
-          background-color: rgb(20, 17, 26);
-        }
+    &_content_box.four {
+         
+           @include center-content-row;
+          .contactInfo {
+                 font-size: 1rem;
+                width: 50%;
+                height: 120px;
+                @include center-content-column-start-top;
+
+                &.branch {
+                      border-left: 1px solid rgb(115, 105, 128);
+                }
+
+                &_title {
+                      width: 100%;
+                      padding: 10px;
+                      margin-bottom: 10px;
+                      font-weight: bold;
+                      border-bottom: 1px solid rgb(115, 105, 128);
+                }
+
+                &_address {
+                      padding-left: 10px;
+                }
+          }
     }
     
     &_content_box {
@@ -67,7 +88,7 @@
             height: 18rem;
             color: rgb(148, 129, 156);
             padding: 20px;
-            background-color: rgb(20, 17, 26);
+            background-color: rgb(27, 22, 34);
             
 
             &.contact {
@@ -92,13 +113,11 @@
               align-items: center;
               justify-content: flex-start;
               flex-direction: column;
-
               @include respond5(contentBreak) {
               align-items: center;
               justify-content: center;
-              
-    }
             }
+        }
     }
 
     &_content_title {

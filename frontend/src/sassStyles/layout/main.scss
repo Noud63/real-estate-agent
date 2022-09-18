@@ -7,18 +7,36 @@
     width: 100%;
     height: auto;
     margin-bottom: 0px;
+    transition: .5s ease-in-out;
 
     .vote {
    position: absolute;
    @include center-content-column-start;
    width: 55px;
    height: 200px;
-   top: 37%;
+   top: 31.5%;
    left: 0;
    z-index: 999;
    border-bottom-right-radius: 20px;
    border-top-right-radius: 20px;
    background-color: rgb(60, 49, 73);
+
+   @include respond2(gridcontainer){
+        @include center-content-row;
+        width:180px;
+        height: 55px;
+        top: 140px;
+        border-radius: 0;
+   }
+
+   @include respond(hamburgermenu){
+       display: none;
+   }
+
+   button {
+       border-style: none;
+       outline: none;
+   }
 
    &_number {
         @include center-content-column;
@@ -26,6 +44,12 @@
        height: 33%;
        background-color: rgb(103, 92, 121);
        padding-right: 5px;
+       cursor: pointer;
+        @include respond2(gridcontainer){
+           width: 33%;
+           height: 100%;
+           padding-right: 0;
+         }
        .rating {
           color: rgb(104, 185, 177);
           font-size: 1.4rem;
@@ -44,9 +68,17 @@
        height: 33%;
        background-color: rgb(75, 66, 88);
        padding-right: 5px;
+       @include respond2(gridcontainer){
+           width: 33%;
+           height: 100%;
+           padding-right: 0;
+           padding-top: 5px;
+         }
+        cursor: pointer;
        .rate-us {
           color: rgb(163, 163, 163);
           font-size: .8rem;
+          padding-top: 2px;
        }
    }
 
@@ -54,18 +86,99 @@
        @include center-content-column;
        width: 100%;
        height: 33%;
-       background-color: rgb(57, 49, 68);
+       background-color: rgb(27, 22, 34);
        padding-right: 5px;
        color:rgb(163, 163, 163);
+       cursor: pointer;
+       @include respond2(gridcontainer){
+           width: 33%;
+           height: 100%;
+           padding-right: 0px;
+           padding-top: 5px;
+         }
         .rate-us {
           color: rgb(136, 136, 136);
           font-size: .8rem;
        }
-   }
-}
+     }
+  }
 }
 
+.voteModal {
+    position: relative;
+    @include center-content;
+    top: 50vh;
+    right: 0;
+    background-color: rgb(84, 67, 94, .7);
+    z-index:999;
+    transition: .5s ease-in-out;
 
+    &_content {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        @include center-content-column;
+        border-radius: 10px;
+        padding: 5px;
+        border: 2px solid rgb(172, 161, 185);
+        background-color:  rgb(124, 109, 138, 0);
+        box-shadow: 0px 0px 30px rgb(0, 0, 0);
+
+        &_box {
+            @include spacebetween-content;
+            width: 100%;
+            height: 40px;
+            padding: 8px;
+            border-radius: 10px;
+            margin-bottom: 2px;
+            background-color:  rgba(197, 182, 206, 1);
+            font-size: 1rem;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(17, 15, 20);
+
+            .closeModal {
+                padding-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &_content_numbers {
+        width: 100%;
+        height: 90%;
+        gap: 2px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    &_content_numbers div {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+         @include center-content;
+         background-color:  rgba(197, 182, 206, 1);
+         font-size: 1.6rem;
+         font-family: Arial, Helvetica, sans-serif;
+         color: rgb(30, 25, 39);
+         cursor:pointer;
+    }
+}
+
+.selectRating {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background-color: rgb(103, 92, 121);
+}
+
+.showOptions {
+        display: flex;
+        left: 55px;
+}
 
 .homepage_image {
     max-width: 100%;
@@ -75,7 +188,7 @@
 
     .awards {
         position: absolute;
-        bottom: 35%;
+        bottom: 25%;
         right: 8%;
         @include respond1(removeSidebar){
                    bottom: 35%;
@@ -90,7 +203,7 @@
             width: 180px;
             rotate: 15deg;
             -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
-              filter: drop-shadow(0px 5px 1px rgb(49, 44, 54));
+              filter: drop-shadow(0px 3px 1px rgb(49, 44, 54));
 
               @include respond10(thirteenhundred){
                    width: 130px;
@@ -113,18 +226,26 @@
         font-family:'Arial';
         font-size: 2rem;
         position: absolute;
-        bottom: 20px;
+        bottom: 0px;
         width: 100%;
-        heighT: 100px;
-        color: rgb(129, 108, 129);
+        height: 120px;
         word-spacing: 5px;
         letter-spacing: 5px;
         font-weight: bold;
+        background-color: rgb(27, 22, 34);
+        border-top: 1px solid rgb(110, 100, 126);
+        border-bottom: 1px solid rgb(110, 100, 126);
+
+        @include respond10(thirteenhundred){
+                   background-color: transparent;
+                   color: rgb(129, 108, 129);
+                   border: 0;
+                   border-top: 0;
+              }
 
         @include respond2(gridcontainer){
-              width: 445px;
               font-size: 1.6rem;
-               bottom: 0px;
+               bottom: -10px;
         }
 
         @include respond5(contentBreak){
@@ -137,16 +258,16 @@
 
         @include respond(hamburgermenu) {
         font-size: 1.4rem;
-         width: 420px;
+       bottom: -20px;
         }
 
          @include respond9(sidebarDelete){
-           bottom: -40px;
+           bottom: -50px;
         }
 
         @include respond3(smallest){
             font-size: 1.2rem;
-         width: 310px;
+        //  width: 310px;
         }
 
         @include respond8(removeaward){
@@ -156,8 +277,11 @@
 
     .castlesandchateaux {
          @include center-content-row;
-        color:rgb(97, 73, 97);
+        color:rgb(168, 140, 168);
         width: 100%;
+         @include respond10(thirteenhundred){
+                   color:rgb(97, 73, 97);
+              }
     }
 
     .luxury_real_estate {
@@ -165,6 +289,7 @@
         font-size: 1rem;
         margin-top: 10px;
         width: 100%;
+        color: rgb(112, 85, 112);
         padding-bottom: 10px;
         @include center-content-row;
 

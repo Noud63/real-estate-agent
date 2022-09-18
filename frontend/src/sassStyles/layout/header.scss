@@ -142,7 +142,7 @@
     bottom: 0;
     top: 0;
     right: -100%;
-    background-color: rgb(96, 83, 109, .7);
+    background-color: rgba(50, 41, 58, .8);
     transition: .3s ease-in-out;
     z-index: 2;
 }
@@ -157,7 +157,7 @@
         margin-right: 10px;
         padding: 15px;
         border-radius: 5px calc(5px * 10);
-        border: 2px solid rgb(197, 174, 197);
+        border: 2px solid rgb(150, 136, 163);
         background-color: rgb(70, 54, 77);
         color:  rgb(206, 188, 214);
         cursor: pointer;
@@ -167,6 +167,6 @@
 .buttons_btnOverlay:hover {
         border: 2px solid rgb(221, 212, 226);
         transition: .3s ease-in-out;
-        box-shadow: 0px 2px 6px rgb(43, 33, 46);
+        box-shadow: 0px 4px 26px rgb(53, 38, 59);
         color:  rgb(227, 219, 231);
     }

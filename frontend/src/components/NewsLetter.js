@@ -1,20 +1,13 @@
 import React, { useState, useRef } from 'react'
 import '../sassStyles/layout/NewsLetter.scss'
-import closeIcon from '../assets/icons/close.png'
-import logo from '../assets/icons/ellielogo4.png'
 import emailjs from '@emailjs/browser';
 
-const NewsLetter = ({ showForm, setShowForm, setExpand, propertyName }) => {
+const NewsLetter = () => {
 
     const [success, setSuccess] = useState("Submit");
 
     const btnRef = useRef(null)
     const form = useRef();
-
-    const closeForm = () => {
-        setShowForm(false)
-        setExpand(false)
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,20 +38,17 @@ const NewsLetter = ({ showForm, setShowForm, setExpand, propertyName }) => {
                 <div className="newsLetter_inputfields">
 
                     <div className="newsLetter_inputfields_name">
-                        {/* <label>Name:</label> */}
                         <input type="text" placeholder="name" name="from_name" required />
-
-                        {/* <label>Telephone number:</label> */}
                         <input type="text" placeholder="telephone" name="from_telephone" required />
                     </div>
 
                     <div className="newsLetter_inputfields_name2">
-                        {/* <label>Email:</label> */}
                         <input type="email" placeholder="email" name="from_email" required />
                         <div className="sendRequestBtn"><button type="submit" value="send" ref={btnRef}>{success}</button></div>
                     </div>
-
+                    
                 </div>
+                <div className="newsLetter_footer">*newsletter will be send once a month</div>
             </form>
         </div>
     )

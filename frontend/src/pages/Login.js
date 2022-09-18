@@ -76,7 +76,7 @@ const onErrors = errors => console.error(errors);
             <form onSubmit={handleSubmit(submitForm, onErrors)} className="form">
 
                 <div className="name2">
-                    <label htmlFor="username">Username: </label>
+                    <label htmlFor="username" className="pass2">Username: </label>
                     <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                         {errors.username && <div>{errors.username.message}</div>}
                     </div>
@@ -84,7 +84,7 @@ const onErrors = errors => console.error(errors);
                 </div>
 
                 <div className="pw">
-                    <label htmlFor="password" className="pass">Password: </label>
+                    <label htmlFor="password" className="pass2">Password: </label>
                     <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                         {errors.password && <div>{errors.password.message}</div>}
                     </div>
@@ -103,7 +103,7 @@ const onErrors = errors => console.error(errors);
             {/* {showMessage ? <div>You are already logged in!</div> : ""} */}
 
             <div className="goToRegister">
-                <Link to='/register' style={{ textDecoration: 'none' }}>Not registered? Go to Register.</Link>
+                <Link to='/register' style={{ textDecoration: 'none' }} className="goToRegisterText">Not registered? Go to Register.</Link>
             </div>
         </div>
     )

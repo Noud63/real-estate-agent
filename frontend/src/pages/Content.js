@@ -76,10 +76,15 @@ const Content = () => {
             </div>
                
             <div className="sidebarContentWrapper">
+               
 
                 <div className="sidebar">
                     <div className="frame"><NewsLetter /></div>
+                    <div className="frame2">
+                        <div className="frame2_sold">SOLD</div>
+                    </div>
                 </div>
+
 
                 <div className="content2">
                     <SearchEstates />
@@ -109,7 +114,7 @@ const Content = () => {
                 
             </div>
             <div className="blockBottom"></div>
-            <div className="blockBottom"></div>
+            <div className="blockBottom2"></div>
         </>
     )
 }

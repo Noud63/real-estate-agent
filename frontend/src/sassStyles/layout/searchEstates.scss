@@ -24,6 +24,7 @@
     border-right: 0;
       @include respond5(contentBreak){
            margin-bottom: 10px;
+           border-right: 1px solid rgb(149, 136, 158);
         }
 }
 
@@ -50,9 +51,9 @@ select {
 .searchbtn {
     width: 120px;
     height: 40px;
-    background-image: linear-gradient(to top, rgb(50, 39, 59), rgb(187, 172, 199));
-    // border-radius: 5px;
-    border-style: none;
+    background-image: linear-gradient(to top, rgb(87, 72, 99), rgb(187, 172, 199));
+    border: 0;
+    border-top: 1px solid white;
     outline: none;
      @include respond5(contentBreak){
            width: 300px;
