@@ -51,7 +51,7 @@
            padding-right: 0;
          }
        .rating {
-          color: rgb(104, 185, 177);
+          color: rgb(255, 192, 19);
           font-size: 1.4rem;
           font-weight:  bold;
        }
@@ -109,9 +109,7 @@
     @include center-content;
     top: 50vh;
     right: 0;
-    background-color: rgb(84, 67, 94, .7);
     z-index:999;
-    transition: .5s ease-in-out;
 
     &_content {
         position: absolute;
@@ -120,9 +118,9 @@
         @include center-content-column;
         border-radius: 10px;
         padding: 5px;
-        border: 2px solid rgb(172, 161, 185);
+        border: 2px solid rgb(198, 191, 207);
         background-color:  rgb(124, 109, 138, 0);
-        box-shadow: 0px 0px 30px rgb(0, 0, 0);
+        box-shadow: 0px 0px 50px rgb(0, 0, 0);
 
         &_box {
             @include spacebetween-content;
@@ -130,10 +128,13 @@
             height: 40px;
             padding: 8px;
             border-radius: 10px;
-            margin-bottom: 2px;
-            background-color:  rgba(197, 182, 206, 1);
+            border-right: 1px solid rgb(237, 234, 241);
+            border-top: 1px solid rgb(237, 234, 241);
+            margin-bottom: 4px;
+            background-color:  rgb(196, 188, 204);
             font-size: 1rem;
             font-family: Arial, Helvetica, sans-serif;
+            box-shadow: -1px 1px 0px 1px rgb(78, 72, 85);
             color: rgb(17, 15, 20);
 
             .closeModal {
@@ -146,23 +147,13 @@
     &_content_numbers {
         width: 100%;
         height: 90%;
-        gap: 2px;
+        gap: 4px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
 
-    &_content_numbers div {
-        height: 100%;
-        width: 100%;
-        border-radius: 10px;
-         @include center-content;
-         background-color:  rgba(197, 182, 206, 1);
-         font-size: 1.6rem;
-         font-family: Arial, Helvetica, sans-serif;
-         color: rgb(30, 25, 39);
-         cursor:pointer;
-    }
+    
 }
 
 .selectRating {
@@ -262,12 +253,12 @@
         }
 
          @include respond9(sidebarDelete){
-           bottom: -50px;
+           bottom: -30px;
         }
 
         @include respond3(smallest){
             font-size: 1.2rem;
-        //  width: 310px;
+              bottom: -50px;
         }
 
         @include respond8(removeaward){
@@ -277,7 +268,7 @@
 
     .castlesandchateaux {
          @include center-content-row;
-        color:rgb(168, 140, 168);
+        color:rgb(153, 140, 168);
         width: 100%;
          @include respond10(thirteenhundred){
                    color:rgb(97, 73, 97);
@@ -318,9 +309,9 @@
         }
     }
 
-        @include respond4(ellielogo){
-             margin-bottom: 20px;
-        }
+        // @include respond4(ellielogo){
+        //     margin-bottom: 20px;
+        // }
 
 .c5_image {
     width: 100%;

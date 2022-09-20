@@ -82,6 +82,7 @@ const Content = () => {
                     <div className="frame"><NewsLetter /></div>
                     <div className="frame2">
                         <div className="frame2_sold">SOLD</div>
+                        
                     </div>
                 </div>
 
@@ -108,9 +109,6 @@ const Content = () => {
                             </div>
                 </div>
 
-                        {/* <div className="sidebar2">
-                            <div className="frame"></div>
-                        </div> */}
                 
             </div>
             <div className="blockBottom"></div>

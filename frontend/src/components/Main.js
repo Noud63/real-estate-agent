@@ -1,10 +1,11 @@
-import React, {useState, useRef} from 'react'
+import React, {useState} from 'react'
 import header from '../assets/images/header.jpg'
 import '../sassStyles/layout/main.scss'
 import award from '../assets/icons/award.png'
 import heart from '../assets/icons/heartgrey.png'
 import heartred from '../assets/icons/heartred.png'
 import arrow from '../assets/icons/arrow.png'
+import RatingButtons from './RatingButtons'
 
 const Main = () => {
 
@@ -13,14 +14,18 @@ const Main = () => {
     const [ showOptions , setShowOptions ] = useState(false)
     const [ showModal, setShowModal ] = useState(false)
 
+    const nums = [0,1,2,3,4,5]
 
     const rate = () => {
         setShowModal(true)
     }
 
-    const yourRating =(e) => {
-        setRating(e.target.textContent)
-    }
+    // const yourRating =(e) => {
+    //     setRating(e.target.textContent)
+        
+    //             setActiveBtn(prev => !prev)
+        
+    // }
 
     const closeModal = () => {
         setShowModal(false)
@@ -46,13 +51,10 @@ const Main = () => {
                        <div className="closeModal" onClick={closeModal}>Close X</div>
                    </div>
                   
-                    <div className="voteModal_content_numbers" onClick={yourRating}>
-                       <div>0</div>
-                       <div>1</div>
-                       <div>2</div>
-                       <div>3</div>
-                       <div>4</div>
-                       <div>5</div>
+                   <div className="voteModal_content_numbers">
+                       {nums.map( num => {
+                           return <RatingButtons num={num} setRating={setRating} key={num}/>
+                       })}
                    </div>
                        
                     </div>

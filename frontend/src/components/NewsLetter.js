@@ -48,7 +48,7 @@ const NewsLetter = () => {
                     </div>
                     
                 </div>
-                <div className="newsLetter_footer">*newsletter will be send once a month</div>
+                <div className="newsLetter_footer">*newsletter will be sent once a month</div>
             </form>
         </div>
     )

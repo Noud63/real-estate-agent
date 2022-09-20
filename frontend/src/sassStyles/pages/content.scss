@@ -5,12 +5,11 @@
 .borderTop {
     width: 100%;
     margin-bottom: 0px;
+    background-color: white;
     @include center-content-row;
-     @include respond9(sidebarDelete){
-           margin-top: 30px;
-        }
     @include respond4(ellielogo){
-        margin-bottom:40px;
+        margin-bottom:30px;
+        padding-top:30px;
     }
      
 
@@ -34,10 +33,13 @@
         color: rgb(43, 34, 49);
         @include center-content;
         border-left: 1px solid rgb(157, 145, 167);
-        // border-bottom: 1px solid rgb(182, 170, 192);
         cursor: pointer;
         background: rgb(209, 200, 219);
         transition: all .5s ease-in-out;
+
+        @include respond4(ellielogo){
+          border-bottom: 1px solid rgb(157, 145, 167);
+        }    
 
         &:hover {
             background: rgb(130, 122, 141);
@@ -84,7 +86,6 @@
     height: auto;
     justify-content: space-around;
     flex-direction: row;
-    // border: 1px solid red;
     background-color: rgb(27, 22, 34);
     @include respond5(contentBreak){
           height: 4000px;
@@ -92,8 +93,7 @@
 
 }
 
- 
-.sidebar {
+ .sidebar {
     background-color: rgb(27, 22, 34);
     width: 30%;
     height: auto;
@@ -112,7 +112,7 @@
         .frame2 {
             @include center-content-column-top;
             width: 100%;
-            height: 1700px;
+            height: 1750px;
             background-image: linear-gradient(to bottom,  rgb(50, 43, 59, 50%),  rgb(50, 43, 59, .1));
             color: rgb(178, 168, 196);
             margin-top: 30px;
@@ -122,31 +122,18 @@
         }
 }
 
-// .sidebar2 {
-//    background-color: rgb(20, 17, 26);
-//     @include center-content-column-top ;
-//     width: 20%;
-//     height: 2030px;
-//     margin-left: 0px;
-//     margin-top: 20px;
-    
-//    @include respond1(removeSidebar){
-//           display: none;
-//         }
-// }
-
 .content2 {
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    height: 2020px;
+    height: 2055px;
     background-color: transparent;
     margin-top: 60px;
     color: rgb(76, 61, 78);
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     // border: 1px solid red;
 
      @include respond1(removeSidebar){

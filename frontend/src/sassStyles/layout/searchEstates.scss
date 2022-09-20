@@ -35,6 +35,7 @@
     background-color: transparent;
     border-right: 0px;
     outline: none;
+    padding-left: 10px;
     color: rgb(153, 142, 168);
     border-color: rgb(124, 110, 134);
     @include respond5(contentBreak){

@@ -63,7 +63,7 @@
                 @include center-content-column-start-top;
 
                 &.branch {
-                      border-left: 1px solid rgb(115, 105, 128);
+                      border-left: 1px solid rgb(97, 89, 107);
                 }
 
                 &_title {
@@ -86,7 +86,7 @@
             justify-content: center;
             flex-direction: row;
             height: 18rem;
-            color: rgb(148, 129, 156);
+            color: rgb(134, 123, 145);
             padding: 20px;
             background-color: rgb(27, 22, 34);
             
@@ -144,7 +144,7 @@
             bottom: 0;
             height: 30px;
             background-color: black;
-            color:rgb(88, 71, 92);
+            color:rgb(98, 84, 107);
             @include center-content;
             font-size: .8rem;
       }
@@ -160,7 +160,7 @@
       display: grid;
       grid-template-columns: repeat( 4, 1fr);
       grid-template-rows: repeat(1, 1fr);
-      color:  rgb(146, 124, 151);
+      color:  rgb(126, 115, 138);
       gap: 1px;  
       @include respond5(contentBreak) {
           grid-template-columns: repeat( 2, 1fr);

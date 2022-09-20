@@ -93,11 +93,11 @@ const Header = () => {
 
     const buttonsOverlay = () => {
         return (
-            <>
+            <div className="buttonsBox">
                 <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
                 <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
                 <button className="buttons_btnOverlay" onClick={register}>Register</button>
-            </>
+            </div>
         )
     }
 
@@ -105,7 +105,8 @@ const Header = () => {
     return (
         <>
             <div className={scrolled ? "header" : "header header_hide"}>
-                <div className="header_france">Country: France &nbsp;-&nbsp; Regions: All Regions + Monaco</div>
+               
+                <div className="header_france"><div className="frame2_driehoek"></div><span>Country: France &nbsp;-&nbsp; Regions: All Regions + Monaco</span><div className="frame2_driehoek"></div></div>
                 <div className="header_content">
 
                     <div className="header_content_iconandtitle" onClick={backHome}>
