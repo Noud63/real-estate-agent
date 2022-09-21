@@ -6,7 +6,7 @@ Back-end&nbsp;  : Express - MongoDB - Mongoose - Node<br><br><br>
 
 
 
-![elliecastelli](https://user-images.githubusercontent.com/38325801/191254140-15d6d734-ccf4-42bd-b69e-171f9264d16b.png)<br><br><br>
+![elliecastelli](https://user-images.githubusercontent.com/38325801/191538687-bd5ec85d-1983-4625-a7dd-44bc67a1a288.png)<br><br><br>
 
 ![elliecastelli5](https://user-images.githubusercontent.com/38325801/191537810-c5efd57b-b7f6-4553-9268-56c1e42b7c28.png)<br><br><br>
 
