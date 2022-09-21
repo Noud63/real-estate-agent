@@ -17,7 +17,7 @@ const Content = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
-    const [resPerPage, setResPerpage ] = useState(7)
+    const [resPerPage, setResPerpage ] = useState(5)
 
     // add page number to url
     const navigate = useNavigate();
@@ -77,18 +77,10 @@ const Content = () => {
                 </div>
             </div>
                
-            <div className="sidebarContentWrapper">
-               
-                {/* <div className="sidebar">
-                    <div className="frame"><NewsLetter /></div>
-                    <div className="frame2">
-                        <div className="frame2_sold">SOLD</div>
-                    </div>
-                </div> */}
-
+            <div className="contentWrapper">
 
                 <div className="content2">
-                    <SearchEstates />
+                    <SearchEstates setCurrentNumber={setCurrentNumber} currentNumber={currentNumber}/>
 
                     {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
 
@@ -110,9 +102,10 @@ const Content = () => {
                 </div>
 
                 <div className="sidebar">
+                    
                     <div className="sidebar_content"><NewsLetter /></div>
                         <div className="sidebar_content2">
-
+                          <div className="recentlySold">Recently Sold Properties:</div>
                             <div className="imageBox">
                                 <div className="fulfillimg"><img src={fulfillyourdream} alt="" style={{ width: '100%', height: 'auto' }} /></div>
                                 <div className="fulfilltext"><span className="soldChateau">Chateau de Tourreau</span><span className="soldPrice">$5.890.000,-</span></div>
@@ -124,11 +117,9 @@ const Content = () => {
                         </div>
                         </div>
                     </div>
-                </div>
-
-            <div className="content_block">
-                {/* <div className="frame"><NewsLetter /></div> */}
             </div>
+
+            <div className="content_block"></div>
             <div className="content_block2"></div>
         </>
     )

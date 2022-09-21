@@ -80,25 +80,23 @@
     border-top: 1px solid rgb(110, 101, 124);
 }
 
-.sidebarContentWrapper {
+.contentWrapper {
     width: 100%;
     display: flex;
-    height: auto;
+    height: 1650px;
     justify-content: space-around;
     flex-direction: row;
     background-color: rgb(27, 22, 34);
     @include respond5(contentBreak){
           height: 4000px;
         }
-
 }
 
  .sidebar {
     background-color: rgb(27, 22, 34);
     width: 30%;
-    height: auto;
+    height: 1550px;
     margin-top: 60px;
-    // border: 1px solid red;
 
     @include respond1(removeSidebar){
           display: none;
@@ -112,13 +110,22 @@
         &_content2 {
             @include center-content-column-top;
             width: 100%;
-            height: 1750px;
-            background-image: linear-gradient(to bottom,  rgb(50, 43, 59, 50%),  rgb(50, 43, 59, .1));
+            height: 1245px;
+            background-image: linear-gradient(to bottom,  rgb(50, 43, 59, 50%),  rgba(18, 15, 22, 0.4));
             color: rgb(178, 168, 196);
             margin-top: 30px;
             border-top: 1px solid rgb(121, 112, 131);
-            border-bottom: 2px solid rgb(6, 5, 7);
+            border-bottom: 2px solid rgb(0, 0, 0);
             padding: 20px;
+
+            .recentlySold {
+                width: 100%;
+                height: 30px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1rem;
+                 border-bottom: 1px solid rgb(162, 149, 175);
+                 margin-bottom: 30px;
+            }
 
             & .imageBox {
                 position: relative;
@@ -148,9 +155,13 @@
                 letter-spacing: 2px;
                 color: rgb(188, 177, 206);
                 z-index: 999;
+                @include respond10(thirteenhundred){
+                     font-size: .9rem;
+                }
 
                 .soldPrice {
-                    color: rgb(228, 0, 0);
+                    color: rgb(197, 0, 0);
+                    font-weight: bold;
                 }
                 }
             }
@@ -163,7 +174,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    height: 2010px;
+    height: 1550px;
     background-color: transparent;
     margin-top: 60px;
     color: rgb(76, 61, 78);

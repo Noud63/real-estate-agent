@@ -4,7 +4,7 @@ import { filteredProperties } from '../features/estateSlice'
 import '../sassStyles/layout/searchEstates.scss'
 import reset from '../assets/icons/reset.png'
 
-const SearchEstates = () => {
+const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
 
     const [region, setRegion] = useState("");
     const [livingSpace, setLivingSpace] = useState("");
@@ -29,6 +29,8 @@ const SearchEstates = () => {
                 est.area.match(new RegExp(foundPlotSize, 'gi'))
             )
         });
+
+        if(currentNumber > 1) setCurrentNumber(1)
         dispatch(filteredProperties(result))
     }, [dispatch, livingSpace, plotSize, realestate, region]);
 
@@ -39,6 +41,7 @@ const SearchEstates = () => {
         setLivingSpace("")
         setPlotSize("")
         dispatch(filteredProperties(realestate))
+        setCurrentNumber(1)
     }
 
     return (

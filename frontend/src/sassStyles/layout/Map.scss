@@ -48,13 +48,21 @@
 .enquiry {
     width: 100px;
     height: 30px;
-    background-image: linear-gradient(to top, rgb(65, 0, 0), rgb(180, 0, 0));
-    color: rgb(224, 218, 231);
+    background-color: transparent;
+    color: rgb(178, 165, 192);
     border-style: none;
     outline: none;
+    border: 1px solid rgb(154, 146, 170);
     cursor: pointer;
+    transition: .2s ease-in-out;
     @include respond5(contentBreak){
             width: 100%;
             margin-bottom: 20px;
+        }
+
+        &:hover {
+          box-shadow: 0px 0px 8px rgb(129, 116, 145);
+          border: 1px solid rgb(189, 179, 201);
+          color:  rgb(203, 192, 216);
         }
 }
