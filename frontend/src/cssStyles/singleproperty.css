@@ -18,10 +18,12 @@
   justify-content: space-between;
   flex-direction: row;
   width: 96%;
-  box-shadow: 0px 1px 2px rgb(156, 151, 160);
-  background-image: linear-gradient(to top, rgb(233, 228, 238), rgb(251, 249, 253));
+  color: rgb(186, 166, 194);
+  box-shadow: 0px 1px 2px rgb(0, 0, 0);
+  background-image: linear-gradient(to top, rgb(20, 17, 26), rgb(42, 36, 49));
   height: 205px;
-  border-bottom: 1px solid rgb(159, 140, 173);
+  border-top: 1px solid rgb(98, 85, 107);
+  border-bottom: 1px solid rgb(0, 0, 0);
   transition: all 0.5s ease-in-out;
 }
 .content2_property.enlarge {
@@ -122,7 +124,7 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 .content2_property .like_icon {
   width: 100%;

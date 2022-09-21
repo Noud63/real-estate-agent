@@ -42,9 +42,8 @@
 .footer {
   position: relative;
   width: 100%;
-  height: 38rem;
-  padding-top: 2rem;
-  background-color: rgb(20, 17, 26);
+  height: 48rem;
+  background-color: rgb(27, 22, 34);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -52,26 +51,31 @@
 }
 @media only screen and (max-width: 1080px) {
   .footer {
-    height: 51rem;
+    height: 65rem;
+    border-top: 1px solid rgb(84, 73, 95);
   }
 }
 @media only screen and (max-width: 750px) {
   .footer {
-    height: 90rem;
+    height: 125rem;
   }
 }
 .footer_content_gridContainer {
-  width: 95%;
+  width: 100%;
+  box-shadow: 0px 28px 28px -28px black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  background-color: rgb(103, 84, 107);
   gap: 1px;
+  background-color: rgb(130, 116, 151);
+  border-top: 1px solid rgb(130, 116, 151);
 }
 @media only screen and (max-width: 1080px) {
   .footer_content_gridContainer {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+    background-color: rgb(70, 59, 80);
   }
   .footer_content_gridContainer :nth-of-type(5) {
     order: 1;
@@ -81,17 +85,61 @@
   .footer_content_gridContainer {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 1fr);
+    gap: 1px;
+    background-color: rgb(70, 59, 80);
   }
+}
+.footer_content_box.three {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer_content_box.three .winner {
+  margin-top: 10px;
+}
+.footer_content_box.four {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.footer_content_box.four .contactInfo {
+  font-size: 1rem;
+  width: 50%;
+  height: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.footer_content_box.four .contactInfo.branch {
+  border-left: 1px solid rgb(97, 89, 107);
+}
+.footer_content_box.four .contactInfo_title {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(115, 105, 128);
+}
+.footer_content_box.four .contactInfo_address {
+  padding-left: 10px;
 }
 .footer_content_box {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 13rem;
-  color: rgb(148, 129, 156);
+  height: 18rem;
+  color: rgb(134, 123, 145);
   padding: 20px;
-  background-color: rgb(20, 17, 26);
+  background-color: rgb(27, 22, 34);
+}
+.footer_content_box.contact {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
 }
 .footer_content_box .icons {
   display: flex;
@@ -135,21 +183,32 @@
   font-family: "Times";
   top: 65px;
 }
+.footer .allrightsreserved {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+  background-color: black;
+  color: rgb(98, 84, 107);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
 
 .offices {
   position: absolute;
-  bottom: 0;
+  bottom: 50px;
   width: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  height: 10rem;
-  border-top: 1px solid rgb(120, 106, 131);
+  height: 7rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  color: rgb(146, 124, 151);
+  color: rgb(126, 115, 138);
   gap: 1px;
 }
 @media only screen and (max-width: 750px) {
@@ -157,6 +216,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     font-size: 12px;
+    bottom: 90px;
+    height: 9rem;
   }
 }
 .offices .office {
@@ -164,6 +225,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+@media only screen and (max-width: 750px) {
+  .offices .office {
+    padding: 20px;
+  }
 }
 .offices .office .loc-address {
   display: flex;

@@ -30,8 +30,8 @@ const NewsLetter = () => {
     return (
         <div className="newsLetter">
 
-            <div className="newsLetter_close">
-                <div className="newsLetter_close_header">Newsletter Subscription:</div>
+            <div className="newsLetter_top">
+                <div className="newsLetter_top_header">Newsletter Subscription:</div>
             </div>
 
             <form onSubmit={handleSubmit} className="form" ref={form} autoComplete="off">

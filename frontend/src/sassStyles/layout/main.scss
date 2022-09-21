@@ -2,6 +2,7 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
+
 .container {
     position: relative;
     width: 100%;
@@ -10,16 +11,16 @@
     transition: .5s ease-in-out;
 
     .vote {
-   position: absolute;
-   @include center-content-column-start;
-   width: 55px;
-   height: 200px;
-   top: 31.5%;
-   left: 0;
-   z-index: 999;
-   border-bottom-right-radius: 20px;
-   border-top-right-radius: 20px;
-   background-color: rgb(60, 49, 73);
+        position: absolute;
+        @include center-content-column-start;
+        width: 55px;
+        height: 200px;
+        top: 31.5%;
+        left: 0;
+        z-index: 999;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color: rgb(60, 49, 73);
 
    @include respond2(gridcontainer){
         @include center-content-row;
@@ -152,8 +153,6 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
-
-    
 }
 
 .selectRating {
@@ -239,17 +238,13 @@
                bottom: -10px;
         }
 
-        @include respond5(contentBreak){
-           bottom: -10px;
-        }
-
-        @include respond6(castlesandchateaux){
-           bottom: -30px;
-        }
-
         @include respond(hamburgermenu) {
-        font-size: 1.4rem;
-       bottom: -20px;
+            font-size: 1.4rem;
+            bottom: -20px;
+        }
+
+        @include respond8(removeaward){
+              font-size: 1.2rem;
         }
 
          @include respond9(sidebarDelete){
@@ -258,13 +253,9 @@
 
         @include respond3(smallest){
             font-size: 1.2rem;
-              bottom: -50px;
+              bottom: -60px;
         }
-
-        @include respond8(removeaward){
-              font-size: 1.2rem;
-        }
-    }
+}
 
     .castlesandchateaux {
          @include center-content-row;
@@ -272,6 +263,9 @@
         width: 100%;
          @include respond10(thirteenhundred){
                    color:rgb(97, 73, 97);
+              }
+        @include respond4(ellielogo){
+                 letter-spacing: 1px;
               }
     }
 
@@ -289,6 +283,7 @@
               font-size: .9rem;
               letter-spacing: 2px;
               padding-bottom: 0px;
+               margin-top: 0px;
         }
 
         @include respond(hamburgermenu) {
@@ -308,10 +303,6 @@
          letter-spacing: 0px;
         }
     }
-
-        // @include respond4(ellielogo){
-        //     margin-bottom: 20px;
-        // }
 
 .c5_image {
     width: 100%;

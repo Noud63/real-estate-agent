@@ -28,7 +28,7 @@ const Header = () => {
 
     const handleScroll = () => {
         const offset = window.scrollY;
-        offset > 100 ?setScrolled(false) : setScrolled(true);
+        offset > 100 ? setScrolled(false) : setScrolled(true);
     }
 
     useEffect(() => {
@@ -82,7 +82,7 @@ const Header = () => {
     }
 
     const buttons = () => {
-        return (  
+        return (
             <>
                 <button className="buttons_btn" onClick={buy}>Buy</button>
                 <button className="buttons_btn" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
@@ -105,7 +105,7 @@ const Header = () => {
     return (
         <>
             <div className={scrolled ? "header" : "header header_hide"}>
-               
+
                 <div className="header_france"><div className="frame2_driehoek"></div><span>Country: France &nbsp;-&nbsp; Regions: All Regions + Monaco</span><div className="frame2_driehoek"></div></div>
                 <div className="header_content">
 
@@ -123,7 +123,7 @@ const Header = () => {
                     </div>
 
                     <div className="buttons">
-                       {buttons()}
+                        {buttons()}
                     </div>
                 </div>
 
@@ -131,9 +131,9 @@ const Header = () => {
             </div>
 
             {showMenu && size.width <= 800 ? <div className="menuOverlay show">
-                    {buttonsOverlay()}
+                {buttonsOverlay()}
             </div> : <div className="menuOverlay">
-                    {buttonsOverlay()}
+                {buttonsOverlay()}
             </div>}
         </>
     )

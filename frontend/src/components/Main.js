@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import header from '../assets/images/header.jpg'
 import '../sassStyles/layout/main.scss'
 import award from '../assets/icons/award.png'
@@ -9,83 +9,77 @@ import RatingButtons from './RatingButtons'
 
 const Main = () => {
 
-    const [ rating, setRating ] = useState(0)
-    const [ fav, setFav ] = useState(false)
-    const [ showOptions , setShowOptions ] = useState(false)
-    const [ showModal, setShowModal ] = useState(false)
+    const [rating, setRating] = useState(0)
+    const [fav, setFav] = useState(false)
+    const [showOptions, setShowOptions] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
-    const nums = [0,1,2,3,4,5]
+    const nums = [0, 1, 2, 3, 4, 5]
 
     const rate = () => {
         setShowModal(true)
     }
-
-    // const yourRating =(e) => {
-    //     setRating(e.target.textContent)
-        
-    //             setActiveBtn(prev => !prev)
-        
-    // }
 
     const closeModal = () => {
         setShowModal(false)
     }
 
     const share = () => {
+        console.log("Share url")
     }
-
 
     const favorite = () => {
         setFav(!fav)
     }
 
 
-   return (
+    return (
         <div className="container">
-                {showModal ? <div className="voteModal">
-                    
-               <div className="voteModal_content">
 
-                   <div className="voteModal_content_box">
-                       <div className="pickANumber">Pick a number:</div>
-                       <div className="closeModal" onClick={closeModal}>Close X</div>
-                   </div>
-                  
-                   <div className="voteModal_content_numbers">
-                       {nums.map( num => {
-                           return <RatingButtons num={num} setRating={setRating} key={num}/>
-                       })}
-                   </div>
-                       
+            {showModal ? <div className="voteModal">
+
+                <div className="voteModal_content">
+
+                    <div className="voteModal_content_box">
+                        <div className="pickANumber">Pick a number:</div>
+                        <div className="closeModal" onClick={closeModal}>Close X</div>
                     </div>
-                </div> : ""}
-           <div className="vote">
 
-               <button type="button" className="vote_number" onClick={rate} >
-                   
-                   <span className="rating">{rating}</span>
-                   <span className="rate-us">rate us</span>
-               </button>
+                    <div className="voteModal_content_numbers">
+                        {nums.map(num => {
+                            return <RatingButtons num={num} setRating={setRating} key={num} />
+                        })}
+                    </div>
 
-               <button type="button" className="vote_share" onClick={share}>
-                   <img src={arrow} alt="" style={{ width: '12px' }} />
-                   <span className="rate-us">share</span>
+                </div>
+            </div> : ""}
+
+            <div className="vote">
+
+                <button type="button" className="vote_number" onClick={rate} >
+                    <span className="rating">{rating}</span>
+                    <span className="rate-us">rate us</span>
                 </button>
 
-               <button type="button" className="vote_like" onClick={favorite}>
-                <img src={!fav ? heart : heartred} alt="" style={{width: '20px'}}/>
-                   <span className="rate-us">fav</span>
-               </button>
+                <button type="button" className="vote_share" onClick={share}>
+                    <img src={arrow} alt="" style={{ width: '12px' }} />
+                    <span className="rate-us">share</span>
+                </button>
 
-           </div>
+                <button type="button" className="vote_like" onClick={favorite}>
+                    <img src={!fav ? heart : heartred} alt="" style={{ width: '20px' }} />
+                    <span className="rate-us">fav</span>
+                </button>
+
+            </div>
 
             <div className="homepage_image">
-               <div className="awards"><img src={award} alt="" className="award"/></div>
-                <div className="your_dream">
-                    <span className="castlesandchateaux">Castles & Chateaux</span>
-                    <span className="luxury_real_estate">Luxury real estate in France with Ellie Castelli</span>
-                </div>
-                <img src={header} alt="" className="c5_image" />
+                <div className="awards"><img src={award} alt="" className="award" /></div>
+                    <div className="your_dream">
+                        <span className="castlesandchateaux">Castles & Chateaux</span>
+                        <span className="luxury_real_estate">Luxury real estate in France with Ellie Castelli</span>
+                    </div>
+                    <img src={header} alt="" className="c5_image" />
             </div>
 
         </div>

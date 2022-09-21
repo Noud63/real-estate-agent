@@ -53,8 +53,7 @@
              @include respond4(ellielogo){
               padding: 0 10px;
             }
-            
-    }
+        }
 
         &_content_title {
             @include center-content-column;
@@ -86,7 +85,7 @@
             @include respond3(smallest){
                font-size: 2.6rem;
             }
-      }
+        }
 
         &_content_your_castle {
           position: absolute;
@@ -99,7 +98,7 @@
         @include respond4(ellielogo){
               display: none;
             }
-      }
+        }
 }
 
 .frame2_driehoek {
@@ -162,11 +161,14 @@
     position: fixed;
     width: 200px;
     bottom: 0;
-    top: 0;
-    right: -200px;
-    background-color: rgba(50, 41, 58, 1);
+    top: 90px;
+    right: -210px;
+    background-image:linear-gradient(to left,  rgb(31, 26, 36), rgb(45, 39, 53));
     transition: .3s ease-in-out;
-    z-index: 2;
+    z-index: 5;
+    @include respond3(smallest){
+                top: 70px;
+            }
 }
 
 .show {
@@ -176,7 +178,6 @@
 .buttonsBox {
     @include center-content-column;
     width: 200px;
-    margin-top: 80px;
 }
 
 .buttons_btnOverlay {

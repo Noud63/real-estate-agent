@@ -7,6 +7,8 @@ import SearchEstates from '../components/SearchEstates'
 import Pagination from '../components/Pagination'
 import { useNavigate } from "react-router-dom"
 import NewsLetter from '../components/NewsLetter'
+import fulfillyourdream from '../assets/images/fulfillyourdreamimg2.jpg'
+import fulfillyourdream2 from '../assets/images/fulfillyourdreamimg3.jpg'
 
 
 const Content = () => {
@@ -77,20 +79,18 @@ const Content = () => {
                
             <div className="sidebarContentWrapper">
                
-
-                <div className="sidebar">
+                {/* <div className="sidebar">
                     <div className="frame"><NewsLetter /></div>
                     <div className="frame2">
                         <div className="frame2_sold">SOLD</div>
-                        
                     </div>
-                </div>
+                </div> */}
 
 
                 <div className="content2">
                     <SearchEstates />
 
-                    {errorMessage ? <div>No results match your search criteria!</div> : ""}
+                    {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
 
                     <ListItems newList={newList} show={show}/>
 
@@ -109,10 +109,27 @@ const Content = () => {
                             </div>
                 </div>
 
-                
+                <div className="sidebar">
+                    <div className="sidebar_content"><NewsLetter /></div>
+                        <div className="sidebar_content2">
+
+                            <div className="imageBox">
+                                <div className="fulfillimg"><img src={fulfillyourdream} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+                                <div className="fulfilltext"><span className="soldChateau">Chateau de Tourreau</span><span className="soldPrice">$5.890.000,-</span></div>
+                            </div>
+
+                        <div className="imageBox">
+                            <div className="fulfillimg"><img src={fulfillyourdream2} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+                            <div className="fulfilltext"><span className="soldChateau">Chateau Les Carrasses</span><span className="soldPrice">$3.750.000,-</span></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div className="content_block">
+                {/* <div className="frame"><NewsLetter /></div> */}
             </div>
-            <div className="blockBottom"></div>
-            <div className="blockBottom2"></div>
+            <div className="content_block2"></div>
         </>
     )
 }

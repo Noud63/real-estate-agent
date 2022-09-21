@@ -173,7 +173,7 @@
            border-top: 1px solid rgb(255, 8, 8);
            box-shadow: 0px 2px 2px rgb(90, 0, 0);
            background-image: linear-gradient(to top, rgb(116, 0, 0), rgb(207, 0, 0));
-           color: white;
+           color: rgb(255, 255, 255);
             @include respond5(contentBreak){
               height: 43px;
               margin-top: 20px;

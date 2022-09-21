@@ -39,54 +39,23 @@
   font-family: "Digi";
   src: url("../../fonts/Digizen.ttf") format("truetype");
 }
-.selectMenus {
-  max-width: 96%;
+.num {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  margin: 0px 20px 30px 20px;
-}
-@media only screen and (max-width: 750px) {
-  .selectMenus {
-    flex-direction: column;
-  }
-}
-
-.select {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 38px;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
+  background-color: rgb(196, 188, 204);
+  border-right: 1px solid rgb(237, 234, 241);
+  border-top: 1px solid rgb(237, 234, 241);
+  font-size: 1.6rem;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(129, 108, 129);
-  border: 1px solid #967e96;
-  letter-spacing: 3px;
-  word-spacing: 3px;
+  color: rgb(30, 25, 39);
+  cursor: pointer;
+  box-shadow: -1px 1px 0px 1px rgb(78, 72, 85);
 }
-@media only screen and (max-width: 1080px) {
-  .select {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-  }
-}
-@media only screen and (max-width: 750px) {
-  .select {
-    width: 300px;
-    font-size: 0.8rem;
-  }
-}
-
-.selectBox {
-  width: 280px;
-}
-@media only screen and (max-width: 750px) {
-  .selectBox {
-    width: 300px;
-    margin-top: 10px;
-  }
+.num.clicked {
+  box-shadow: 0px 0px 0px 0px rgba(78, 72, 85, 0);
+  border: 0;
 }
