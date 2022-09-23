@@ -2,6 +2,15 @@
 @import '../abstracts/global';
 @import '../abstracts/mixins';
 
+@keyframes fadeIn {
+  from {
+ opacity: 0;
+  }
+to {
+ opacity: 1;
+  }
+   
+}
 
 .soldprops {
     position: relative;
@@ -25,20 +34,33 @@
             width: 100%;
             padding: 0 20px;
             margin-bottom: 50px;
-            opacity: 1;
             height: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
             // grid-template-rows: repeat(1, 1fr);
-            gap: 20px;
+            // gap: 20px;
           
             &_imageBox {
+                animation: fadeIn .8s ease-in;
                 position: relative;
-                width: 100%;
+                @include center-content;
+                width: 24%;
+                min-width:300px;
                 height: auto;
+                margin-bottom: 10px;
                 line-height: 0;
                 box-shadow: 0px 4px 4px rgb(11, 9, 14);
-
+                @include respond10(thirteenhundred){
+                    width: 49%;
+                }
+                @include respond(hamburgermenu){
+                     width: 100%;
+                }
+    
                 .image {
                 width: 100%;
                 height: auto;
