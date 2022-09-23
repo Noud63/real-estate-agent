@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom"
 import NewsLetter from '../components/NewsLetter'
 import fulfillyourdream from '../assets/images/fulfillyourdreamimg2.jpg'
 import fulfillyourdream2 from '../assets/images/fulfillyourdreamimg3.jpg'
+import frenchproperty from '../assets/images/goodlife.jpg'
+import SoldProperties from '../components/SoldProperties'
 
 
 const Content = () => {
@@ -54,7 +56,7 @@ const Content = () => {
     }
 
 
-    // Show message when filtered list is empty
+    // Show message when filtered list is empty (no matching criteria)
     useEffect(() => {
         if (filtered.length === 0) {
             setNewList([])
@@ -76,51 +78,67 @@ const Content = () => {
                     <div className="headerMenu_item">Currency</div>
                 </div>
             </div>
-               
-            <div className="contentWrapper">
 
-                <div className="content2">
-                    <SearchEstates setCurrentNumber={setCurrentNumber} currentNumber={currentNumber}/>
+            <div className="mainContentWrapper">
+                <div className="realEstatesWrapper">
 
-                    {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
+                    <div className="content2">
 
-                    <ListItems newList={newList} show={show}/>
+                        <SearchEstates setCurrentNumber={setCurrentNumber} currentNumber={currentNumber} />
 
-                            <div className="btns">
-                                {pageNumbers.map(number => {
-                                    return <Pagination key={number}
-                                        number={number}
-                                        filtered={filtered}
-                                        currentNumber={currentNumber}
-                                        setCurrentNumber={setCurrentNumber}
-                                        resultsPerPage={resultsPerPage}
-                                        newList={newList}
-                                        setNewList={setNewList}
-                                    />
-                                })}
-                            </div>
-                </div>
+                        {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
 
-                <div className="sidebar">
-                    
-                    <div className="sidebar_content"><NewsLetter /></div>
+                        <ListItems newList={newList} show={show} />
+
+                        <div className="btns">
+                            {pageNumbers.map(number => {
+                                return <Pagination key={number}
+                                    number={number}
+                                    filtered={filtered}
+                                    currentNumber={currentNumber}
+                                    setCurrentNumber={setCurrentNumber}
+                                    resultsPerPage={resultsPerPage}
+                                    newList={newList}
+                                    setNewList={setNewList}
+                                />
+                            })}
+                        </div>
+                    </div>
+
+                    <div className="sidebar">
+
+                        <div className="sidebar_content"><NewsLetter /></div>
                         <div className="sidebar_content2">
-                          <div className="recentlySold">Recently Sold Properties:</div>
+                            <div className="recentlySold">Recently Sold Properties:</div>
                             <div className="imageBox">
                                 <div className="fulfillimg"><img src={fulfillyourdream} alt="" style={{ width: '100%', height: 'auto' }} /></div>
                                 <div className="fulfilltext"><span className="soldChateau">Chateau de Tourreau</span><span className="soldPrice">$5.890.000,-</span></div>
                             </div>
 
-                        <div className="imageBox">
-                            <div className="fulfillimg"><img src={fulfillyourdream2} alt="" style={{ width: '100%', height: 'auto' }} /></div>
-                            <div className="fulfilltext"><span className="soldChateau">Chateau Les Carrasses</span><span className="soldPrice">$3.750.000,-</span></div>
-                        </div>
+                            <div className="imageBox">
+                                <div className="fulfillimg"><img src={fulfillyourdream2} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+                                <div className="fulfilltext"><span className="soldChateau">Chateau Les Carrasses</span><span className="soldPrice">$3.750.000,-</span></div>
+                            </div>
+
+                            <a href="https://thegoodlifefrance.com/category/magazine/" target="blank"><div className="imageBox">
+                                <div className="fulfillimg"><img src={frenchproperty} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+                                <div className="fulfilltext"><span className="soldChateau">Subscribe now!</span><span className="soldPrice">It's free!</span></div>
+                            </div></a>
                         </div>
                     </div>
+                </div>
             </div>
+               
+                 
 
-            <div className="content_block"></div>
+            
+            <div className="content_subscription">
+                <div className="news"><NewsLetter /></div>
+                <div className="finance">Your add here</div>
+            </div>
+            <div className="content_sold"><SoldProperties /></div>
             <div className="content_block2"></div>
+            <div className="content_block3"></div>
         </>
     )
 }

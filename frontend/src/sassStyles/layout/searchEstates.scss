@@ -4,7 +4,7 @@
 
 
 .searchFields {
-    max-width: 96%;
+    width: 96%;
     @include center-content-row;
     margin: 0px  20px 30px 20px;
     @include respond5(contentBreak){

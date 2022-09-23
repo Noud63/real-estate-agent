@@ -54,6 +54,13 @@
  flex-direction:row;
 }
 
+@mixin center-content-row-top{
+ display: flex;
+ align-items: flex-start;
+ justify-content: center;
+ flex-direction:row;
+}
+
 
 @mixin spacebetween-content {
  display: flex;

@@ -30,7 +30,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
             )
         });
 
-        if(currentNumber > 1) setCurrentNumber(1)
+        if(currentNumber > 1) setCurrentNumber(1)  // if search query starts from page 2 or higher
         dispatch(filteredProperties(result))
     }, [dispatch, livingSpace, plotSize, realestate, region]);
 

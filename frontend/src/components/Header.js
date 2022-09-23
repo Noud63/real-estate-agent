@@ -20,16 +20,19 @@ const Header = () => {
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
 
+
     useEffect(() => {
         if (isLoggedIn) {
             setLogOut(true)
         }
     }, [isLoggedIn, logins, login])
 
+
     const handleScroll = () => {
         const offset = window.scrollY;
         offset > 100 ? setScrolled(false) : setScrolled(true);
     }
+
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -106,7 +109,12 @@ const Header = () => {
         <>
             <div className={scrolled ? "header" : "header header_hide"}>
 
-                <div className="header_france"><div className="frame2_driehoek"></div><span>Country: France &nbsp;-&nbsp; Regions: All Regions + Monaco</span><div className="frame2_driehoek"></div></div>
+                <div className="header_france">
+                    <div className="frame2_driehoek"></div>
+                    <span>Country: France &nbsp;-&nbsp; Regions: All Regions + Monaco</span>
+                    <div className="frame2_driehoek"></div>
+                </div>
+                
                 <div className="header_content">
 
                     <div className="header_content_iconandtitle" onClick={backHome}>
@@ -126,7 +134,6 @@ const Header = () => {
                         {buttons()}
                     </div>
                 </div>
-
 
             </div>
 

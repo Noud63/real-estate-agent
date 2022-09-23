@@ -18,7 +18,10 @@
      &_footer {
        width: 100%;
        @include center-content-row-start;
-         color:rgb(104, 94, 116)
+         color:rgb(104, 94, 116);
+         @include respond6(castlesandchateaux){
+          margin-top: 10px;
+       }
        }
 }
 
@@ -48,6 +51,9 @@
        justify-content: space-between;
        flex-direction: row;
        margin-top: 20px;
+       @include respond6(castlesandchateaux){
+          flex-direction: column;
+       }
 
        &_name {
          width: 50%;
@@ -55,6 +61,9 @@
        align-items: flex-start;
        justify-content: center;
        flex-direction: column;
+        @include respond6(castlesandchateaux){
+           width: 100%;
+       }
        }
 
        &_name2 {
@@ -63,9 +72,15 @@
        align-items: flex-end;
        justify-content: center;
        flex-direction: column;
+       @include respond6(castlesandchateaux){
+           width: 100%;
+       }
 
        .sendRequestBtn {
          width: 98%;
+         @include respond6(castlesandchateaux){
+           width: 100%;
+       }
     
        & button {
            width: 100%;
@@ -93,6 +108,10 @@
          
          font-size: .9rem;
           background-color: transparent;
+          @include respond6(castlesandchateaux){
+           width: 100%;
+           padding-left: 0px;
+       }
        }
 
        
