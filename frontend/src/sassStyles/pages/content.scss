@@ -42,7 +42,7 @@
         }    
 
         &:hover {
-            background: rgb(130, 122, 141);
+            background: rgb(89, 78, 102);
             color: white;
         }
        } 
@@ -97,8 +97,6 @@
     width: 35%;
     height: auto;
     margin: 60px 20px 0 20px;
-    // border: 1px solid red;
-    overflow: hidden;
     @include respond1(removeSidebar){
           display: none;
         }
@@ -131,7 +129,7 @@
             & .imageBox {
                 position: relative;
                 margin-bottom: 30px;
-                max-width: 630px;
+                max-width: 382px;
                 height: auto;
                 line-height: 0;
                 box-shadow: 0px 4px 4px rgb(11, 9, 14);
