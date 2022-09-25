@@ -13,13 +13,13 @@
     top:0;
     width: 100%;
     height: 205px;
-    background-color: rgb(168, 0, 0);
+    // background-color: rgb(168, 0, 0);
     box-shadow: 0px 2px 3px rgb(0, 0, 0);
     z-index: 1;
     animation: show-form .8s ease-in-out;
     opacity: 1;
     color: white;
-     background-image: linear-gradient(to top, rgb(94, 0, 0), rgb(153, 0, 0));
+    background-image: linear-gradient(to top, rgb(94, 0, 0), rgb(153, 0, 0));
 
     &.show {
     top: 205px;

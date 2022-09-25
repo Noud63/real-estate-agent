@@ -37,7 +37,7 @@ const SoldProperties = () => {
                         {line1 && line2 && line3 ? <div className="message">
                             <div className="message_text"><span>{line1}</span><span>{line2}</span><span>{line3}</span><span style={{fontSize: '10px'}}>{price}</span></div>
                            </div> : "" }
-                        <div className="image"><img src={process.env.PUBLIC_URL + `/soldProps/${img}`} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+                        <div className="image"><img src={process.env.PUBLIC_URL + `/soldProps/${img}`} alt="" /></div>
                         <div className="footer"><span className="soldChateau">{name}</span><span className="soldPrice">{price}</span></div>
                     </div>
                 })}

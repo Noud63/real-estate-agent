@@ -50,7 +50,7 @@ to {
                 width: 24%;
                 height: auto;
                 margin-bottom: 10px;
-                box-shadow: 0px 4px 4px rgb(11, 9, 14);
+                box-shadow: 0px 4px 4px rgb(0, 0, 0);
                 @include respond10(thirteenhundred){
                     width: 49%;
                 }
@@ -81,11 +81,12 @@ to {
                 .image {
                 width: 100%;
                 height: auto;
-                opacity: .4;
+                opacity: 1;
                 transition: .5s ease-in-out;
 
-                &:hover {
-                    opacity: 1;
+                & img {
+                    width: 100%;
+                    height: auto;
                 }
                }
                
@@ -103,13 +104,7 @@ to {
                 letter-spacing: 2px;
                 color: rgb(200, 191, 214);
                 font-size: .9rem;
-                // @include respond10(thirteenhundred){
-               
-                // @include respond2(gridcontainer){
-                //           font-size: .8rem;
-                //      }
-                // }
-
+                border-bottom: 1px solid rgb(167, 152, 180);
                 .soldChateau {
                     color: rgb(163, 149, 184);
                 }
