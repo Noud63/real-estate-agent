@@ -88,9 +88,3 @@ export default SearchEstates
 //         <input onChange={(e) => setLivingSpace(e.target.value)} value={livingSpace} placeholder="Living space.." className="selectop" />
 //         <input onChange={(e) => setPlotSize(e.target.value)} value={plotSize} placeholder="Plot size.." className="selectop" />
 
-// const result = realestate.filter((est) => {
-//     return (
-//         (foundRegion ? est.located.match(new RegExp(foundRegion, "gi")) : true) &&
-//         (foundLivingSpace ? est.livingspace.match(new RegExp(foundLivingSpace, "gi")) : true) &&
-//         (foundPlotSize ? est.area.match(new RegExp(foundPlotSize, "gi")) : true)
-//     )

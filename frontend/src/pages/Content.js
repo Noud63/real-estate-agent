@@ -7,14 +7,10 @@ import SearchEstates from '../components/SearchEstates'
 import Pagination from '../components/Pagination'
 import { useNavigate } from "react-router-dom"
 import NewsLetter from '../components/NewsLetter'
-import fulfillyourdream from '../assets/images/fulfillyourdreamimg2.jpg'
-import fulfillyourdream2 from '../assets/images/fulfillyourdreamimg3.jpg'
-import frenchproperty from '../assets/images/goodlife.jpg'
-import magazine2 from '../assets/images/magazine2.jpg'
-import magazine3 from '../assets/images/magazine4.png'
 import SoldProperties from '../components/SoldProperties'
+import HeaderMenu from '../components/HeaderMenu'
+import SideBar from '../components/SideBar'
 import 'react-tippy/dist/tippy.css'
-import { Tooltip } from 'react-tippy'
 
 
 const Content = () => {
@@ -69,23 +65,9 @@ const Content = () => {
         }
     }, [filtered.length])
 
-    // const highLight = (e) => {
-    //      e.target.parentNode.style.opacity = 1
-    // }
-
     return (
         <>
-            <div className="borderTop">
-                <div className="headerMenu">
-                    <div className="headerMenu_item">Home</div>
-                    <div className="headerMenu_item">Buy</div>
-                    <div className="headerMenu_item">Service</div>
-                    <div className="headerMenu_item">Finance</div>
-                    <div className="headerMenu_item">News</div>
-                    <div className="headerMenu_item">Currency</div>
-                </div>
-            </div>
-
+           <HeaderMenu />
             <div className="mainContentWrapper">
                 <div className="realEstatesWrapper">
 
@@ -112,57 +94,16 @@ const Content = () => {
                         </div>
                     </div>
 
-                    <div className="sidebar">
-
-                        <div className="sidebar_content"><NewsLetter /></div>
-                        <div className="sidebar_content2">
-                            <div className="recentlySold">Recently Sold Properties:</div>
-                            <div className="imageBox">
-                                <div className="sidebarimg" ><img src={fulfillyourdream} alt="" /></div>
-                                <div className="sidebartext"><span className="soldChateau">Chateau de Tourreau</span><span className="soldPrice">$5.890.000,-</span></div>
-                            </div>
-
-                            <div className="imageBox">
-                                <div className="sidebarimg"><img src={fulfillyourdream2} alt=""/></div>
-                                <div className="sidebartext"><span className="soldChateau">Chateau Les Carrasses</span><span className="soldPrice">$3.750.000,-</span></div>
-                            </div>
-
-                            <div className="imageBox" >
-                                <Tooltip title="The Good Life magazine" position="top" trigger="mouseenter" inertia="true" theme='light'>
-                                <a href="https://thegoodlifefrance.com/category/magazine/" target="blank">
-                                    <div className="sidebarimg" style={{ opacity: '1' }}><img src={frenchproperty} alt="" /></div>
-                                <div className="sidebartext"><span className="soldChateau">Subscribe now!</span><span className="soldPrice">It's free!</span></div></a>
-                                </Tooltip>
-                            </div>
-
-                            <div className="imageBox" >
-                                <Tooltip title="French Property News Magazine" position="top" trigger="mouseenter" inertia="true" theme='light' >
-                                <a href="https://www.afrenchcollection.com/french-property-news-magazine/" target="blank">
-                                    <div className="sidebarimg" style={{ opacity: '1' }}><img src={magazine2} alt="" /></div>
-                                    <div className="sidebartext"><span className="soldChateau">Subscribe now!</span><span className="soldPrice">$3.99 p/m</span></div></a>
-                                </Tooltip>
-                            </div>
-                           
-                            <div className="imageBox" >
-                                <Tooltip title="My French Country Home Magazine" position="top" trigger="mouseenter" inertia="true" theme='light'>
-                                <a href="https://myfrenchcountryhomemagazine.com/product-category/digital-edition/" target="blank">
-                                    <div className="sidebarimg" style={{ opacity: '1' }}><img src={magazine3} alt="" /></div>
-                                    <div className="sidebartext"><span className="soldChateau">Subscribe now!</span><span className="soldPrice">$39.99 p/y</span></div></a>
-                                </Tooltip>
-                            </div>
-                           
-                        </div>
-                    </div>
+                   <SideBar />
+                   
                 </div>
             </div>
                
-                 
-
-            
             <div className="content_subscription">
                 <div className="news"><NewsLetter /></div>
                 <div className="finance">Your add here</div>
             </div>
+
             <div className="content_sold"><SoldProperties /></div>
             <div className="content_block2"></div>
             <div className="content_block3"></div>
