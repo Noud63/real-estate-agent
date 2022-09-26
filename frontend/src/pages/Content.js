@@ -19,7 +19,7 @@ const Content = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
-    const [resPerPage, setResPerpage ] = useState(5)
+    const [resPerPage, setResPerpage] = useState(5)
 
     // add page number to url
     const navigate = useNavigate();
@@ -40,7 +40,7 @@ const Content = () => {
         dispatch(getRealEstates())
         if (isSuccess) {
             setShow(true)
-        } else if (isError){
+        } else if (isError) {
             console.log('No data!')
         }
     }, [dispatch, isSuccess])
@@ -67,18 +67,14 @@ const Content = () => {
 
     return (
         <>
-           <HeaderMenu />
+          <HeaderMenu />
             <div className="mainContentWrapper">
                 <div className="realEstatesWrapper">
 
                     <div className="content2">
-
                         <SearchEstates setCurrentNumber={setCurrentNumber} currentNumber={currentNumber} />
-
                         {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
-
                         <ListItems newList={newList} show={show} />
-
                         <div className="btns">
                             {pageNumbers.map(number => {
                                 return <Pagination key={number}
@@ -94,11 +90,11 @@ const Content = () => {
                         </div>
                     </div>
 
-                   <SideBar />
-                   
+                    <SideBar />
+
                 </div>
             </div>
-               
+
             <div className="content_subscription">
                 <div className="news"><NewsLetter /></div>
                 <div className="finance">Your add here</div>

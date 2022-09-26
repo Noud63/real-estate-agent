@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import HeaderMenu from '../components/HeaderMenu'
 
 const Register = () => {
 
@@ -54,7 +55,8 @@ const Register = () => {
     const onErrors = errors => console.error(errors);
 
     return (
-
+        <>
+ <HeaderMenu />
         <div className="container2">
             <ToastContainer theme='dark' position="top-right"
                 autoClose={3000}
@@ -179,6 +181,7 @@ const Register = () => {
                 <Link to='/login' style={{ textDecoration: 'none' }} className="goToLoginText ">Already registered? Go to Login</Link>
             </div>
         </div>
+        </>
     )
 }
 

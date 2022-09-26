@@ -9,6 +9,9 @@ body {
     margin: 50px auto;
     width: 700px;
     height: 100vh;
+    @include respond3(smallest){
+        margin: 100px auto;
+    }
     
 }
 

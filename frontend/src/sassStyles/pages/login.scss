@@ -7,6 +7,9 @@
     margin: 50px auto;
     width: 315px;
     min-height: 100vh;
+    @include respond3(smallest){
+        margin: 100px auto;
+    }
 }
 
 .wrapper3 {
@@ -16,11 +19,6 @@
     width: 100%;
 }
 
-@media only screen and (max-width: 1170px){
-.container3 {
-    margin: 180px auto;
-  }
-}
 
 .login {
     display: flex;

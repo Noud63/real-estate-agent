@@ -7,6 +7,7 @@ import { loginUser, logout } from '../features/loginSlice'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import HeaderMenu from '../components/HeaderMenu'
 
 
 const SigninForm = () => {
@@ -63,8 +64,10 @@ const SigninForm = () => {
 const onErrors = errors => console.error(errors);
 
     return (
-
+        <>
+ <HeaderMenu />
         <div className="container3">
+           
             <ToastContainer theme='dark' position="top-right"
                 autoClose={3000}
                 hideProgressBar={true}
@@ -106,6 +109,7 @@ const onErrors = errors => console.error(errors);
                 <Link to='/register' style={{ textDecoration: 'none' }} className="goToRegisterText">Not registered? Go to Register.</Link>
             </div>
         </div>
+        </>
     )
 }
 

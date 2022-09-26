@@ -22,17 +22,17 @@
         border-top-right-radius: 20px;
         background-color: rgb(60, 49, 73);
 
-   @include respond2(gridcontainer){
+        @include respond2(gridcontainer){
         @include center-content-row;
         width:180px;
         height: 55px;
         top: 140px;
         border-radius: 0;
-   }
+       }
 
-   @include respond(hamburgermenu){
-       display: none;
-   }
+        @include respond(hamburgermenu){
+        display: none;
+        }
 
    button {
        border-style: none;
@@ -51,7 +51,7 @@
            height: 100%;
            padding-right: 0;
          }
-       .rating {
+           .rating {
           color: rgb(255, 192, 19);
           font-size: 1.4rem;
           font-weight:  bold;
@@ -180,15 +180,16 @@
         position: absolute;
         bottom: 25%;
         right: 8%;
-        @include respond1(removeSidebar){
+              @include respond1(removeSidebar){
                    bottom: 35%;
               }
               @include respond2(gridcontainer){
                    bottom: 25%;
               }
-         @include respond8(removeaward){
+              @include respond8(removeaward){
               display: none;
-        }
+              }
+
         .award {
             width: 180px;
             rotate: 15deg;
@@ -204,11 +205,10 @@
               @include respond2(gridcontainer){
                    width: 100px;
               }
-
               @include respond(hamburgermenu){
                    width: 80px;
               }
-        }
+         }
     }
     
     .your_dream {
@@ -223,7 +223,6 @@
         letter-spacing: 5px;
         font-weight: bold;
         background-color: rgb(27, 22, 34);
-        border-top: 1px solid rgb(110, 100, 126);
         border-bottom: 1px solid rgb(110, 100, 126);
 
         @include respond10(thirteenhundred){
@@ -253,7 +252,8 @@
 
         @include respond3(smallest){
             font-size: 1.2rem;
-              bottom: -60px;
+              bottom: -35px;
+              height: 60px;
         }
 }
 
@@ -307,5 +307,6 @@
 .c5_image {
     width: 100%;
     height: auto;
+    
     }
 }

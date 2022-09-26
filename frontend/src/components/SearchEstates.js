@@ -84,7 +84,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
 
 export default SearchEstates
 
-//         <input onChange={(e) => setRegion(e.target.value)} value={region} placeholder="Region.." className="selectop" />
-//         <input onChange={(e) => setLivingSpace(e.target.value)} value={livingSpace} placeholder="Living space.." className="selectop" />
-//         <input onChange={(e) => setPlotSize(e.target.value)} value={plotSize} placeholder="Plot size.." className="selectop" />
+//<input onChange={(e) => setRegion(e.target.value)} value={region} placeholder="Region.." className="selectop" />
+//<input onChange={(e) => setLivingSpace(e.target.value)} value={livingSpace} placeholder="Living space.." className="selectop" />
+//<input onChange={(e) => setPlotSize(e.target.value)} value={plotSize} placeholder="Plot size.." className="selectop" />
 
