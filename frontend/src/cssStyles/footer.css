@@ -43,7 +43,7 @@
   position: relative;
   width: 100%;
   height: 48rem;
-  background-color: rgb(27, 22, 34);
+  background-color: rgb(65, 0, 0);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -134,7 +134,7 @@
   height: 18rem;
   color: rgb(134, 123, 145);
   padding: 20px;
-  background-color: rgb(27, 22, 34);
+  background-color: rgb(65, 0, 0);
 }
 .footer_content_box.contact {
   font-size: 1.2rem;

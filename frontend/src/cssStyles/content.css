@@ -88,102 +88,50 @@
   }
 }
 .borderTop .headerMenu_item:hover {
-  background: rgb(130, 122, 141);
+  background: rgb(89, 78, 102);
   color: white;
 }
 
-.blockTop {
-  height: 250px;
+.mainContentWrapper {
+  margin: 0 auto;
+  max-width: 1920px;
+  background-color: rgb(65, 0, 0);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-  background-image: linear-gradient(to top, rgb(20, 17, 26), rgb(42, 36, 49));
-  border-bottom: 1px solid rgb(110, 101, 124);
-}
-.blockTop_imageBox {
-  width: 100%;
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: row;
-}
-.blockTop_imageBox_image {
-  width: 100%;
-}
-.blockTop_imageBox_fulfill {
-  width: 500px;
+  justify-content: center;
 }
 
-.blockBottom {
-  height: 600px;
-  background-color: rgb(27, 22, 34);
-  border-top: 1px solid rgb(110, 101, 124);
-}
-
-.blockBottom2 {
-  height: 700px;
-  background-color: rgb(27, 22, 34);
-  border-top: 1px solid rgb(110, 101, 124);
-}
-
-.sidebarContentWrapper {
+.realEstatesWrapper {
   width: 100%;
-  display: flex;
   height: auto;
-  justify-content: space-around;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   flex-direction: row;
-  background-color: rgb(27, 22, 34);
+  flex-direction: row;
 }
 @media only screen and (max-width: 750px) {
-  .sidebarContentWrapper {
+  .realEstatesWrapper {
     height: 4000px;
   }
 }
-
-.sidebar {
-  background-color: rgb(27, 22, 34);
-  width: 30%;
-  height: auto;
-  margin-top: 60px;
-}
 @media only screen and (max-width: 1200px) {
-  .sidebar {
-    display: none;
+  .realEstatesWrapper {
+    height: auto;
   }
-}
-.sidebar .frame {
-  width: 100%;
-  height: auto;
-}
-.sidebar .frame2 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  width: 100%;
-  height: 1750px;
-  background-image: linear-gradient(to bottom, rgba(50, 43, 59, 0.5), rgba(50, 43, 59, 0.1));
-  color: rgb(178, 168, 196);
-  margin-top: 30px;
-  border-top: 1px solid rgb(121, 112, 131);
-  border-bottom: 2px solid rgb(6, 5, 7);
-  padding: 20px;
 }
 
 .content2 {
-  width: 60%;
+  width: 65%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  height: 2055px;
-  background-color: transparent;
+  height: auto;
   margin-top: 60px;
   color: rgb(76, 61, 78);
   font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 60px;
+  margin: 60px 20px 0 20px;
 }
 @media only screen and (max-width: 1200px) {
   .content2 {
@@ -192,13 +140,14 @@
 }
 @media only screen and (max-width: 750px) {
   .content2 {
-    height: 4000px;
+    height: 3250px;
   }
 }
 
 .btns {
-  margin: 20px auto;
+  margin: 10px auto;
   width: auto;
+  padding-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -206,18 +155,88 @@
 }
 
 .paginationBtn {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-style: none;
-  color: rgb(52, 44, 63);
+  color: rgb(86, 75, 102);
   background-color: rgb(158, 145, 173);
-  box-shadow: 0px 1px 2px rgb(132, 116, 141);
+  box-shadow: 0px 1px 2px rgb(53, 0, 0);
   font-size: 1rem;
   cursor: pointer;
   font-weight: bold;
   margin-right: 5px;
 }
 .paginationBtn.active {
-  background-color: rgb(90, 69, 94);
+  background-color: rgb(136, 0, 0);
   color: rgb(222, 208, 224);
+}
+
+.content_subscription {
+  padding: 50px 20px;
+  height: auto;
+  width: 100%;
+  background-color: rgb(65, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  display: none;
+}
+@media only screen and (max-width: 1200px) {
+  .content_subscription {
+    display: flex;
+  }
+}
+.content_subscription .finance {
+  width: 50%;
+  color: rgb(165, 156, 179);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+@media only screen and (max-width: 1080px) {
+  .content_subscription .finance {
+    display: none;
+  }
+}
+.content_subscription .news {
+  width: 50%;
+}
+@media only screen and (max-width: 1080px) {
+  .content_subscription .news {
+    width: 100%;
+  }
+}
+
+.content_sold {
+  height: auto;
+  width: 100%;
+  padding: 100px 0;
+  background-color: rgb(224, 224, 224);
+}
+
+.content_block2 {
+  height: 700px;
+  background-color: rgb(163, 163, 163);
+}
+
+.content_block3 {
+  height: 700px;
+  background-color: rgb(59, 0, 0);
+}
+
+.content_block4 {
+  height: 700px;
+  background-color: rgb(231, 231, 231);
+}
+
+.content_block5 {
+  height: 700px;
+  background-color: rgb(41, 0, 0);
+}
+
+.content_block6 {
+  height: 700px;
+  background-color: rgb(65, 0, 0);
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import header from '../assets/images/header.jpg'
+import header3 from '../assets/images/header3.jpg'
 import '../sassStyles/layout/main.scss'
 import award from '../assets/icons/award.png'
+import award1 from '../assets/icons/award1.png'
 import heart from '../assets/icons/heartgrey.png'
 import heartred from '../assets/icons/heartred.png'
 import arrow from '../assets/icons/arrow.png'
@@ -74,12 +75,15 @@ const Main = () => {
             </div>
 
             <div className="homepage_image">
-                <div className="awards"><img src={award} alt="" className="award" /></div>
+                {/* <div className="awards"><img src={award} alt="" className="award" /></div>
+                <div className="awards1"><img src={award1} alt="" className="award" /></div> */}
                     <div className="your_dream">
-                        <span className="castlesandchateaux">Castles & Chateaux</span>
-                        <span className="luxury_real_estate">Luxury real estate in France with Ellie Castelli</span>
+                    <div className="awards"><img src={award} alt="" className="award" /></div>
+                    <div className="awards1"><img src={award1} alt="" className="award" /></div>
+                        <span className="castlesandchateaux">Luxury Real Estate</span>
+                        <span className="luxury_real_estate">Castles - Chateaux - Appartments - Villas </span>
                     </div>
-                    <img src={header} alt="" className="c5_image" />
+                    <img src={header3} alt="" className="c5_image" />
             </div>
 
         </div>

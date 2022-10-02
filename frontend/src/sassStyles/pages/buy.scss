@@ -4,6 +4,7 @@
 
 
 .buyWrapper {
+    background-color: $dominantbackground;
  @include center-content-column-top;
 }
 
@@ -17,11 +18,11 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9rem;
     padding: 0 40px;
-    border-top: 1px solid rgb(80, 72, 92);
-    border-bottom: 2px solid rgb(0, 0, 0);
-    background-image: linear-gradient(to bottom, rgba(58, 50, 68, 0.5), rgba(18, 15, 22, 0.4));
+    border-top: 2px solid rgb(128, 0, 0);
+    border-bottom: 2px solid rgb(32, 0, 0);
+    background-image: linear-gradient(to top, rgb(61, 0, 0),  rgb(85, 0, 0));
     line-height: 1.4;
-    color: rgb(145, 134, 165);
+    color: rgb(183, 173, 201);
     @include respond(hamburgermenu){
            height: 1200px;
         }
@@ -30,7 +31,7 @@
     &_header {
         width: 100%;
         padding: 20px 0 10px 0;
-        font-size: 2rem;
+        font-size: 1.4rem;
         border-bottom: 1px solid rgb(145, 134, 165);
         @include respond(hamburgermenu){
          font-size: 1.6rem;
@@ -45,6 +46,7 @@
         font-size: .9rem;
         @include respond8(removeaward){
          font-size: .8rem;
+          border-bottom: 1px solid rgb(145, 134, 165);
         }
     }
     
@@ -54,5 +56,9 @@
         line-height: 0px;
         margin-top: 72.12px;
         height: 60.44px;
+    }
+    p {
+        padding-bottom: 50px;
+         border-bottom: 1px solid rgb(145, 134, 165);
     }
 }

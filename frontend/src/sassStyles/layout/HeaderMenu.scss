@@ -3,15 +3,15 @@
 @import '../abstracts/mixins';
 
 
-.borderTop {
-    width: 100%;
-    margin-bottom: 0px;
-    background-color: white;
-    @include center-content-row;
-    @include respond4(ellielogo){
-        margin-bottom:30px;
-        padding-top:30px;
-    }
+// .borderTop {
+//     width: 100%;
+//     margin-bottom: 0px;
+//     background-color: white;
+//     @include center-content-row;
+//     @include respond4(ellielogo){
+//         margin-bottom:30px;
+//         padding-top:30px;
+//     }
      
 
 .headerMenu {
@@ -20,7 +20,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    @include respond4(ellielogo){
+    @include respond3(smallest){
           grid-template-columns: repeat(3, 1fr);
           grid-template-rows: repeat(2, 1fr);
         }    
@@ -38,15 +38,14 @@
         background: rgb(209, 200, 219);
         transition: all .5s ease-in-out;
 
-        @include respond4(ellielogo){
-          border-bottom: 1px solid rgb(157, 145, 167);
-        }    
+        // @include respond4(ellielogo){
+        //   border-bottom: 1px solid rgb(157, 145, 167);
+        // }    
 
         &:hover {
-            background: rgb(89, 78, 102);
+            background: rgb(121, 10, 10);
             color: white;
         }
        } 
-
       }
-    }
+    

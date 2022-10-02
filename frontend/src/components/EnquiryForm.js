@@ -52,15 +52,15 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
                 <div className="enquiryForm_inputfields">
 
                     <div className="enquiryForm_inputfields_name">
-                        <label>Name:</label>
+                        {/* <label>Name:</label> */}
                         <input type="text" placeholder="name" name="from_name" required/>
 
-                        <label>Telephone number:</label>
+                        {/* <label>Telephone number:</label> */}
                         <input type="text" placeholder="telephone" name="from_telephone" required/>
                     </div>
 
                     <div className="enquiryForm_inputfields_name">
-                        <label>Email:</label>
+                        {/* <label>Email:</label> */}
                         <input type="email" placeholder="email" name="from_email" required/>
                         <div className="sendRequestBtn"><button type="submit" value="send" ref={btnRef}>{success}</button></div>
                     </div>

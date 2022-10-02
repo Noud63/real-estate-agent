@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #bfb5c2;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #625469;
+  box-shadow: inset 0 0 10px rgb(11, 6, 12);
+  border-radius: 50px;
+}
+
+@-moz-document url-prefix() {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #544a61;
+  }
+}
+.sidebar {
+  background-color: rgb(65, 0, 0);
+  width: 35%;
+  height: auto;
+  margin: 60px 20px 0 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar_content {
+  width: 100%;
+  height: auto;
+}
+.sidebar_content2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 910px;
+  background-image: linear-gradient(to top, rgb(63, 0, 0), rgb(85, 0, 0));
+  color: rgb(187, 177, 202);
+  margin-top: 30px;
+  border-top: 1px solid rgb(128, 0, 0);
+  border-bottom: 2px solid rgb(34, 0, 0);
+  padding: 20px;
+}
+.sidebar_content2 :hover:nth-child(2) .sidebarimg {
+  opacity: 1;
+}
+.sidebar_content2 :hover:nth-child(3) .sidebarimg {
+  opacity: 1;
+}
+.sidebar_content2 .recentlySold {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  border-bottom: 1px solid rgb(180, 169, 190);
+  margin-bottom: 30px;
+}
+.sidebar_content2 .imageBox {
+  position: relative;
+  margin-bottom: 28px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  line-height: 0;
+}
+.sidebar_content2 .imageBox .sidebarimg {
+  max-width: 310px;
+  height: auto;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0px 4px 4px rgb(34, 0, 0);
+}
+.sidebar_content2 .imageBox .sidebarimg img {
+  width: 100%;
+  height: auto;
+}
+.sidebar_content2 .imageBox .sidebartext {
+  position: absolute;
+  background-image: linear-gradient(to top, rgba(75, 64, 94, 0.8), rgb(31, 24, 41) 90%);
+  width: 310px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  bottom: 0;
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: rgb(188, 177, 206);
+  z-index: 999;
+  border-bottom: 1px solid rgb(199, 0, 0);
+}
+@media only screen and (max-width: 1300px) {
+  .sidebar_content2 .imageBox .sidebartext {
+    font-size: 0.9rem;
+  }
+}
+.sidebar_content2 .imageBox .sidebartext .soldPrice {
+  color: rgb(197, 0, 0);
+  font-weight: bold;
+}

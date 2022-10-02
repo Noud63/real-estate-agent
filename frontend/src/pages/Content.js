@@ -95,14 +95,20 @@ const Content = () => {
                 </div>
             </div>
 
+            
+
+            <div className="content_sold"><SoldProperties /></div>
             <div className="content_subscription">
                 <div className="news"><NewsLetter /></div>
                 <div className="finance">Your add here</div>
             </div>
-
-            <div className="content_sold"><SoldProperties /></div>
             <div className="content_block2"></div>
             <div className="content_block3"></div>
+            <div className="content_block4"></div>
+            <div className="content_block2"></div>
+            <div className="content_block5"></div>
+            <div className="content_block6"></div>
+            
         </>
     )
 }

@@ -54,7 +54,7 @@
   flex-direction: column;
   width: 55px;
   height: 200px;
-  top: 31.5%;
+  top: 36.1%;
   left: 0;
   z-index: 999;
   border-bottom-right-radius: 20px;
@@ -67,8 +67,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 180px;
-    height: 55px;
+    width: 150px;
+    height: 50px;
     top: 140px;
     border-radius: 0;
   }
@@ -89,7 +89,7 @@
   flex-direction: column;
   width: 100%;
   height: 33%;
-  background-color: rgb(103, 92, 121);
+  background-color: rgb(170, 0, 0);
   padding-right: 5px;
   cursor: pointer;
 }
@@ -101,7 +101,7 @@
   }
 }
 .container .vote_number .rating {
-  color: rgb(255, 192, 19);
+  color: rgb(216, 211, 230);
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -116,7 +116,7 @@
   flex-direction: column;
   width: 100%;
   height: 33%;
-  background-color: rgb(75, 66, 88);
+  background-color: rgb(109, 0, 0);
   padding-right: 5px;
   cursor: pointer;
 }
@@ -140,7 +140,7 @@
   flex-direction: column;
   width: 100%;
   height: 33%;
-  background-color: rgb(27, 22, 34);
+  background-color: rgb(65, 0, 0);
   padding-right: 5px;
   color: rgb(163, 163, 163);
   cursor: pointer;
@@ -233,50 +233,46 @@
   display: flex;
   justify-content: center;
 }
-.homepage_image .awards {
+.homepage_image .awards1 {
   position: absolute;
-  bottom: 25%;
+  bottom: 12%;
   right: 8%;
 }
-@media only screen and (max-width: 1200px) {
-  .homepage_image .awards {
-    bottom: 35%;
+@media only screen and (max-width: 800px) {
+  .homepage_image .awards1 {
+    display: none;
   }
 }
-@media only screen and (max-width: 1080px) {
-  .homepage_image .awards {
-    bottom: 25%;
+.homepage_image .awards1 .award {
+  width: 70px;
+  height: auto;
+  -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
+  filter: drop-shadow(0px 3px 1px rgb(68, 0, 0));
+}
+@media only screen and (max-width: 800px) {
+  .homepage_image .awards1 .award {
+    width: 55px;
   }
 }
-@media only screen and (max-width: 700px) {
+.homepage_image .awards {
+  position: absolute;
+  bottom: 12%;
+  right: 5%;
+}
+@media only screen and (max-width: 800px) {
   .homepage_image .awards {
     display: none;
   }
 }
 .homepage_image .awards .award {
-  width: 180px;
-  rotate: 15deg;
+  width: 70px;
+  height: auto;
   -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
-  filter: drop-shadow(0px 3px 1px rgb(49, 44, 54));
-}
-@media only screen and (max-width: 1300px) {
-  .homepage_image .awards .award {
-    width: 130px;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  .homepage_image .awards .award {
-    width: 120px;
-  }
-}
-@media only screen and (max-width: 1080px) {
-  .homepage_image .awards .award {
-    width: 100px;
-  }
+  filter: drop-shadow(0px 3px 1px rgb(68, 0, 0));
 }
 @media only screen and (max-width: 800px) {
   .homepage_image .awards .award {
-    width: 80px;
+    width: 55px;
   }
 }
 .homepage_image .your_dream {
@@ -293,28 +289,23 @@
   word-spacing: 5px;
   letter-spacing: 5px;
   font-weight: bold;
-  background-color: rgb(27, 22, 34);
-  border-top: 1px solid rgb(110, 100, 126);
-  border-bottom: 1px solid rgb(110, 100, 126);
+  background-color: rgba(65, 0, 0, 0.5);
 }
 @media only screen and (max-width: 1300px) {
   .homepage_image .your_dream {
-    background-color: transparent;
     color: rgb(129, 108, 129);
-    border: 0;
-    border-top: 0;
+    height: 100px;
   }
 }
 @media only screen and (max-width: 1080px) {
   .homepage_image .your_dream {
     font-size: 1.6rem;
-    bottom: -10px;
   }
 }
 @media only screen and (max-width: 800px) {
   .homepage_image .your_dream {
     font-size: 1.4rem;
-    bottom: -20px;
+    height: 70px;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -322,15 +313,10 @@
     font-size: 1.2rem;
   }
 }
-@media only screen and (max-width: 650px) {
-  .homepage_image .your_dream {
-    bottom: -30px;
-  }
-}
 @media only screen and (max-width: 510px) {
   .homepage_image .your_dream {
     font-size: 1.2rem;
-    bottom: -60px;
+    height: 60px;
   }
 }
 .homepage_image .castlesandchateaux {
@@ -338,13 +324,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  color: rgb(153, 140, 168);
+  color: rgb(207, 198, 219);
   width: 100%;
-}
-@media only screen and (max-width: 1300px) {
-  .homepage_image .castlesandchateaux {
-    color: rgb(97, 73, 97);
-  }
 }
 @media only screen and (max-width: 510px) {
   .homepage_image .castlesandchateaux {
@@ -356,7 +337,7 @@
   font-size: 1rem;
   margin-top: 10px;
   width: 100%;
-  color: rgb(112, 85, 112);
+  color: rgb(207, 198, 219);
   padding-bottom: 10px;
   display: flex;
   align-items: center;
@@ -369,7 +350,6 @@
     font-size: 0.9rem;
     letter-spacing: 2px;
     padding-bottom: 0px;
-    margin-top: 0px;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -378,6 +358,7 @@
     width: 500px;
     word-spacing: 0;
     letter-spacing: 3px;
+    margin-top: 0;
   }
 }
 @media only screen and (max-width: 510px) {

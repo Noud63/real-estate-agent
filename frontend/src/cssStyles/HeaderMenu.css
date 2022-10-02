@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #bfb5c2;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #625469;
+  box-shadow: inset 0 0 10px rgb(11, 6, 12);
+  border-radius: 50px;
+}
+
+@-moz-document url-prefix() {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #544a61;
+  }
+}
+.headerMenu {
+  width: 100%;
+  height: 40px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+@media only screen and (max-width: 510px) {
+  .headerMenu {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.headerMenu_item {
+  position: relative;
+  height: 40px;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 2px;
+  color: rgb(43, 34, 49);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgb(157, 145, 167);
+  cursor: pointer;
+  background: rgb(209, 200, 219);
+  transition: all 0.5s ease-in-out;
+}
+.headerMenu_item:hover {
+  background: rgb(121, 10, 10);
+  color: white;
+}

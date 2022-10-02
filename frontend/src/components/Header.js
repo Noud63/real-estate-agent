@@ -118,7 +118,7 @@ const Header = () => {
                 <div className="header_content">
 
                     <div className="header_content_iconandtitle" onClick={backHome}>
-                        <img src={ellieLogo} alt="elliecastelli" style={{ width: '65px', height: '60px', marginTop: '15px' }} />
+                        <img src={ellieLogo} alt="elliecastelli" style={{ width: '60px', height: '55px', marginTop: '12px' }} />
                         <div className="header_content_title">
                             <span className="header_content_ellieName">Ellie Castelli</span>
                             <span className="header_content_your_castle">- Your Castle is your Home -</span>
@@ -127,7 +127,7 @@ const Header = () => {
 
                     <div className="hamburger menu">
                         {!showMenu ? <GiHamburgerMenu color='rgb(55, 39, 75)' size='40' onClick={showMenuOverlay} /> :
-                            <AiOutlineClose color='rgb(55, 39, 75)' size='40' onClick={closeMenuOverlay} />}
+                            <AiOutlineClose color='rgb(55, 39, 75)' size='40' onClick={closeMenuOverlay} className="cross"/>}
                     </div>
 
                     <div className="buttons">

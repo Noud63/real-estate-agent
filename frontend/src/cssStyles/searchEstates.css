@@ -40,7 +40,7 @@
   }
 }
 .searchFields {
-  max-width: 96%;
+  width: 96%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,19 +57,19 @@
   width: 300px;
   height: 40px;
   font-size: 1rem;
-  color: rgb(132, 116, 141);
+  color: rgb(198, 184, 206);
   letter-spacing: 1px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(149, 136, 158);
+  border: 1px solid rgb(196, 186, 207);
   border-right: 0;
 }
 @media only screen and (max-width: 750px) {
   .searchOptions {
     margin-bottom: 10px;
-    border-right: 1px solid rgb(149, 136, 158);
+    border-right: 1px solid rgb(196, 186, 207);
   }
 }
 
@@ -82,7 +82,7 @@
   outline: none;
   padding-left: 10px;
   color: rgb(153, 142, 168);
-  border-color: rgb(124, 110, 134);
+  border-color: rgb(196, 186, 207);
 }
 @media only screen and (max-width: 750px) {
   .selectop {
@@ -99,7 +99,7 @@ select {
 .searchbtn {
   width: 120px;
   height: 40px;
-  background-image: linear-gradient(to top, rgb(87, 72, 99), rgb(187, 172, 199));
+  background: rgb(199, 184, 211);
   border: 0;
   border-top: 1px solid white;
   outline: none;

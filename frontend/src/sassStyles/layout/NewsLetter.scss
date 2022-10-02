@@ -9,20 +9,20 @@
     width: 100%;
     height: auto;
     background-color: transparent;
-    background-image: linear-gradient(to bottom,  rgb(50, 43, 59),  rgb(50, 43, 59, .2));
-    color: rgb(178, 168, 196);
-    border-top: 1px solid rgb(121, 112, 131);
+    background-image: linear-gradient(to top, rgb(63, 0, 0),  rgb(85, 0, 0));
+    color:  rgb(186, 166, 194);
+    border-top: 1px solid rgb(124, 0, 0);
     border-bottom: 2px solid rgb(6, 5, 7);
     padding: 15px 20px 15px 20px;
 
      &_footer {
        width: 100%;
        @include center-content-row-start;
-         color:rgb(104, 94, 116);
+         color:rgb(141, 0, 0);
          @include respond6(castlesandchateaux){
           margin-top: 10px;
        }
-       }
+    }
 }
 
 .newsLetter_top {
@@ -34,7 +34,7 @@
        flex-direction: row;
        font-family: Arial, Helvetica, sans-serif;
        font-size: 1rem;
-       border-bottom: 1px solid rgb(149, 140, 161);
+       border-bottom: 1px solid  rgb(186, 166, 194);
         &_header {
             width: 100%;
         }
@@ -53,6 +53,10 @@
        margin-top: 20px;
        @include respond6(castlesandchateaux){
           flex-direction: column;
+       }
+
+       & ::placeholder {
+         color: rgb(148, 141, 158);
        }
 
        &_name {
@@ -88,9 +92,9 @@
            margin-top: 0px;
            border-style: none;
            outline: none;
-           border-top: 1px solid rgb(255, 8, 8);
-           box-shadow: 0px 2px 2px rgb(90, 0, 0);
-           background-image: linear-gradient(to top, rgb(94, 0, 0), rgb(184, 0, 0));
+           border-top: 1px solid rgb(245, 0, 0);
+           box-shadow: 0px 2px 2px rgb(51, 0, 0);
+           background-color:rgb(128, 0, 0);
            color: rgb(217, 210, 228);
          }
         }
@@ -102,7 +106,7 @@
          height: 37px;
          padding-left: 5px;
          border-style: none;
-         border-bottom: 1px solid rgb(165, 154, 180);
+         border-bottom: 1px solid rgb(199, 191, 209);
          color: rgb(193, 184, 207);
          outline: none;
          
@@ -113,7 +117,4 @@
            padding-left: 0px;
        }
        }
-
-       
-
 }

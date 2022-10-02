@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Chopin";
+  src: url("../../fonts/ChopinScript.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Digi";
+  src: url("../../fonts/Digizen.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #bfb5c2;
+  display: none;
+}
+
+::-webkit-scrollbar {
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #625469;
+  box-shadow: inset 0 0 10px rgb(11, 6, 12);
+  border-radius: 50px;
+}
+
+@-moz-document url-prefix() {
+  .scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #544a61;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.soldprops {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.soldprops_header {
+  width: 100%;
+  height: 50px;
+  color: rgb(112, 102, 96);
+  padding: 0 0 40px 0;
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.soldprops_grid {
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 50px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.soldprops_grid_imageBox {
+  animation: fadeIn 0.8s ease-in;
+  position: relative;
+  width: 24%;
+  height: auto;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 2px rgb(158, 158, 158);
+}
+@media only screen and (max-width: 1300px) {
+  .soldprops_grid_imageBox {
+    width: 49%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .soldprops_grid_imageBox {
+    width: 100%;
+  }
+}
+.soldprops_grid_imageBox .message {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, rgb(226, 226, 226), rgb(201, 201, 201));
+  z-index: 999;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid white;
+}
+.soldprops_grid_imageBox .message_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  color: rgb(79, 69, 94);
+}
+.soldprops_grid_imageBox .message_text span {
+  height: 25px;
+}
+.soldprops_grid_imageBox .image {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+.soldprops_grid_imageBox .image img {
+  width: 100%;
+  height: auto;
+}
+.soldprops_grid_imageBox .footer {
+  position: absolute;
+  border-bottom: 1px solid white;
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  bottom: 0;
+  right: 0;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: rgb(200, 191, 214);
+  font-size: 0.9rem;
+  background-image: linear-gradient(to top, rgb(230, 230, 230), rgb(201, 201, 201));
+}
+.soldprops_grid_imageBox .footer .soldChateau {
+  color: rgb(63, 54, 48);
+}
+.soldprops_grid_imageBox .footer .soldPrice {
+  color: rgb(197, 0, 0);
+  font-weight: bold;
+}
+.soldprops .loadmoreBtn {
+  position: absolute;
+  background-color: rgb(224, 224, 224);
+  color: rgb(100, 90, 78);
+  border-style: none;
+  outLine: none;
+  border: 2px solid rgb(133, 127, 117);
+  bottom: -25px;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+}

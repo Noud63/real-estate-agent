@@ -17,7 +17,7 @@ const SingleProperty = ({ id, area, bathrooms, bedrooms, city, departement, regi
 
     return <div className={!expand ? "content2_property" : "content2_property enlarge"} key={id}>
 
-             <Likes id={id}/>
+             <Likes id={id} />
             
             <div className="content2_property_castleImageBox"><img src={img} alt="castle" className="content2_property_castleImage" /></div>
 

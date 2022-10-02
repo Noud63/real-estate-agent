@@ -5,6 +5,7 @@
 
 .container3 {
     margin: 50px auto;
+    background-color: $dominantbackground;
     width: 315px;
     min-height: 100vh;
     @include respond3(smallest){
@@ -26,7 +27,7 @@
     justify-content: center;
     width: 100%;
     border: 1px solid rgb(148, 133, 156); 
-    color: rgb(168, 151, 179);
+    color: rgb(192, 176, 202);
     margin-bottom: 10px;
     height: 50px;
     font-size: 1.2rem;
@@ -84,12 +85,12 @@ input[name="password3"] {
 .btn {
     margin-top: 10px;
     height: 50px;
-    background-color: rgb(87, 77, 99);
+    background-color: rgb(88, 5, 5);
     width: 315px;
     color: rgb(177, 164, 184);
     border-style: none;
-    border-top: 2px solid rgb(117, 106, 131);
-    border-bottom: 2px solid rgb(49, 45, 56);
+    border-top: 2px solid rgb(134, 0, 0);
+    border-bottom: 2px solid rgb(44, 0, 0);
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -206,11 +207,11 @@ input[type="checkbox"] {
 }
 
 .goToRegisterText {
-    color: rgb(151, 133, 163);
+    color: rgb(153, 0, 0);
 }
 
 
- input[type="checkbox"] {
-  filter: invert(100%) hue-rotate(8deg) brightness(1.7);
-}
+//  input[type="checkbox"] {
+//   filter: invert(80%) hue-rotate(8deg) brightness(1.2);
+// }
 

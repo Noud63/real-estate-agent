@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const HeaderMenu = () => {
     return (
-        <div className="borderTop">
+        
             <div className="headerMenu">
                 <Link to="/" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Home</div></Link>
                 <Link to="/buy" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Buy</div></Link>
@@ -13,7 +13,7 @@ const HeaderMenu = () => {
                 <div className="headerMenu_item">News</div>
                 <div className="headerMenu_item">Currency</div>
             </div>
-        </div>
+        
     )
 }
 

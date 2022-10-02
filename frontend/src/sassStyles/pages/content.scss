@@ -54,6 +54,7 @@
 .mainContentWrapper {
     margin: 0 auto;
     max-width: 1920px;
+    background-color: $dominantbackground;
     @include center-content;
 }
 
@@ -77,7 +78,6 @@
     justify-content: flex-start;
     flex-direction: column;
     height: auto;
-    background-color: transparent;
     margin-top: 60px;
     color: rgb(76, 61, 78);
     font-family: Arial, Helvetica, sans-serif;
@@ -103,17 +103,17 @@
     width: 40px;
     height: 40px;
     border-style: none;
-    color: rgb(52, 44, 63);
+    color: rgb(86, 75, 102);
     background-color: rgb(158, 145, 173);
-    box-shadow: 0px 1px 2px rgb(132, 116, 141);
+    box-shadow: 0px 1px 2px rgb(53, 0, 0);
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
     margin-right: 5px;
 
     &.active {
-        background-color: rgb(90, 69, 94);
-         color: rgb(222, 208, 224);
+        background-color: rgb(136, 0, 0);
+        color: rgb(222, 208, 224);
     }
 }
 
@@ -121,7 +121,8 @@
     padding: 50px 20px;
     height: auto;
     width: 100%;
-    border-top: 1px solid rgb(110, 101, 124);
+    background-color: $dominantbackground;
+    // border-top: 1px solid rgb(110, 101, 124);
     @include center-content-row;
     display: none;
     @include respond1(removeSidebar){
@@ -148,12 +149,40 @@
 .content_sold {
     height: auto;
     width: 100%;
-    background-color: rgb(27, 22, 34);
-    border-top: 1px solid rgb(110, 101, 124);
+    padding: 100px 0;
+    background-color:rgb(224, 224, 224);
+    // border-top: 1px solid rgb(80, 72, 92);
+    // border-bottom: 1px solid rgb(110, 101, 124);
 }
 
-.content_block2, .content_block3  {
+.content_block2 {
     height: 700px;
-    background-color: rgb(27, 22, 34);
-    border-top: 1px solid rgb(110, 101, 124);
+    background-color: rgb(163, 163, 163);
+    // border-top: 1px solid rgb(110, 101, 124);
 }
+
+.content_block3  {
+    height: 700px;
+    background-color: rgb(59, 0, 0);
+    // border-top: 1px solid rgb(110, 101, 124);
+}
+
+.content_block4  {
+    height: 700px;
+    background-color: rgb(231, 231, 231);
+    // border-top: 1px solid rgb(110, 101, 124);
+}
+
+.content_block5 {
+    height: 700px;
+    background-color: rgb(41, 0, 0);
+    // border-top: 1px solid rgb(110, 101, 124);
+}
+
+.content_block6 {
+    height: 700px;
+    background-color: $dominantbackground;
+    // border-top: 1px solid rgb(110, 101, 124);
+}
+
+

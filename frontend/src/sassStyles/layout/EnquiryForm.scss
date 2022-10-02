@@ -8,18 +8,18 @@
     justify-content: flex-start;
     flex-direction: column;
     border-width: 0 10px 10px 10px;
-    border-color:  rgb(34, 29, 43);
+    border-color:  $dominantbackground;
     border-style: solid;
     top:0;
     width: 100%;
     height: 205px;
     // background-color: rgb(168, 0, 0);
-    box-shadow: 0px 2px 3px rgb(0, 0, 0);
+    box-shadow: 0px 2px 3px rgb(39, 0, 0);
     z-index: 1;
     animation: show-form .8s ease-in-out;
     opacity: 1;
     color: white;
-    background-image: linear-gradient(to top, rgb(94, 0, 0), rgb(153, 0, 0));
+    background-image: linear-gradient(to top, rgb(65, 0, 0), rgb(153, 0, 0));
 
     &.show {
     top: 205px;
@@ -42,7 +42,7 @@
 
 .enquiryForm_close {
        width: 100%;
-       height: 35px;
+       height: 45px;
        display:flex;
        align-items: center;
        justify-content: center;
@@ -50,7 +50,7 @@
        padding: 0 10px;
        font-family: Arial, Helvetica, sans-serif;
        font-size: .9rem;
-       border-bottom: 1px solid rgb(240, 236, 245);
+       border-bottom: 1px solid rgb(216, 210, 224);
         @include respond5(contentBreak){
              border-bottom: 0;
              padding: 0;
@@ -78,7 +78,7 @@
          display:flex;
        align-items: center;
        justify-content: flex-end;
-         color: rgb(255, 255, 255);
+         color: rgb(229, 225, 235);
          width: 50%;
        }
 
@@ -87,7 +87,7 @@
        align-items: center;
        justify-content: flex-start;
        font-weight: bold;
-         color: rgb(255, 255, 255);
+         color: rgb(229, 225, 235);
          width: 50%;
          @include respond5(contentBreak){
             display:none;
@@ -167,13 +167,13 @@
        & button {
            width: 100%;
            height: 33px;
-           margin-top: 26px;
+           margin-top: 10px;
            border-style: none;
            outline: none;
            border-top: 1px solid rgb(255, 8, 8);
-           box-shadow: 0px 2px 2px rgb(90, 0, 0);
-           background-image: linear-gradient(to top, rgb(116, 0, 0), rgb(207, 0, 0));
-           color: rgb(255, 255, 255);
+           box-shadow: 0px 2px 2px rgb(66, 0, 0);
+           background-color: rgb(150, 0, 0);
+           color: rgb(221, 216, 230);
             @include respond5(contentBreak){
               height: 43px;
               margin-top: 20px;
@@ -183,21 +183,28 @@
         }
        }
 
-       & label {
-         width: 90%;
-         display:block;
-         color: white;
-         font-size: .9rem;
-         margin-bottom: 10px;
+       & ::placeholder {
+         color: rgb(193, 188, 201);
        }
+
+      //  & label {
+      //    width: 90%;
+      //    display:block;
+      //    color: rgb(215, 210, 226);
+      //    font-size: .9rem;
+      //    margin-bottom: 10px;
+      //  }
 
        & input {
          width: 90%;
-         margin-bottom: 10px;
+         margin-bottom: 20px;
+         margin-top: 12px;
          height: 30px;
          padding-left: 5px;
          border-style: none;
          outline: none;
+         border-bottom: 1px solid rgb(208, 203, 218);
+         background-color: transparent;
          font-size: .9rem;
        }
 }

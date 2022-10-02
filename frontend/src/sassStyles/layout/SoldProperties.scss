@@ -9,7 +9,6 @@
 to {
  opacity: 1;
   }
-   
 }
 
 .soldprops {
@@ -19,15 +18,15 @@ to {
     height: auto;
     @include center-content-column;
 
-
         &_header {
             width: 100%;
             height: 50px;
-            color:rgb(163, 149, 184);
-            padding: 40px 0 40px 20px;
-            font-size: 1.2rem;
+            color:rgb(112, 102, 96);
+            padding: 0 0 40px 0;
+            font-size: 1.8rem;
             font-family: Arial, Helvetica, sans-serif;
-            @include center-content-row-start;
+            letter-spacing: 4px;
+            @include center-content-row;
         }
 
         &_grid {
@@ -50,7 +49,7 @@ to {
                 width: 24%;
                 height: auto;
                 margin-bottom: 10px;
-                box-shadow: 0px 4px 4px rgb(0, 0, 0);
+                box-shadow: 0px 2px 2px rgb(158, 158, 158);
                 @include respond10(thirteenhundred){
                     width: 49%;
                 }
@@ -63,15 +62,15 @@ to {
                     width: 100%;
                     top: 0;
                     bottom: 0;
-                    background-image: linear-gradient(to bottom, rgb(31, 26, 41), rgb(48, 41, 61));
+                    background-image: linear-gradient(to top, rgb(226, 226, 226),rgb(201, 201, 201));
                     z-index: 999;
                     font-family: Arial, Helvetica, sans-serif;
-                    // border: 2px solid rgb(132, 122, 146);
+                    border-bottom: 1px solid white;
 
                     &_text {
                           @include center-content-column;
                           height: 100%;
-                          color:rgb(175, 164, 190);
+                          color:rgb(79, 69, 94);
                           span {
                               height: 25px;
                           }
@@ -92,9 +91,9 @@ to {
                
                 .footer {
                 position: absolute;
-                background-image: linear-gradient(to top, rgba(75, 64, 94, .8), rgba(31, 24, 41, 1) );
+                border-bottom: 1px solid white;
                 width: 100%;
-                height: 20%;
+                height: 25%;
                 @include center-content-row;
                 justify-content: space-around;
                 bottom: 0;
@@ -104,9 +103,9 @@ to {
                 letter-spacing: 2px;
                 color: rgb(200, 191, 214);
                 font-size: .9rem;
-                border-bottom: 1px solid rgb(167, 152, 180);
+                 background-image: linear-gradient(to top, rgb(230, 230, 230),rgb(201, 201, 201));
                 .soldChateau {
-                    color: rgb(163, 149, 184);
+                    color: rgb(63, 54, 48);
                 }
 
                 .soldPrice {
@@ -118,11 +117,11 @@ to {
      }
      .loadmoreBtn {
          position: absolute;
-         background-color: rgb(30, 25, 37);
-         color: rgb(152, 139, 170);
+         background-color: rgb( 224, 224, 224);
+         color: rgb(100, 90, 78);
          border-style: none;
          outLine: none;
-         border: 2px solid rgb(132, 119, 151);
+         border: 2px solid rgb(133, 127, 117);
          bottom: -25px;
          width: 200px;
          height: 50px;
