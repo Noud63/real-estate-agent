@@ -7,6 +7,7 @@ import magazine2 from '../assets/images/magazine2.jpg'
 import magazine3 from '../assets/images/magazine4.png'
 import NewsLetter from '../components/NewsLetter'
 import { Tooltip } from 'react-tippy'
+import 'react-tippy/dist/tippy.css'
 
 const SideBar = () => {
     return (

@@ -126,7 +126,7 @@ const Header = () => {
                     </div>
 
                     <div className="hamburger menu">
-                        {!showMenu ? <GiHamburgerMenu color='rgb(55, 39, 75)' size='40' onClick={showMenuOverlay} /> :
+                        {!showMenu ? <GiHamburgerMenu color='rgb(65, 0, 0)' size='40' onClick={showMenuOverlay} /> :
                             <AiOutlineClose color='rgb(55, 39, 75)' size='40' onClick={closeMenuOverlay} className="cross"/>}
                     </div>
 

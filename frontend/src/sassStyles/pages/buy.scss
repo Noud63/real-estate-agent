@@ -5,7 +5,7 @@
 
 .buyWrapper {
     background-color: $dominantbackground;
- @include center-content-column-top;
+    @include center-content-column-top;
 }
 
 .buy {
@@ -18,7 +18,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9rem;
     padding: 0 40px;
-    border-top: 2px solid rgb(128, 0, 0);
+    border-top: 2px solid rgb(117, 47, 47);
     border-bottom: 2px solid rgb(32, 0, 0);
     background-image: linear-gradient(to top, rgb(61, 0, 0),  rgb(85, 0, 0));
     line-height: 1.4;
@@ -59,6 +59,8 @@
     }
     p {
         padding-bottom: 50px;
-         border-bottom: 1px solid rgb(145, 134, 165);
+        margin-top: 50px;
+        border-bottom: 1px solid rgb(145, 134, 165);
+        border-top: 1px solid rgb(145, 134, 165);
     }
 }

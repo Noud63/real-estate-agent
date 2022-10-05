@@ -6,9 +6,9 @@ const HeaderMenu = () => {
     return (
         
             <div className="headerMenu">
-                <Link to="/" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Home</div></Link>
-                <Link to="/buy" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Buy</div></Link>
-                <div className="headerMenu_item">Service</div>
+                <Link to="/" className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Home</div></Link>
+                <Link to="/buy"  className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Buy</div></Link>
+                <Link to="/AllProperties"  className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Properties</div></Link>
                 <div className="headerMenu_item">Finance</div>
                 <div className="headerMenu_item">News</div>
                 <div className="headerMenu_item">Currency</div>

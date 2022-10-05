@@ -56,7 +56,6 @@ const Register = () => {
 
     return (
         <>
- <HeaderMenu />
         <div className="container2">
             <ToastContainer theme='dark' position="top-right"
                 autoClose={3000}

@@ -7,6 +7,7 @@ import heart from '../assets/icons/heartgrey.png'
 import heartred from '../assets/icons/heartred.png'
 import arrow from '../assets/icons/arrow.png'
 import RatingButtons from './RatingButtons'
+import HeaderMenu from './HeaderMenu'
 
 const Main = () => {
 
@@ -85,7 +86,7 @@ const Main = () => {
                     </div>
                     <img src={header3} alt="" className="c5_image" />
             </div>
-
+            <HeaderMenu />
         </div>
     )
 }

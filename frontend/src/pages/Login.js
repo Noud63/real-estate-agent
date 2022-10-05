@@ -65,7 +65,6 @@ const onErrors = errors => console.error(errors);
 
     return (
         <>
- <HeaderMenu />
         <div className="container3">
            
             <ToastContainer theme='dark' position="top-right"
