@@ -7,8 +7,10 @@
     width: 96%;
     @include center-content-row;
     margin: 0px  20px 30px 20px;
+    box-shadow: 0px 2px 2px rgb(27, 0, 0);
     @include respond5(contentBreak){
             flex-direction: column;
+             box-shadow: none;
         }
 }
 
@@ -20,16 +22,17 @@
     letter-spacing: 1px;
     font-weight: bold;
     @include center-content;
-    border: 1px solid rgb(196, 186, 207);
+    border: 1px solid rgb(148, 0, 0);
     border-right: 0;
       @include respond5(contentBreak){
            margin-bottom: 10px;
-           border-right: 1px solid rgb(196, 186, 207);
+           border-right: 1px solid rgb(148, 0, 0);
+           box-shadow: 0px 2px 2px rgb(27, 0, 0);
         }
 }
 
 .selectop {
-    width: 240px;
+    width: 250px;
     height: 40px;
     color: rgb(111, 94, 122);
     background-color: transparent;
@@ -37,11 +40,12 @@
     outline: none;
     padding-left: 10px;
     color: rgb(153, 142, 168);
-    border-color: rgb(196, 186, 207);
+    border-color: rgb(148, 0, 0);
     @include respond5(contentBreak){
            width: 300px;
            margin-bottom: 10px;
-           border: 1px solid rgb(149, 136, 158);
+        border-right: 1px solid rgb(148, 0, 0);
+        box-shadow: 0px 2px 2px rgb(27, 0, 0);
         }
 }
 
@@ -50,14 +54,15 @@ select {
 }
 
 .searchbtn {
-    width: 120px;
+    width: 100px;
     height: 40px;
-    background: rgb(199, 184, 211);
+    background: transparent;
     border: 0;
-    border-top: 1px solid white;
+    border: 1px solid rgb(148, 0, 0);
     outline: none;
      @include respond5(contentBreak){
            width: 300px;
+           box-shadow: 0px 2px 2px rgb(27, 0, 0);
         }
 }
 

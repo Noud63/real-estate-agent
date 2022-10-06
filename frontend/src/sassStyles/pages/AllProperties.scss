@@ -54,6 +54,7 @@
 .mainContentWrapper {
     margin: 0 auto;
     max-width: 1920px;
+    margin-bottom: 500px;
     background-color: $dominantbackground;
     @include center-content;
 }

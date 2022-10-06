@@ -7,9 +7,15 @@
 .content_block1{
     width: 100%;
     height: auto;
-    padding: 180px 0;
+    padding: 170px 0 180px 0;
     @include center-content-column;
     background-color: $dominantbackground;
+    @include respond2(gridcontainer){
+        padding: 120px 0;
+    }
+     @include respond5(contentBreak){
+            padding: 80px 0;
+        }
 
 
     &_wrapper {
@@ -17,12 +23,33 @@
         @include center-content-row;
         margin: 0 20px;
         padding: 10px;
+        @include respond5(contentBreak){
+            @include center-content-column;
+        }
+
        &_imgLeft {
         position: relative;
         margin: 10px;
         width: 50%;
         height: auto;
         line-height: 0;
+
+        & .featuring {
+            position: absolute;
+         width: 100%;
+         top: -40px;
+        //  height: 60px;
+        //  border: 1px solid rgb(146, 107, 107);
+         @include center-content-row-start;
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+         font-size: 1.2rem;
+         letter-spacing: 2px;
+         color: rgb(116, 85, 82);
+      }
+
+         @include respond5(contentBreak){
+           width: 100%;
+        }
     
        & .name {
            position: absolute;
@@ -51,6 +78,9 @@
           margin: 10px;
           height: auto;
           line-height: 0;
+           @include respond5(contentBreak){
+           width: 100%;
+        }
 
        & .name {
            position: absolute;
@@ -77,13 +107,13 @@
 
      .viewAllProps {
          width: 220px;
-         height: 60px;
+         height: 50px;
          margin-top: 50px;
-         border: 1px solid rgb(146, 107, 107);
+         border: 1px solid rgb(122, 86, 86);
          @include center-content;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-           font-size: 1rem;
-            letter-spacing: 2px;
+         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+         font-size: 1rem;
+         letter-spacing: 2px;
          color: rgb(207, 198, 219);
       }
 }
@@ -97,7 +127,7 @@
 
 .content_block2 {
     height: 700px;
-    background-color: rgb(163, 163, 163);
+    background-color: rgb(63, 63, 63);
 }
 
 .content_block3  {
@@ -112,7 +142,7 @@
 
 .content_block5 {
     height: 700px;
-    background-color: rgb(41, 0, 0);
+    background-color: $dominantbackground;
 }
 
 .content_block6 {

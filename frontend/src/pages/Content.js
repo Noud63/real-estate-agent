@@ -10,28 +10,29 @@ const Content = () => {
 
 return (
           <>
+        
             <div className="content_block1">
-
+            
                 <div className="content_block1_wrapper">
-
+                
                      <div className="content_block1_wrapper_imgLeft">
-                        <img src={image} alt="" style={{ width: '100%', height: 'auto', opacity: '.3' }} />
+                    <div className="featuring">Featured properties:</div>
+                        <img src={image} alt="" style={{ width: '100%', height: 'auto', opacity: '.4' }} />
                         <div className="name">
                             <span>Château de Chenonceau</span>
                         </div>
                      </div>
+
                      <div className="content_block1_wrapper_imgRight">
-                        <img src={image2} alt="" style={{ width: '100%', height: 'auto', opacity: '.3' }} />
+                        <img src={image2} alt="" style={{ width: '100%', height: 'auto', opacity: '.4' }} />
                         <div className="name">
                             <span>Château d'azay le Rideau</span>
                         </div>
                      </div>
 
-                     
-
                 </div>
 
-            <Link to='/allproperties' style={{textDecoration: 'none'}}><div className="viewAllProps">View our Properties</div></Link>
+                   <Link to='/allproperties' style={{textDecoration: 'none'}}><div className="viewAllProps">View our Properties</div></Link>
                
             </div>
 
@@ -42,7 +43,6 @@ return (
             <div className="content_block4"></div>
             <div className="content_block2"></div>
             <div className="content_block5"></div>
-            <div className="content_block6"></div>
         </>
     )
 }

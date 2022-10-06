@@ -84,6 +84,14 @@
 }
 
 //Media queries
+@mixin respond11($breakpoint) { 
+  @if $breakpoint == fiveteenhundred {    
+    @media only screen and (max-width: 1500px) {
+      @content;
+    }
+  }
+}
+
 @mixin respond10($breakpoint) { 
   @if $breakpoint == thirteenhundred {    
     @media only screen and (max-width: 1300px) {
@@ -99,9 +107,26 @@
     }
   }
 }
+
+@mixin respond1($breakpoint) { 
+  @if $breakpoint == removeSidebar {    
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
 @mixin respond2($breakpoint) { 
   @if $breakpoint == gridcontainer {    
     @media only screen and (max-width: 1080px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond12($breakpoint) { 
+  @if $breakpoint == thousand {    
+    @media only screen and (max-width: 1000px) {
       @content;
     }
   }

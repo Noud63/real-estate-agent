@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     height: 140px;
-    background-color: rgba(255, 255, 255, .45);
+    background-color: rgba(194, 188, 207, 0.45);
     box-shadow: 0px 2px 5px rgb(69, 60, 80);
     z-index: 999;
     transition: top .5s ease-in-out;
@@ -136,7 +136,9 @@
     &_btn:hover {
         transform: scale(1.05);
         transition: .3s ease-in-out;
-        box-shadow: 0px 0px 4px rgb(96, 77, 102);
+        color:  rgb(230, 230, 230);
+        box-shadow: 0px 2px 4px rgb(66, 58, 68);
+          border: 2px solid rgb(230, 230, 230);
     }
 
     @include respond(hamburgermenu) {
@@ -199,6 +201,6 @@
 .buttons_btnOverlay:hover {
         border: 2px solid rgb(221, 212, 226);
         transition: .3s ease-in-out;
-        box-shadow: 0px 4px 26px rgb(24, 22, 27);
-        color:  rgb(227, 219, 231);
+        box-shadow: 0px 4px 10px rgb(24, 22, 27);
+        color:  rgb(240, 235, 243);
     }

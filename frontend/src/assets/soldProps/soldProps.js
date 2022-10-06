@@ -12,7 +12,7 @@ const soldProps = [
         id: 1,
         name: 'Chateau Les Carrasses',
         price: '$3.750.000,-',
-        img: '../soldProps/fulfillyourdreamimg3.jpg'
+        img: '../soldProps/fulfillyourdreamimg2.jpg'
     },
     {
         id: 2,
