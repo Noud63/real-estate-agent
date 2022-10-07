@@ -31,7 +31,6 @@ const AllProperties = () => {
     const realestates = useSelector(state => state.realestate)
     let { isLoading, realestate, filtered, isError, isSuccess, message } = realestates;
 
-
     useEffect(() => {
         dispatch(getRealEstates())
         if (isSuccess) {
@@ -39,7 +38,7 @@ const AllProperties = () => {
         } else if (isError) {
             console.log('No data!')
         }
-    }, [dispatch, isSuccess])
+    }, [dispatch, isSuccess, isError])
 
 
     //Pagination

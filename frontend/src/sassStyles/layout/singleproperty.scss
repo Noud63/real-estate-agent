@@ -118,6 +118,11 @@
                 width: 100%;
                 height: auto;
             }
+
+            @include respond5(contentBreak){
+               top: -18px;
+               right: -18px;
+            }
         }
 }
 

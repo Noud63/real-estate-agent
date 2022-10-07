@@ -6,12 +6,8 @@ Back-end&nbsp;  : Express - MongoDB - Mongoose - Node<br><br><br>
 
 
 
-![elliecastelli](https://user-images.githubusercontent.com/38325801/191538687-bd5ec85d-1983-4625-a7dd-44bc67a1a288.png)<br><br><br>
+![ecmacbook](https://user-images.githubusercontent.com/38325801/194486020-10cc9859-f125-41c1-b862-ff4660b54396.png)<br><br><br>
+![ecipadpro2](https://user-images.githubusercontent.com/38325801/194486080-9fd4b786-179f-4a56-869e-36a15d3c9737.png)<br><br><br>
+![ecmobile](https://user-images.githubusercontent.com/38325801/194486167-2921d769-9a66-4af1-a61c-71a8d170c599.png)<br><br><br>
 
-![elliecastelli5](https://user-images.githubusercontent.com/38325801/191537810-c5efd57b-b7f6-4553-9268-56c1e42b7c28.png)<br><br><br>
 
-![elliecastelli7](https://user-images.githubusercontent.com/38325801/191249351-35275d9d-52e1-4dc7-8aef-9cfde311ca6a.png)<br><br><br>
-
-![elliecastelli2](https://user-images.githubusercontent.com/38325801/191249369-a7a573c0-9543-4e2f-88cd-fe1dc73b1f53.png)<br><br><br>
-
-![elliecastelliduo](https://user-images.githubusercontent.com/38325801/191250095-74bb1d1e-f44e-4e24-9ae3-2307bda7aada.png)<br><br><br>

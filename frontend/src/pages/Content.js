@@ -38,9 +38,21 @@ return (
 
             <div className="content_sold"><SoldProperties /></div>
 
-            <div className="content_block2"></div>
-            <div className="content_block3"></div>
+            {/* <div className="content_block2"></div> */}
+            <div className="content_block3">
+                <div className="content_block3_wrapper">
+                    <div className="finance"><span>$</span>FINANCE</div>
+                    <div className="elliesTeam">
+                    Ellie's dedicated team covers all areas of financial advice, helping clients to make decisions based on market insights.<br /><br />
+                    Our services are conducted at local, national and international levels by specialists who have many years of experience in their respective fields.<br /><br />
+                    Working on behalf of clients, we hold close relationships with lenders to make financial processes run smoothly and cost-effectively.
+                    </div>
+
+                    <div className="financialService">Service</div>
+                </div>
+            </div>
             <div className="content_block4"></div>
+            <div className="content_block5"></div>
             <div className="content_block2"></div>
             <div className="content_block5"></div>
         </>

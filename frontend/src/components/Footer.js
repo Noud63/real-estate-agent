@@ -23,7 +23,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className="footer_content_box two">more info</div>
+                <div className="footer_content_box two"><span className="blis">Buy <span>&#10045; </span>Let <span>&#10045; </span> Invest <span>&#10045; </span> Sell</span><br /><span>With Ellie, It couldn't be easier</span></div>
                 <div className="footer_content_box three">
                     <img src={award} alt="" className="awardPng" style={{ width: '100px', height: 'auto'}}/>
                     <div className="winner">Winner Best Broker Award 2020 & 2021</div>

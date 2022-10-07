@@ -54,9 +54,13 @@
 .mainContentWrapper {
     margin: 0 auto;
     max-width: 1920px;
-    margin-bottom: 500px;
+    margin-bottom: 100px;
     background-color: $dominantbackground;
     @include center-content;
+
+    @include respond1(removeSidebar){
+            margin-bottom: 0;
+        }
 }
 
 .realEstatesWrapper {
@@ -128,6 +132,7 @@
     display: none;
     @include respond1(removeSidebar){
         display: flex;
+           padding: 0 50px 80px 50px;
     }
 
     .finance {

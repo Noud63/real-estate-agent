@@ -40,7 +40,7 @@ export const estateSlice = createSlice({
 
         builder.addCase(getRealEstates.pending, (state) => {
             state.isLoading = true
-        })
+        }) 
         builder.addCase(getRealEstates.fulfilled, (state, action) => {
             state.isLoading = false
             state.isSuccess = true

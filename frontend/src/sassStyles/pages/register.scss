@@ -8,7 +8,7 @@ body {
 .container2 {
     margin: 50px auto;
     width: 700px;
-    height: 100vh;
+    height: auto;
     @include respond3(smallest){
         margin: 100px auto;
     }
@@ -181,7 +181,7 @@ select:-webkit-autofill:focus {
     width: 100%;
     border-style: none;
     border-top: 1px solid rgb(104, 39, 39);
-    border-bottom: 2px solid rgb(53, 0, 0);
+    border-bottom: 2px solid rgb(37, 0, 0);
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
 }

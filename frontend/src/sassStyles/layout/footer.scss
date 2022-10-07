@@ -18,18 +18,16 @@
     
     &_content_gridContainer {
     width: 100%;
-    box-shadow: 0px 18px 18px rgb(36, 0, 0);
+    box-shadow: 0px 18px 18px -2px rgb(36, 0, 0);
     display: grid;
     grid-template-columns: repeat( 3, 1fr);
     grid-template-rows: repeat(2, 1fr); 
     gap: 1px;
-    border-top: 1px solid rgb(134, 65, 65);
+//     border-top: 1px solid rgb(134, 65, 65);
 
     @include respond2(gridcontainer) {
           grid-template-columns: repeat( 2, 1fr);
           grid-template-rows: repeat(3, 1fr);
-      //     gap: 1px; 
-      //     background-color: rgb(70, 59, 80);
           & :nth-of-type(5){
           order:1;
         }
@@ -38,9 +36,21 @@
     @include respond5(contentBreak) {
           grid-template-columns: repeat( 1, 1fr);
           grid-template-rows: repeat(6, 1fr);
-      //     gap: 1px; 
-      //     background-color: rgb(70, 59, 80);
     }
+    }
+
+    &_content_box.two {
+          @include center-content-column;
+          text-align: center;
+          line-height: .9;
+
+          & .blis {
+                font-size: 1.6rem;
+          }
+
+          & span {
+                font-size: .9rem;
+                }
     }
 
     &_content_box.three {
@@ -51,7 +61,7 @@
 
           & .awardPng {
                  -webkit-filter: drop-shadow(0px 2px 2px #290000);
-                        filter: drop-shadow(0px 4px 4px #290000);
+                 filter: drop-shadow(0px 4px 4px #310000);
           }
     }
 
@@ -59,7 +69,7 @@
          
            @include center-content-row;
           .contactInfo {
-                 font-size: 1rem;
+                font-size: .9rem;
                 width: 50%;
                 height: 120px;
                 @include center-content-column-start-top;
@@ -88,8 +98,13 @@
             justify-content: center;
             flex-direction: row;
             height: 18rem;
+             font-family: -apple-system, BlinkMacSystemFont, 
+             'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+             'Open Sans', 'Helvetica Neue', sans-serif;
+             font-size: .9rem;
             color: rgb(165, 154, 177);
             padding: 20px;
+            border-top: 1px solid rgb(104, 46, 46);
             background-color: $dominantbackground;
             box-shadow: 0px 0px 8px rgb(39, 0, 0);
 
@@ -103,8 +118,8 @@
                   @include center-content-row;
                     .icon {
                         padding: 5px;
-                        -webkit-filter: drop-shadow(0px 2px 2px #360000);
-                        filter: drop-shadow(0px 4px 2px #360000);
+                        -webkit-filter: drop-shadow(0px 1px 1px #360000);
+                        filter: drop-shadow(0px 1px 1px #2e0000);
                   }
             }
 
