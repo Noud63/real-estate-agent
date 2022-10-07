@@ -27,8 +27,6 @@ const initialState = {
     message: '',
 }
 
-
-
 export const allUsersSlice = createSlice({
     name: 'allusers',    // Reducer name
     initialState,

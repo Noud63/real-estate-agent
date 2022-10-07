@@ -4,7 +4,8 @@
 
 .allUsersContainer {
     margin: 80px auto;
-    max-width: 800px;
+    max-width: 750px;
+    padding: 0 20px;
     height: auto;
     margin-bottom: 120px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -40,12 +41,18 @@
             & .prefix {
                 width: 50%;
                 border-bottom: 1px solid rgb(99, 85, 114);
+                @include respond7(headername){
+                    width: 45%;
+                }
             }
 
             & .names {
                  width: 50%;
                  font-style: italic;
                 border-bottom: 1px solid rgb(99, 85, 114);
+                @include respond7(headername){
+                    width: 55%;
+                }
             }
         }
     }

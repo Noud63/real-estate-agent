@@ -9,9 +9,9 @@ const HeaderMenu = () => {
                 <Link to="/" className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Home</div></Link>
                 <Link to="/buy"  className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Buy</div></Link>
                 <Link to="/allProperties"  className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Properties</div></Link>
-                <div className="headerMenu_item">Finance</div>
+                <Link to="/financeservice" className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">Finance</div></Link>
                 <div className="headerMenu_item">News</div>
-            <Link to="/alluserslist" className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">users</div></Link>
+                <Link to="/alluserslist" className="link" style={{ textDecoration: 'none' }}><div className="headerMenu_item">users</div></Link>
             </div>
         
     )
