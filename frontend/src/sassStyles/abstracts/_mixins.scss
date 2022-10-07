@@ -69,6 +69,13 @@
  flex-direction: row;
 }
 
+@mixin spacebetween-content-column {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ flex-direction: column;
+}
+
 @mixin spacebetween-content-top {
  display: flex;
  align-items: flex-start;

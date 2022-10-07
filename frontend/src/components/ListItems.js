@@ -1,5 +1,5 @@
 import React from 'react'
-import Loader from '../features/Loader'
+import Loader from '../utilities/Loader'
 import SingleProperty from './SingleProperty'
 
 const ListItems = ({ newList, show}) => {
