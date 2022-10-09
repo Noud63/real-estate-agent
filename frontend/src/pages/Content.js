@@ -48,13 +48,13 @@ return (
                     Working on behalf of clients, we hold close relationships with lenders to make financial processes run smoothly and cost-effectively.
                     </div>
 
-                    <div className="financialService">Service</div>
+                <Link to='/financeservice' style={{ textDecoration: 'none' }}><div className="financialService">Service</div></Link>
                 </div>
             </div>
             <div className="content_block4"></div>
             <div className="content_block5"></div>
             <div className="content_block2"></div>
-            <div className="content_block5"></div>
+            <div className="content_block6"></div>
         </>
     )
 }

@@ -189,13 +189,23 @@
 
 .content_block4  {
     height: 700px;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(231, 231, 231);
 }
 
 .content_block5 {
+     background-image: url('../../assets/images/balance.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 700px;
     background-color: $dominantbackground;
 }
+
+.content_block6  {
+    height: 700px;
+    background-color:rgb(66, 0, 0);
+}
+
 
 
 

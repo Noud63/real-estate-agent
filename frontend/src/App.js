@@ -9,6 +9,7 @@ import Buy from './pages/Buy'
 import AllProperties from './pages/AllProperties'
 import AllUsersList from './pages/AllUsersList'
 import FinanceService from './pages/FinanceService'
+import ShowUserInfo from './pages/ShowUserInfo'
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,6 +31,7 @@ function App() {
           <Route path='/allproperties' element={<AllProperties />} />
           <Route path='/financeservice' element={<FinanceService />} />
           <Route path='/alluserslist' element={<AllUsersList />} />
+          <Route path='/showuserinfo' element={<ShowUserInfo />} />
         </Routes>
         <Footer />
       </Router>

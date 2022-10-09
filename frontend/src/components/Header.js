@@ -9,7 +9,7 @@ import { logout } from '../features/loginSlice'
 
 const Header = () => {
 
-    const [scrolled, setScrolled] = useState(true);
+    const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false)
     const [logOut, setLogOut] = useState(false);
     const [size, setSize] = useState({ width: undefined, height: undefined })
@@ -30,7 +30,7 @@ const Header = () => {
 
     const handleScroll = () => {
         const offset = window.scrollY;
-        offset > 100 ? setScrolled(false) : setScrolled(true);
+        offset > 100 ? setScrolled(true) : setScrolled(false);
     }
 
 
@@ -60,6 +60,11 @@ const Header = () => {
         setShowMenu(false)
     }
 
+    const showUserInfo = () => {
+        navigate('/showuserinfo')
+        setShowMenu(false)
+    }
+
     const loginHandler = () => {
         navigate('/login')
         setShowMenu(false)
@@ -77,8 +82,7 @@ const Header = () => {
 
     const showMenuOverlay = () => {
         setShowMenu(true)
-
-    }
+   }
 
     const closeMenuOverlay = () => {
         setShowMenu(false)
@@ -87,27 +91,17 @@ const Header = () => {
     const buttons = () => {
         return (
             <>
-                <button className="buttons_btn" onClick={buy}>Buy</button>
-                <button className="buttons_btn" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                <button className="buttons_btn" onClick={register}>Register</button>
+                <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={buy}>Buy</button>
+                <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+                {isLoggedIn && <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={showUserInfo}>user info</button>}
+                <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={register}>Register</button>
             </>
         )
     }
 
-    const buttonsOverlay = () => {
-        return (
-            <div className="buttonsBox">
-                <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
-                <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                <button className="buttons_btnOverlay" onClick={register}>Register</button>
-            </div>
-        )
-    }
-
-
     return (
         <>
-            <div className={scrolled ? "header" : "header header_hide"}>
+            <div className={scrolled ? "header header_hide" : "header"}>
 
                 <div className="header_france">
                     <div className="frame2_driehoek"></div>
@@ -137,13 +131,26 @@ const Header = () => {
 
             </div>
 
-            {showMenu && size.width <= 800 ? <div className="menuOverlay show">
-                {buttonsOverlay()}
+            {showMenu && size.width <= 800 ? <div className={!scrolled ? "menuOverlay show" : "menuOverlay show toTop"}>
+                {buttons()}
             </div> : <div className="menuOverlay">
-                {buttonsOverlay()}
+                {buttons()}
             </div>}
+            
         </>
     )
 }
 
 export default Header
+
+
+  // const buttonsOverlay = () => {
+    //     return (
+    //         <div className="buttonsBox">
+    //             <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
+    //             <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+    //             {isLoggedIn && <button className="buttons_btnOverlay" onClick={showUserInfo}>user info</button>}
+    //             <button className="buttons_btnOverlay" onClick={register}>Register</button>
+    //         </div>
+    //     )
+    // }
