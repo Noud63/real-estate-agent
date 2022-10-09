@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import HeaderMenu from '../components/HeaderMenu'
 
 const Register = () => {
 
@@ -40,7 +39,6 @@ const Register = () => {
                 clearTimeout(timer);
             };
         }
-        console.log(user)
     }, [user, isRegistered,navigate])
 
 

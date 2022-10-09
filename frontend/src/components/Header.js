@@ -20,12 +20,11 @@ const Header = () => {
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
 
-
     useEffect(() => {
         if (isLoggedIn) {
             setLogOut(true)
         }
-    }, [isLoggedIn, logins, login])
+    }, [isLoggedIn])
 
 
     const handleScroll = () => {
@@ -60,6 +59,12 @@ const Header = () => {
         setShowMenu(false)
     }
 
+    const register = () => {
+        navigate('/register')
+        // setShowMenu(false)
+    }
+
+
     const showUserInfo = () => {
         navigate('/showuserinfo')
         setShowMenu(false)
@@ -68,16 +73,12 @@ const Header = () => {
     const loginHandler = () => {
         navigate('/login')
         setShowMenu(false)
-        if (isLoggedIn) {
+        if (logOut) {
             dispatch(logout())
             setLogOut(false)
+            localStorage.removeItem('loggedIn')
         }
-    }
-
-
-    const register = () => {
-        navigate('/register')
-        setShowMenu(false)
+        
     }
 
     const showMenuOverlay = () => {
@@ -93,7 +94,7 @@ const Header = () => {
             <>
                 <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={buy}>Buy</button>
                 <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                {isLoggedIn && <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={showUserInfo}>user info</button>}
+                {logOut ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={showUserInfo}>user info</button> : ""}
                 <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={register}>Register</button>
             </>
         )

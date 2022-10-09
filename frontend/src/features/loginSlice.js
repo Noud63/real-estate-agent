@@ -31,7 +31,7 @@ export const logout = createAction('auth/logout')
 const initialState = {
     login: { username: "", password: "" },
     isError: false,
-    isLoggedIn: false,
+    isLoggedIn: localStorage.getItem('loggedIn') ? JSON.parse(localStorage.getItem('loggedIn')) : false,
     isLoading: false,
     message: ''
 }
@@ -45,8 +45,8 @@ export const loginSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(logout, () => {
-                return initialState
+            .addCase(logout, (state) => {
+                state.isLoggedIn = false
             })
             .addCase(loginUser.pending, (state) => {
                 state.isLoading = true

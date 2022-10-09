@@ -22,22 +22,27 @@ const SigninForm = () => {
     const logins = useSelector(state => state.login)
     const { isError, isLoggedIn, message } = logins
 
+    
+
     const submitForm = (data) => {
         dispatch(logout())
-        
         dispatch(loginUser(data))
         reset()
+        
     };
 
     useEffect(()=> {
         if(isLoggedIn){
             toast.success('Logged in successfully!')
+            localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn)
+            )
             const timer = setTimeout(()=> {
                 navigate('/?page=1')
             },4200)
             return () => {
                 clearTimeout(timer);
             };
+            
         }
         // console.log(logins)
     }, [logins, isLoggedIn, navigate])
