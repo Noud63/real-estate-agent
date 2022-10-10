@@ -52,7 +52,10 @@ return (
                 </div>
             </div>
             <div className="content_block4"></div>
-            <div className="content_block5"></div>
+            <div className="content_block5">
+            <div className="balancingAct">Buying a house can be a a balancing act between all parties involved.</div>
+            <div className="balancingAct_text">Ellie is here to help you as a home-buyer through this challenging time in your journey.</div>
+            </div>
             <div className="content_block2"></div>
             <div className="content_block6"></div>
         </>

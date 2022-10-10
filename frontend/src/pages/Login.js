@@ -23,7 +23,6 @@ const SigninForm = () => {
     const { isError, isLoggedIn, message } = logins
 
     
-
     const submitForm = (data) => {
         dispatch(logout())
         dispatch(loginUser(data))
@@ -42,9 +41,7 @@ const SigninForm = () => {
             return () => {
                 clearTimeout(timer);
             };
-            
         }
-        // console.log(logins)
     }, [logins, isLoggedIn, navigate])
 
 

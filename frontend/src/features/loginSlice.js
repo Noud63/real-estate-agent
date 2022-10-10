@@ -61,7 +61,6 @@ export const loginSlice = createSlice({
                 state.isLoading = false
                 state.isError = true
                 state.message = payload
-                state.user = null
             })
     }
 })

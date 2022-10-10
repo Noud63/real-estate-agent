@@ -13,7 +13,7 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
     const [logOut, setLogOut] = useState(false);
     const [size, setSize] = useState({ width: undefined, height: undefined })
-   
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -61,7 +61,7 @@ const Header = () => {
 
     const register = () => {
         navigate('/register')
-        // setShowMenu(false)
+        setShowMenu(false)
     }
 
 
@@ -77,13 +77,14 @@ const Header = () => {
             dispatch(logout())
             setLogOut(false)
             localStorage.removeItem('loggedIn')
+            navigate('/')
         }
-        
+
     }
 
     const showMenuOverlay = () => {
         setShowMenu(true)
-   }
+    }
 
     const closeMenuOverlay = () => {
         setShowMenu(false)
@@ -109,7 +110,7 @@ const Header = () => {
                     <span>Country: France &nbsp;-&nbsp; Regions: All Regions + Monaco</span>
                     <div className="frame2_driehoek"></div>
                 </div>
-                
+
                 <div className="header_content">
 
                     <div className="header_content_iconandtitle" onClick={backHome}>
@@ -122,7 +123,7 @@ const Header = () => {
 
                     <div className="hamburger menu">
                         {!showMenu ? <GiHamburgerMenu color='rgb(65, 0, 0)' size='40' onClick={showMenuOverlay} /> :
-                            <AiOutlineClose color='rgb(55, 39, 75)' size='40' onClick={closeMenuOverlay} className="cross"/>}
+                            <AiOutlineClose color='rgb(55, 39, 75)' size='40' onClick={closeMenuOverlay} className="cross" />}
                     </div>
 
                     <div className="buttons">
@@ -137,7 +138,7 @@ const Header = () => {
             </div> : <div className="menuOverlay">
                 {buttons()}
             </div>}
-            
+
         </>
     )
 }
