@@ -24,10 +24,8 @@ const SigninForm = () => {
 
     
     const submitForm = (data) => {
-        dispatch(logout())
         dispatch(loginUser(data))
         reset()
-        
     };
 
     useEffect(()=> {

@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt')
 // @route   POST /users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
-console.log(req.user)
+
     const { firstname, lastname, address, country, zip, city,
         telephone, email, number, username, password, isAdmin } = req.body;
 
@@ -77,12 +77,12 @@ const login = asyncHandler(async (req, res) => {
     }
 
     if (user && await bcrypt.compare(password, user.password)) {
-        const token = generateToken(user._id)
         return res.json({
             _id: user._id,
             username: user.username,
             password: user.password,
-            token: token
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id)
         })
     } else {
         res.status(400)

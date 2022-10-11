@@ -6,6 +6,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/loginSlice'
+import { reset } from '../features/allUsersSlice'
 
 const Header = () => {
 
@@ -77,9 +78,12 @@ const Header = () => {
             dispatch(logout())
             setLogOut(false)
             localStorage.removeItem('loggedIn')
+            dispatch(reset())
+            localStorage.removeItem('allusers')
+            localStorage.removeItem('accessallowed')
             navigate('/')
         }
-
+        
     }
 
     const showMenuOverlay = () => {

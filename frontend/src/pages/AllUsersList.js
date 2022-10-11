@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getAllUsers } from '../features/allUsersSlice'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import '../sassStyles/pages/AllUsersList.scss'
+import AccessAllowed from '../components/AccessAllowed'
+import Loader from '../utilities/Loader'
 
 const AllUsersList = () => {
-
-    const dispatch = useDispatch()
 
     const allRegisteredusers = useSelector(state => state.allusers)
     let { isLoading, allUsers, isError, isSuccess, message } = allRegisteredusers
 
-    useEffect(() => {
-        dispatch(getAllUsers())
-    }, [dispatch])
-
-    return (
+return (
         <div className="allUsersContainer">
-            <div className="userInfo_header">All Users Info</div>
+            <AccessAllowed />
+            {isLoading && <Loader />}
             {allUsers && allUsers.map(user => {
                 const { address, city, country, email, firstname, lastname, number, telephone, username, zip, _id } = user
                 return <div key={_id} className="userInfo">

@@ -6,6 +6,7 @@ export const getAllUsers = createAsyncThunk(
     'allusers/getAllUsers', async (_, thunkAPI) => {
         try {
             const response = await axios.get('allUsers')
+            localStorage.setItem('allusers', JSON.stringify(response.data))
             return response.data
         } catch (error) {
             const message =
@@ -21,7 +22,7 @@ export const getAllUsers = createAsyncThunk(
 
 
 const initialState = {
-    allUsers: [],
+    allUsers: localStorage.getItem('allusers') ? JSON.parse(localStorage.getItem('allusers')) : [],
     isSuccess: false,
     isLoading: false,
     message: '',
@@ -31,7 +32,9 @@ export const allUsersSlice = createSlice({
     name: 'allusers',    // Reducer name
     initialState,
     reducers: {
-        reset: () => initialState
+        reset: (state) => {
+            return {...state, allUsers : []}
+        }
     },
     extraReducers: (builder) => {
 
