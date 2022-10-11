@@ -32,7 +32,7 @@ const AccessAllowed = () => {
     }, [accessAllowed])
 
     return (
-        <div className="userInfo_header">{accessAllowed ? 'All Users Info' : 'No access allowed'}</div>
+        <div className="userInfo_header">{accessAllowed ? 'All Users Info' : 'Access denied!'}</div>
     )
 }
 

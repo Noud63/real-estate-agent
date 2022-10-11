@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 
 
 const userLoginData = async (loginData) => {
-    const response = await axios.post('login', loginData)
+    const response = await axios.post('login', loginData )
     const token = response.data.token
     if (token) {
         localStorage.setItem('userToken', JSON.stringify(token))
