@@ -18,10 +18,8 @@ const AccessAllowed = () => {
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
 
-    console.log(login)
-
     useEffect(() => {
-        if (isLoggedIn && login.isAdmin) {
+        if (isLoggedIn && (login.isAdmin || localStorage.getItem('isAdmin'))) {
             dispatch(getAllUsers())
             setAccessAllowed(true)
         }

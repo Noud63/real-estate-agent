@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/loginSlice'
 import { reset } from '../features/allUsersSlice'
+import { resetProfile } from '../features/userProfileSlice'
+import { userProfile } from '../features/userProfileSlice'
 
 const Header = () => {
 
@@ -20,6 +22,9 @@ const Header = () => {
 
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
+
+    const userData = useSelector(state => state.profile)
+    const { isError, isSuccess, message, profile, isLoading } = userData
 
     useEffect(() => {
         if (isLoggedIn) {
@@ -50,6 +55,18 @@ const Header = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+    const loggingOut = () => {
+        dispatch(logout())
+        setLogOut(false)
+        localStorage.removeItem('loggedIn')
+        dispatch(reset())
+        dispatch(resetProfile())
+        localStorage.removeItem('allusers')
+        localStorage.removeItem('accessallowed')
+        localStorage.removeItem('userToken')
+        localStorage.removeItem('isAdmin')
+    }
+
 
     const backHome = () => {
         navigate('/')
@@ -62,28 +79,27 @@ const Header = () => {
 
     const register = () => {
         navigate('/register')
+        loggingOut()
         setShowMenu(false)
     }
 
 
     const showUserInfo = () => {
-        navigate('/showuserinfo')
+        navigate('/userprofile')
+        // dispatch(userProfile(login._id))
         setShowMenu(false)
     }
+
+    console.log(login)
 
     const loginHandler = () => {
         navigate('/login')
         setShowMenu(false)
         if (logOut) {
-            dispatch(logout())
-            setLogOut(false)
-            localStorage.removeItem('loggedIn')
-            dispatch(reset())
-            localStorage.removeItem('allusers')
-            localStorage.removeItem('accessallowed')
+            loggingOut()
             navigate('/')
         }
-        
+
     }
 
     const showMenuOverlay = () => {

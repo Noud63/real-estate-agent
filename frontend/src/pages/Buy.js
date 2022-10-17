@@ -7,7 +7,7 @@ const Buy = () => {
     return (
         <div className="buyWrapper">
             <div className="buy">
-                {/* <div className="buy_header"><img src={mortgage} alt="" style={{width: '100%', height: 'auto'}}/></div> */}
+                <div className="buy_header"><img src={mortgage} alt="" style={{width: '100%', height: 'auto'}}/></div>
                 <p className="buy_text"><span className="letterB">B</span>uying a home is likely to be the largest financial commitment you make in your life,
             Buying a home is likely to be the largest financial commitment you make in your life.
             Buying a home is likely to be the largest financial commitment you make in your life,

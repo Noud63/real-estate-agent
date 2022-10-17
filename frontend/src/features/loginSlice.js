@@ -12,7 +12,6 @@ const userLoginData = async (loginData) => {
 }
 
 
-
 export const loginUser = createAsyncThunk(
     'auth/loginUser', async (login, thunkAPI) => {
         try {
@@ -29,7 +28,7 @@ export const logout = createAction('auth/logout')
 
 
 const initialState = {
-    login: { username: "", password: "" },
+    login: { username: "", password: ""},
     isError: false,
     isLoggedIn: localStorage.getItem('loggedIn') ? JSON.parse(localStorage.getItem('loggedIn')) : false,
     isLoading: false,
@@ -41,12 +40,13 @@ export const loginSlice = createSlice({
     name: 'login',
     initialState,
     reducers: {
-        reset: () => initialState
+        resetState: () => initialState
     },
     extraReducers: (builder) => {
         builder
             .addCase(logout, (state) => {
                 state.isLoggedIn = false
+                state.login = {}
             })
             .addCase(loginUser.pending, (state) => {
                 state.isLoading = true
@@ -65,6 +65,6 @@ export const loginSlice = createSlice({
     }
 })
 
-export const { reset } = loginSlice.actions
+export const { resetState } = loginSlice.actions
 
 export default loginSlice.reducer

@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginUser, logout } from '../features/loginSlice'
+import { userProfile } from '../features/userProfileSlice'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 const SigninForm = () => {
@@ -20,19 +21,25 @@ const SigninForm = () => {
     const navigate = useNavigate()
 
     const logins = useSelector(state => state.login)
-    const { isError, isLoggedIn, message } = logins
+    const { isError, isLoggedIn, message, login } = logins
 
-    
+   
     const submitForm = (data) => {
         dispatch(loginUser(data))
         reset()
     };
 
     useEffect(()=> {
+        if (isLoggedIn){
+            dispatch(userProfile(login._id))
+        }
+    },[dispatch, login._id])
+
+
+    useEffect(()=> {
         if(isLoggedIn){
             toast.success('Logged in successfully!')
-            localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn)
-            )
+            localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn))
             const timer = setTimeout(()=> {
                 navigate('/?page=1')
             },4200)
@@ -40,7 +47,8 @@ const SigninForm = () => {
                 clearTimeout(timer);
             };
         }
-    }, [logins, isLoggedIn, navigate])
+
+    }, [isLoggedIn, navigate])
 
 
     useEffect(() => {
@@ -58,7 +66,6 @@ const SigninForm = () => {
         }
         setPasswordShown(!passwordShown);
     };
-
 
 const onErrors = errors => console.error(errors);
 

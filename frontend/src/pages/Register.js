@@ -26,7 +26,6 @@ const Register = () => {
         }
         dispatch(registerUser(data))
         reset()
-        console.log(registeredUser)
     }
 
     useEffect(() => {
@@ -34,7 +33,7 @@ const Register = () => {
             toast.success('Successfully registered!')
             const timer = setTimeout(() => {
                 navigate('/login')
-            }, 4200)
+            }, 2000)
             return () => {
                 clearTimeout(timer);
             };
@@ -45,8 +44,9 @@ const Register = () => {
     useEffect(() => {
         if (isError) {
             toast.error(message);
+            dispatch(resetState())
         }
-        dispatch(resetState())
+        
     }, [isError, message, dispatch])
 
 

@@ -3,6 +3,7 @@ import realestateReducer from '../features/estateSlice'
 import registerReducer from '../features/registerSlice'
 import loginReducer from '../features/loginSlice'
 import allUsersReducer from '../features/allUsersSlice'
+import userProfileReducer from '../features/userProfileSlice'
 
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
     realestate: realestateReducer,
     registered: registerReducer,
     login: loginReducer,
-    allusers: allUsersReducer
+    allusers: allUsersReducer,
+    profile: userProfileReducer
   },
 });

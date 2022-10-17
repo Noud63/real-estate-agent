@@ -19,7 +19,7 @@ export const registerUser = createAsyncThunk('auth/registerUser', async (user, t
     }
 })
 
-export const resetState = createAction('auth/logout')
+// export const resetState = createAction('auth/logout')
 
 const initialState = {
     user: { address: "", city: "", country: "", email: "", firstname: "", lastname: "", number: "", telephone: "", username: "", password: "", zip: "" },
@@ -35,18 +35,10 @@ export const registerSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        reset: (state) => {
-            state.isLoading = false
-            state.isRegistered = false
-            state.isError = false
-            state.message = ''
-        }
+        resetState: () => initialState
     },
     extraReducers: (builder) => {
         builder
-            .addCase(resetState, () => {
-                return initialState
-            })
             .addCase(registerUser.pending, (state) => {
                 state.isLoading = true
                 
@@ -66,6 +58,6 @@ export const registerSlice = createSlice({
           }
 })
 
-export const { reset } = registerSlice.actions
+export const { resetState} = registerSlice.actions
 
 export default registerSlice.reducer

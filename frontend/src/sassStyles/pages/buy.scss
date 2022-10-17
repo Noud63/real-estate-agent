@@ -9,7 +9,7 @@
 }
 
 .buy {
-    margin: 50px auto;
+    margin: 80px auto;
     margin-left: 20px;
     margin-right: 20px;
     @include center-content-column-top;
@@ -19,11 +19,13 @@
     font-size: .9rem;
     padding: 0 40px;
     padding-bottom: 50px;
-    border-top: 2px solid rgb(117, 47, 47);
-    border-bottom: 2px solid rgb(32, 0, 0);
-    background-image: linear-gradient(to top, rgb(61, 0, 0),  rgb(85, 0, 0));
+    margin-bottom: 150px;
+    box-shadow: 0px 4px 8px rgb(29, 0, 0);
+    border-top: 1px solid rgb(117, 47, 47);
+    // border-bottom: 2px solid rgb(32, 0, 0);
+    // background-image: linear-gradient(to top, rgb(61, 0, 0),  rgb(85, 0, 0));
     line-height: 1.4;
-    color: rgb(183, 173, 201);
+    color: rgb(207, 198, 219);
     @include respond(hamburgermenu){
            height: auto;
         }
@@ -33,7 +35,7 @@
         width: 100%;
         padding: 20px 0 10px 0;
         font-size: 1.4rem;
-        border-bottom: 1px solid rgb(145, 134, 165);
+        margin-top: 10px;
         @include respond(hamburgermenu){
          font-size: 1.6rem;
         }
@@ -46,8 +48,7 @@
         padding: 30px 0;
         font-size: .9rem;
         @include respond8(removeaward){
-         font-size: .8rem;
-          border-bottom: 1px solid rgb(145, 134, 165);
+        font-size: .8rem;
         }
     }
     
@@ -60,8 +61,8 @@
     }
     p {
         padding-bottom: 50px;
-        margin-top: 50px;
-        border-bottom: 1px solid rgb(145, 134, 165);
-        border-top: 1px solid rgb(145, 134, 165);
+        margin-top: 10px;
+        border-bottom: 1px solid  rgb(207, 198, 219);
+        border-top: 1px solid rgb(207, 198, 219);
     }
 }
