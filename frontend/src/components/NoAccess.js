@@ -8,9 +8,8 @@ const NoAccess = () => {
     const [isAdmin, setIsAdmin] = useState(false)
 
     useEffect(() => {
-        const storage = localStorage.getItem('isAdmin')
-        if (storage)
-            setIsAdmin(JSON.parse(localStorage.getItem('isAdmin')))
+        const storage = localStorage.getItem('isAdmin');
+        return storage ? setIsAdmin(JSON.parse(localStorage.getItem('isAdmin'))) : false;
     }, [])
 
 
@@ -26,12 +25,6 @@ const NoAccess = () => {
             setIsAdmin(false)
         }
     }, [isLoggedIn, login.isAdmin])
-
-
-    useEffect(() => {
-        localStorage.setItem('isAdmin', JSON.stringify(isAdmin))
-    }, [isAdmin])
-
 
     return (
         <Link to="/alluserslist" className="link" style={{ textDecoration: 'none' }}>

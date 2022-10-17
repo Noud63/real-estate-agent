@@ -10,7 +10,7 @@ const ShowUserInfo = () => {
 
     const { address, city, country, email, firstname, lastname, number, telephone, username, zip } = profile
 
-    console.log(profile)
+    // console.log(profile)
 
     return (
         <div className="profileContainer">

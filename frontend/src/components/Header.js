@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/loginSlice'
 import { reset } from '../features/allUsersSlice'
 import { resetProfile } from '../features/userProfileSlice'
-import { userProfile } from '../features/userProfileSlice'
 
 const Header = () => {
 
@@ -58,9 +57,9 @@ const Header = () => {
     const loggingOut = () => {
         dispatch(logout())
         setLogOut(false)
-        localStorage.removeItem('loggedIn')
         dispatch(reset())
         dispatch(resetProfile())
+        localStorage.removeItem('loggedIn')
         localStorage.removeItem('allusers')
         localStorage.removeItem('accessallowed')
         localStorage.removeItem('userToken')
@@ -86,7 +85,6 @@ const Header = () => {
 
     const showUserInfo = () => {
         navigate('/userprofile')
-        // dispatch(userProfile(login._id))
         setShowMenu(false)
     }
 

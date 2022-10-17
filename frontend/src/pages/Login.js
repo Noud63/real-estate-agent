@@ -33,6 +33,9 @@ const SigninForm = () => {
         if (isLoggedIn){
             dispatch(userProfile(login._id))
         }
+        if(login.isAdmin){
+            localStorage.setItem('isAdmin', JSON.stringify(login.isAdmin))
+        }
     },[dispatch, login._id])
 
 
@@ -42,7 +45,7 @@ const SigninForm = () => {
             localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn))
             const timer = setTimeout(()=> {
                 navigate('/?page=1')
-            },4200)
+            },2000)
             return () => {
                 clearTimeout(timer);
             };
