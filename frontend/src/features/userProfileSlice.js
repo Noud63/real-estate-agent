@@ -13,7 +13,6 @@ const userProfileData = async (id) => {
         }
     }
     const response = await axios.get(`userprofile/${id}`, config)
-    console.log(response.data)
     localStorage.setItem('profile', JSON.stringify(response.data))
     return response.data
 }

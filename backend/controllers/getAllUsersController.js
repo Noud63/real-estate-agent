@@ -15,11 +15,11 @@ const getAllUsers = async (req, res) => {
 
 
 const userProfile = async (req, res) => {
-    if (!mongoose.Types.ObjectId.isValid(req.params.id)) return false;
     try {
         let profile = await User.findById(req.params.id);
         if (profile) {
             profile = {
+                _id: profile._id,
                 firstname: profile.firstname,
                 lastname: profile.lastname,
                 address: profile.address,

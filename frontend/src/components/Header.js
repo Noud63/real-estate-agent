@@ -40,6 +40,7 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
+        console.log(login)
     }, []);
 
 
@@ -88,7 +89,6 @@ const Header = () => {
         setShowMenu(false)
     }
 
-    console.log(login)
 
     const loginHandler = () => {
         navigate('/login')

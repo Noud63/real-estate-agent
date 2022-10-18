@@ -7,7 +7,6 @@ export const getAllUsers = createAsyncThunk(
         try {
             const response = await axios.get('allUsers')
             localStorage.setItem('allusers', JSON.stringify(response.data))
-            console.log(response.data)
             return response.data
         } catch (error) {
             const message =

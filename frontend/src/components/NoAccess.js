@@ -9,7 +9,9 @@ const NoAccess = () => {
 
     useEffect(() => {
         const storage = localStorage.getItem('isAdmin');
-        return storage ? setIsAdmin(JSON.parse(localStorage.getItem('isAdmin'))) : false;
+        if(storage){
+            setIsAdmin(JSON.parse(localStorage.getItem('isAdmin')))
+        }
     }, [])
 
 

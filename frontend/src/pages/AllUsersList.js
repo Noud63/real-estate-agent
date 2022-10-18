@@ -17,6 +17,7 @@ return (
                 const { address, city, country, email, firstname, lastname, number, telephone, username, zip, _id } = user
                 return <div key={_id} className="userInfo">
                     <div className="userInfo_users">
+                        <div className="user"><span className="prefix">Id: </span><span className="names">{_id}</span></div>
                         <div className="user"><span className="prefix">FirstName: </span><span className="names">{firstname}</span></div>
                         <div className="user"><span className="prefix">LastName: </span><span className="names">{lastname}</span></div>
                         <div className="user"><span className="prefix">Address: </span><span className="names">{address}</span></div>
