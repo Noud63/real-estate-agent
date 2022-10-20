@@ -12,7 +12,7 @@ You can register for a newsletter and with each item in the list of real-estates
 A user can register and login. JSON Web Token is used for authentication and authorization.<br>
 The owner can login as an administrator and perform exclusive tasks.<br>
 A user can update his profile when logged in.<br>
-All registered users is stored in a mongoDB database aswell as the data (real-estate-properties) that are loaded by default.<br>
+All registered users are stored in a mongoDB database aswell as the data (real-estate-properties) that are loaded by default.<br>
 The application is responsive.<br><br>
 
 

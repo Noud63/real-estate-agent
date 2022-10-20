@@ -29,7 +29,8 @@ const userProfile = async (req, res) => {
                 telephone: profile.telephone,
                 email: profile.email,
                 number: profile.number,
-                username: profile.username
+                username: profile.username,
+                password: profile.password
             }
             res.send(profile);
         }

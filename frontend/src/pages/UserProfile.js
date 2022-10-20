@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import '../sassStyles/pages/UserProfile.scss'
 import Loader from '../utilities/Loader'
+import { updateProfile, resetState }  from '../features/updateProfileSlice'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const ShowUserInfo = () => {
 
     const userData = useSelector(state => state.profile)
     const { isError, isSuccess, message, profile, isLoading } = userData
 
-    const { address, city, country, email, firstname, lastname, number, telephone, username, zip } = profile
+    const { address, city, country, email, firstname, lastname, number, telephone, username, password, zip, _id} = profile
+
+    const updateprof = useSelector(state => state.updateprofile)
+    const { update, isUpdated } = updateprof
 
     const [ firstName, setFirstName ] = useState(firstname)
     const [ lastName, setLastName ] = useState(lastname)
@@ -21,11 +27,13 @@ const ShowUserInfo = () => {
     const [ userName, setUserName ] = useState(username)
     const [ phoneNumber, setPhoneNumber ] = useState(telephone)
 
+    const dispatch = useDispatch()
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    
-    const update = {
+   
+    let updated = {
+         _id: _id,
         firstname: firstName, 
         lastname: lastName,
         address: street,
@@ -35,13 +43,30 @@ const handleSubmit = (e) => {
         zip: postalCode,
         email: emailAddress,
         telephone: phoneNumber,
-        username: userName 
+        username: userName,
     }
+    
+    dispatch(updateProfile(updated))
     console.log(update)
+    localStorage.setItem('profile', JSON.stringify(updated))
 }
 
+useEffect(()=> {
+    if (isUpdated) {
+        toast.success('Successfully updated!')
+    }
+    dispatch(resetState())
+},[isUpdated])
+
+  
     return (
         <div className="profileContainer">
+            <ToastContainer theme='dark' position="top-right"
+                autoClose={2000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false} />
             <div className="profileHeader">Update User profile</div>
             {profile ?
                 <div className="profile">
@@ -96,6 +121,11 @@ const handleSubmit = (e) => {
                                 <label htmlFor="username"><span>Username</span><span>:</span></label>
                                 <input type="text" placeholder="Username" name="username" defaultValue={username} onChange={(e) => setUserName(e.target.value)} />
                             </div>
+
+                            {/* <div className="inputBox">
+                                <label htmlFor="password"><span>Password</span><span>:</span></label>
+                                <input type="text" placeholder="Password" name="password" defaultValue={password} onChange={(e) => setUserPassword(e.target.value)} />
+                            </div> */}
                             
 
                             <button type="submit" className="submitBtn">Update Profile</button>

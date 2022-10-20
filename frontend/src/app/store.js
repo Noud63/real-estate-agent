@@ -4,6 +4,7 @@ import registerReducer from '../features/registerSlice'
 import loginReducer from '../features/loginSlice'
 import allUsersReducer from '../features/allUsersSlice'
 import userProfileReducer from '../features/userProfileSlice'
+import updateProfileReducer from '../features/updateProfileSlice'
 
 
 export const store = configureStore({
@@ -12,6 +13,7 @@ export const store = configureStore({
     registered: registerReducer,
     login: loginReducer,
     allusers: allUsersReducer,
-    profile: userProfileReducer
+    profile: userProfileReducer,
+    updateprofile: updateProfileReducer
   },
 });

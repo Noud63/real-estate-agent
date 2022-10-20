@@ -65,6 +65,7 @@ const Header = () => {
         localStorage.removeItem('accessallowed')
         localStorage.removeItem('userToken')
         localStorage.removeItem('isAdmin')
+        localStorage.removeItem('profile')
     }
 
 

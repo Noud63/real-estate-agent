@@ -24,6 +24,8 @@ const Register = () => {
             toast.error('passwords don\'t match!')
             return
         }
+
+    console.log(data)
         dispatch(registerUser(data))
         reset()
     }
