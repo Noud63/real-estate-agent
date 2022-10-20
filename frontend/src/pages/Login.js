@@ -77,10 +77,11 @@ const onErrors = errors => console.error(errors);
            
             <ToastContainer theme='dark' position="top-right"
                 autoClose={3000}
-                hideProgressBar={true}
+                hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
                 rtl={false}
+                toastStyle={{ backgroundColor: "rgb(68, 0, 0)", color: 'rgb(207, 198, 219)' }}
             />
             <div className="login">login</div>
             <form onSubmit={handleSubmit(submitForm, onErrors)} className="form">
