@@ -203,15 +203,12 @@ input[type="checkbox"] {
     margin-top: 20px;
     width: 100%;
     height: 40px;
-    @include center-content;
+     color: rgb(173, 0, 0);
+    @include center-content-column;
 }
 
 .goToRegisterText {
-    color: rgb(153, 0, 0);
+  margin-top: 40px;
+  @include center-content-column;
+    color: rgb(173, 0, 0);
 }
-
-
-//  input[type="checkbox"] {
-//   filter: invert(80%) hue-rotate(8deg) brightness(1.2);
-// }
-

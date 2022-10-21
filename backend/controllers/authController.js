@@ -64,7 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // @route   POST /users
 // @access  Public
 const login = asyncHandler(async (req, res) => {
-
+    
     const { username, password } = req.body
     if (!username || !password) {
         res.status(400).json({ message: 'Please provide all values!' })

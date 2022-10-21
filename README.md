@@ -12,7 +12,7 @@ I used React, Redux-Toolkit and Sass for the frontend part of the app, and for t
 There is a search function where you can filter data from an api request based on certain criteria.<br>
 You can register for a newsletter and with each item in the list of real-estates you can make an enquiry for more information about the estate.<br>
 A user can register and login. JSON Web Token is used for authentication and authorization.<br>
-The owner can login as an administrator and perform exclusive tasks.<br>
+The owner can login as an administrator and perform exclusive tasks like delete a registered user.<br>
 A user can update his profile when logged in.<br>
 All registered users are stored in a mongoDB database aswell as the data (real-estate-properties) that are loaded by default.<br>
 The application is responsive.<br><br>

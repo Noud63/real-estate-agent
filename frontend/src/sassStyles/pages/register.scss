@@ -51,6 +51,10 @@ body {
     margin-top: 10px;
 }
 
+input[type=text] {
+    color: white;
+}
+
 .pass {
     color: rgb(168, 156, 180);
     width: 25%;
@@ -101,7 +105,7 @@ input[name="address"] {
     padding-left: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid gray;
-    color: rgb(52, 43, 59);
+    color: rgb(221, 217, 230);
     font-size: 1rem;
 }
 
@@ -140,7 +144,7 @@ input[name="username"]
     padding-left: 5px;
     margin-bottom: 10px;
     border-bottom: 1px solid gray;
-    color: rgb(157, 141, 170);
+    color: rgb(221, 217, 230);
     font-size: 1rem;
 }
 
@@ -256,71 +260,71 @@ select:-webkit-autofill:focus {
 }
 
 .goToLoginText {
-    color: rgb(167, 0, 0);
+    color: rgb(184, 0, 0);
 }
 
 
-.overlayShowReg {
-    position: fixed;
-    left:0;
-    right:0;
-    bottom: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    z-index: 10;
-    opacity: 0;
-    animation: fadeinout 5s ease-in-out;
-    animation-fill-mode: forwards;
-}
+// .overlayShowReg {
+//     position: fixed;
+//     left:0;
+//     right:0;
+//     bottom: 0;
+//     top: 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background-color: transparent;
+//     z-index: 10;
+//     opacity: 0;
+//     animation: fadeinout 5s ease-in-out;
+//     animation-fill-mode: forwards;
+// }
 
-.registerednameShowReg {
-    margin: 200px auto;
-    width: 300px;
-    height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color:  rgb(185, 168, 197);
-    border-radius: 10px;
-    font-size: 1.4rem;
-    color: rgb(23, 18, 26);
-    padding: 15px;
-    border: 1px solid rgb(28, 24, 31);
-    box-shadow: 0px 2px 18px rgb(53, 53, 53);
-    opacity: 0;
-    animation: fadeinout 5s ease-in-out;
-    animation-fill-mode: forwards;
-}
+// .registerednameShowReg {
+//     margin: 200px auto;
+//     width: 300px;
+//     height: 220px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//     background-color:  rgb(185, 168, 197);
+//     border-radius: 10px;
+//     font-size: 1.4rem;
+//     color: rgb(23, 18, 26);
+//     padding: 15px;
+//     border: 1px solid rgb(28, 24, 31);
+//     box-shadow: 0px 2px 18px rgb(53, 53, 53);
+//     opacity: 0;
+//     animation: fadeinout 5s ease-in-out;
+//     animation-fill-mode: forwards;
+// }
 
-@keyframes fadeinout {
-  0% {
-    opacity: 0
-  }
-  30% {
-    opacity: 1
-  }
-  40% {
-    opacity: 1
-  }
-  50% {
-    opacity: 1
-  }
-  60% {
-    opacity: 1
-  }
-  100% {
-    opacity: 0
-  }
-}
+// @keyframes fadeinout {
+//   0% {
+//     opacity: 0
+//   }
+//   30% {
+//     opacity: 1
+//   }
+//   40% {
+//     opacity: 1
+//   }
+//   50% {
+//     opacity: 1
+//   }
+//   60% {
+//     opacity: 1
+//   }
+//   100% {
+//     opacity: 0
+//   }
+// }
 
-.welcomeReg {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+// .welcomeReg {
+//     margin-top: 10px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+// }

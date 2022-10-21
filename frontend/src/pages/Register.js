@@ -35,12 +35,13 @@ const Register = () => {
             toast.success('Successfully registered!')
             const timer = setTimeout(() => {
                 navigate('/login')
+                dispatch(resetState())
             }, 2000)
             return () => {
                 clearTimeout(timer);
             };
         }
-    }, [user, isRegistered,navigate])
+    }, [user, isRegistered,navigate, dispatch])
 
 
     useEffect(() => {

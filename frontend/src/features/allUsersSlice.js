@@ -20,6 +20,23 @@ export const getAllUsers = createAsyncThunk(
     }
 )
 
+export const deleteUser = createAsyncThunk(
+    'allusers/deleteUser', async (id, thunkAPI) => {
+        try {
+            const response = await axios.delete(`deleteuser/${id}`)
+            return response.data
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            return thunkAPI.rejectWithValue();
+        }
+    }
+)
+
 
 const initialState = {
     allUsers: localStorage.getItem('allusers') ? JSON.parse(localStorage.getItem('allusers')) : [],
@@ -34,7 +51,7 @@ export const allUsersSlice = createSlice({
     reducers: {
         reset: (state) => {
             return { ...state, allUsers: [] }
-        }
+        },
     },
     extraReducers: (builder) => {
 
@@ -51,6 +68,21 @@ export const allUsersSlice = createSlice({
             state.isError = true
             state.message = action.payload
         })
+            .addCase(deleteUser.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(deleteUser.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.allUsers = state.allUsers.filter(user => {
+                    return user._id !== action.payload
+                })
+            })
+            .addCase(deleteUser.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+            })
     }
 })
 

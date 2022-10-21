@@ -114,7 +114,7 @@ const onErrors = errors => console.error(errors);
             {/* {showMessage ? <div>You are already logged in!</div> : ""} */}
 
             <div className="goToRegister">
-                <Link to='/register' style={{ textDecoration: 'none' }} className="goToRegisterText">Not registered? Go to Register.</Link>
+                    <Link to='/register' style={{ textDecoration: 'none' }} className="goToRegisterText"><span>Not registered? Go to Register.</span></Link><br /><span>Forgot password?</span>
             </div>
         </div>
         </>

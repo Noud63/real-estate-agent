@@ -14,6 +14,7 @@ const loginRoute = require('./routes/loginRoute')
 const allUsersRoute = require('./routes/allUsersRoute')
 const userProfileRoute = require('./routes/userProfileRoute')
 const updateProfileRoute = require('./routes/updateProfileRoute')
+const deleteUserRoute = require('./routes/deleteUserRoute')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 app.use(cors())
@@ -33,8 +34,9 @@ app.use('/login', loginRoute)
 app.use('/allusers', allUsersRoute)
 app.use('/userprofile', userProfileRoute)
 app.use('/updateprofile', updateProfileRoute)
+app.use('/deleteuser', deleteUserRoute)
 
 app.use(notFound)
 app.use(errorHandler)
 
-app.listen(PORT, () => { console.log(`Server running on port ${PORT}`.yellow)})
+app.listen(PORT, () => { console.log(`Server running on port ${PORT}`.yellow) })
