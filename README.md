@@ -1,4 +1,4 @@
-<h1>Real Estate Agent, Ellie Castelli</h1>
+<h1 align="center">Real Estate Agent Application</h1>
 
 <h2>MERN Stack Application (in progress)</h2>
 Front-end : React - Redux Toolkit - SASS CSS Pre-Processor<br>
@@ -16,12 +16,10 @@ All registered users are stored in a mongoDB database aswell as the data (real-e
 The application is responsive.<br><br>
 
 
-
-
-![ecmacbook](https://user-images.githubusercontent.com/38325801/194486020-10cc9859-f125-41c1-b862-ff4660b54396.png)<br><br><br>
-<p align="center"><img src="https://user-images.githubusercontent.com/38325801/194486080-9fd4b786-179f-4a56-869e-36a15d3c9737.png" /></p><br><br><br>
-<p align="center"><img src="https://user-images.githubusercontent.com/38325801/196441489-7d6ff924-47f3-49db-b2f7-290d8587809e.png" /></p><br><br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/38325801/194486020-10cc9859-f125-41c1-b862-ff4660b54396.png"/></p><br><br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/38325801/194486080-9fd4b786-179f-4a56-869e-36a15d3c9737.png"/></p><br><br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/38325801/196441489-7d6ff924-47f3-49db-b2f7-290d8587809e.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/196442957-e12d1366-7a97-452d-abd5-c036b3381f9b.png"/></p><br><br><br>
-<p align="center"><img src="https://user-images.githubusercontent.com/38325801/194811007-762a2912-c2ca-4703-a329-a72b76c93d14.png"/><br><br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/38325801/194811007-762a2912-c2ca-4703-a329-a72b76c93d14.png"/></p><br><br><br>
 
 

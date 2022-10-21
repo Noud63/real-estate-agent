@@ -4,7 +4,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 // Register user
 const update = async (profile) => {
     const response = await axios.post('/updateProfile', profile)
-    console.log(response.data)
     return response.data
 }
 
@@ -12,7 +11,6 @@ const update = async (profile) => {
 // Register user
 export const updateProfile = createAsyncThunk('update/updateProfile', async (profile, thunkAPI) => {
     try {
-        console.log(profile)
         return await update(profile)
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
@@ -41,7 +39,6 @@ export const updateProfileSlice = createSlice({
         builder
             .addCase(updateProfile.pending, (state) => {
                 state.isLoading = true
-
             })
             .addCase(updateProfile.fulfilled, (state, action) => {
                 state.isLoading = false
