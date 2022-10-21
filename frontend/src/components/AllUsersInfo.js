@@ -15,8 +15,8 @@ const AllUsersInfo = ({ address, city, country, email, firstname, lastname, numb
 
 const deleteFromStorageAndUi = (id, e) => {
     if(id){
-        const element = e.target.parentNode.parentNode
-        e.target.parentNode.parentNode.parentNode.removeChild(element)
+        const element = e.currentTarget.parentNode.parentNode
+        e.currentTarget.parentNode.parentNode.parentNode.removeChild(element)
 
         let users = JSON.parse(localStorage.getItem("allusers"))
         users = users.filter(user => user._id !== id)
