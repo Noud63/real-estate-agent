@@ -4,7 +4,7 @@
 Front-end : React - Redux Toolkit - SASS CSS Pre-Processor<br>
 Back-end&nbsp;  : Express - MongoDB - Node<br><br><br>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/38325801/197115674-5a8e5033-d20d-4335-a92c-ff6eed5e967f.png"/></p><br><br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/38325801/197115944-a988e8f5-f5a8-46fc-868f-28a4238aaf83.png"/></p><br><br>
 
 Real Estate Agent Ellie Castelli is a MERN Stack application.<br>
 It is an E-Commerce Web App where you can buy luxury real estate in France.<br>
