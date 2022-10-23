@@ -2,7 +2,14 @@
 @import '../abstracts/global';
 @import '../abstracts/mixins';
 
-
+@keyframes popup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 .estateInfoPopup {
     display: flex;
@@ -15,6 +22,7 @@
     transform: translate(-50%, -50%);
     z-index: 999;
     @include center-content;
+   
 
     &_estateInfo {
         @include center-content;
@@ -24,6 +32,8 @@
         width: 80%;
         height: 80vh;
         box-shadow: 0px 0px 40px rgb(41, 0, 0);
+        animation-name: popup;
+        animation-duration: .5s;
     }
 }
 
