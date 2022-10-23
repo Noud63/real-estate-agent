@@ -22,7 +22,6 @@ const deleteFromStorageAndUi = (id, e) => {
         users = users.filter(user => user._id !== id)
         localStorage.setItem('allusers', JSON.stringify(users))
     }
-    
 }
 
     return (

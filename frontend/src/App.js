@@ -10,6 +10,7 @@ import AllProperties from './pages/AllProperties'
 import AllUsersList from './pages/AllUsersList'
 import FinanceService from './pages/FinanceService'
 import UserProfile from './pages/UserProfile'
+import Services from './pages/Services'
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,6 +28,7 @@ function App() {
           <Route path='/' element={<Content />} />
           <Route path='/login' element={<Login />} />
           <Route path='/buy' element={<Buy />} />
+          <Route path='/services' element={<Services />} />
           <Route path='/register' element={<Register />} />
           <Route path='/allproperties' element={<AllProperties />} />
           <Route path='/financeservice' element={<FinanceService />} />

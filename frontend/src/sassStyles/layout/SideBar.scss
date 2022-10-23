@@ -77,8 +77,8 @@
                 font-family: Arial, Helvetica, sans-serif;
                 letter-spacing: 2px;
                 color: rgb(188, 177, 206);
-                z-index: 999;
-                     border-bottom: 1px solid rgb(199, 0, 0);
+                z-index:10;
+                border-bottom: 1px solid rgb(199, 0, 0);
                 @include respond10(thirteenhundred){
                      font-size: .9rem;
                 }

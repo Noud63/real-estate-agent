@@ -22,11 +22,11 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
         const foundLivingSpace = (livingSpace || "");
         const foundPlotSize = (plotSize || "");
 
-        const result = realestate.filter((est) => {
+        const result = realestate.filter((estate) => {
             return(
-                est.located.match(new RegExp(foundRegion, 'gi')) &&
-                est.livingspace.match(new RegExp(foundLivingSpace, 'gi')) &&
-                est.area.match(new RegExp(foundPlotSize, 'gi'))
+                estate.located.match(new RegExp(foundRegion, 'gi')) &&
+                estate.livingspace.match(new RegExp(foundLivingSpace, 'gi')) &&
+                estate.area.match(new RegExp(foundPlotSize, 'gi'))
             )
         });
 

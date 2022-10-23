@@ -24,8 +24,11 @@
              @include center-content-column-top;
              &.enlarge {
               height: 550px;
+            }
         }
-    
+
+        &_castleImageBox {
+            cursor: pointer;
         }
 
         &_castleImage {
@@ -38,7 +41,7 @@
         padding: 10px;
         display: block;
         width: 300px;
-    }
+        }
 
         &_info {
         width: 30%;
@@ -126,6 +129,3 @@
         }
 }
 
-
-
-    

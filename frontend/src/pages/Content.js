@@ -38,7 +38,6 @@ return (
 
             <div className="content_sold"><SoldProperties /></div>
 
-            {/* <div className="content_block2"></div> */}
             <div className="content_block3">
                 <div className="content_block3_wrapper">
                     <div className="finance"><span>$</span>FINANCE</div>
@@ -47,16 +46,18 @@ return (
                     Our services are conducted at local, national and international levels by specialists who have many years of experience in their respective fields.<br /><br />
                     Working on behalf of clients, we hold close relationships with lenders to make financial processes run smoothly and cost-effectively.
                     </div>
-
-                <Link to='/financeservice' style={{ textDecoration: 'none' }}><div className="financialService">Service</div></Link>
+                     <Link to='/financeservice' style={{ textDecoration: 'none' }}><div className="financialService">Service</div></Link>
                 </div>
             </div>
             <div className="content_block4"></div>
             <div className="block5">
                 <div className="block5_content">
                 <div className="balancingAct">THE BALANCING ACT</div>
-                <div className="balancingAct_text">Buying a house can be a a balancing act between all parties involved.</div>
-                <div className="balancingAct_text">Ellie is here to help you as a home-buyer through this challenging time in your journey.</div>
+                <div className="balancingAct_text">
+                    Buying a house can be a a balancing act between all parties involved.<br />
+                    Ellie is here to help you as a home-buyer through this challenging time in your journey.
+              </div>
+                <Link to='/services' style={{ textDecoration: 'none' }}><div className="services">Services</div></Link>
                 </div>
            
             </div>

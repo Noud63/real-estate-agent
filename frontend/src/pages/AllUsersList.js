@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import '../sassStyles/pages/AllUsersList.scss'
 import AccessAllowed from '../components/AccessAllowed'
 import Loader from '../utilities/Loader'
-import { deleteUser } from '../features/allUsersSlice'
 import AllUsersInfo from '../components/AllUsersInfo'
 
 const AllUsersList = () => {
