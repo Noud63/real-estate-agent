@@ -1,7 +1,7 @@
 const data = [
     {
         name: 'Château des Milandes',
-        img: '/assets/images/c1.jpg',
+        img: ['c1.jpg', 'c1b.jpg', 'c1c.jpg', 'c1d.jpg'],
         price: '6.980.000',
         region: 'Nouvelle-Aquitaine',
         departement: 'Dordogne',
@@ -16,7 +16,7 @@ const data = [
     },
     {
         name: 'Château de Chenonceau',
-        img: '/assets/images/c2.jpg',
+        img: ['c2.jpg'],
         price: '25.980.000',
         region: 'Centre-Val de Loire',
         departement: 'Indre-et-Loire',
@@ -31,7 +31,7 @@ const data = [
     },
     {
         name: 'Château de Parthey',
-        img: '/assets/images/c3.jpg',
+        img: ['c3.jpg'],
         price: '5.500.000',
         region: ' Bourgogne-F-C',
         departement: 'Jura',
@@ -46,7 +46,7 @@ const data = [
     },
     {
         name: 'Château d\'azay le Rideau',
-        img: '/assets/images/c4.jpg',
+        img: ['c4.jpg'],
         price: '11.890.500',
         region: 'Centre-Val de Loire',
         departement: 'Indre-et-Loire',
@@ -61,7 +61,7 @@ const data = [
     },
     {
         name: 'Château de Chantilly',
-        img: '/assets/images/c5.jpg',
+        img: ['c5.jpg'],
         price: '19.800.000',
         region: 'Hauts-de-France',
         departement: 'Oise',
@@ -76,7 +76,7 @@ const data = [
     },
     {
         name: 'Château d\'Amboise',
-        img: '/assets/images/c6.jpg',
+        img: ['c6.jpg'],
         price: '7.569.500',
         region: 'Centre-Val de Loire',
         departement: 'Indre-et-Loire',
@@ -91,7 +91,7 @@ const data = [
     },
     {
         name: 'château de pierrefonds',
-        img: '/assets/images/c7.jpg',
+        img: ['c7.jpg'],
         price: '145.890.000',
         region: 'Hauts de France',
         departement: 'Oise',
@@ -106,7 +106,7 @@ const data = [
     },
     {
         name: 'Château d\'Usse',
-        img: '/assets/images/c8.jpg',
+        img: ['c8.jpg'],
         price: '18.750.000',
         region: 'Centre-Val de Loire',
         departement: 'Indre-et-Loire',
@@ -121,7 +121,7 @@ const data = [
     },
     {
         name: 'Château de Fougères',
-        img: '/assets/images/c9.jpg',
+        img: ['c9.jpg'],
         price: '13.950.000',
         region: 'Bretagne',
         departement: 'Ille-et-Vilaine',
@@ -136,7 +136,7 @@ const data = [
     },
     {
         name: 'Château de Carcassonne',
-        img: '/assets/images/c10.jpg',
+        img: ['c10.jpg'],
         price: 'Not for Sale',
         region: 'Occitanie',
         departement: 'Aude',

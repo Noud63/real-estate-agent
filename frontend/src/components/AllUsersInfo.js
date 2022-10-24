@@ -1,8 +1,8 @@
 import React from 'react'
 import { deleteUser } from '../features/allUsersSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-const AllUsersInfo = ({ address, city, country, email, firstname, lastname, number, telephone, username, zip, id, isSuccess, allUsers}) => {
+const AllUsersInfo = ({ address, city, country, email, firstname, lastname, number, telephone, username, zip, id, isSuccess }) => {
 
     const dispatch = useDispatch()
 

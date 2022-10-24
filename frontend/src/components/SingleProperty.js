@@ -18,6 +18,8 @@ const SingleProperty = ({ item, newList }) => {
 
     const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price, like } = item;
 
+    console.log(img)
+
     const handleInfoPopup = (id) => {
         newList.forEach(el => {
             if (el._id === id) {
@@ -36,7 +38,7 @@ return (
 
             <Likes id={_id} />
 
-            <div className="content2_property_castleImageBox" onClick={() => handleInfoPopup(_id)}><img src={img} alt="castle" className="content2_property_castleImage" /></div>
+            <div className="content2_property_castleImageBox" onClick={() => handleInfoPopup(_id)}><img src={process.env.PUBLIC_URL + `assets/images/${img[0]}`} alt="castle" className="content2_property_castleImage" /></div>
 
             <div className="content2_property_info" >
 
@@ -66,7 +68,7 @@ return (
 
         </div>
 
-        <InfoModal showPopup={showPopup} name={name} closeModal={closeModal}/>
+        <InfoModal showPopup={showPopup} item={item} closeModal={closeModal}/>
     </>
 
 )

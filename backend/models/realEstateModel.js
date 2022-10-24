@@ -5,10 +5,10 @@ const realEstateSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    img: {
+    img: [{
         type: String,
         required: true
-    },
+    }],
     price: {
         type: String,
         required: true
