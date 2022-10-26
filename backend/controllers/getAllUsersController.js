@@ -30,7 +30,8 @@ const userProfile = async (req, res) => {
                 email: profile.email,
                 number: profile.number,
                 username: profile.username,
-                password: profile.password
+                password: profile.password,
+                token: generateToken(profile._id)
             }
             res.send(profile);
         }

@@ -12,11 +12,13 @@
     background-image: linear-gradient(to top, rgb(63, 0, 0),  rgb(85, 0, 0));
     color:  rgb(186, 166, 194);
     border-top: 1px solid rgb(124, 0, 0);
-    border-bottom: 2px solid rgb(6, 5, 7);
+    border-bottom: 2px solid rgb(24, 0, 0);
     padding: 15px 20px 15px 20px;
 
      &_footer {
        width: 100%;
+       margin-top: 20px;
+       margin-bottom: 20px;
        @include center-content-row-start;
          color:rgb(141, 0, 0);
          @include respond6(castlesandchateaux){
@@ -59,19 +61,8 @@
          color: rgb(148, 141, 158);
        }
 
-       &_name {
-         width: 50%;
-        display:flex;
-       align-items: flex-start;
-       justify-content: center;
-       flex-direction: column;
-        @include respond6(castlesandchateaux){
-           width: 100%;
-       }
-       }
-
        &_name2 {
-         width: 50%;
+         width: 100%;
         display:flex;
        align-items: flex-end;
        justify-content: center;
@@ -81,10 +72,11 @@
        }
 
        .sendRequestBtn {
-         width: 98%;
+         width: 100%;
          @include respond6(castlesandchateaux){
            width: 100%;
        }
+      }
     
        & button {
            width: 100%;
@@ -97,14 +89,13 @@
            background-color:rgb(128, 0, 0);
            color: rgb(217, 210, 228);
          }
-        }
+        
        }
 
        & input {
-         width: 98%;
+         width: 100%;
          margin-bottom: 40px;
          height: 37px;
-         padding-left: 5px;
          border-style: none;
          border-bottom: 1px solid rgb(199, 191, 209);
          color: rgb(193, 184, 207);

@@ -5,6 +5,7 @@ import loginReducer from '../features/loginSlice'
 import allUsersReducer from '../features/allUsersSlice'
 import userProfileReducer from '../features/userProfileSlice'
 import updateProfileReducer from '../features/updateProfileSlice'
+import addEmailReducer from '../features/addEmailsSlice'
 
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
     login: loginReducer,
     allusers: allUsersReducer,
     profile: userProfileReducer,
-    updateprofile: updateProfileReducer
+    updateprofile: updateProfileReducer,
+    emails: addEmailReducer
   },
 });

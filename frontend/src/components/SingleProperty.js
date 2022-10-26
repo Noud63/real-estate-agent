@@ -18,8 +18,6 @@ const SingleProperty = ({ item, newList }) => {
 
     const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price, like } = item;
 
-    console.log(img)
-
     const handleInfoPopup = (id) => {
         newList.forEach(el => {
             if (el._id === id) {

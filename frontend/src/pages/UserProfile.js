@@ -50,6 +50,7 @@ const handleSubmit = (e) => {
     console.log(update)
     localStorage.setItem('profile', JSON.stringify(updated))
 }
+console.log(profile)
 
 useEffect(()=> {
     if (isUpdated) {

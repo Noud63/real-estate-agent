@@ -1,7 +1,5 @@
 import React from 'react'
 import '../sassStyles/layout/InfoModal.scss'
-import { useSelector, useDispatch } from 'react-redux'
-
 
 const InfoModal = ({ showPopup, item, closeModal}) => {
 

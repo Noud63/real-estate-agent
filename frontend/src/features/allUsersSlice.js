@@ -5,7 +5,18 @@ import axios from 'axios'
 export const getAllUsers = createAsyncThunk(
     'allusers/getAllUsers', async (_, thunkAPI) => {
         try {
-            const response = await axios.get('allUsers')
+
+            const token = JSON.parse(localStorage.getItem("userToken"));
+            if (!token) {
+                console.log("Token not found!");
+            }
+
+            const config = {
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                }
+            }
+            const response = await axios.get('allUsers', config)
             localStorage.setItem('allusers', JSON.stringify(response.data))
             return response.data
         } catch (error) {
@@ -24,7 +35,17 @@ export const getAllUsers = createAsyncThunk(
 export const deleteUser = createAsyncThunk(
     'allusers/deleteUser', async (id, thunkAPI) => {
         try {
-            const response = await axios.delete(`deleteuser/${id}`)
+            const token = JSON.parse(localStorage.getItem("userToken"));
+            if (!token) {
+                console.log("Token not found!");
+            }
+
+            const config = {
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                }
+            }
+            const response = await axios.delete(`deleteuser/${id}`, config)
             return response.data
         } catch (error) {
             const message =

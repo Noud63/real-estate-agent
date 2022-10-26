@@ -1,13 +1,21 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import '../sassStyles/layout/NewsLetter.scss'
 import emailjs from '@emailjs/browser';
+import { useSelector, useDispatch } from 'react-redux'
+import { addEmail } from '../features/addEmailsSlice'
 
 const NewsLetter = () => {
 
     const [success, setSuccess] = useState("Submit");
+    const [newEmail, setNewEmail] = useState("");
 
     const btnRef = useRef(null)
     const form = useRef();
+
+    const dispatch = useDispatch()
+
+    const emails = useSelector(state => state.emails)
+    const { email, isLoading, isSuccess } = emails
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,7 +24,7 @@ const NewsLetter = () => {
         emailjs.sendForm('service_uajwvyh', 'template_7uflv8h', form.current, 'user_hmFUVd309vqUiRXCpAWNG')
             .then((result) => {
                 console.log(result.text)
-                setSuccess('Message successfully sent!')
+                setSuccess('Email successfully sent!')
                 let timer = setTimeout(() => {
                     setSuccess("submit")
                     clearTimeout(timer)
@@ -24,7 +32,11 @@ const NewsLetter = () => {
             }, (error) => {
                 console.log(error.text);
             });
+
+        const emailObj = { email: newEmail }
+        dispatch(addEmail(emailObj))
         form.current.reset()
+        setNewEmail("")
     }
 
     return (
@@ -37,16 +49,11 @@ const NewsLetter = () => {
             <form onSubmit={handleSubmit} className="form" ref={form} autoComplete="off">
                 <div className="newsLetter_inputfields">
 
-                    <div className="newsLetter_inputfields_name">
-                        <input type="text" placeholder="name" name="from_name" required />
-                        <input type="text" placeholder="telephone" name="from_telephone" required />
-                    </div>
-
                     <div className="newsLetter_inputfields_name2">
-                        <input type="email" placeholder="email" name="from_email" required />
+                        <input type="email" placeholder="email" name="from_email" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} required />
                         <div className="sendRequestBtn"><button type="submit" value="send" ref={btnRef}>{success}</button></div>
                     </div>
-                    
+
                 </div>
                 <div className="newsLetter_footer">*newsletter will be sent once a month</div>
             </form>
