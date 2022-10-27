@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import '../sassStyles/pages/AllUsersList.scss'
 import AccessAllowed from '../components/AccessAllowed'
@@ -9,6 +9,9 @@ const AllUsersList = () => {
 
     const allRegisteredusers = useSelector(state => state.allusers)
     let { isLoading, allUsers, isError, isSuccess, message } = allRegisteredusers
+
+    const subscribers = useSelector(state => state.emails)
+    let { allemails } = subscribers
 
     return (
         <div className="allUsersContainer">

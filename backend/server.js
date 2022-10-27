@@ -16,6 +16,7 @@ const userProfileRoute = require('./routes/userProfileRoute')
 const updateProfileRoute = require('./routes/updateProfileRoute')
 const deleteUserRoute = require('./routes/deleteUserRoute')
 const addEmailRoute = require('./routes/addEmailRoute')
+const allEmailsRoute = require('./routes/allEmailsRoute')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 
 app.use(cors())
@@ -25,8 +26,8 @@ dotenv.config()
 connectDB()
 addDataToCollection()
 
-// app.get('/castles', (req, res) => {
-//     res.send({ message: 'Got it!' })
+// app.get('/', (req, res) => {
+//     res.send({ message: 'Server up and running!' })
 // })
 
 app.use('/castles', castleRoute)
@@ -37,6 +38,7 @@ app.use('/userprofile', userProfileRoute)
 app.use('/updateprofile', updateProfileRoute)
 app.use('/deleteuser', deleteUserRoute)
 app.use('/addemail', addEmailRoute)
+app.use('/allemails', allEmailsRoute)
 
 app.use(notFound)
 app.use(errorHandler)

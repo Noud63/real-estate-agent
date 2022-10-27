@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const emails = require('../controllers/emailsController')
+const getAllEmails = require('../controllers/getAllEmailsController')
 const { verifyToken } = require('../middleware/verifyToken')
 
-router.route('/').post(verifyToken, emails)
+router.route('/').get(getAllEmails)
+
 module.exports = router

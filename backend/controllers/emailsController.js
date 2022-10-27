@@ -23,8 +23,6 @@ const emails = asyncHandler(async (req, res) => {
     if (newEmail) {
         res.status(201).json({ email: newEmail.email })
     }
-    console.log(newEmail)
-
 })
 
 module.exports = emails

@@ -16,7 +16,7 @@ return (
                 <div className="content_block1_wrapper">
                 
                      <div className="content_block1_wrapper_imgLeft">
-                    <div className="featuring">Featured properties:</div>
+                    {/* <div className="featuring">Featured properties:</div> */}
                         <img src={image} alt="" style={{ width: '100%', height: 'auto', opacity: '.4' }} />
                         <div className="name">
                             <span>Château de Chenonceau</span>

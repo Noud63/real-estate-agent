@@ -14,9 +14,8 @@ const verifyToken = (req, res, next) => {
     }
 }
 
-const admin = (req, res, next) => {
-    console.log(req.user)
-    if (req.user && req.user.isAdmin) {
+const isAdmin = (req, res, next) => {
+    if (req.user.isAdmin) {
         next()
     } else {
         res.status(401)
@@ -24,4 +23,4 @@ const admin = (req, res, next) => {
     }
 }
 
-module.exports = { verifyToken, admin }
+module.exports = { verifyToken, isAdmin }
