@@ -15,7 +15,8 @@ and the information will be sent to your email address.<br>
 A user can register and login. JSON Web Token is used for authentication and authorization.<br>
 The owner can login as an administrator and perform exclusive tasks like delete a registered user.<br>
 A user can update his profile when logged in.<br>
-All registered users are stored in a mongoDB database aswell as the data (real-estate-properties) that are loaded by default.<br>
+All registered users are stored in a mongoDB database aswell as the data (real-estate-properties) that are loaded by default,
+and all the email addresses of newsletter subscribers.<br>
 The application is responsive.<br><br>
 
 
