@@ -89,6 +89,12 @@
     margin: 60px 20px 0 20px;
     // border: 1px solid red;
 
+    & .searchError {
+        margin-top: 50px;
+        color: rgb(199, 191, 212);
+        letter-spacing: 2px;
+    }
+
      @include respond1(removeSidebar){
           width: 96%;
         }

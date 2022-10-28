@@ -6,7 +6,8 @@ export const getRealEstates = createAsyncThunk(
     'realestate/getRealEstates', async (_, thunkAPI) => {
         try {
             const response = await axios.get('castles')
-            return response.data
+                return response.data
+           
         } catch (error) {
             const message =
                 (error.response &&

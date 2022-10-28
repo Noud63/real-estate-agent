@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import like from '../assets/icons/like.png'
+import { useSelector, useDispatch } from 'react-redux'
 import likeRed from '../assets/icons/likeRed.png'
+import { filteredProperties } from '../features/estateSlice'
 
 const Likes = ({ id }) => {
 
     const [likes, setLikes] = useState(false)
 
-    const likesHandler = () => {
-        setLikes(prev => !prev)
+    const likesHandler = (id) => {
+           setLikes(prev => !prev)
     }
 
     return (

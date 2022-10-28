@@ -38,6 +38,7 @@ const AllProperties = () => {
         } else if (isError) {
             console.log('No data!')
         }
+        // localStorage.setItem('allproperties', JSON.stringify(realestate))
     }, [dispatch, isSuccess, isError])
 
 

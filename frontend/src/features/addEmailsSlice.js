@@ -62,7 +62,7 @@ export const getAllEmails = createAsyncThunk(
 
 const initialState = {
     email: {},
-    allemails: [],
+    allemails: localStorage.getItem('allemails') ? JSON.parse(localStorage.getItem('allemails')) : [],
     isError: false,
     isSucces: false,
     isLoading: false,

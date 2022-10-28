@@ -30,7 +30,7 @@ const NoAccess = () => {
 
     return (
         <Link to="/alluserslist" className="link" style={{ textDecoration: 'none' }}>
-            <div className="headerMenu_item">{isAdmin ? 'Admin' : <img src={noaccess} alt="" style={{ width: '25px' }} />}
+            <div className="headerMenu_item">{isAdmin ? 'Dashboard' : <img src={noaccess} alt="" style={{ width: '25px' }} />}
             </div></Link>
     )
 }

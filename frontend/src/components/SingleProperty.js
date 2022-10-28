@@ -34,7 +34,7 @@ return (
     <>
         <div className={!expand ? "content2_property" : "content2_property enlarge"} key={_id}>
 
-            <Likes id={_id} />
+            <Likes id={_id} like={like}/>
 
             <div className="content2_property_castleImageBox" onClick={() => handleInfoPopup(_id)}><img src={process.env.PUBLIC_URL + `assets/images/${img[0]}`} alt="castle" className="content2_property_castleImage" /></div>
 

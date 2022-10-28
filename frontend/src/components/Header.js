@@ -40,7 +40,6 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
-        console.log(login)
     }, []);
 
 
@@ -60,12 +59,15 @@ const Header = () => {
         setLogOut(false)
         dispatch(reset())
         dispatch(resetProfile())
-        localStorage.removeItem('loggedIn')
-        localStorage.removeItem('allusers')
-        localStorage.removeItem('accessallowed')
-        localStorage.removeItem('userToken')
-        localStorage.removeItem('isAdmin')
-        localStorage.removeItem('profile')
+        // All to be cleared:
+        // localStorage.removeItem('loggedIn')
+        // localStorage.removeItem('allusers')
+        // localStorage.removeItem('accessallowed')
+        // localStorage.removeItem('userToken')
+        // localStorage.removeItem('isAdmin')
+        // localStorage.removeItem('profile')
+        // localStorage.removeItem('allemails')
+        localStorage.clear()
     }
 
 

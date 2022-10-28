@@ -37,7 +37,7 @@ const deleteFromStorageAndUi = (id, e) => {
             <div className="user"><span className="prefix">Email: </span><span className="names">{email}</span></div>
             <div className="user"><span className="prefix">Tel: </span><span className="names">{telephone}</span></div>
             <div className="user"><span className="prefix">UserName: </span><span className="names">{username}</span></div>
-            <button type="button" className="deleteUserBtn" onClick={(e) => deleteSingleUser(id, e)}>Delete User</button>
+            <button type="button" className="deleteUserBtn" onClick={(e) => deleteSingleUser(id, e)}>Remove User</button>
         </div>
     )
 }
