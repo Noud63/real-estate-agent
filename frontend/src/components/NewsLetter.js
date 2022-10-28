@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import '../sassStyles/layout/NewsLetter.scss'
 import emailjs from '@emailjs/browser';
 import { useSelector, useDispatch } from 'react-redux'
-import { addEmail } from '../features/addEmailsSlice'
+import { addEmail, getAllEmails } from '../features/addEmailsSlice'
 
 const NewsLetter = () => {
 
@@ -35,6 +35,7 @@ const NewsLetter = () => {
 
         const emailObj = { email: newEmail }
         dispatch(addEmail(emailObj))
+        dispatch(getAllEmails())
         form.current.reset()
         setNewEmail("")
     }

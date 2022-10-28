@@ -26,7 +26,7 @@ const deleteFromStorageAndUi = (id, e) => {
 
     return (
         <div className="userInfo_users">
-            <div className="user"><span className="prefix">Id: </span><span className="names">{id}</span></div>
+            <div className="user"><span className="prefix">Id: </span><span className="names">{id}.....</span></div>
             <div className="user"><span className="prefix">FirstName: </span><span className="names">{firstname}</span></div>
             <div className="user"><span className="prefix">LastName: </span><span className="names">{lastname}</span></div>
             <div className="user"><span className="prefix">Address: </span><span className="names">{address}</span></div>

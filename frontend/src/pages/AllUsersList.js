@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import '../sassStyles/pages/AllUsersList.scss'
 import AccessAllowed from '../components/AccessAllowed'
 import Loader from '../utilities/Loader'
@@ -13,12 +13,18 @@ const AllUsersList = () => {
     const allRegisteredusers = useSelector(state => state.allusers)
     let { isLoading, allUsers, isError, isSuccess, message } = allRegisteredusers
 
+    const subscribers = useSelector(state => state.emails)
+    let { allemails } = subscribers
+
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         if (!isLoggedIn) {
             setNewsSubscribers(false)
+            dispatch()
         }
     }, [isLoggedIn])
 
@@ -48,7 +54,7 @@ const AllUsersList = () => {
                                     telephone={telephone}
                                     username={username}
                                     zip={zip}
-                                    id={_id}
+                                    id={_id.slice(0,15)}
                                 />
                             </div>
 
@@ -56,8 +62,8 @@ const AllUsersList = () => {
                     })}
                 </div>
                 <div className="usersContainer_allemails">
-                    <div className="usersContainer_allemails_subscribers">Subscribers</div>
-                    <AllEmails />
+                    <div className="usersContainer_allemails_subscribers">Subscribers<span>{allemails.length}</span></div>
+                    <AllEmails allemails={allemails}/>
                 </div>
             </div>
         </>

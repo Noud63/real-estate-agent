@@ -28,7 +28,10 @@
         box-shadow: 0px 2px 4px rgb(26, 0, 0);
         @include respond12(thousand){
         width:90%;
-    }
+        }
+        @include respond7(headername){
+        width:100%;
+       }
         
 
         & .registeredUsers {
@@ -112,10 +115,14 @@
         @include respond12(thousand){
            width:90%;
         }
+        @include respond7(headername){
+        width:100%;
+    }
 
         &_subscribers {
             width: 100%;
             font-size: 1.6rem;
+            @include spacebetween-content;
             padding: 10px 0;
             margin-bottom: 18px;
             border-bottom: 1px solid rgb(207, 198, 219);

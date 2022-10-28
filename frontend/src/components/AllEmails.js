@@ -2,13 +2,11 @@ import React,{useEffect, useState} from 'react'
 import { useSelector } from 'react-redux'
 import deleteIcon from '../assets/icons/close2.png'
 
-const AllEmails = () => {
+const AllEmails = ({allemails}) => {
 
-    const subscribers = useSelector(state => state.emails)
-    let { isLoading, allemails, isError, isSuccess, message } = subscribers
-
+    
     useEffect(()=> {
-        let allemails = JSON.parse(localStorage.getItem('allemails'))
+        allemails = JSON.parse(localStorage.getItem('allemails'))
         if(allemails){
             allemails = allemails.sort((a, b) => {
                 return a.email.localeCompare(b.email)
@@ -16,9 +14,9 @@ const AllEmails = () => {
         }
     },[])
 
-const removeEmail = () => {
-    console.log("Email removed!")
-}
+     const removeEmail = () => {
+      console.log("Email removed!")
+    }
 
       
    return (
