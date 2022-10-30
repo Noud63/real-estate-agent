@@ -19,51 +19,52 @@ const AllUsersList = () => {
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
 
-    const dispatch = useDispatch()
-
     useEffect(() => {
         if (!isLoggedIn) {
             setNewsSubscribers(false)
-            dispatch()
         }
     }, [isLoggedIn])
 
     return (
         <>
             <AccessAllowed />
-            <div className={newsSubscribers ? "usersContainer" : "usersContainer hide"}>
-
-                <div className="usersContainer_allUsers">
+            <div className={newsSubscribers ? "dashboardContainer" : "dashboardContainer hide"}>
+                <div className="usersWrapper">
                     <div className="registeredUsers">Registered Users <span>{allUsers.length}</span></div>
-                    {isLoading && <Loader />}
-                    {allUsers && allUsers.map(user => {
-                        const { address, city, country, email, firstname, lastname, number, telephone, username, zip, _id } = user;
-                        return (
-                            <div key={_id} className="userInfo">
+                    <div className="usersWrapper_allUsers">
 
-                                <AllUsersInfo
-                                    allUsers={allUsers}
-                                    isSuccess={isSuccess}
-                                    address={address}
-                                    city={city}
-                                    country={country}
-                                    email={email}
-                                    firstname={firstname}
-                                    lastname={lastname}
-                                    number={number}
-                                    telephone={telephone}
-                                    username={username}
-                                    zip={zip}
-                                    id={_id.slice(0,15)}
-                                />
-                            </div>
-
-                        )
-                    })}
+                        {isLoading && <Loader />}
+                        {allUsers && allUsers.map(user => {
+                            const { address, city, country, email, firstname, lastname, number, telephone, username, zip, _id } = user;
+                            return (
+                                <div key={_id} className="userInfo">
+                                    <AllUsersInfo
+                                        allUsers={allUsers}
+                                        isSuccess={isSuccess}
+                                        address={address}
+                                        city={city}
+                                        country={country}
+                                        email={email}
+                                        firstname={firstname}
+                                        lastname={lastname}
+                                        number={number}
+                                        telephone={telephone}
+                                        username={username}
+                                        zip={zip}
+                                        id={_id.slice(0, 15)}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-                <div className="usersContainer_allemails">
-                    <div className="usersContainer_allemails_subscribers">Subscribers<span>{allemails.length}</span></div>
-                    <AllEmails allemails={allemails}/>
+                
+                <div className="allemailsWrapper">
+                    <div className="subscribers">Subscribers<span>{allemails.length}</span></div>
+                    <div className="allemailsWrapper_allEmails">
+                        <AllEmails allemails={allemails} />
+                    </div>
+                    
                 </div>
             </div>
         </>

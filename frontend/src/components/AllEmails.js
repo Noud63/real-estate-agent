@@ -1,16 +1,20 @@
-import React,{useEffect, useState} from 'react'
-import { useSelector } from 'react-redux'
+import React,{useEffect} from 'react'
 import deleteIcon from '../assets/icons/close2.png'
+import { useDispatch } from 'react-redux'
+import { getAllEmails } from '../features/addEmailsSlice'
 
 const AllEmails = ({allemails}) => {
 
-    
+    const dispatch = useDispatch()
+
     useEffect(()=> {
+        dispatch(getAllEmails())
         allemails = JSON.parse(localStorage.getItem('allemails'))
         if(allemails){
             allemails = allemails.sort((a, b) => {
                 return a.email.localeCompare(b.email)
             })
+            localStorage.setItem('allemails', JSON.stringify(allemails))
         }
     },[])
 
@@ -18,7 +22,7 @@ const AllEmails = ({allemails}) => {
       console.log("Email removed!")
     }
 
-      
+    console.log(allemails)
    return (
         <>
             {allemails.map( (mail) => {
