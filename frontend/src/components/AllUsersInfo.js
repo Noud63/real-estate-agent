@@ -2,7 +2,7 @@ import React from 'react'
 import { deleteUser } from '../features/allUsersSlice'
 import { useDispatch } from 'react-redux'
 
-const AllUsersInfo = ({ address, city, country, email, firstname, lastname, number, telephone, username, zip, id, isSuccess }) => {
+const AllUsersInfo = ({ allUsers, address, city, country, email, firstname, lastname, number, telephone, username, zip, id, isSuccess, setRegistrationTotal }) => {
 
     const dispatch = useDispatch()
 
@@ -11,7 +11,8 @@ const AllUsersInfo = ({ address, city, country, email, firstname, lastname, numb
             dispatch(deleteUser(id))
         }
             deleteFromStorageAndUi(id, e)
-       }
+            setRegistrationTotal(allUsers.length - 1)
+        }
 
 const deleteFromStorageAndUi = (id, e) => {
     if(id){
@@ -19,14 +20,17 @@ const deleteFromStorageAndUi = (id, e) => {
         e.currentTarget.parentNode.parentNode.parentNode.removeChild(element)
 
         let users = JSON.parse(localStorage.getItem("allusers"))
-        users = users.filter(user => user._id !== id)
-        localStorage.setItem('allusers', JSON.stringify(users))
+        if(users){
+            let newList = users.filter(user => user._id !== id)
+            localStorage.setItem('allusers', JSON.stringify(newList))
+        }
+        
     }
 }
 
     return (
         <div className="userInfo_users">
-            <div className="user"><span className="prefix">Id: </span><span className="names">{id}.....</span></div>
+            <div className="user"><span className="prefix">Id: </span><span className="names">{id.slice(0, 15)}.....</span></div>
             <div className="user"><span className="prefix">FirstName: </span><span className="names">{firstname}</span></div>
             <div className="user"><span className="prefix">LastName: </span><span className="names">{lastname}</span></div>
             <div className="user"><span className="prefix">Address: </span><span className="names">{address}</span></div>

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import noaccess from '../assets/icons/noaccess.png'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { getAllEmails } from '../features/addEmailsSlice'
+import { getAllUsers } from '../features/allUsersSlice'
 
 const NoAccess = () => {
 
     const [isAdmin, setIsAdmin] = useState(false)
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const storage = localStorage.getItem('isAdmin');
@@ -28,10 +33,17 @@ const NoAccess = () => {
         }
     }, [isLoggedIn, login.isAdmin])
 
+
+     const getAllUsersInfo = () => {
+          navigate('/alluserslist')
+         dispatch(getAllEmails())
+         dispatch(getAllUsers())
+     }
+
+
     return (
-        <Link to="/alluserslist" className="link" style={{ textDecoration: 'none' }}>
-            <div className="headerMenu_item">{isAdmin ? 'Dashboard' : <img src={noaccess} alt="" style={{ width: '25px' }} />}
-            </div></Link>
+        
+            <div className="headerMenu_item" onClick={getAllUsersInfo}>{isAdmin ? 'Dashboard' : <img src={noaccess} alt="" style={{ width: '25px' }} />}</div>
     )
 }
 

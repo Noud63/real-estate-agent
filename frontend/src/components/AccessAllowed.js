@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAllUsers } from '../features/allUsersSlice'
 
 
 const AccessAllowed = () => {
@@ -20,7 +19,6 @@ const AccessAllowed = () => {
 
     useEffect(() => {
         if (isLoggedIn && (login.isAdmin || localStorage.getItem('isAdmin'))) {
-            dispatch(getAllUsers())
             setAccessAllowed(true)
         }
     }, [dispatch, isLoggedIn, login.isAdmin])

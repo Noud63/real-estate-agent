@@ -14,7 +14,6 @@ const addEmailData = async (email) => {
         }
     }
     const response = await axios.post('addemail', email, config)
-    console.log(response.data)
     return response.data
 }
 
@@ -59,6 +58,33 @@ export const getAllEmails = createAsyncThunk(
 )
 
 
+export const removeEmail = createAsyncThunk(
+    'email/deleteEmail', async (id, thunkAPI) => {
+        try {
+            const token = JSON.parse(localStorage.getItem("userToken"));
+            if (!token) {
+                console.log("Token not found!");
+            }
+
+            const config = {
+                headers: {
+                    'authorization': `Bearer ${token}`,
+                }
+            }
+            const response = await axios.delete(`deleteemail/${id}`, config)
+            return response.data
+        } catch (error) {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+            return thunkAPI.rejectWithValue();
+        }
+    }
+)
+
 
 const initialState = {
     email: {},
@@ -69,6 +95,7 @@ const initialState = {
     message: ''
 }
 
+console.log(initialState)
 
 export const addEmailsSlice = createSlice({
     name: 'email',
@@ -98,13 +125,30 @@ export const addEmailsSlice = createSlice({
             .addCase(getAllEmails.fulfilled, (state, { payload }) => {
                 state.isLoading = false
                 state.isSuccess = true
-                state.allemails = payload
+                state.allemails = payload.sort((a, b) => {
+                    return a.email.localeCompare(b.email)
+                })
                 state.message = payload
             })
             .addCase(getAllEmails.rejected, (state, { payload }) => {
                 state.isLoading = false
                 state.isError = true
                 state.message = payload
+            })
+            .addCase(removeEmail.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(removeEmail.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.allemails = state.allemails.filter(mail => {
+                    return mail._id !== action.payload
+                })
+            })
+            .addCase(removeEmail.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
             })
     }
 })

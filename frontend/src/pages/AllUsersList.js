@@ -5,10 +5,17 @@ import AccessAllowed from '../components/AccessAllowed'
 import Loader from '../utilities/Loader'
 import AllUsersInfo from '../components/AllUsersInfo'
 import AllEmails from '../components/AllEmails'
+import {getAllEmails} from '../features/addEmailsSlice'
+
 
 const AllUsersList = () => {
 
+    const [ registrationTotal, setRegistrationTotal ] = useState(0)
+
     const [newsSubscribers, setNewsSubscribers] = useState(true)
+
+    const [sortedEmails, setSortedEmails] = useState([])
+    const dispatch = useDispatch()
 
     const allRegisteredusers = useSelector(state => state.allusers)
     let { isLoading, allUsers, isError, isSuccess, message } = allRegisteredusers
@@ -19,11 +26,12 @@ const AllUsersList = () => {
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
 
-    useEffect(() => {
+     useEffect(() => {
         if (!isLoggedIn) {
             setNewsSubscribers(false)
         }
     }, [isLoggedIn])
+
 
     return (
         <>
@@ -51,7 +59,8 @@ const AllUsersList = () => {
                                         telephone={telephone}
                                         username={username}
                                         zip={zip}
-                                        id={_id.slice(0, 15)}
+                                        setRegistrationTotal={setRegistrationTotal}
+                                        id={_id}
                                     />
                                 </div>
                             )

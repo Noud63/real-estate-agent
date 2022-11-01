@@ -35,7 +35,6 @@ const NewsLetter = () => {
 
         const emailObj = { email: newEmail }
         dispatch(addEmail(emailObj))
-        dispatch(getAllEmails())
         form.current.reset()
         setNewEmail("")
     }

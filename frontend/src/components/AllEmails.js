@@ -1,36 +1,35 @@
-import React,{useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import deleteIcon from '../assets/icons/close2.png'
 import { useDispatch } from 'react-redux'
-import { getAllEmails } from '../features/addEmailsSlice'
+import { removeEmail, getAllEmails } from '../features/addEmailsSlice'
 
-const AllEmails = ({allemails}) => {
+const AllEmails = ({ allemails }) => {
 
     const dispatch = useDispatch()
 
-    useEffect(()=> {
-        dispatch(getAllEmails())
-        allemails = JSON.parse(localStorage.getItem('allemails'))
-        if(allemails){
-            allemails = allemails.sort((a, b) => {
-                return a.email.localeCompare(b.email)
-            })
-            localStorage.setItem('allemails', JSON.stringify(allemails))
-        }
-    },[])
-
-     const removeEmail = () => {
-      console.log("Email removed!")
+    const deleteEmail = (id, e) => {
+       if(id){
+           dispatch(removeEmail(id))
+           let emails = JSON.parse(localStorage.getItem("allemails"))
+           emails = emails.filter(mail => mail._id !== id)
+           localStorage.setItem('allemails', JSON.stringify(emails))
+       }
+        e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode)
     }
-
-    console.log(allemails)
-   return (
+    
+    return (
         <>
-            {allemails.map( (mail) => {
+            {allemails.map((mail) => {
                 const { email, _id } = mail
-                return <div className="user" key={_id}>{email}<span><img src={deleteIcon} alt="delete" style={{height: "20px", cursor: "pointer"}} onClick={removeEmail}/></span></div>
+                return <div className="user" key={_id} id={_id}>{email}<span><img src={deleteIcon} alt="delete" style={{ height: "20px", cursor: "pointer" }} onClick={(e) => deleteEmail(_id, e)} /></span></div>
             })}
         </>
     )
 }
 
 export default AllEmails
+
+
+// emails = emails.sort((a, b) => {
+//     return a.email.localeCompare(b.email)
+// })
