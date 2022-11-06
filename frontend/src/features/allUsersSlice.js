@@ -46,7 +46,6 @@ export const deleteUser = createAsyncThunk(
                 }
             }
             const response = await axios.delete(`deleteuser/${id}`, config)
-            console.log(response.data)
             return response.data
         } catch (error) {
             const message =
@@ -62,7 +61,7 @@ export const deleteUser = createAsyncThunk(
 
 
 const initialState = {
-    allUsers: localStorage.getItem('allusers') ? JSON.parse(localStorage.getItem('allusers')) : [],
+    allUsers:[],
     isSuccess: false,
     isLoading: false,
     message: '',
@@ -99,7 +98,7 @@ export const allUsersSlice = createSlice({
             state.isLoading = false
             state.isSuccess = true
             state.allUsers = state.allUsers.filter(user => {
-                return user._id !== action.payload
+                return user._id !== action.payload.id
             })
         })
         .addCase(deleteUser.rejected, (state, action) => {

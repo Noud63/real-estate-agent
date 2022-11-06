@@ -43,7 +43,7 @@ export const getAllEmails = createAsyncThunk(
                 }
             }
             const response = await axios.get('allemails', config)
-            localStorage.setItem('allemails', JSON.stringify(response.data))
+            // localStorage.setItem('allemails', JSON.stringify(response.data))
             return response.data
         } catch (error) {
             const message =
@@ -88,7 +88,7 @@ export const removeEmail = createAsyncThunk(
 
 const initialState = {
     email: {},
-    allemails: localStorage.getItem('allemails') ? JSON.parse(localStorage.getItem('allemails')) : [],
+    allemails: [],
     isError: false,
     isSucces: false,
     isLoading: false,
@@ -101,7 +101,9 @@ export const addEmailsSlice = createSlice({
     name: 'email',
     initialState,
     reducers: {
-        resetState: () => initialState
+        resetState: state => {
+            return {...state, allemails: []}
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -111,7 +113,7 @@ export const addEmailsSlice = createSlice({
             .addCase(addEmail.fulfilled, (state, { payload }) => {
                 state.isLoading = false
                 state.isSuccess = true
-                state.email = payload
+                state.allemails.push(payload)
                 state.message = payload
             })
             .addCase(addEmail.rejected, (state, { payload }) => {
@@ -141,8 +143,9 @@ export const addEmailsSlice = createSlice({
             .addCase(removeEmail.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = true
-                state.allemails = state.allemails.filter(mail => {
-                    return mail._id !== action.payload
+                state.allemails = state.allemails.filter((mail) => {
+                    console.log(action.payload.id)
+                    return mail._id !== action.payload.id
                 })
             })
             .addCase(removeEmail.rejected, (state, action) => {

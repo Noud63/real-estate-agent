@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginUser, logout } from '../features/loginSlice'
 import { userProfile } from '../features/userProfileSlice'
-import { getAllEmails } from '../features/addEmailsSlice'
+import { getAllEmails, resetState } from '../features/addEmailsSlice'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -58,7 +58,7 @@ const SigninForm = () => {
     useEffect(() => {
         if (isError) {
             toast.error(message);
-            dispatch(logout())
+            dispatch(resetState())
         } 
     }, [isError, message, dispatch])
 

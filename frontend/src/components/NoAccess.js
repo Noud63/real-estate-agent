@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import noaccess from '../assets/icons/noaccess.png'
 import { useNavigate } from 'react-router-dom'
-import { getAllEmails } from '../features/addEmailsSlice'
-import { getAllUsers } from '../features/allUsersSlice'
+
 
 const NoAccess = () => {
 
     const [isAdmin, setIsAdmin] = useState(false)
 
     const navigate = useNavigate()
-    const dispatch = useDispatch()
 
     useEffect(() => {
         const storage = localStorage.getItem('isAdmin');
@@ -36,9 +34,7 @@ const NoAccess = () => {
 
      const getAllUsersInfo = () => {
           navigate('/alluserslist')
-         dispatch(getAllEmails())
-         dispatch(getAllUsers())
-     }
+         }
 
 
     return (

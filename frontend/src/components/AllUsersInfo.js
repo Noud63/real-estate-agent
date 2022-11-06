@@ -1,48 +1,25 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { deleteUser } from '../features/allUsersSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../utilities/Loader'
 
 const AllUsersInfo = () => {
 
-   const [registrationTotal, setRegistrationTotal] = useState(0)
-
     const allRegisteredusers = useSelector(state => state.allusers)
     let { isLoading, allUsers, isError, isSuccess, message } = allRegisteredusers
 
     const dispatch = useDispatch()
 
-    useEffect(()=> {
-        let users = JSON.parse(localStorage.getItem("allusers"))
-        setRegistrationTotal(users.length)
-    }, [])
-
-    const deleteSingleUser = (id, e) => {
-        if (isSuccess) {
+    const deleteSingleUser = (id) => {
+        if (id) {
             dispatch(deleteUser(id))
         }
-            deleteFromStorageAndUi(id, e)
-        }
-
-const deleteFromStorageAndUi = (id, e) => {
-    if(id){
-        const element = e.currentTarget.parentNode.parentNode
-        e.currentTarget.parentNode.parentNode.parentNode.removeChild(element)
-
-        let users = JSON.parse(localStorage.getItem("allusers"))
-        if(users){
-            let newList = users.filter(user => user._id !== id)
-            localStorage.setItem('allusers', JSON.stringify(newList))
-            setRegistrationTotal(newList.length)
-        }
     }
-}
 
     return (
         <div className="usersWrapper">
-            <div className="registeredUsers">Registered Users <span>{registrationTotal}</span></div>
+            <div className="registeredUsers">Registered Users <span>{allUsers.length}</span></div>
             <div className="usersWrapper_allUsers">
-
                 {isLoading && <Loader />}
                 {allUsers && allUsers.map(user => {
                     const { address, city, country, email, firstname, lastname, number, telephone, username, zip, _id } = user;
