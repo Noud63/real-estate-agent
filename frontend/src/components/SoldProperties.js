@@ -4,10 +4,10 @@ import soldProps from '../assets/soldProps/soldProps'
 
 const SoldProperties = () => {
 
-    const [soldProperties, setSoldProperties] = useState([])
-    const [loadBtn, setLoadBtn] = useState('Show More')
-    const [currentSlice, setCurrentSlice] = useState(4)
-    const [perPage, setPerPage] = useState(4)
+    const [ soldProperties, setSoldProperties ] = useState([])
+    const [ loadBtn, setLoadBtn ] = useState('Show More')
+    const [ currentSlice, setCurrentSlice ] = useState(4)
+    const [ perPage, setPerPage ] = useState(4)
     const [ showMore, setShowMore ] = useState(false)
 
     useEffect(() => {

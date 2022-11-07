@@ -132,7 +132,7 @@
     width: 100%;
     padding: 100px 0;
     background-image: linear-gradient(to bottom, rgb(241, 241, 241),rgb(207, 207, 207));
-    transition: all .8s ease-in-out;
+    transition: all 1s ease-in-out;
     @include respond11(fiveteenhundred){
         max-height: 1350px;
     }
@@ -140,6 +140,7 @@
         max-height: 1950px;
     }
 }
+
 .showMore {
     max-height: 1750px;
      @include respond11(fiveteenhundred){
@@ -148,7 +149,6 @@
      @include respond12(thousand){
         max-height: 3250px;
     }
-    
 }
 
 .content_block2 {
