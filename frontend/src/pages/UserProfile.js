@@ -5,6 +5,7 @@ import Loader from '../utilities/Loader'
 import { updateProfile, resetState }  from '../features/updateProfileSlice'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import { userProfile } from '../features/userProfileSlice'
 
 const ShowUserInfo = () => {
 
@@ -47,10 +48,10 @@ const handleSubmit = (e) => {
     }
     
     dispatch(updateProfile(updated))
-    console.log(update)
+    dispatch(userProfile(updated._id))
     localStorage.setItem('profile', JSON.stringify(updated))
 }
-console.log(profile)
+
 
 useEffect(()=> {
     if (isUpdated) {

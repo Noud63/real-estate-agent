@@ -31,10 +31,11 @@
         width: 50%;
         height: auto;
         line-height: 0;
+        border-top: 1px solid rgb(126, 70, 70);
 
         & img {
             box-shadow: 0px 2px 41px rgb(20, 0, 0);
-            border: 1px solid rgb(150, 113, 113);
+            border: 1px solid rgb(185, 155, 155);
             }
 
         & .featuring {
@@ -79,10 +80,11 @@
           margin: 10px;
           height: auto;
           line-height: 0;
+          border-top: 1px solid rgb(126, 70, 70);
 
           & img {
             box-shadow: 0px 2px 41px rgb(20, 0, 0);
-             border: 1px solid rgb(150, 113, 113);
+            border: 1px solid rgb(185, 155, 155);
             } 
           @include respond5(contentBreak){
           width: 100%;
@@ -124,11 +126,29 @@
       }
 }
 
+
 .content_sold {
-    height: auto;
+    max-height: 740px;
     width: 100%;
     padding: 100px 0;
     background-image: linear-gradient(to bottom, rgb(241, 241, 241),rgb(207, 207, 207));
+    transition: all .8s ease-in-out;
+    @include respond11(fiveteenhundred){
+        max-height: 1350px;
+    }
+    @include respond12(thousand){
+        max-height: 1950px;
+    }
+}
+.showMore {
+    max-height: 1750px;
+     @include respond11(fiveteenhundred){
+        max-height: 1950px;
+    }
+     @include respond12(thousand){
+        max-height: 3250px;
+    }
+    
 }
 
 .content_block2 {

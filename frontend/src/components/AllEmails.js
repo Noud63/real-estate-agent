@@ -23,7 +23,7 @@ const AllEmails = () => {
             <div className="subscribers">Subscribers<span>{allemails.length}</span></div>
             <div className="allemailsWrapper_allEmails">
                 {isLoading && <Loader />}
-                {allemails.map((mail) => {
+                {allemails && allemails.map((mail) => {
                     const { email, _id } = mail
                     return <EmailItem  deleteEmail={deleteEmail} email={email} id={_id} key={_id} isLoading={isLoading}/>
                 })}

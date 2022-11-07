@@ -6,6 +6,7 @@
 
 body {
   position: relative;
+  overflow: overlay;
 }
 
 /* width */
@@ -17,13 +18,13 @@ body {
 ::-webkit-scrollbar-track {
   // box-shadow: inset 0 0 5px black; 
   border-radius: 10px;
-  background: transparent; 
+  background-color: transparent; 
 }
  
 /* Handle */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(133, 0, 0); 
-}
+// ::-webkit-scrollbar-thumb:hover {
+//   background: rgb(133, 0, 0); 
+// }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb {

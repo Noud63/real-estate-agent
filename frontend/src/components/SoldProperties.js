@@ -8,14 +8,17 @@ const SoldProperties = () => {
     const [loadBtn, setLoadBtn] = useState('Show More')
     const [currentSlice, setCurrentSlice] = useState(4)
     const [perPage, setPerPage] = useState(4)
+    const [ showMore, setShowMore ] = useState(false)
 
     useEffect(() => {
         setSoldProperties(soldProps)
     }, [])
 
     const loadMore = () => {
+
         if (currentSlice < soldProperties.length) {
             setCurrentSlice(currentSlice + perPage)
+            setShowMore(true)
         }
 
         if (currentSlice === (soldProperties.length - perPage)) {
@@ -24,10 +27,12 @@ const SoldProperties = () => {
         if (currentSlice === soldProperties.length) {
             setCurrentSlice(perPage)
             setLoadBtn('Show More')
+            setShowMore(false)
         }
     }
 
     return (
+        <div className={!showMore ? "content_sold" : "content_sold showMore"}>
         <div className="soldprops">
                 <div className="soldprops_header">SOLD PROPERTIES</div>
                 <div className="soldprops_grid">
@@ -43,6 +48,7 @@ const SoldProperties = () => {
                     })}
                 </div>
                 <button type="button" className="loadmoreBtn" onClick={loadMore} >{loadBtn}</button>
+            </div>
             </div>
     )
 }

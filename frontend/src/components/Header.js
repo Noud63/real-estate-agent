@@ -100,7 +100,6 @@ const Header = () => {
             loggingOut()
             navigate('/')
         }
-
     }
 
     const showMenuOverlay = () => {
