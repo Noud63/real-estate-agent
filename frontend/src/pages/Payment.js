@@ -68,13 +68,11 @@ function Payment() {
         }
         getKey()
     }, []);
-    
+
 
     useEffect(() => {
         // callback function to call when event triggers
         const onPageLoad = () => {
-            console.log('page loaded');
-            // do something else
             setComplete(true)
         };
 

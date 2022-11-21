@@ -20,6 +20,10 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  @include respond12(thousand){
+      width: 90%;
+      margin: 50px auto;
+  }
 }
 
 .checkoutWrapper {
@@ -31,6 +35,11 @@ main {
   box-shadow: 0px 0px 18px rgb(22, 0, 0);
   background-color: rgb(65, 0, 0);
   border-radius: 10px;
+  margin: 0px 20px 0px 20px;
+
+  @include respond12(thousand){
+       flex-direction:column;
+  }
 }
 
 .subscriptionBox {
@@ -41,15 +50,17 @@ main {
   flex-direction: column;
   font-family: "Raleway";
   font-size: 1.2em;
-  color: var(--dark-terminal-color);
   color: rgb(186, 179, 201);
+  @include respond12(thousand){
+       width: 100%
+  }
 
   .ellie_logo {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 30px 0 30px 0;
 }
 
 .logo_img {
@@ -67,7 +78,7 @@ main {
 
 &_subscription {
   width: 80%;
-  margin-bottom: 170px;
+  margin-bottom: 100px;
 
      .price {
         width: 100%;
@@ -83,8 +94,12 @@ main {
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-         margin-top: 20px;
+        margin-top: 20px;
        }
+   }
+
+   .thankyou {
+       margin-bottom: 40px;
    }
 }
 
@@ -94,6 +109,12 @@ main {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #eae8ec;
+  @include respond12(thousand){
+       width: 100%;
+       border-top-right-radius: 0;
+       border-bottom-left-radius: 10px;
+       border-bottom-right-radius: 10px;
+  }
 }
 
 form > * {
