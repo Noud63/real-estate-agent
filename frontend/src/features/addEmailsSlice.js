@@ -43,7 +43,6 @@ export const getAllEmails = createAsyncThunk(
                 }
             }
             const response = await axios.get('allemails', config)
-            // localStorage.setItem('allemails', JSON.stringify(response.data))
             return response.data
         } catch (error) {
             const message =

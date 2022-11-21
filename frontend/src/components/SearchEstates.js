@@ -72,7 +72,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
                 <option value="3">{'3 ha'}</option>
                 <option value="6">{'6 ha'}</option>
                 <option value="8">{'8 ha'}</option>
-                <option value="9">{'9 ha'}</option>
+                <option value="10">{'10 ha'}</option>
                 <option value="10">{'10 ha'}</option>
             </select>
 

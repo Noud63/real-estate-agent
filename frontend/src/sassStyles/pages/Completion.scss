@@ -1,0 +1,40 @@
+@import '../abstracts/global';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.subscription_succes {
+     width: 100%;
+     margin: 0 auto;
+     @include center-content-column;
+     min-height: 100vh;
+
+     &_message {
+         max-width: 1000px;
+         width: 100%;
+         font-family: 'Arial narrow';
+         letter-spacing: 2px;
+         @include center-content-column;
+         font-size: 1.2rem;
+         color: rgb(179, 169, 197);
+
+         :nth-child(3) {
+             font-size: .8rem;
+             margin-top: 20px;
+         }
+
+         span {
+             text-align: center;
+         }
+     }
+
+     .back_btn {
+           width: 140px;
+           height: 40px;
+           font-size: 1rem;
+           color: rgb(179, 169, 197); 
+           border: 1px solid rgb(179, 169, 197); 
+           outline: none;
+           background-color: transparent;
+           margin-top: 40px;
+        }
+}

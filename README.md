@@ -10,8 +10,9 @@ Real Estate Agent is a MERN Stack application.<br>
 It is an E-Commerce Web App where you can buy luxury real estate in France.<br>
 I used React, Redux-Toolkit and Sass for the frontend part of the app, and for the back-end I used MongoDB, Express and Node.<br>
 There is a search function where you can filter data from an api request based on certain criteria.<br>
-You can register for a newsletter, and with each item in the list of real-estates you can make an enquiry for more information about the estate
+You can register for a newsletter and a magazine, and with each item in the list of real-estates you can make an enquiry for more information about the estate
 and the information will be sent to your email address.<br>
+The user can choose a payment method provided by Stripe.js. It is an integraded payment procedure so no redirect to stripe.<br>
 A user can register and login. JSON Web Token is used for authentication and authorization.<br>
 The owner can login as an administrator and perform exclusive tasks like delete a registered user.<br>
 A user can update his profile when logged in.<br>
@@ -23,6 +24,7 @@ The application is responsive.<br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/194486020-10cc9859-f125-41c1-b862-ff4660b54396.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/194486080-9fd4b786-179f-4a56-869e-36a15d3c9737.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/196441489-7d6ff924-47f3-49db-b2f7-290d8587809e.png"/></p><br><br><br>
+<p align="center"><img src="https://user-images.githubusercontent.com/38325801/203021233-9d9af96a-7ed9-4024-bf59-662d2f8c3474.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/200298159-c0be1804-8d85-46d0-aeda-066fe79e5ef3.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/196442957-e12d1366-7a97-452d-abd5-c036b3381f9b.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/194811007-762a2912-c2ca-4703-a329-a72b76c93d14.png"/></p><br><br><br>

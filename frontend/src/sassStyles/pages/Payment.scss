@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+@import '../abstracts/global';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
+:root {
+  --light-grey: #f6f9fc;
+  --dark-terminal-color: #0a2540;
+  --accent-color: #990000;
+  --radius: 3px;
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.checkoutWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-shadow: 0px 0px 18px rgb(22, 0, 0);
+  background-color: rgb(65, 0, 0);
+  border-radius: 10px;
+}
+
+.subscriptionBox {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Raleway";
+  font-size: 1.2em;
+  color: var(--dark-terminal-color);
+  color: rgb(186, 179, 201);
+
+  .ellie_logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo_img {
+  width: 70px;
+}
+
+  &_header {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+&_subscription {
+  width: 80%;
+  margin-bottom: 170px;
+
+     .price {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .p3mths {
+        font-size: .8rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+         margin-top: 20px;
+       }
+   }
+}
+
+.checkoutBox {
+  width: 50%;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #eae8ec;
+}
+
+form > * {
+  margin: 10px 0;
+}
+
+button {
+  background-color: var(--accent-color);
+}
+
+.checkout_btn {
+  background: var(--accent-color);
+  border-radius: var(--radius);
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+}
+.checkout_btn:hover {
+  filter: contrast(115%);
+}
+.checkout_btn:active {
+  transform: translateY(0px) scale(0.98);
+  filter: brightness(0.9);
+}
+.checkout_btn:disabled {
+  opacity: 0.5;
+  cursor: none;
+}
+
+input,
+select {
+  display: block;
+  font-size: 1.1em;
+  width: 100%;
+//   margin-bottom: 10px;
+}
+
+label {
+  display: block;
+}
+
+a {
+  color: var(--accent-color);
+//   font-weight: 900;
+}
+
+small {
+  font-size: 0.6em;
+}
+
+fieldset,
+input,
+select {
+  border: 1px solid #e0e0e0;
+}
+
+#payment-form {
+  width: calc(100% - 40px);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+#messages {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
+  display: none; /* hide initially, then show once the first message arrives */
+  background-color: #0a253c;
+  color: #00d924;
+  padding: 20px;
+  margin: 0 20px;
+  border-radius: var(--radius);
+  font-size: 0.7em;
+}
