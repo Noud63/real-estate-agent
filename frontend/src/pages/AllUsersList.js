@@ -10,30 +10,34 @@ import { getAllUsers } from '../features/allUsersSlice'
 
 const AllUsersList = () => {
 
-    const [newsSubscribers, setNewsSubscribers] = useState(true)
+    const [accessAllowed, setAccessAllowed] = useState(false)
 
     const dispatch = useDispatch()
 
-    useEffect(()=> {
-        dispatch(getAllEmails())
-        dispatch(getAllUsers())
-    },[])
-
-
     const logins = useSelector(state => state.login)
-    const {isLoggedIn } = logins
+    const { isLoggedIn, login } = logins
 
     useEffect(() => {
-        if (!isLoggedIn) {
-            setNewsSubscribers(false)
+        if (!isLoggedIn || login.isAdmin === false) {
+            setAccessAllowed(false)
         }
     }, [isLoggedIn])
 
+    useEffect(() => {
+
+        if(login.isAdmin){
+            dispatch(getAllEmails())
+            dispatch(getAllUsers())
+        }else{
+            setAccessAllowed(false)
+        }
+        
+    }, [login.isAdmin])
 
     return (
         <>
-            <AccessAllowed />
-            <div className={newsSubscribers ? "dashboardContainer" : "dashboardContainer hide"}>
+            <AccessAllowed accessAllowed={accessAllowed} setAccessAllowed={setAccessAllowed}/>
+            <div className={accessAllowed ? "dashboardContainer" : "dashboardContainer hide"}>
                 <AllUsersInfo />
                 <AllEmails />
             </div>

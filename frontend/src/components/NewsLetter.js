@@ -36,8 +36,8 @@ const NewsLetter = () => {
         //         console.log(error.text);
         //     });
 
-        // const emailObj = { email: newEmail }
-        // dispatch(addEmail(emailObj))
+        const emailObj = { email: newEmail }
+        dispatch(addEmail(emailObj))
         form.current.reset()
         setNewEmail("")
 

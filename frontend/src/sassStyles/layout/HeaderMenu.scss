@@ -26,6 +26,7 @@
         letter-spacing: 2px;
         color: rgb(207, 198, 219);
         @include center-content;
+        border-style: none;
         border-top: 1px solid rgb(117, 70, 70);
         cursor: pointer;
         background-image: linear-gradient(to top, rgb(61, 0, 0),  rgb(85, 0, 0));

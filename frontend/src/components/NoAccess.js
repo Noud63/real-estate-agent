@@ -39,7 +39,7 @@ const NoAccess = () => {
 
     return (
         
-            <div className="headerMenu_item" onClick={getAllUsersInfo}>{isAdmin ? 'Dashboard' : <img src={noaccess} alt="" style={{ width: '25px' }} />}</div>
+            <button type="button" className="headerMenu_item" onClick={getAllUsersInfo} >{isAdmin ? 'Dashboard' : <img src={noaccess} alt="" style={{ width: '25px' }} />}</button>
     )
 }
 

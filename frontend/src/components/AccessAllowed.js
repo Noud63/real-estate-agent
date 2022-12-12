@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 
-const AccessAllowed = () => {
-
-   const [accessAllowed, setAccessAllowed] = useState(false)
+const AccessAllowed = ({ accessAllowed, setAccessAllowed }) => {
 
     useEffect(() => {
         const storage = localStorage.getItem('accessallowed')

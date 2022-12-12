@@ -36,5 +36,12 @@
            outline: none;
            background-color: transparent;
            margin-top: 40px;
+           cursor: pointer;
+           transition: .2s ease-in-out;
+
+           &:hover {
+               letter-spacing: 3px;
+           }
         }
+
 }

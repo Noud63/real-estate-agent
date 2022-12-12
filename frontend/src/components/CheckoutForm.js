@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const options = {
     fields: {
         billingDetails: {
-            name: 'never',
+            name: 'never'
         },
     }
 }

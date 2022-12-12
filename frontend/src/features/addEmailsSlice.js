@@ -94,8 +94,6 @@ const initialState = {
     message: ''
 }
 
-console.log(initialState)
-
 export const addEmailsSlice = createSlice({
     name: 'email',
     initialState,
