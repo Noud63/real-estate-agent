@@ -29,7 +29,7 @@ dotenv.config()
 const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY);
 
 connectDB().then(
-    app.listen(PORT, () => { console.log(`Server running on port ${PORT}`.yellow) })
+    app.listen(PORT, '0.0.0.0', () => { console.log(`Server running on port ${PORT}`.yellow) })
 )
 
 addDataToCollection()
