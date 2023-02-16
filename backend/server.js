@@ -34,10 +34,6 @@ connectDB().then(
 
 addDataToCollection()
 
-// app.get('/', (req, res) => {
-//     res.send({ message: 'Server up and running!' })
-// })
-
 app.get("/config", (req, res) => {
     res.send({
         publishableKey: process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY,
