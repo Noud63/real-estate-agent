@@ -51,7 +51,7 @@ app.post("/create-payment-intent", async (req, res) => {
             automatic_payment_methods: { enabled: true },
         });
 
-        // Send publishable key and PaymentIntent details to client
+        //Send publishable key and PaymentIntent details to client
         res.send({
             clientSecret: paymentIntent.client_secret,
             paymentIntent: paymentIntent
