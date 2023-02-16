@@ -6,6 +6,7 @@ import axios from "axios";
 import logo from '../assets/icons/ellielogo1.png'
 import '../sassStyles/pages/Payment.scss'
 import Loader from '../utilities/Loader'
+import elliemag from '../assets/images/elliemag.png'
 
 
 const appearance = {
@@ -100,6 +101,7 @@ function Payment() {
                             <div className="p3mths">
                                 <span>Ellie's Glossy magazine and newsletter</span>
                                 <span>Payment term every three months</span>
+                                <img src={elliemag} alt="magazine" className="elliemagazine"/>
                             </div>
                         </div>
                         <div className="thankyou">Thank you for subscribing!</div>

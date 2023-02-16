@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 
@@ -6,9 +6,9 @@ const AccessAllowed = ({ accessAllowed, setAccessAllowed }) => {
 
     useEffect(() => {
         const storage = localStorage.getItem('accessallowed')
-        if(storage)
+        if (storage)
             setAccessAllowed(JSON.parse(localStorage.getItem('accessallowed')))
-    }, [])
+    }, [setAccessAllowed])
 
     const logins = useSelector(state => state.login)
     const { login, isLoggedIn } = logins
@@ -17,9 +17,9 @@ const AccessAllowed = ({ accessAllowed, setAccessAllowed }) => {
         if (isLoggedIn && (login.isAdmin || localStorage.getItem('isAdmin'))) {
             setAccessAllowed(true)
         }
-    }, [isLoggedIn, login.isAdmin])
+    }, [isLoggedIn, login.isAdmin, setAccessAllowed])
 
-    useEffect(()=> {
+    useEffect(() => {
         localStorage.setItem('accessallowed', JSON.stringify(accessAllowed))
     }, [accessAllowed])
 

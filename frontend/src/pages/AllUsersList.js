@@ -21,7 +21,7 @@ const AllUsersList = () => {
         if (!isLoggedIn || login.isAdmin === false) {
             setAccessAllowed(false)
         }
-    }, [isLoggedIn])
+    }, [isLoggedIn, login.isAdmin])
 
     useEffect(() => {
 
@@ -32,7 +32,7 @@ const AllUsersList = () => {
             setAccessAllowed(false)
         }
         
-    }, [login.isAdmin])
+    }, [login.isAdmin, dispatch])
 
     return (
         <>
