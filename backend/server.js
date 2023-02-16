@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const router = express.Router()
 const colors = require('colors')
+const path = require('path')
 const PORT = process.env.REACT_APP_PORT || 5000
 const connectDB = require('./config/db')
 const addDataToCollection = require('./seeder')
@@ -30,6 +31,7 @@ const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY);
 connectDB().then(
     app.listen(PORT, () => { console.log(`Server running on port ${PORT}`.yellow) })
 )
+
 addDataToCollection()
 
 // app.get('/', (req, res) => {
