@@ -156,13 +156,6 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* <div className={!showMenu ? "menuOverlay" : "menuOverlay show" && !scrolled ? "menuOverlay show" : "menuOverlay show toTop"}>
-                    <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
-                    <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                    {isLoggedIn && <button className="buttons_btnOverlay" onClick={showUserInfo}>user info</button>}
-                    <button className="buttons_btnOverlay" onClick={register}>Register</button>
-                </div> */}
-
                 <HeaderSubMenu showMenu={showMenu}
                     buy={buy}
                     scrolled={scrolled}
@@ -175,8 +168,6 @@ const Header = () => {
                 />
 
             </div>
-
-
         </>
     )
 }
