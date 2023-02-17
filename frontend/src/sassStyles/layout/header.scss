@@ -20,7 +20,10 @@
                 background-color: rgba(255, 255, 255, .6);
             }
     @include respond3(smallest){
-                height: 70px;
+                height: 50px;
+            }
+    @include respond7(headername){
+                height: 40px;
             }
 
     &_hide {
@@ -83,7 +86,10 @@
                 font-size: 2.6rem;
             }
             @include respond3(smallest){
-               font-size: 2.6rem;
+               font-size: 2.2rem;
+            }
+             @include respond7(headername){
+                font-size: 1.8rem;
             }
         }
 
@@ -154,6 +160,9 @@
      @include respond3(smallest) {
        width: 30px;
     }
+    @include respond7(headername) {
+       width: 25px;
+    }
     
     cursor: pointer;
 }
@@ -172,7 +181,10 @@
     transition: .3s ease-in-out;
     z-index: 5;
     @include respond3(smallest){
-                top: 70px;
+                top: 50px;
+    }
+    @include respond7(headername) {
+       top: 40px;
     }
 }
 

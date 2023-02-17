@@ -258,9 +258,12 @@
                  letter-spacing: 1px;
               }
                @include respond3(smallest){
-            letter-spacing: 8px;
-             
-        }
+                letter-spacing: 8px;
+             }
+             @include respond7(headername) {
+                letter-spacing: 4px;
+                font-size: 1.2rem;
+    }
     }
 
     .luxury_real_estate {
