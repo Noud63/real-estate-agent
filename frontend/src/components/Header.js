@@ -8,13 +8,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../features/loginSlice'
 import { reset } from '../features/allUsersSlice'
 import { resetProfile } from '../features/userProfileSlice'
+import HeaderSubMenu from './HeaderSubMenu'
 
 const Header = () => {
 
     const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false)
     const [logOut, setLogOut] = useState(false);
-    const [size, setSize] = useState({ width: undefined, height: undefined })
+    const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight})
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -103,24 +104,25 @@ const Header = () => {
     }
 
     const showMenuOverlay = () => {
-        setShowMenu(true)
+        setShowMenu(!showMenu)
     }
 
     const closeMenuOverlay = () => {
-        setShowMenu(false)
+        setShowMenu(!showMenu)
     }
 
-    const buttons = () => {
-        return (
-            <>
-                <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={buy}>Buy</button>
-                <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-                {logOut ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={showUserInfo}>user info</button> : ""}
-                <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={register}>Register</button>
-            </>
-        )
-    }
+    // const buttons = () => {
+    //     return (
+    //         <>
+    //             <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={buy}>Buy</button>
+    //             <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+    //             {logOut ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={showUserInfo}>user info</button> : ""}
+    //             <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={register}>Register</button>
+    //         </>
+    //     )
+    // }
 
+    console.log(scrolled)
     return (
         <>
             <div className={scrolled ? "header header_hide" : "header"}>
@@ -147,17 +149,33 @@ const Header = () => {
                     </div>
 
                     <div className="buttons">
-                        {buttons()}
+                        <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={buy}>Buy</button>
+                        <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+                        {logOut ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={showUserInfo}>user info</button> : ""}
+                        <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={register}>Register</button>
                     </div>
                 </div>
 
+                {/* <div className={!showMenu ? "menuOverlay" : "menuOverlay show" && !scrolled ? "menuOverlay show" : "menuOverlay show toTop"}>
+                    <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
+                    <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+                    {isLoggedIn && <button className="buttons_btnOverlay" onClick={showUserInfo}>user info</button>}
+                    <button className="buttons_btnOverlay" onClick={register}>Register</button>
+                </div> */}
+
+                <HeaderSubMenu showMenu={showMenu}
+                    buy={buy}
+                    scrolled={scrolled}
+                    showUserInfo={showUserInfo}
+                    register={register}
+                    loginHandler={loginHandler}
+                    isLoggedIn={isLoggedIn}
+                    logOut={logOut}
+                    size={size}
+                />
+
             </div>
 
-            {showMenu && size.width <= 800 ? <div className={!scrolled ? "menuOverlay show" : "menuOverlay show toTop"}>
-                {buttons()}
-            </div> : <div className="menuOverlay">
-                {buttons()}
-            </div>}
 
         </>
     )
@@ -166,13 +184,13 @@ const Header = () => {
 export default Header
 
 
-  // const buttonsOverlay = () => {
-    //     return (
-    //         <div className="buttonsBox">
-    //             <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
-    //             <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-    //             {isLoggedIn && <button className="buttons_btnOverlay" onClick={showUserInfo}>user info</button>}
-    //             <button className="buttons_btnOverlay" onClick={register}>Register</button>
-    //         </div>
-    //     )
-    // }
+//   const buttonsOverlay = () => {
+//         return (
+//             <div className="menuOverlay">
+//                 <button className="buttons_btnOverlay" onClick={buy}>Buy</button>
+//                 <button className="buttons_btnOverlay" onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
+//                 {isLoggedIn && <button className="buttons_btnOverlay" onClick={showUserInfo}>user info</button>}
+//                 <button className="buttons_btnOverlay" onClick={register}>Register</button>
+//             </div>
+//         )
+//     }
