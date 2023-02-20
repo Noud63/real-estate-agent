@@ -65,7 +65,6 @@ app.post("/create-payment-intent", async (req, res) => {
     }
 });
 
-
 app.use('/castles', castleRoute)
 app.use('/users', registerRoute)
 app.use('/login', loginRoute)
