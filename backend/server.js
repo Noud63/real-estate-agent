@@ -19,7 +19,7 @@ const deleteUserRoute = require('./routes/deleteUserRoute')
 const addEmailRoute = require('./routes/addEmailRoute')
 const allEmailsRoute = require('./routes/allEmailsRoute')
 const deleteEmailRoute = require('./routes/deleteEmailRoute')
-const { notFound, errorHandler } = require('./middleware/errorMiddleware')
+// const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 const fs = require('fs')
 
 app.use(cors())
