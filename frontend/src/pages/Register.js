@@ -67,7 +67,8 @@ const Register = () => {
                 <form action="" onSubmit={handleSubmit(submitForm, onErrors)} className="form">
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="firstname" className="pass">Firstname: </label>
+                        <div className="textInput">
+                            <label htmlFor="firstname" className="pass">Firstname: </label>
                             <input type="text" placeholder="" id="firstname" name="firstname" {...register("firstname", { required: 'firstname required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -76,7 +77,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="lastname" className="pass">Lastname: </label>
+                        <div className="textInput">
+                            <label htmlFor="lastname" className="pass">Lastname: </label>
                             <input type="text" placeholder="" id="lastname" name="lastname" {...register("lastname", { required: 'lastname required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -97,7 +99,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="city" className="pass">City: </label>
+                        <div className="textInput">
+                            <label htmlFor="city" className="pass">City: </label>
                             <input type="text" placeholder="" id="city" name="city" {...register("city", { required: 'city required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -106,7 +109,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="zip" className="pass">Zip code: </label>
+                        <div className="textInput">
+                            <label htmlFor="zip" className="pass">Zip code: </label>
                             <input type="text" placeholder="" id="zip" name="zip" {...register("zip", { required: 'zip code required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -115,7 +119,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="country" className="pass">Country: </label>
+                        <div className="textInput">
+                            <label htmlFor="country" className="pass">Country: </label>
                             <input type="text" placeholder="" id="country" name="country" {...register("country", { required: 'country required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -124,7 +129,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="email" className="pass">E-mail: </label>
+                        <div className="textInput">
+                            <label htmlFor="email" className="pass">E-mail: </label>
                             <input type="email" placeholder="" id="email" name="email" {...register("email", { required: 'email required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -133,7 +139,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="telephone" className="pass">Tel: </label>
+                        <div className="textInput">
+                            <label htmlFor="telephone" className="pass">Tel: </label>
                             <input type="number" placeholder="" id="telephone" name="telephone" {...register("telephone", { required: 'telephone required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -144,7 +151,8 @@ const Register = () => {
                     <div className="choose">Choose a username and password</div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="username" className="pass">Username: </label>
+                        <div className="textInput">
+                            <label htmlFor="username" className="pass">Username: </label>
                             <input type="text" placeholder="" id="username" name="username" {...register("username", { required: 'username required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -153,7 +161,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="password" className="pass">Password: </label>
+                        <div className="textInput">
+                            <label htmlFor="password" className="pass">Password: </label>
                             <input type="text" placeholder="" id="password" name="password" {...register("password", { required: 'password required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
@@ -162,7 +171,8 @@ const Register = () => {
                     </div>
 
                     <div className="name">
-                        <div className="textInput"><label htmlFor="repeatpassword" className="pass">Repeat password: </label>
+                        <div className="textInput">
+                            <label htmlFor="repeatpassword" className="pass">Repeat password: </label>
                             <input type="text" placeholder="" id="repeatpassword" name="repeatpassword" {...register("repeatpassword", { required: 'repeat password!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
