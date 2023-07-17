@@ -8,5 +8,7 @@ export const images = [
     'c7.jpg', 
     'c8.jpg', 
     'c9.jpg', 
-    'c10.jpg' 
+    'c10.jpg',
+    'c11.jpg',
+    'c12.jpg'
 ]

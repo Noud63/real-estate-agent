@@ -122,7 +122,7 @@ const Header = () => {
     //     )
     // }
 
-    console.log(scrolled)
+    // console.log(scrolled)
     return (
         <>
             <div className={scrolled ? "header header_hide" : "header"}>

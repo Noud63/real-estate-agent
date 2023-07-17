@@ -8,6 +8,9 @@ const NoAccess = () => {
 
     const [isAdmin, setIsAdmin] = useState(false)
 
+    const logins = useSelector(state => state.login)
+    const { login, isLoggedIn } = logins
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -18,11 +21,7 @@ const NoAccess = () => {
     }, [])
 
 
-    const logins = useSelector(state => state.login)
-    const { login, isLoggedIn } = logins
-
-
-    useEffect(() => {
+useEffect(() => {
         if (isLoggedIn && (login.isAdmin || localStorage.getItem('isAdmin'))) {
             setIsAdmin(true)
         }

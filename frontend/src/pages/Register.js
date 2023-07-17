@@ -68,7 +68,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="firstname" className="pass">Firstname: </label>
-                            <input type="text" placeholder="" name="firstname" {...register("firstname", { required: 'firstname required!' })} />
+                            <input type="text" placeholder="" id="firstname" name="firstname" {...register("firstname", { required: 'firstname required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.firstname && <div>{errors.firstname.message}</div>}
@@ -77,7 +77,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="lastname" className="pass">Lastname: </label>
-                            <input type="text" placeholder="" name="lastname" {...register("lastname", { required: 'lastname required!' })} />
+                            <input type="text" placeholder="" id="lastname" name="lastname" {...register("lastname", { required: 'lastname required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.lastname && <div>{errors.lastname.message}</div>}
@@ -86,9 +86,9 @@ const Register = () => {
 
                     <div className="address2">
                         <div className="textInput"><label htmlFor="address" className="pass">Address: </label>
-                            <input type="text" placeholder="" name="address" {...register("address", { required: 'address and number required!' })} />
+                            <input type="text" placeholder="" id="address" name="address" {...register("address", { required: 'address and number required!' })} />
                             <label htmlFor="number" className="numLabel">Num:</label>
-                            <input type="text" placeholder="" className="number" name="number" {...register("number", { required: 'number required!' })} />
+                            <input type="text" placeholder="" id="number" className="number" name="number" {...register("number", { required: 'number required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.address && <div>{errors.address.message}</div>}
@@ -98,7 +98,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="city" className="pass">City: </label>
-                            <input type="text" placeholder="" name="city" {...register("city", { required: 'city required!' })} />
+                            <input type="text" placeholder="" id="city" name="city" {...register("city", { required: 'city required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.city && <div>{errors.city.message}</div>}
@@ -107,7 +107,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="zip" className="pass">Zip code: </label>
-                            <input type="text" placeholder="" name="zip" {...register("zip", { required: 'zip code required!' })} />
+                            <input type="text" placeholder="" id="zip" name="zip" {...register("zip", { required: 'zip code required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.zip && <div>{errors.zip.message}</div>}
@@ -116,7 +116,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="country" className="pass">Country: </label>
-                            <input type="text" placeholder="" name="country" {...register("country", { required: 'country required!' })} />
+                            <input type="text" placeholder="" id="country" name="country" {...register("country", { required: 'country required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.country && <div>{errors.country.message}</div>}
@@ -125,7 +125,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="email" className="pass">E-mail: </label>
-                            <input type="email" placeholder="" name="email" {...register("email", { required: 'email required!' })} />
+                            <input type="email" placeholder="" id="email" name="email" {...register("email", { required: 'email required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.email && <div>{errors.email.message}</div>}
@@ -134,7 +134,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="telephone" className="pass">Tel: </label>
-                            <input type="number" placeholder="" name="telephone" {...register("telephone", { required: 'telephone required!' })} />
+                            <input type="number" placeholder="" id="telephone" name="telephone" {...register("telephone", { required: 'telephone required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.telephone && <div>{errors.telephone.message}</div>}
@@ -145,7 +145,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="username" className="pass">Username: </label>
-                            <input type="text" placeholder="" name="username" {...register("username", { required: 'username required!' })} />
+                            <input type="text" placeholder="" id="username" name="username" {...register("username", { required: 'username required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.username && <div>{errors.username.message}</div>}
@@ -154,7 +154,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="password" className="pass">Password: </label>
-                            <input type="text" placeholder="" name="password" {...register("password", { required: 'password required!' })} />
+                            <input type="text" placeholder="" id="password" name="password" {...register("password", { required: 'password required!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.password && <div>{errors.password.message}</div>}
@@ -163,7 +163,7 @@ const Register = () => {
 
                     <div className="name">
                         <div className="textInput"><label htmlFor="repeatpassword" className="pass">Repeat password: </label>
-                            <input type="text" placeholder="" name="repeatpassword" {...register("repeatpassword", { required: 'repeat password!' })} />
+                            <input type="text" placeholder="" id="repeatpassword" name="repeatpassword" {...register("repeatpassword", { required: 'repeat password!' })} />
                         </div>
                         <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                             {errors.repeatpassword && <div>{errors.repeatpassword.message}</div>}

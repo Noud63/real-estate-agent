@@ -17,22 +17,17 @@ const AllUsersList = () => {
     const logins = useSelector(state => state.login)
     const { isLoggedIn, login } = logins
 
+console.log(logins)
+
     useEffect(() => {
         if (!isLoggedIn || login.isAdmin === false) {
             setAccessAllowed(false)
-        }
-    }, [isLoggedIn, login.isAdmin])
-
-    useEffect(() => {
-
-        if(login.isAdmin){
-            dispatch(getAllEmails())
-            dispatch(getAllUsers())
         }else{
-            setAccessAllowed(false)
+            dispatch(getAllEmails())
+            dispatch(getAllUsers()) 
         }
-        
-    }, [login.isAdmin, dispatch])
+    }, [isLoggedIn, login.isAdmin, dispatch])
+
 
     return (
         <>

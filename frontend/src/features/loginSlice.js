@@ -6,6 +6,7 @@ const userLoginData = async (loginData) => {
     const response = await axios.post('login', loginData )
     const token = response.data.token
     if (token) {
+        localStorage.setItem('isAdmin', JSON.stringify(response.data.isAdmin))
         localStorage.setItem('userToken', JSON.stringify(token))
     }
     return response.data

@@ -77,51 +77,51 @@ useEffect(()=> {
                         <form onSubmit={handleSubmit} className="form">
                             <div className="inputBox">
                                 <label htmlFor="fullname"><span>Fullname</span><span>:</span></label>
-                                <input type="text" placeholder="Firstname" name="firstname" defaultValue={firstname} onChange={(e) => setFirstName(e.target.value)} />
+                                <input type="text" placeholder="Firstname" id="fullname" name="firstname" defaultValue={firstname} onChange={(e) => setFirstName(e.target.value)} />
                             </div>
                             <div className="inputBox">
                                 <label htmlFor="lastname"><span>Lastname</span><span>:</span></label>
-                                <input type="text" placeholder="Lastname" name="lastname" defaultValue={lastname} onChange={(e) => setLastName(e.target.value)} />
+                                <input type="text" placeholder="Lastname" id="lastname" name="lastname" defaultValue={lastname} onChange={(e) => setLastName(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="address"><span>Address</span><span>:</span></label>
-                                <input type="text" placeholder="Address" name="address" defaultValue={address} onChange={(e) => setStreet(e.target.value)} />
+                                <input type="text" placeholder="Address" id="address" name="address" defaultValue={address} onChange={(e) => setStreet(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="number"><span>Number</span><span>:</span></label>
-                                <input type="text" placeholder="Number" name="number" defaultValue={number} onChange={(e) => setHouseNumber(e.target.value)} />
+                                <input type="text" placeholder="Number" id="number" name="number" defaultValue={number} onChange={(e) => setHouseNumber(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="city"><span>City</span><span>:</span></label>
-                                <input type="text" placeholder="City" name="city" defaultValue={city} onChange={(e) => setHomeTown(e.target.value)} />
+                                <input type="text" placeholder="City" id="city" name="city" defaultValue={city} onChange={(e) => setHomeTown(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="zip"><span>Zip</span><span>:</span></label>
-                                <input type="text" placeholder="Zip" name="zip" defaultValue={zip} onChange={(e) => setPostalCode(e.target.value)} />
+                                <input type="text" placeholder="Zip" id="zip" name="zip" defaultValue={zip} onChange={(e) => setPostalCode(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="country"><span>Country</span><span>:</span></label>
-                                <input type="text" placeholder="Country" name="country" defaultValue={country} onChange={(e) => setCountryName(e.target.value)} />
+                                <input type="text" placeholder="Country" id="country" name="country" defaultValue={country} onChange={(e) => setCountryName(e.target.value)} />
                             </div>
                            
                             <div className="inputBox">
                                 <label htmlFor="email"><span>Email</span><span>:</span></label>
-                                <input type="text" placeholder="Email" name="email" defaultValue={email} onChange={(e) => setEmailAddress(e.target.value)} />
+                                <input type="text" placeholder="Email" id="email" name="email" defaultValue={email} onChange={(e) => setEmailAddress(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="telephone"><span>Telephone</span><span>:</span></label>
-                                <input type="text" placeholder="Telephone" name="telephone" defaultValue={telephone} onChange={(e) => setPhoneNumber(e.target.value)} />
+                                <input type="text" placeholder="Telephone" id="telephone" name="telephone" defaultValue={telephone} onChange={(e) => setPhoneNumber(e.target.value)} />
                             </div>
                             
                             <div className="inputBox">
                                 <label htmlFor="username"><span>Username</span><span>:</span></label>
-                                <input type="text" placeholder="Username" name="username" defaultValue={username} onChange={(e) => setUserName(e.target.value)} />
+                                <input type="text" placeholder="Username" id="username" name="username" defaultValue={username} onChange={(e) => setUserName(e.target.value)} />
                             </div>
 
                             {/* <div className="inputBox">

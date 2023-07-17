@@ -23,6 +23,8 @@ const SigninForm = () => {
 
     const logins = useSelector(state => state.login)
     const { isError, isLoggedIn, message, login } = logins
+
+    console.log(logins)
    
     const submitForm = (data) => {
         dispatch(loginUser(data))
@@ -34,10 +36,10 @@ const SigninForm = () => {
             dispatch(userProfile(login._id))
             dispatch(getAllEmails())
         }
-        if(login.isAdmin){
-            localStorage.setItem('isAdmin', JSON.stringify(login.isAdmin))
-        }
-    },[dispatch, login._id])
+        // if(login.isAdmin){
+        //     localStorage.setItem('isAdmin', JSON.stringify(login.isAdmin))
+        // }
+    },[dispatch, login._id, isLoggedIn])
 
 
     useEffect(()=> {
@@ -93,7 +95,7 @@ const onErrors = errors => console.error(errors);
                     <div className="error" style={{ color: 'red', marginBottom: '10px' }}>
                         {errors.username && <div>{errors.username.message}</div>}
                     </div>
-                    <input type="text" placeholder="" name="username3" {...register("username", { required: 'username required!' })} />
+                    <input type="text" placeholder="" id="username" name="username3" {...register("username", { required: 'username required!' })} />
                 </div>
 
                 <div className="pw">
@@ -102,7 +104,7 @@ const onErrors = errors => console.error(errors);
                         {errors.password && <div>{errors.password.message}</div>}
                     </div>
 
-                    <input type={passwordShown ? "text" : "password"} placeholder="" name="password3"
+                    <input type={passwordShown ? "text" : "password"} placeholder="" id="password" name="password3"
                         {...register("password", { required: 'password required!', minLength: { value: 1, message: 'Minimum of 8 characters required!' } })}
                         onChange={(e) => setPassword(e.target.value)} />
                     <div className="showPass"> Show password: </div>

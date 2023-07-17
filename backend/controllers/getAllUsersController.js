@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 //const asyncHandler = require('express-async-handler')
 
 const getAllUsers = async (req, res) => {
+
+    
     try {
         const allUsers = await User.find({});
         res.send(allUsers);

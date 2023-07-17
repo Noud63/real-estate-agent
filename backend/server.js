@@ -19,7 +19,7 @@ const deleteUserRoute = require('./routes/deleteUserRoute')
 const addEmailRoute = require('./routes/addEmailRoute')
 const allEmailsRoute = require('./routes/allEmailsRoute')
 const deleteEmailRoute = require('./routes/deleteEmailRoute')
-// const { notFound, errorHandler } = require('./middleware/errorMiddleware')
+const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 const fs = require('fs')
 
 app.use(cors())
@@ -33,6 +33,10 @@ connectDB().then(
 )
 
 addDataToCollection()
+
+app.get('/test', (req, res) => {
+    res.send('API runnning...')
+})
 
 app.get("/config", (req, res) => {
     res.send({
@@ -85,7 +89,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
 });
 
-// app.use(notFound)
-// app.use(errorHandler)
+app.use(notFound)
+app.use(errorHandler)
 
 

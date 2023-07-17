@@ -5,6 +5,7 @@ const verifyToken = (req, res, next) => {
     if (authHeader) {
         const token = authHeader.authorization.split(' ')[1];
         jwt.verify(token, process.env.REACT_APP_JWT_SECRET, (err, user) => {
+            console.log(user)
             if (err) res.status(403).json("Token is not valid");
             req.user = user;
             next();
@@ -22,5 +23,6 @@ const isAdmin = (req, res, next) => {
         throw new Error('Not authorized as an admin')
     }
 }
+
 
 module.exports = { verifyToken, isAdmin }
