@@ -10,12 +10,15 @@ const InfoModal = ({ showPopup, item, closeModal}) => {
               <div className="estateInfoPopup_estateInfoBox">
                     <div className="estateInfoPopup_estateInfoBox_header"><h3>{name}</h3></div>
                 <div className="estateInfoPopup_estateInfoBox_gridContainer" >
-                   {img.length > 1 ? img.map( (img, index) => {
+                   {img.map( (img, index) => {
                        return (
-                           <div className="estateImage" key={index}><img src={process.env.PUBLIC_URL + `assets/images/${img}`} alt="estate" /></div>
-                    
+                        <div key={index}>
+                        <div className="estateImage" key={index}><img src={process.env.PUBLIC_URL + `assets/images/${img}`} alt="estate" /></div>
+                        <div className="estateInfoPopup_moreinfo">More info on: <b>{name}</b>&nbsp;coming soon!</div>
+                        </div>
+                           
                        )
-                   }) : <div>Info on: <b>{name}</b>&nbsp;coming soon!</div>}
+                   })}
                    </div>
                 </div>
         </div>

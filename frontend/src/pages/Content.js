@@ -9,22 +9,21 @@ import { Link } from 'react-router-dom'
 const Content = () => {
 
 return (
-          <>
-        
-            <div className="content_block1">
-            
+        <>
+        <div className="content_block1">
+            <div className="content_block1_featuring">Featured Properties:</div>
                 <div className="content_block1_wrapper">
                 
                 <div className="content_block1_wrapper_imgLeft">
-                    <div className="featuring">Featured properties:</div>
-                        <img src={image} alt="" style={{ width: '100%', height: 'auto', opacity: '.4'}} />
+                    
+                        <img src={image} alt="" style={{ width: '100%', height: 'auto', opacity: '.7'}} />
                         <div className="name">
                             <span>Château de Chenonceau</span>
                         </div>
                      </div>
 
                      <div className="content_block1_wrapper_imgRight">
-                        <img src={image2} alt="" style={{ width: '100%', height: 'auto', opacity: '.4' }} />
+                        <img src={image2} alt="" style={{ width: '100%', height: 'auto', opacity: '.7' }} />
                         <div className="name">
                             <span>Château d'azay le Rideau</span>
                         </div>

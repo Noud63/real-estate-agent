@@ -5,9 +5,9 @@
 .content_block1{
     width: 100%;
     height: auto;
-    padding: 170px 0 180px 0;
+    padding: 150px 0 190px 0;
     @include center-content-column;
-    background-color: $dominantbackground;
+    background-image: $dominantbackground;
     @include respond2(gridcontainer){
         padding: 120px 0;
     }
@@ -15,6 +15,15 @@
             padding: 80px 0;
         }
 
+     &_featuring {
+            width: 100%;
+            margin-bottom: 30px;
+            @include center-content;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: rgb(179, 138, 138);  
+      }
 
     &_wrapper {
         max-width: 1000px;
@@ -31,23 +40,14 @@
         width: 50%;
         height: auto;
         line-height: 0;
-        border-top: 1px solid rgb(126, 70, 70);
+        border-top: 1px solid rgb(184, 127, 127);
+          border-left: 1px solid rgb(134, 81, 81);
+          border-right: 1px solid rgb(134, 81, 81);
+          border-bottom: 1px solid rgb(94, 49, 49);
 
         & img {
             box-shadow: 0px 2px 41px rgb(20, 0, 0);
-            border: 1px solid rgb(185, 155, 155);
             }
-
-        & .featuring {
-            position: absolute;
-            width: 100%;
-            top: -40px;
-            @include center-content-row-start;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            color: rgb(116, 85, 82);  
-      }
 
          @include respond5(contentBreak){
            width: 100%;
@@ -70,7 +70,7 @@
                height: 40px;
                padding: 20px;
                @include center-content;
-               border: 1px solid rgb(146, 107, 107);
+               background-color: rgb(61, 0, 0);
            }
        }
      }
@@ -80,11 +80,13 @@
           margin: 10px;
           height: auto;
           line-height: 0;
-          border-top: 1px solid rgb(126, 70, 70);
+          border-top: 1px solid rgb(184, 127, 127);
+          border-left: 1px solid rgb(134, 81, 81);
+          border-right: 1px solid rgb(134, 81, 81);
+          border-bottom: 1px solid rgb(94, 49, 49);
 
           & img {
             box-shadow: 0px 2px 41px rgb(20, 0, 0);
-            border: 1px solid rgb(185, 155, 155);
             } 
           @include respond5(contentBreak){
           width: 100%;
@@ -107,7 +109,7 @@
                height: 40px;
                padding: 20px;
                @include center-content;
-               border: 1px solid rgb(146, 107, 107);
+               background-color: rgb(61, 0, 0);
            }
        }
      }

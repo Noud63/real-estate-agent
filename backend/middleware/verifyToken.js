@@ -16,6 +16,7 @@ const verifyToken = (req, res, next) => {
 }
 
 const isAdmin = (req, res, next) => {
+    console.log(req.user)
     if (req.user.isAdmin) {
         next()
     } else {
@@ -23,6 +24,5 @@ const isAdmin = (req, res, next) => {
         throw new Error('Not authorized as an admin')
     }
 }
-
 
 module.exports = { verifyToken, isAdmin }

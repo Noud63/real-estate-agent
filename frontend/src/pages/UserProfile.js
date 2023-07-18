@@ -17,6 +17,7 @@ const ShowUserInfo = () => {
     const updateprof = useSelector(state => state.updateprofile)
     const { update, isUpdated } = updateprof
 
+
     const [ firstName, setFirstName ] = useState(firstname)
     const [ lastName, setLastName ] = useState(lastname)
     const [ street, setStreet ] = useState(address)
@@ -46,7 +47,7 @@ const handleSubmit = (e) => {
         telephone: phoneNumber,
         username: userName,
     }
-    
+    console.log(updated)
     dispatch(updateProfile(updated))
     dispatch(userProfile(updated._id))
     localStorage.setItem('profile', JSON.stringify(updated))

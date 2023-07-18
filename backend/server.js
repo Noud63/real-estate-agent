@@ -8,7 +8,7 @@ const colors = require('colors')
 const path = require('path')
 const PORT = process.env.REACT_APP_PORT || 5000
 const connectDB = require('./config/db')
-const addDataToCollection = require('./seeder')
+// const addDataToCollection = require('./seeder')
 const castleRoute = require('./routes/castleRoute')
 const registerRoute = require('./routes/registerRoute')
 const loginRoute = require('./routes/loginRoute')
@@ -32,7 +32,7 @@ connectDB().then(
     app.listen(PORT, '0.0.0.0', () => { console.log(`Server running on port ${PORT}`.yellow) })
 )
 
-addDataToCollection()
+// addDataToCollection()
 
 app.get('/test', (req, res) => {
     res.send('API runnning...')

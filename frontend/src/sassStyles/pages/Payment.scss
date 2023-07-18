@@ -36,6 +36,7 @@ main {
   background-color: rgb(65, 0, 0);
   border-radius: 10px;
   margin: 0px 20px 0px 20px;
+  padding:0;
 
   @include respond12(thousand){
        flex-direction:column;
@@ -109,7 +110,7 @@ main {
 }
 
 .checkoutBox {
-  width: 50%;
+  width: 50%;;
   background-color: white;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -123,7 +124,7 @@ main {
 }
 
 form > * {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 button {

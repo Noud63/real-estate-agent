@@ -6,14 +6,12 @@ const userProfileData = async (id) => {
     if (!token) {
         console.log("Token not found!");
     }
-
     const config = {
         headers: {
             'authorization': `Bearer ${token}`,
         }
     }
     const response = await axios.get(`userprofile/${id}`, config)
-    localStorage.setItem('profile', JSON.stringify(response.data))
     return response.data
 }
 
