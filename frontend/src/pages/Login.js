@@ -36,9 +36,6 @@ const SigninForm = () => {
             dispatch(userProfile(login._id))
             dispatch(getAllEmails())
         }
-        // if(login.isAdmin){
-        //     localStorage.setItem('isAdmin', JSON.stringify(login.isAdmin))
-        // }
     },[dispatch, login._id, isLoggedIn])
 
 
@@ -53,7 +50,6 @@ const SigninForm = () => {
                 clearTimeout(timer);
             };
         }
-
     }, [isLoggedIn, navigate])
 
 
@@ -114,8 +110,6 @@ const onErrors = errors => console.error(errors);
                 <button type="submit" className="btn">Submit</button>
 
             </form>
-
-            {/* {showMessage ? <div>You are already logged in!</div> : ""} */}
 
             <div className="goToRegister">
                     <Link to='/register' style={{ textDecoration: 'none' }} className="goToRegisterText"><span>Not registered? Go to Register.</span></Link><br /><span>Forgot password?</span>
