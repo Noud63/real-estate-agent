@@ -74,8 +74,7 @@ const onErrors = errors => console.error(errors);
     return (
         <>
         <div className="container3">
-           
-            <ToastContainer theme='dark' position="top-right"
+           <ToastContainer theme='dark' position="top-right"
                 autoClose={3000}
                 hideProgressBar={false}
                 newestOnTop={false}
