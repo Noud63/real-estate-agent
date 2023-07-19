@@ -23,7 +23,6 @@
     grid-template-columns: repeat( 3, 1fr);
     grid-template-rows: repeat(2, 1fr); 
     gap: 1px;
-//     border-top: 1px solid rgb(134, 65, 65);
 
     @include respond2(gridcontainer) {
           grid-template-columns: repeat( 2, 1fr);
@@ -107,7 +106,7 @@
             padding: 20px;
             border-top: 1px solid rgb(104, 46, 46);
             background-color: $dominantbackground;
-            box-shadow: 0px 0px 8px rgb(39, 0, 0);
+            box-shadow: 0px 4px 8px rgb(39, 0, 0);
 
             &.contact {
                   font-size: 1.2rem;
@@ -163,9 +162,9 @@
             width: 100%;
             position: absolute;
             bottom: 0;
-            height: 30px;
-            background-color: rgb(97, 0, 0);
-            color:rgb(17, 0, 0);
+            height: 40px;
+            background-color: rgb(178,129,84);
+            color:rgb(66, 0, 0);
             @include center-content;
             font-size: .8rem;
       }

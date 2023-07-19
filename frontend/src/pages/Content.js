@@ -48,7 +48,9 @@ return (
                      <Link to='/financeservice' style={{ textDecoration: 'none' }}><div className="financialService">Service</div></Link>
                 </div>
             </div>
+
             <div className="content_block4"></div>
+
             <div className="block5">
                 <div className="block5_content">
                 <div className="balancingAct">THE BALANCING ACT</div>
@@ -60,8 +62,44 @@ return (
                 </div>
            
             </div>
+
             <div className="content_block2"></div>
-            <div className="content_block6"></div>
+
+            <div className="content_block7">
+                <div className="wrapper">
+                    <div className="wrapper_header">The Good Life</div>
+                    <div className="wrapper_subHeader">- Living in the French Countryside -</div>
+                    <div className="wrapper_text">
+                        <div className="wrapper_text_columnLeft">
+                             <p>
+                                jshfas fkjhaf adhf sdf hsd fs dhfsd fhsd fsh dfk sdjhfsd lkfjs dhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfks djhfsdlkfjs dhf
+                             jshfas fkj haf adh f sdfh sd fsdhfs dfhsd fsh dfksd jhfs<br/>  dlk fjsdhf jshfas fkjhafadhf sdfhsd fsdhfsdfhsd fshd fksdjhfsdl kfjsdhf
+                             jsh fas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfks djh fsdlk fjsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfksd jhfsdl kfjsdhf
+                             jshfas fkjhaf adhf s dfhsd fsdhf sdfhsd fs hdfks djhf sdlkf jsd hf jshfas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfksdjh fsdl kfjsdhf<br/><br/>
+                             jsh fas fkjhaf adhf sdfhsd fsdhfsdf hsd fshdfksdjhfs dlkfjsdhf jshfas<br/>  fkjhaf adhf sdfhsd fsdhfs dfhsd fshd fksdjhfsdlkfj sdhf
+                             jshfas fk jhaf adhf sdfhsd fs dhfs dfhsd fshdfk sdjhfsdlkf jsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfk sdjhf sdlkfjsdhf
+                              jshfas fkj haf adh<br/>   sdfh sd fsdhfs dfhsd fsh dfksd jhfs dlk fjsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshd fksdjhfsdl kfjsdhf
+                             jsh fas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfks djh fsdlk fjsdhf jshfas fkj haf adhf sdfhsd fsd hfsd fhsd fshdfksd jhfsdl kfj sdhf
+                             fsdh fsdfhsd fshdfksdjh fsdl
+                             </p>
+                        </div>
+                        <div className="wrapper_text_columnRight">
+                             jshfas fkjhaf adhf sdf hsd fs dhfsd fhsd fsh dfk sdjhfsd lkfjs dhf jsh fas fkjhaf adhf sdfhsd fsdhf sdfhsd fshdfks djhfsdlkfjs dhf
+                             jshfas fkj haf adh sdfh sd fsdhfs dfhsd fsh dfksd jhfs<br/>  dlk fjsdhf jshfas fkjhaf adhf sdfhsd fsdhf sdfhsd fshd fksdjhfsdl kfjsdhf
+                             jsh fas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfks djh fsdlk fjsdhf jshfas fkjhaf adhf sdfhsd fsd hfsdf hsd fshdfksd jhfsdl kfjsdhf
+                             jshfas fkjhaf adhf s dfhsd fsdhf sdfhsd fs hdfks djhf sdlkf jsd hf jshfas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfksdjh fsdl kfjsdhf
+                             jsh fas fkjhaf adhf sdfhsd fsdhfsdf hsd fshdfksdjhfs dlkfjsdhf jshfas fkjhaf adhf sdfhsd fsdhfs dfhsd fshd fksd jhfsdl kfj sdhf<br/><br/>
+                             jshfas fk jhaf adhf sdfhsd fs dhfs dfhsd fshdfk sdjhf sdlkf jsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfk sdjhf sdlkf jsdhf
+                             jshfas fk jhaf adhf sdfhsd fs dhfs dfhsd fshdfk sdjhf sdlkf jsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfk sdjhf sdlkf jsdhf
+                             
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="content_block2"></div>
+            {/* <div className="content_block6"></div> */}
         </>
     )
 }
