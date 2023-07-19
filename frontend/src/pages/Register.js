@@ -63,7 +63,9 @@ const Register = () => {
                 rtl={false}
             />
             <div className="wrapper2">
+
                 <div className="register">Register</div>
+                
                 <form action="" onSubmit={handleSubmit(submitForm, onErrors)} className="form">
 
                     <div className="name">
