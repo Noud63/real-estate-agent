@@ -72,27 +72,22 @@ return (
                     <div className="wrapper_text">
                         <div className="wrapper_text_columnLeft">
                              <p>
-                                jshfas fkjhaf adhf sdf hsd fs dhfsd fhsd fsh dfk sdjhfsd lkfjs dhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfks djhfsdlkfjs dhf
-                             jshfas fkj haf adh f sdfh sd fsdhfs dfhsd fsh dfksd jhfs<br/>  dlk fjsdhf jshfas fkjhafadhf sdfhsd fsdhfsdfhsd fshd fksdjhfsdl kfjsdhf
-                             jsh fas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfks djh fsdlk fjsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfksd jhfsdl kfjsdhf
-                             jshfas fkjhaf adhf s dfhsd fsdhf sdfhsd fs hdfks djhf sdlkf jsd hf jshfas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfksdjh fsdl kfjsdhf<br/><br/>
-                             jsh fas fkjhaf adhf sdfhsd fsdhfsdf hsd fshdfksdjhfs dlkfjsdhf jshfas<br/>  fkjhaf adhf sdfhsd fsdhfs dfhsd fshd fksdjhfsdlkfj sdhf
-                             jshfas fk jhaf adhf sdfhsd fs dhfs dfhsd fshdfk sdjhfsdlkf jsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfk sdjhf sdlkfjsdhf
-                              jshfas fkj haf adh<br/>   sdfh sd fsdhfs dfhsd fsh dfksd jhfs dlk fjsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshd fksdjhfsdl kfjsdhf
-                             jsh fas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfks djh fsdlk fjsdhf jshfas fkj haf adhf sdfhsd fsd hfsd fhsd fshdfksd jhfsdl kfj sdhf
-                             fsdh fsdfhsd fshdfksdjh fsdl
-                             </p>
+                             French rural life varies depending on the region, but some common characteristics and aspects include:<br/>
+
+                            <b>- Slow-paced lifestyle:</b> Compared to the bustling cities, rural areas in France often have a slower, more relaxed pace of life. People may enjoy spending time outdoors, tending to their gardens or farms, and engaging in leisurely activities.<br/>
+                            <b>- Agriculture and farming:</b> Agriculture is an essential part of rural life in France. Many villages and towns are surrounded by farmland, vineyards, and orchards. Local farmers cultivate crops and raise livestock, contributing to the country's agricultural economy.<br/>
+                            <b>- Community-oriented:</b> Rural communities in France are often close-knit and value strong social connections. Residents may gather for local events, festivals, and markets, fostering a sense of camaraderie among the inhabitants.<br/>
+                            <b>- Cultural heritage:</b> Many rural areas in France are rich in history and cultural heritage. You'll find picturesque villages with charming architecture, ancient churches, and historic landmarks that reflect the country's long and diverse history.<br/>
+                            <b>- astronomy:</b> GFrench rural areas are known for their culinary delights, with locally sourced and fresh ingredients playing a central role. Each region has its own traditional dishes and specialties, making it a treat for food enthusiasts.<br/>
+
+                            </p>
                         </div>
                         <div className="wrapper_text_columnRight">
-                             jshfas fkjhaf adhf sdf hsd fs dhfsd fhsd fsh dfk sdjhfsd lkfjs dhf jsh fas fkjhaf adhf sdfhsd fsdhf sdfhsd fshdfks djhfsdlkfjs dhf
-                             jshfas fkj haf adh sdfh sd fsdhfs dfhsd fsh dfksd jhfs<br/>  dlk fjsdhf jshfas fkjhaf adhf sdfhsd fsdhf sdfhsd fshd fksdjhfsdl kfjsdhf
-                             jsh fas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfks djh fsdlk fjsdhf jshfas fkjhaf adhf sdfhsd fsd hfsdf hsd fshdfksd jhfsdl kfjsdhf
-                             jshfas fkjhaf adhf s dfhsd fsdhf sdfhsd fs hdfks djhf sdlkf jsd hf jshfas fkjhaf adhf sdfhsd fsdh fsdfhsd fshdfksdjh fsdl kfjsdhf
-                             jsh fas fkjhaf adhf sdfhsd fsdhfsdf hsd fshdfksdjhfs dlkfjsdhf jshfas fkjhaf adhf sdfhsd fsdhfs dfhsd fshd fksd jhfsdl kfj sdhf<br/><br/>
-                             jshfas fk jhaf adhf sdfhsd fs dhfs dfhsd fshdfk sdjhf sdlkf jsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfk sdjhf sdlkf jsdhf
-                             jshfas fk jhaf adhf sdfhsd fs dhfs dfhsd fshdfk sdjhf sdlkf jsdhf jshfas fkjhaf adhf sdfhsd fsdhfsdfhsd fshdfk sdjhf sdlkf jsdhf
-                             
-                            
+                            <b>- Limited amenities:</b> In some rural areas, access to amenities and services may be limited compared to urban centers. While there are typically grocery stores, schools, and medical facilities, residents might need to travel to nearby towns for more extensive services.<br/>
+                            <b>- Nature and outdoor activities:</b> Nature and outdoor activities: Living in the countryside offers access to beautiful natural landscapes, such as rolling hills, forests, rivers, and lakes. This allows residents and visitors to enjoy outdoor activities like hiking, fishing, and cycling.<br/>
+                            <b>- Challenges:</b> Just like rural life anywhere, there are some challenges. Youth migration to urban centers can lead to aging populations in some rural areas. Additionally, some regions may face economic difficulties, affecting job opportunities and infrastructure.<br/><br/>
+
+                            Overall, French rural life can offer a tranquil and idyllic existence for those who appreciate the beauty of nature, the charm of small communities, and a simpler way of living. However, like any lifestyle, it comes with its unique set of advantages and challenges.
                         </div>
                     </div>
                 </div>
