@@ -20,12 +20,13 @@ const NoAccess = () => {
         }
     }, [])
 
+// console.log(login.isAdmin)
 
 useEffect(() => {
         if (isLoggedIn && (login.isAdmin || localStorage.getItem('isAdmin'))) {
             setIsAdmin(true)
         }
-        if (!isLoggedIn) {
+        if (!isLoggedIn || !login.isAdmin) {
             setIsAdmin(false)
         }
     }, [isLoggedIn, login.isAdmin])

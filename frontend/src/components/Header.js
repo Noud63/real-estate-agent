@@ -26,6 +26,8 @@ const Header = () => {
     const userData = useSelector(state => state.profile)
     const { isError, isSuccess, message, profile, isLoading } = userData
 
+    console.log(profile)
+
     useEffect(() => {
         if (isLoggedIn) {
             setLogOut(true)

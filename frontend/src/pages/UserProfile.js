@@ -61,7 +61,7 @@ useEffect(()=> {
     dispatch(resetState())
 },[isUpdated, dispatch])
 
-  
+  console.log(profile)
     return (
         <div className="profileContainer">
             <ToastContainer theme='dark' position="top-right"

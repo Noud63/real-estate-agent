@@ -23,8 +23,6 @@ const SigninForm = () => {
 
     const logins = useSelector(state => state.login)
     const { isError, isLoggedIn, message, login } = logins
-
-    console.log(logins)
    
     const submitForm = (data) => {
         dispatch(loginUser(data))
