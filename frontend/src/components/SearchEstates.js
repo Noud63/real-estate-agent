@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { filteredProperties } from '../features/estateSlice'
+import { getRealEstates } from '../features/estateSlice'
 import '../sassStyles/layout/searchEstates.scss'
 import reset from '../assets/icons/reset.png'
 
@@ -29,9 +30,10 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
                 estate.area.match(new RegExp(foundPlotSize, 'gi'))
             )
         });
-
         if(currentNumber > 1) setCurrentNumber(1)  // if search query starts from page 2 or higher
-        dispatch(filteredProperties(result))
+        
+       dispatch(filteredProperties(result))
+       
     }, [dispatch, livingSpace, plotSize, realestate, region]);
 
 
@@ -40,7 +42,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
         setRegion("")
         setLivingSpace("")
         setPlotSize("")
-        dispatch(filteredProperties(realestate))
+        dispatch(getRealEstates(realestate))
         setCurrentNumber(1)
     }
 
@@ -72,7 +74,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
                 <option value="3">{'3 ha'}</option>
                 <option value="6">{'6 ha'}</option>
                 <option value="8">{'8 ha'}</option>
-                <option value="10">{'10 ha'}</option>
+                <option value="9">{'9 ha'}</option>
                 <option value="10">{'10 ha'}</option>
             </select>
 
@@ -83,6 +85,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
 }
 
 export default SearchEstates
+
 
 //<input onChange={(e) => setRegion(e.target.value)} value={region} placeholder="Region.." className="selectop" />
 //<input onChange={(e) => setLivingSpace(e.target.value)} value={livingSpace} placeholder="Living space.." className="selectop" />

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import '../sassStyles/layout/EnquiryForm.scss'
-import closeIcon from '../assets/icons/close.png'
+import closeIcon from '../assets/icons/close1.png'
 import logo from '../assets/icons/ellielogo4.png'
 import emailjs from '@emailjs/browser';
 
@@ -44,14 +44,14 @@ const EnquiryForm = ({ showForm, setShowForm, setExpand, propertyName }) => {
             </div>
 
             <div className="enquiryFormHeader">
-                <span className="makeEnquiry">Make an Enquiry about:</span>
-                <span className="castleName">{propertyName}</span>
+                <div className="makeEnquiry">Make an Enquiry about:</div>
+                <div className="estateName">{propertyName}</div>
             </div>
 
             <form onSubmit={handleSubmit} className="form" ref={form} autoComplete="off">
                 <div className="enquiryForm_inputfields">
 
-                    <div className="enquiryForm_inputfields_name">
+                    <div className="enquiryForm_inputfields_name2">
                         {/* <label>Name:</label> */}
                         <input type="text" placeholder="name" name="from_name" required/>
 

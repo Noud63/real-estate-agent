@@ -17,8 +17,6 @@ const AllUsersList = () => {
     const logins = useSelector(state => state.login)
     const { isLoggedIn, login } = logins
 
-console.log(logins)
-
     useEffect(() => {
         if (!isLoggedIn || login.isAdmin === false) {
             setAccessAllowed(false)

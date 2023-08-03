@@ -2,9 +2,9 @@ import React, {useEffect, useCallback} from 'react'
 
 const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, resultsPerPage, setNewList }) => {
 
-    const paginate = (number) => {
+    const paginate = useCallback((number) => {
         setCurrentNumber(number)
-    }
+    },[setCurrentNumber])
 
     const slicedList = useCallback(() => {
         if (filtered.length > resultsPerPage) {

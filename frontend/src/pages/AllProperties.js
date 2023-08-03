@@ -7,6 +7,7 @@ import SearchEstates from '../components/SearchEstates'
 import NewsLetter from '../components/NewsLetter'
 import Pagination from '../components/Pagination'
 import SideBar from '../components/SideBar'
+import Magazines from '../components/Magazines'
 import '../sassStyles/pages/AllProperties.scss'
 
 const AllProperties = () => {
@@ -90,9 +91,11 @@ const AllProperties = () => {
                 </div>
             </div>
             <div className="content_subscription">
-                <div className="news"><NewsLetter /></div>
+               <NewsLetter className="news"/>
                 <div className="finance">Free Advertising Space</div>
             </div>
+
+            <Magazines />
         </>
     )
 }

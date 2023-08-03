@@ -1,0 +1,79 @@
+@import '../abstracts/global';
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+
+.magazines {
+    width: 100%;
+    margin: 0 auto;
+    @include center-content;
+    padding: 0 40px 0 40px;
+    margin-bottom: 200px;
+    @include respond1(removeSidebar){
+        width: 91%;
+        padding: 0;
+    }
+
+      @include respond8(removeaward) {
+        width: 300px;
+        margin-top: 50px;
+      }
+
+    &_imageWrapper {
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, 300px);
+        grid-template-rows: repeat(1, auto);
+
+        @include respond11(fiveteenhundred){
+            width: 70%;
+            grid-template-columns: repeat(2, 300px);
+            grid-template-rows: repeat(2, auto);
+            gap: 40px;
+        }
+
+        @include respond12(thousand) {
+              width: 100%;
+        }
+
+        @include respond8(removeaward) {
+           grid-template-columns: repeat(1, 300px);
+            grid-template-rows: repeat(4, auto);
+        }
+    }
+
+    &_imageBox {
+        @include center-content;
+        line-height: 0;
+        box-shadow: 0px 4px 4px rgb(29, 0, 0);
+    }
+
+    .sidebarimg{
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.sidebartext {
+    background-color: rgb(151, 92, 92);
+    height: 50px;
+    @include center-content;
+    justify-content: space-around;
+    font-size: .8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(187, 0, 0);
+    @include respond10(thirteenhundred){
+            font-size: .9rem;
+    }
+}
+
+.soldPrice {
+    color: rgb(49, 0, 0);
+    font-weight: bold;
+}
+}

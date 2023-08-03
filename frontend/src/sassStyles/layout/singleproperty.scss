@@ -44,7 +44,7 @@
         }
 
         &_info {
-        width: 30%;
+        width: 35%;
         height: auto;
         margin: 15px 0;
         @include center-content-column-start-top;
@@ -58,6 +58,7 @@
         .title {
             font-size: 1.2rem;
             margin-bottom: 20px;
+              letter-spacing: 1px;
             @include respond5(contentBreak){
             margin-bottom: 10px;
         }
@@ -100,7 +101,7 @@
 
         .price {
             margin-top: 20px;
-            color: rgb(187, 0, 0);
+            color: rgb(231, 0, 0);
             
             & span {
                 font-weight: bold;

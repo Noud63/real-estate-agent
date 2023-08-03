@@ -37,7 +37,7 @@
  display: flex;
  align-items: center;
  justify-content: center;
- flex-direction:row;
+ flex-direction: row;
 }
 
 @mixin center-content-row-start {
@@ -99,17 +99,17 @@
   }
 }
 
-@mixin respond10($breakpoint) { 
-  @if $breakpoint == thirteenhundred {    
-    @media only screen and (max-width: 1300px) {
+@mixin respond14($breakpoint) { 
+  @if $breakpoint == thirteenthirty {    
+    @media only screen and (max-width: 1330px) {
       @content;
     }
   }
 }
 
-@mixin respond1($breakpoint) { 
-  @if $breakpoint == removeSidebar {    
-    @media only screen and (max-width: 1200px) {
+@mixin respond10($breakpoint) { 
+  @if $breakpoint == thirteenhundred {    
+    @media only screen and (max-width: 1300px) {
       @content;
     }
   }

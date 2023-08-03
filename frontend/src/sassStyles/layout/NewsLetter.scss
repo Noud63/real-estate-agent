@@ -7,7 +7,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: auto;
+    height: 275px;
     background-color: transparent;
     background-image: linear-gradient(to top, rgb(63, 0, 0),  rgb(85, 0, 0));
     color:  rgb(186, 166, 194);
@@ -36,7 +36,7 @@
        flex-direction: row;
        font-family: Arial, Helvetica, sans-serif;
        font-size: 1rem;
-       border-bottom: 1px solid  rgb(186, 166, 194);
+      //  border-bottom: 1px solid  rgb(186, 166, 194);
         &_header {
             width: 100%;
         }

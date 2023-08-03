@@ -47,7 +47,6 @@ const handleSubmit = (e) => {
         telephone: phoneNumber,
         username: userName,
     }
-    console.log(updated)
     dispatch(updateProfile(updated))
     dispatch(userProfile(updated._id))
     localStorage.setItem('profile', JSON.stringify(updated))
@@ -61,7 +60,6 @@ useEffect(()=> {
     dispatch(resetState())
 },[isUpdated, dispatch])
 
-  console.log(profile)
     return (
         <div className="profileContainer">
             <ToastContainer theme='dark' position="top-right"

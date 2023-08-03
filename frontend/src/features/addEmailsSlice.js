@@ -141,7 +141,6 @@ export const addEmailsSlice = createSlice({
                 state.isLoading = false
                 state.isSuccess = true
                 state.allemails = state.allemails.filter((mail) => {
-                    console.log(action.payload.id)
                     return mail._id !== action.payload.id
                 })
             })

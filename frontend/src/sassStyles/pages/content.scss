@@ -34,7 +34,27 @@
             @include center-content-column;
         }
 
-       &_imgLeft {
+    .name {
+           position: absolute;
+           @include center-content;
+           top:0;
+           left:0;
+           bottom:0;
+           right: 0;
+           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           font-size: 1rem;
+           letter-spacing: 2px;
+           color: rgb(207, 198, 219);
+           background-image: linear-gradient(to bottom, rgb(61, 0, 0, .1),  rgb(85, 0, 0, .3));
+
+           & span {
+               padding: 20px;
+               @include center-content;
+               background-color: rgb(61, 0, 0, .8);
+           }
+       }
+
+       &_imgLeft, &_imgRight {
         position: relative;
         margin: 10px;
         width: 50%;
@@ -51,68 +71,9 @@
 
          @include respond5(contentBreak){
            width: 100%;
+           margin-bottom: 40px;
         }
-    
-       & .name {
-           position: absolute;
-           @include center-content;
-           top:0;
-           left:0;
-           bottom:0;
-           right: 0;
-           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-           font-size: 1rem;
-           letter-spacing: 2px;
-           color: rgb(207, 198, 219);
-           background-image: linear-gradient(to bottom, rgb(61, 0, 0, .6),  rgb(85, 0, 0, .1));
-
-           & span {
-               height: 40px;
-               padding: 20px;
-               @include center-content;
-               background-color: rgb(61, 0, 0);
-           }
-       }
-     }
-     &_imgRight {
-          position: relative;
-          width: 50%;
-          margin: 10px;
-          height: auto;
-          line-height: 0;
-          border-top: 1px solid rgb(184, 127, 127);
-          border-left: 1px solid rgb(134, 81, 81);
-          border-right: 1px solid rgb(134, 81, 81);
-          border-bottom: 1px solid rgb(94, 49, 49);
-
-          & img {
-            box-shadow: 0px 2px 41px rgb(20, 0, 0);
-            } 
-          @include respond5(contentBreak){
-          width: 100%;
-        }
-
-       & .name {
-           position: absolute;
-           @include center-content;
-           top:0;
-           left:0;
-           bottom:0;
-           right: 0;
-           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-           font-size: 1rem;
-           letter-spacing: 2px;
-           color: rgb(207, 198, 219);
-           background-image: linear-gradient(to bottom, rgb(61, 0, 0, .6),  rgb(85, 0, 0, .1));
-
-           & span {
-               height: 40px;
-               padding: 20px;
-               @include center-content;
-               background-color: rgb(61, 0, 0);
-           }
-       }
-     }
+      }
     }
 
 .viewAllProps {
@@ -125,6 +86,10 @@
          font-size: 1rem;
          letter-spacing: 2px;
          color: rgb(207, 198, 219);
+
+          @include respond5(contentBreak){
+           margin-bottom: 40px;
+        }
       }
 }
 
@@ -154,8 +119,32 @@
 }
 
 .content_block2 {
+    position: relative;
     height: 700px;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(59, 0, 0);
+     @include center-content-column;
+    padding-top: 50px;
+     @include respond8(removeaward) {
+        height: 1100px;
+        padding-top: 0;
+      }
+
+
+    &_visit {
+        position: absolute;
+        bottom: 180px;
+        width: 260px;
+        padding: 20px 30px;
+        border: 1px solid rgb(187, 187, 187);
+        cursor: pointer;
+        @include center-content-column;
+        color: rgb(190, 190, 190);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        @include respond11(fiveteenhundred){
+            bottom: 100px;
+        }
+    }
 }
 
 .content_block3  {
@@ -305,21 +294,57 @@
 
     .wrapper {
     width: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include center-content-column;
     color: rgb(217, 211, 226);
+    padding: 60px 0;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
      @include respond2(gridcontainer){
             width: 90%;
          }
+    @include respond9(sidebarDelete) {
+        padding: 0 0 60px 0;
+          }
 
     &_header {
-        font-size: 2rem;
+       width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       flex-direction: row;
+       border-bottom: 2px solid rgb(217, 211, 226);
+       &_fleurdelis {
+        display: none;
+       }
+       @include respond9(sidebarDelete) {
+            @include center-content-column;
+            &_fleurdelis {
+                display: flex;
+                width: 40px;
+                margin-bottom: 40px;
+            }
+       }
+       
+
+       .fleurdelis {
+            width: 40px;
+            @include respond9(sidebarDelete) {
+            display: none;
+        }
+        }
+
+        
+    }
+
+    &_title {
+        @include center-content-column;
     }
 
     &_subHeader {
+        font-size: 2rem;
+        flex-direction: row;
+    }
+
+    &_subTitle {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -328,7 +353,6 @@
         font-size: 1.2rem;
         letter-spacing: 2px;
         word-spacing: 5px;
-        border-bottom: 2px solid rgb(217, 211, 226);
         @include respond3(smallest){
               font-size: 1rem;
               letter-spacing: 1px;

@@ -20,6 +20,8 @@ export const getRealEstates = createAsyncThunk(
     }
 )
 
+
+
 const initialState = {
     realestate: [],
     isSuccess: false,
@@ -32,9 +34,23 @@ export const estateSlice = createSlice({
     name: 'realestate',    // Reducer name
     initialState,
     reducers: {
+        
         reset: () => initialState,
+
         filteredProperties: (state, action) => {
             state.filtered = action.payload
+        },
+
+        updatedProperty : (state, action) => {
+            const id = action.payload._id
+            const like = action.payload.like
+            console.log(like)
+            state.filtered.forEach( el => {
+                if(el._id === id){
+                    el.like = like
+                }
+            })
+            
         }
     },  
     extraReducers: (builder) => {
@@ -56,5 +72,5 @@ export const estateSlice = createSlice({
     }
 })
 
-export const { filteredProperties, reset } = estateSlice.actions
+export const { updatedProperty, reset, filteredProperties } = estateSlice.actions
 export default estateSlice.reducer
