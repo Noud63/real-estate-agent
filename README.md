@@ -14,7 +14,7 @@ You can register for a newsletter and a magazine, and with each item in the list
 and the information will be sent to your email address.<br>
 The user can choose a payment method provided by Stripe.js. It is an integraded payment procedure so no redirect to stripe.<br>
 A user can register and login. JSON Web Token is used for authentication and authorization.<br>
-The owner can login as an administrator and perform exclusive tasks like delete a registered user.<br>
+The owner can login as an administrator and perform exclusive tasks like delete a registered user or uplaod a new estate(document) to the database collection.<br>
 A user can update his profile when logged in.<br>
 All registered users are stored in a mongoDB database aswell as the data (real-estate-properties) that are loaded by default,
 and all the email addresses of newsletter subscribers.<br>
