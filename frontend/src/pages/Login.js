@@ -39,7 +39,6 @@ const SigninForm = () => {
 
 
     useEffect(()=> {
-        console.log(logins)
         if(isLoggedIn){
             toast.success('Logged in successfully!')
             localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn))

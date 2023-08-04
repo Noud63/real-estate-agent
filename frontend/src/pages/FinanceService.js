@@ -1,5 +1,5 @@
 import React from 'react'
-import '../sassStyles/pages/FinanceService.scss'
+import '../sassStyles/pages/financeService.scss'
 
 
 const FinanceService = () => {
