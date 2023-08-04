@@ -87,7 +87,6 @@ const login = asyncHandler(async (req, res) => {
         res.status(400)
         return res.json({ message: 'Invalid credentials!' })
     }
-
 })
 
 module.exports = { registerUser, login }

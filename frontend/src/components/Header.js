@@ -111,18 +111,6 @@ const Header = () => {
         setShowMenu(!showMenu)
     }
 
-    // const buttons = () => {
-    //     return (
-    //         <>
-    //             <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={buy}>Buy</button>
-    //             <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
-    //             {logOut ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={showUserInfo}>user info</button> : ""}
-    //             <button className={!showMenu || size.width > 800 ? "buttons_btn" : "buttons_btnOverlay"} onClick={register}>Register</button>
-    //         </>
-    //     )
-    // }
-
-    // console.log(scrolled)
     return (
         <>
             <div className={scrolled ? "header header_hide" : "header"}>
