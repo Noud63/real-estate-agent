@@ -29,18 +29,22 @@ const SigninForm = () => {
         reset()
     };
 
-    useEffect(()=> {
-        if (isLoggedIn){
-            dispatch(userProfile(login._id))
-            dispatch(getAllEmails())
-        }
-    },[dispatch, login._id, isLoggedIn])
+    // useEffect(()=> {
+    //     console.log(logins)
+    //     if (isLoggedIn){
+    //         dispatch(userProfile(login._id))
+    //         dispatch(getAllEmails())
+    //     }
+    // },[dispatch, login._id, isLoggedIn, logins])
 
 
     useEffect(()=> {
+        console.log(logins)
         if(isLoggedIn){
             toast.success('Logged in successfully!')
             localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn))
+            dispatch(userProfile(login._id))
+            dispatch(getAllEmails())
             const timer = setTimeout(()=> {
                 navigate('/?page=1')
             },2000)
@@ -48,15 +52,15 @@ const SigninForm = () => {
                 clearTimeout(timer);
             };
         }
-    }, [isLoggedIn, navigate])
+    }, [isLoggedIn, navigate, dispatch, login._id])
 
 
-    useEffect(() => {
-        if (isError) {
-            toast.error(message);
-            dispatch(resetState())
-        } 
-    }, [isError, message, dispatch])
+    // useEffect(() => {
+    //     if (isError) {
+    //         toast.error(message);
+    //         dispatch(resetState())
+    //     } 
+    // }, [isError, message, dispatch])
 
 
     const togglePasswordVisiblity = (e) => {

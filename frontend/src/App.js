@@ -18,6 +18,8 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import ScrollToTop from './utilities/ScrollToTop';
+
 
 
 function App() {
@@ -40,7 +42,9 @@ function App() {
           <Route path='/completion' element={<Completion />} />
         </Routes>
         <Footer />
+        <ScrollToTop />
       </Router>
+      
     </>
   );
 }

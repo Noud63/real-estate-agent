@@ -9,6 +9,10 @@
     height: auto;
     margin-bottom: 0px;
     transition: .5s ease-in-out;
+background-image: url('../../assets/images/header3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     .vote {
         position: absolute;
@@ -172,9 +176,22 @@
 
 .homepage_image {
     max-width: 100%;
+    height: 600px;
     position: relative;
     display: flex;
     justify-content: center;
+    @include respond12(thousand){
+                  height: 500px;
+              }
+    @include respond(hamburgermenu){
+                  height: 400px;
+              }
+    @include respond9(sidebarDelete){
+                  height: 350px;
+              }
+    @include respond3(smallest){
+                  height: 250px;
+              }
 
     .awards1 {
         position: absolute;

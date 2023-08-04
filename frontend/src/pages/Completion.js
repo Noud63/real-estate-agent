@@ -10,8 +10,7 @@ const navigate = useNavigate()
          navigate('/')
     }
 
-
-    return (
+return (
         <div className="subscription_succes">
             <div className="subscription_succes_message">
                 <span>You have successfully subscribed to the newsletter.</span>

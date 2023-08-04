@@ -20,7 +20,7 @@
        margin-top: 20px;
        margin-bottom: 20px;
        @include center-content-row-start;
-         color:rgb(141, 0, 0);
+         color:rgb(177, 0, 0);
          @include respond6(castlesandchateaux){
           margin-top: 10px;
        }
@@ -36,7 +36,8 @@
        flex-direction: row;
        font-family: Arial, Helvetica, sans-serif;
        font-size: 1rem;
-      //  border-bottom: 1px solid  rgb(186, 166, 194);
+       padding-bottom: 10px;
+       border-bottom: 1px solid  rgb(186, 166, 194);
         &_header {
             width: 100%;
         }
@@ -44,6 +45,7 @@
 
 .form {
   width: 100%;
+  border: 0;
 }
 
 .newsLetter_inputfields {
@@ -52,7 +54,7 @@
        align-items: flex-start;
        justify-content: space-between;
        flex-direction: row;
-       margin-top: 20px;
+       margin-top: 10px;
        @include respond6(castlesandchateaux){
           flex-direction: column;
        }

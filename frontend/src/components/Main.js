@@ -76,15 +76,13 @@ const Main = () => {
             </div>
 
             <div className="homepage_image">
-                {/* <div className="awards"><img src={award} alt="" className="award" /></div>
-                <div className="awards1"><img src={award1} alt="" className="award" /></div> */}
                     <div className="your_dream">
                     <div className="awards"><img src={award} alt="" className="award" /></div>
                     <div className="awards1"><img src={award1} alt="" className="award" /></div>
                         <span className="castlesandchateaux">Luxury Real Estate</span>
                         <span className="luxury_real_estate">Castles - Chateaux - Appartments - Villas </span>
                     </div>
-                    <img src={header3} alt="" className="c5_image" />
+                    {/* <img src={header3} alt="" className="c5_image" /> */}
             </div>
             <HeaderMenu />
         </div>

@@ -69,17 +69,16 @@ const login = asyncHandler(async (req, res) => {
         res.status(400).json({ message: 'Please provide all values!' })
     }
 
-    const user = await User.findOne({ username })
+    const user = await User.findOne({ username: req.body.username })
 
     if (!user) {
-        return res.status(400).json({ message: 'User doesn\'t exist!' })
+        return res.status(400).send({ message: 'User doesn\'t exist!' })
     }
 
     if (user && await bcrypt.compare(password, user.password)) {
         return res.json({
             _id: user._id,
             username: user.username,
-            password: user.password,
             isAdmin: user.isAdmin,
             token: generateToken(user._id)
         })

@@ -1,8 +1,10 @@
 import React from 'react'
+import '../sassStyles/pages/FinanceService.scss'
+
 
 const FinanceService = () => {
     return (
-        <div>
+        <div className="financeService">
             
         </div>
     )

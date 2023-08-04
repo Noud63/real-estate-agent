@@ -152,7 +152,7 @@ const Header = () => {
                         <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={buy}>Buy</button>
                         <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={loginHandler}>{!logOut ? 'Login' : 'Logout'}</button>
                         {logOut ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={showUserInfo}>user info</button> : ""}
-                        <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={register}>Register</button>
+                        {!isLoggedIn ? <button className={!showMenu || size.width > 800 ? "buttons_btn" : ""} onClick={register}>Register</button> : "" }
                     </div>
                 </div>
 

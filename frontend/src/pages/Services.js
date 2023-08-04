@@ -1,8 +1,9 @@
 import React from 'react'
+import '../sassStyles/pages/Services.scss'
 
 const Services = () => {
     return (
-        <div>
+        <div className="services">
             
         </div>
     )

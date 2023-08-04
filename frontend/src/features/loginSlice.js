@@ -55,6 +55,7 @@ export const loginSlice = createSlice({
             .addCase(loginUser.fulfilled, (state, { payload }) => {
                 state.isLoading = false
                 state.isLoggedIn = true
+                state.isError = false
                 state.login = payload
 
             })
