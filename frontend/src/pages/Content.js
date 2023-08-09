@@ -67,7 +67,7 @@ return (
 
             <div className="content_block2">
                 <Magazines />
-                <div className="content_block2_visit">Visit our friends & partners</div>
+                <Link to='/friendsandpartners' className="content_block2_visit" style={{textDecoration: 'none'}}>Visit our friends & partners</Link>
             </div>
 
             <div className="content_block7">

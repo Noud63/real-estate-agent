@@ -1,20 +1,30 @@
-import React, {useEffect, useCallback} from 'react'
+import React, {useEffect, useCallback, useState} from 'react'
 
-const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, resultsPerPage, setNewList }) => {
+const Pagination = ({ filtered, currentNumber, setCurrentNumber, setNewList }) => {
+
+    const [resPerPage, setResPerpage] = useState(5)
+
+    //Number of buttons
+    const pageNumbers = []
+    const pages = Math.ceil(filtered.length / resPerPage)
+
+    for (let i = 1; i <= pages; i++) {
+        pageNumbers.push(i)
+    }
 
     const paginate = useCallback((number) => {
         setCurrentNumber(number)
     },[setCurrentNumber])
 
     const slicedList = useCallback(() => {
-        if (filtered.length > resultsPerPage) {
-            const data2 = filtered.slice(((currentNumber - 1) * resultsPerPage), (currentNumber * resultsPerPage))
+        if (filtered.length > resPerPage) {
+            const data2 = filtered.slice(((currentNumber - 1) * resPerPage), (currentNumber * resPerPage))
             setNewList(data2)
         }
-        if (filtered.length <= resultsPerPage) {
+        if (filtered.length <= resPerPage) {
             setNewList(filtered)
         }
-    }, [currentNumber, filtered, resultsPerPage, setNewList])
+    }, [currentNumber, filtered, resPerPage, setNewList])
 
     useEffect(() => {
         slicedList()
@@ -22,12 +32,18 @@ const Pagination = ({ number, filtered, currentNumber, setCurrentNumber, results
 
 
     return (
-        <button onClick={() => paginate(number)} className={number === currentNumber ? "paginationBtn active" : "paginationBtn"}>
+        <>
+         {pageNumbers.map(number => {
+           return <button onClick={() => paginate(number)} className={number === currentNumber ? "paginationBtn active" : "paginationBtn"} key={number}>
             <span>
                 {number}
             </span>
         </button>
+    
+         })}
+         </>
     );
+    
 }
 
 export default Pagination

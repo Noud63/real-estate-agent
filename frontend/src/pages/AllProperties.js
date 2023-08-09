@@ -16,17 +16,17 @@ const AllProperties = () => {
     const [currentNumber, setCurrentNumber] = useState(1)
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
-    const [resPerPage, setResPerpage] = useState(5)
+    
 
     // add page number to url
-    const navigate = useNavigate();
-    const path = window.location.pathname;
+    // const navigate = useNavigate();
+    // const path = window.location.pathname;
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
-    useEffect(() => {
-        navigate(`${path}?page=${currentNumber}`);
-    }, [currentNumber, path, navigate])
+    // useEffect(() => {
+    //     navigate(`${path}?page=${currentNumber}`);
+    // }, [currentNumber, path, navigate])
 
 
     const realestates = useSelector(state => state.realestate)
@@ -38,46 +38,36 @@ const AllProperties = () => {
         }
     }, [isSuccess])
 
-    //Pagination
-    const pageNumbers = []
-    const resultsPerPage = resPerPage
-    const pages = Math.ceil(filtered.length / resultsPerPage)
 
-    for (let i = 1; i <= pages; i++) {
-        pageNumbers.push(i)
-    }
-
-    // Show message when filtered list is empty (no matching criteria)
-    useEffect(() => {
-        if (filtered.length === 0) {
-            setNewList([])
-            setErrorMessage(true)
-        } else {
-            setErrorMessage(false)
-        }
-    }, [filtered.length])
-
+    // Show message when filtered list is empty (no matching search criteria), or no data at all.
+   
     return (
         <>
             <div className="mainContentWrapper">
                 <div className="realEstatesWrapper">
 
                     <div className="searchbarAndListItems">
-                        <SearchEstates setCurrentNumber={setCurrentNumber} currentNumber={currentNumber} />
+
+                        <SearchEstates 
+                            setCurrentNumber={setCurrentNumber} 
+                            currentNumber={currentNumber} 
+                            filtered={filtered} 
+                            setNewList={setNewList} 
+                            setErrorMessage={setErrorMessage}
+                        />
+
                         {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
+
                         <ListItems newList={newList} show={show} />
+
                         <div className="btns">
-                            {pageNumbers.map(number => {
-                                return <Pagination key={number}
-                                    number={number}
-                                    filtered={filtered}
-                                    currentNumber={currentNumber}
-                                    setCurrentNumber={setCurrentNumber}
-                                    resultsPerPage={resultsPerPage}
-                                    newList={newList}
-                                    setNewList={setNewList}
-                                />
-                            })}
+                            <Pagination 
+                            filtered={filtered}
+                            currentNumber={currentNumber}
+                            setCurrentNumber={setCurrentNumber}
+                            newList={newList}
+                            setNewList={setNewList}
+                            />
                         </div>
                     </div>
 
@@ -85,6 +75,7 @@ const AllProperties = () => {
 
                 </div>
             </div>
+
             <div className="content_subscription">
                <NewsLetter className="news"/>
                 <div className="finance">Free Advertising Space</div>

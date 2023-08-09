@@ -16,7 +16,7 @@ const Likes = ({ id, likedItem, newList }) => {
 
     const likesHandler = (id) => {
 
-   newList.forEach( estate => {
+   realestate.forEach( estate => {
                if(estate._id === id){
                 if(liked === false){
                     setLiked(true)
@@ -35,7 +35,7 @@ const Likes = ({ id, likedItem, newList }) => {
         }else{
             setLiked(true)
         }
-      },[])
+      },[likedItem])
 
 return (
         <div className="like" onClick={() => likesHandler(id)}>
