@@ -5,7 +5,7 @@ import axios from 'axios'
 export const getRealEstates = createAsyncThunk(
     'realestate/getRealEstates', async (_, thunkAPI) => {
         try {
-            const response = await axios.get('castles')
+              const response = await axios.get('castles')
                 return response.data
            
         } catch (error) {
@@ -29,6 +29,7 @@ const initialState = {
     filtered: [],
     message: '',
     }
+
 
 export const estateSlice = createSlice({
     name: 'realestate',    // Reducer name
@@ -61,7 +62,7 @@ export const estateSlice = createSlice({
         builder.addCase(getRealEstates.fulfilled, (state, action) => {
             state.isLoading = false
             state.isSuccess = true
-            state.realestate = action.payload
+            state.realestate = action.payload 
             state.filtered = action.payload
         })
         builder.addCase(getRealEstates.rejected, (state, action) => {

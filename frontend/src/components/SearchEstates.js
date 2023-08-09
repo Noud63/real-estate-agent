@@ -15,7 +15,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
     const dispatch = useDispatch()
 
     const realestates = useSelector(state => state.realestate)
-    let { realestate } = realestates;
+    let { realestate, filtered} = realestates;
 
     useEffect(() => {
 
@@ -30,11 +30,11 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
                 estate.area.match(new RegExp(foundPlotSize, 'gi'))
             )
         });
-        if(currentNumber > 1) setCurrentNumber(1)  // if search query starts from page 2 or higher
+        if(currentNumber > 1) setCurrentNumber(1)  //if search query starts from page 2 or higher
         
        dispatch(filteredProperties(result))
        
-    }, [dispatch, livingSpace, plotSize, realestate, region]);
+    }, [region, livingSpace, plotSize, realestate]);
 
 
     const handleReset = () => {
@@ -42,7 +42,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber}) => {
         setRegion("")
         setLivingSpace("")
         setPlotSize("")
-        dispatch(getRealEstates(realestate))
+        dispatch(getRealEstates())
         setCurrentNumber(1)
     }
 

@@ -33,15 +33,10 @@ const AllProperties = () => {
     let { isLoading, realestate, filtered, isError, isSuccess, message } = realestates;
 
     useEffect(() => {
-        dispatch(getRealEstates())
-        if (isSuccess) {
+       if(isSuccess){
             setShow(true)
-        } else if (isError) {
-            console.log('No data!')
         }
-        // localStorage.setItem('allproperties', JSON.stringify(realestate))
-    }, [dispatch, isSuccess, isError])
-
+    }, [isSuccess])
 
     //Pagination
     const pageNumbers = []

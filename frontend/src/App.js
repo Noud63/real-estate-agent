@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import Main from './components/Main'
 import Header from './components/Header'
 import Content from './pages/Content'
@@ -13,6 +13,7 @@ import UserProfile from './pages/UserProfile'
 import Payment from './pages/Payment'
 import Services from './pages/Services'
 import Completion from './pages/Completion'
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,9 +21,8 @@ import {
 } from "react-router-dom";
 import ScrollToTop from './utilities/ScrollToTop';
 
-
-
 function App() {
+
   return (
     <>
       <Router>

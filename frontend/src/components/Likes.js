@@ -3,8 +3,9 @@ import like from '../assets/icons/like.png'
 import { useSelector, useDispatch } from 'react-redux'
 import likeRed from '../assets/icons/likeRed.png'
 import { updatedProperty } from '../features/estateSlice';
+import { getRealEstates } from '../features/estateSlice';
 
-const Likes = ({ id, newList }) => {
+const Likes = ({ id, likedItem, newList }) => {
 
     const [liked, setLiked] = useState(false)
 
@@ -15,21 +16,26 @@ const Likes = ({ id, newList }) => {
 
     const likesHandler = (id) => {
 
-    filtered.forEach( estate => {
-               if(estate._id === id && liked === false){
+   newList.forEach( estate => {
+               if(estate._id === id){
+                if(liked === false){
                     setLiked(true)
                     dispatch(updatedProperty({...estate, like:true}))
-                    }
-                if(estate._id === id && liked === true ){
-                    setLiked(false)
+                }else if(liked === true){
+                     setLiked(false)
                     dispatch(updatedProperty({...estate, like:false}))
-                   }
-           })
-       }
+                }
+            }
+          })
+        }
 
-    //    useEffect(()=> {
-    //       localStorage.setItem('filtered', JSON.stringify(filtered))
-    //    },[filtered])
+      useEffect(()=> {
+        if(likedItem === false){
+            setLiked(false)
+        }else{
+            setLiked(true)
+        }
+      },[])
 
 return (
         <div className="like" onClick={() => likesHandler(id)}>

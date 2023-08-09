@@ -192,6 +192,9 @@ background-image: url('../../assets/images/header3.jpg');
     @include respond3(smallest){
                   height: 250px;
               }
+     @include respond15(minimalwidth){
+                  height: 200px;
+              }
 
     .awards1 {
         position: absolute;
@@ -263,8 +266,8 @@ background-image: url('../../assets/images/header3.jpg');
             font-size: 1.2rem;
             //   bottom: -10px;
               height: 40px;
-             
         }
+         
 }
 
     .castlesandchateaux {
@@ -280,7 +283,10 @@ background-image: url('../../assets/images/header3.jpg');
              @include respond7(headername) {
                 letter-spacing: 4px;
                 font-size: 1.2rem;
-    }
+             }
+             @include respond15(minimalwidth){
+                  font-size: 1rem;
+              }
     }
 
     .luxury_real_estate {

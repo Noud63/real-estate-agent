@@ -203,3 +203,11 @@
     }
   }
 }
+
+@mixin respond15($breakpoint) { 
+  @if $breakpoint == minimalwidth {    
+    @media only screen and (max-width: 400px) {
+      @content;
+    }
+  }
+}
