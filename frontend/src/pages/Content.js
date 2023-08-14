@@ -72,8 +72,7 @@ return (
 
             <div className="content_block7">
                 <div className="wrapper">
-
-                    <div className="wrapper_header">
+                     <div className="wrapper_header">
                         <img src={fleurdelis} alt="" className="wrapper_header_fleurdelis"/>
                         <img src={fleurdelis} alt="" className="fleurdelis"/>
                         <div className="wrapper_title">
