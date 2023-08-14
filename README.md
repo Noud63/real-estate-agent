@@ -27,7 +27,6 @@ The application is responsive.<br><br>
 <p align="center"><img src="https://github.com/Noud63/real-estate-agent/assets/38325801/6c487ff9-0a6e-4a30-bce6-eb621f143361"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/203021233-9d9af96a-7ed9-4024-bf59-662d2f8c3474.png"/></p><br><br><br>
 <p align="center"><img src="https://user-images.githubusercontent.com/38325801/200298159-c0be1804-8d85-46d0-aeda-066fe79e5ef3.png"/></p><br><br><br>
-<p align="center"><img src="https://user-images.githubusercontent.com/38325801/196442957-e12d1366-7a97-452d-abd5-c036b3381f9b.png"/></p><br><br><br>
+<p align="center"><img src="https://github.com/Noud63/real-estate-agent/assets/38325801/56009924-c5f0-4a02-b741-f5a8a1ed6992"/></p><br><br><br>
 <p align="center"><img src="https://github.com/Noud63/real-estate-agent/assets/38325801/81f43784-90e2-415b-8677-22d186f16cc6"/></p><br><br><br>
 
-![ecmacbook2]()
