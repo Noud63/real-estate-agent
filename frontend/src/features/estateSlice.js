@@ -44,14 +44,14 @@ export const estateSlice = createSlice({
 
         updatedProperty : (state, action) => {
             const id = action.payload._id
-            const like = action.payload.like
-            console.log(like)
-            state.filtered.forEach( el => {
-                if(el._id === id){
-                    el.like = like
+            const liked = action.payload.like
+            console.log(id, liked)
+            state.filtered = state.filtered.map( estate => {
+                if(estate._id === id){
+                    return {...estate, like:liked}
                 }
+                return estate
             })
-            
         }
     },  
     extraReducers: (builder) => {

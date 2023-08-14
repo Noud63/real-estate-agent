@@ -1,8 +1,12 @@
 import React, {useEffect, useCallback, useState} from 'react'
+import { useSelector } from 'react-redux'
 
-const Pagination = ({ filtered, currentNumber, setCurrentNumber, setNewList }) => {
+const Pagination = ({ currentNumber, setCurrentNumber, setNewList }) => {
 
-    const [resPerPage, setResPerpage] = useState(5)
+    const [resPerPage] = useState(5)
+
+     const realestates = useSelector(state => state.realestate)
+    let { filtered} = realestates;
 
     //Number of buttons
     const pageNumbers = []
@@ -39,8 +43,7 @@ const Pagination = ({ filtered, currentNumber, setCurrentNumber, setNewList }) =
                 {number}
             </span>
         </button>
-    
-         })}
+       })}
          </>
     );
     

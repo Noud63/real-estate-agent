@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getRealEstates } from '../features/estateSlice'
 import { useNavigate } from "react-router-dom"
 import ListItems from '../components/ListItems'
 import SearchEstates from '../components/SearchEstates'
@@ -17,29 +15,13 @@ const AllProperties = () => {
     const [newList, setNewList] = useState([])
     const [errorMessage, setErrorMessage] = useState(false)
     
-
     // add page number to url
-    // const navigate = useNavigate();
-    // const path = window.location.pathname;
-
-    // const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     navigate(`${path}?page=${currentNumber}`);
-    // }, [currentNumber, path, navigate])
-
-
-    const realestates = useSelector(state => state.realestate)
-    let { isLoading, realestate, filtered, isError, isSuccess, message } = realestates;
+    const navigate = useNavigate();
+    const path = window.location.pathname;
 
     useEffect(() => {
-       if(isSuccess){
-            setShow(true)
-        }
-    }, [isSuccess])
-
-
-    // Show message when filtered list is empty (no matching search criteria), or no data at all.
+        navigate(`${path}?page=${currentNumber}`);
+    }, [currentNumber, path, navigate])
    
     return (
         <>
@@ -51,9 +33,9 @@ const AllProperties = () => {
                         <SearchEstates 
                             setCurrentNumber={setCurrentNumber} 
                             currentNumber={currentNumber} 
-                            filtered={filtered} 
                             setNewList={setNewList} 
                             setErrorMessage={setErrorMessage}
+                            setShow={setShow}
                         />
 
                         {errorMessage ? <div className="searchError">No results match your search criteria!</div> : ""}
@@ -62,7 +44,6 @@ const AllProperties = () => {
 
                         <div className="btns">
                             <Pagination 
-                            filtered={filtered}
                             currentNumber={currentNumber}
                             setCurrentNumber={setCurrentNumber}
                             newList={newList}

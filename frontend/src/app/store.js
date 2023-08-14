@@ -3,14 +3,14 @@ import { persistReducer } from 'redux-persist'
 import { combineReducers } from 'redux'
 import storage from 'redux-persist/lib/storage'
 import { persistStore } from 'redux-persist';
-import realestateReducer, { getRealEstates } from '../features/estateSlice'
+import realestateReducer from '../features/estateSlice'
 import registerReducer from '../features/registerSlice'
 import loginReducer from '../features/loginSlice'
 import allUsersReducer from '../features/allUsersSlice'
 import userProfileReducer from '../features/userProfileSlice'
 import updateProfileReducer from '../features/updateProfileSlice'
 import addEmailReducer from '../features/addEmailsSlice'
-import logger from 'redux-logger'
+// import logger from 'redux-logger'
 
 
 
@@ -38,7 +38,5 @@ export const store = configureStore({
           serializableCheck: false,
         })
 });
-
-store.dispatch(getRealEstates())
 
 export const persistor = persistStore(store)

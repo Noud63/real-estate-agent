@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { filteredProperties } from '../features/estateSlice'
 import { getRealEstates } from '../features/estateSlice'
 import '../sassStyles/layout/searchEstates.scss'
 import reset from '../assets/icons/reset.png'
 
-const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMessage }) => {
+const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMessage, setShow }) => {
 
     const [region, setRegion] = useState("");
     const [livingSpace, setLivingSpace] = useState("");
@@ -15,10 +15,17 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
     const dispatch = useDispatch()
 
     const realestates = useSelector(state => state.realestate)
-    let { realestate, filtered} = realestates;
+    let { realestate, filtered, isSuccess} = realestates;
 
-    useEffect(() => {
+     useEffect(() => {
+        //dispatch(getRealEstates())
+       if(isSuccess){
+            setShow(true)
+        }
+    }, [isSuccess, setShow])
 
+    
+     useEffect(() => {
         const foundRegion = (region || "");
         const foundLivingSpace = (livingSpace || "");
         const foundPlotSize = (plotSize || "");
@@ -34,7 +41,8 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
         
     dispatch(filteredProperties(result))
        
-    }, [region, livingSpace, plotSize, realestate]);
+    }, [region, livingSpace, plotSize, realestate, dispatch]);
+
 
     const handleReset = () => {
         setRotate(prev => !prev)
@@ -45,6 +53,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
         setCurrentNumber(1)
     }
 
+
      useEffect(() => {
         if (filtered.length === 0) {
             setNewList([])
@@ -52,9 +61,9 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
         } else {
             setErrorMessage(false)
         }
-    }, [filtered.length])
+    }, [filtered.length, setErrorMessage, setNewList])
 
-
+console.log(filtered)
     return (
         <div className="searchFields">
 
@@ -70,6 +79,8 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
             <select onChange={(e) => setLivingSpace(e.target.value)} value={livingSpace} placeholder="Living space.." className="selectop" >
                 <option value="defaultValue">Living space...</option>
                 <option value="500" >{'500 m\xB2'}</option>
+                <option value="600" >{'600 m\xB2'}</option>
+                <option value="700" >{'700 m\xB2'}</option>
                 <option value="1000">{'1000 m\xB2'}</option>
                 <option value="2000">{'2000 m\xB2'}</option>
                 <option value="3000">{'3000 m\xB2'}</option>

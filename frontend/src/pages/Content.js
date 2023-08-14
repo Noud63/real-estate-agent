@@ -3,6 +3,8 @@ import '../sassStyles/pages/content.scss'
 import SoldProperties from '../components/SoldProperties'
 import image from '../assets/images/c2bw.jpg'
 import image2 from '../assets/images/c4bw.jpg'
+import investment from '../assets/images/investment.png'
+import rooftop from '../assets/images/rooftop.jpg'
 import Magazines from '../components/Magazines'
 import { Link } from 'react-router-dom'
 import fleurdelis from '../assets/images/fleurdelis.png'
@@ -63,7 +65,15 @@ return (
                 </div>
               </div>
 
-               <div className="content_block4"></div>
+               <div className="content_block4">
+                 <div className="buyingrealestatewrapper">
+                    <img src={rooftop} alt="" className="rooftop"/>
+                   <div className="buyingrealestate invest">Why buying real estate in 2023</div>
+                   <div className="buyingrealestate2 invest">is a good investment</div>
+                   <img src={investment} alt="" className="diagram"/>
+                 </div>
+               
+               </div>
 
             <div className="content_block2">
                 <Magazines />
