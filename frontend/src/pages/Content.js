@@ -14,7 +14,9 @@ const Content = () => {
 return (
         <>
         <div className="content_block1">
+
             <div className="content_block1_featuring">Featured Properties:</div>
+            
                 <div className="content_block1_wrapper">
                 
                 <div className="content_block1_wrapper_imgLeft">
@@ -102,9 +104,9 @@ return (
                             <b>- Community-oriented:</b> Rural communities in France are often close-knit and value strong social connections. Residents may gather for local events, festivals, and markets, fostering a sense of camaraderie among the inhabitants.<br/><br/>
                             <b>- Cultural heritage:</b> Many rural areas in France are rich in history and cultural heritage. You'll find picturesque villages with charming architecture, ancient churches, and historic landmarks that reflect the country's long and diverse history.<br/><br/>
                             <b>- astronomy:</b> GFrench rural areas are known for their culinary delights, with locally sourced and fresh ingredients playing a central role. Each region has its own traditional dishes and specialties, making it a treat for food enthusiasts.<br/><br/>
-
-                            </p>
+                          </p>
                         </div>
+
                         <div className="wrapper_text_columnRight">
                             <b>- Limited amenities:</b> In some rural areas, access to amenities and services may be limited compared to urban centers. While there are typically grocery stores, schools, and medical facilities, residents might need to travel to nearby towns for more extensive services.<br/><br/>
                             <b>- Nature and outdoor activities:</b> Nature and outdoor activities: Living in the countryside offers access to beautiful natural landscapes, such as rolling hills, forests, rivers, and lakes. This allows residents and visitors to enjoy outdoor activities like hiking, fishing, and cycling.<br/><br/>
