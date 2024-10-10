@@ -5,7 +5,7 @@ import { getRealEstates } from '../features/estateSlice'
 import '../sassStyles/layout/searchEstates.scss'
 import reset from '../assets/icons/reset.png'
 
-const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMessage, setShow }) => {
+const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMessage, setShow}) => {
 
     const [region, setRegion] = useState("");
     const [livingSpace, setLivingSpace] = useState("");
@@ -18,7 +18,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
     let { realestate, filtered, isSuccess} = realestates;
 
      useEffect(() => {
-        //dispatch(getRealEstates())
+        // dispatch(getRealEstates())
        if(isSuccess){
             setShow(true)
         }
@@ -39,7 +39,7 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
         });
         if(currentNumber > 1) setCurrentNumber(1)  //if search query starts from page 2 or higher
         
-    dispatch(filteredProperties(result))
+        dispatch(filteredProperties(result))
        
     }, [region, livingSpace, plotSize, realestate, dispatch]);
 
@@ -63,7 +63,6 @@ const SearchEstates = ({ setCurrentNumber, currentNumber, setNewList, setErrorMe
         }
     }, [filtered.length, setErrorMessage, setNewList])
 
-console.log(filtered)
     return (
         <div className="searchFields">
 

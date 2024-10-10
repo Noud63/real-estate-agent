@@ -68,7 +68,7 @@ return (
                <div className="content_block4">
                  <div className="buyingrealestatewrapper">
                     <img src={rooftop} alt="" className="rooftop"/>
-                   <div className="buyingrealestate invest">Why buying real estate in 2023</div>
+                   <div className="buyingrealestate invest">Why buying real estate in 2024</div>
                    <div className="buyingrealestate2 invest">is a good investment</div>
                    <img src={investment} alt="" className="diagram"/>
                  </div>

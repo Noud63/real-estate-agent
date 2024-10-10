@@ -5,7 +5,7 @@ const Pagination = ({ currentNumber, setCurrentNumber, setNewList }) => {
 
     const [resPerPage] = useState(5)
 
-     const realestates = useSelector(state => state.realestate)
+    const realestates = useSelector(state => state.realestate)
     let { filtered} = realestates;
 
     //Number of buttons
@@ -22,8 +22,8 @@ const Pagination = ({ currentNumber, setCurrentNumber, setNewList }) => {
 
     const slicedList = useCallback(() => {
         if (filtered.length > resPerPage) {
-            const data2 = filtered.slice(((currentNumber - 1) * resPerPage), (currentNumber * resPerPage))
-            setNewList(data2)
+            const list = filtered.slice(((currentNumber - 1) * resPerPage), (currentNumber * resPerPage)) // slice(0, 5), slice
+            setNewList(list)
         }
         if (filtered.length <= resPerPage) {
             setNewList(filtered)

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-
 export const getRealEstates = createAsyncThunk(
     'realestate/getRealEstates', async (_, thunkAPI) => {
         try {
@@ -21,12 +20,11 @@ export const getRealEstates = createAsyncThunk(
 )
 
 
-
 const initialState = {
     realestate: [],
     isSuccess: false,
     isLoading: false,
-    filtered: [],
+    filtered: localStorage.getItem("list") ? JSON.parse(localStorage.getItem("list")) : [],
     message: '',
     }
 
@@ -42,7 +40,7 @@ export const estateSlice = createSlice({
             state.filtered = action.payload
         },
 
-        updatedProperty : (state, action) => {
+        updatedProperty : (state, action) => { 
             const id = action.payload._id
             const liked = action.payload.like
             console.log(id, liked)

@@ -7,7 +7,6 @@ import Map from './Map'
 import EnquiryForm from './EnquiryForm'
 import '../sassStyles/layout/singleproperty.scss'
 import InfoModal from '../components/InfoModal'
-
 import Likes from './Likes'
 
 const SingleProperty = ({ item, newList }) => {
@@ -15,6 +14,7 @@ const SingleProperty = ({ item, newList }) => {
     const [expand, setExpand] = useState(false)
     const [showForm, setShowForm] = useState(false)
     const [showPopup, setShowpopup] = useState(false)
+     const [likesAr, setLikesAr] = useState([])
 
     const { _id, area, bathrooms, bedrooms, city, departement, region, img, livingspace, map, name, price, like } = item;
 
@@ -29,12 +29,17 @@ const SingleProperty = ({ item, newList }) => {
     const closeModal = ()=> {
             setShowpopup(false)
         }
+
+        useEffect(()=> {
+            if(localStorage.getItem("list"))
+             setLikesAr(JSON.parse(localStorage.getItem("list")))
+        },[])
        
 return (
     <>
         <div className={!expand ? "content2_property" : "content2_property enlarge"} key={_id}>
 
-            <Likes id={_id} newList={newList} likedItem={like}/>
+            <Likes id={_id} likedItem={like}/>
 
             <div className="content2_property_castleImageBox" onClick={() => handleInfoPopup(_id)}><img src={process.env.PUBLIC_URL + `assets/images/${img[0]}`} alt="castle" className="content2_property_castleImage" /></div>
 
@@ -72,4 +77,6 @@ return (
 )
 }
 
-export default SingleProperty
+const singlePropMemo = React.memo(SingleProperty)
+
+export default singlePropMemo

@@ -7,6 +7,7 @@ import { filteredProperties, updatedProperty } from '../features/estateSlice';
 const Likes = ({ id, likedItem }) => {
 
     const [liked, setLiked] = useState(false)
+   
 
     const realestates = useSelector(state => state.realestate)
     let { filtered } = realestates;
@@ -14,7 +15,7 @@ const Likes = ({ id, likedItem }) => {
     const dispatch = useDispatch()
 
     const likesHandler = (id) => {
-
+  
    filtered.forEach( estate => {
                if(estate._id === id){
                 if(!liked){
@@ -34,13 +35,18 @@ const Likes = ({ id, likedItem }) => {
         }else{
             setLiked(true)
         }
-      },[likedItem])
+        },[likedItem])
+
+      useEffect(()=>{
+        localStorage.setItem("list", JSON.stringify(filtered))
+       },[filtered])
 
 return (
         <div className="like" onClick={() => likesHandler(id)}>
             <img src={liked ? likeRed : like} alt="" className="like_icon" />
-        </div>
+        </div> 
     )
 }
+
 
 export default Likes

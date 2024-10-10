@@ -8,6 +8,7 @@ const getRealEstates = async (req, res) => {
                 res.send(realestates);
         } catch (error) {
                 console.error(error)
+                res.status(400).json({ message: "No Data" });
         }
 }
 
