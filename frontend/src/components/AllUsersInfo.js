@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { deleteUser } from '../features/allUsersSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../utilities/Loader'
@@ -6,7 +6,7 @@ import Loader from '../utilities/Loader'
 const AllUsersInfo = () => {
 
     const allRegisteredusers = useSelector(state => state.allusers)
-    let { isLoading, allUsers, isError, isSuccess, message } = allRegisteredusers
+    let { isLoading, allUsers } = allRegisteredusers
 
     const dispatch = useDispatch()
 

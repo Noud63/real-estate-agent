@@ -1,7 +1,7 @@
 import React from 'react'
 import deleteIcon from '../assets/icons/close2.png'
 
-const emailItem = ({email, id, deleteEmail, isLoading}) => {
+const emailItem = ({email, id, deleteEmail}) => {
     return (
         
         <div className="user" id={id} key={id}>
