@@ -22,7 +22,14 @@ const deleteEmailRoute = require('./routes/deleteEmailRoute')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 const fs = require('fs')
 
-app.use(cors())
+const corsOptions = {
+  origin: "https://real-estate-agent-nu.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"], // Adjust as per your API
+//   credentials: true, // If your frontend sends cookies or uses `Authorization` headers
+};
+
+// Apply CORS middleware with the options
+app.use(cors(corsOptions));
 app.use(express.json())
 dotenv.config()
 
