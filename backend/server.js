@@ -80,8 +80,6 @@ app.use('/addemail', addEmailRoute)
 app.use('/allemails', allEmailsRoute)
 app.use('/deleteemail', deleteEmailRoute)
 
-// Place after routes
-// Render => Serving the frontend
 
 app.use('/', express.static(path.join(__dirname, '../frontend', 'build')))
 

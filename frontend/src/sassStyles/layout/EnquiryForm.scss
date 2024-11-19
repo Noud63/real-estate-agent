@@ -7,9 +7,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    // border-width: 0 10px 10px 10px;
     border-color:  rgb(72, 0, 0);
-    // border-style: solid;
     top:0;
     width: 100%;
     height: 205px;
@@ -21,8 +19,8 @@
     background-image: linear-gradient(to bottom, rgb(72, 0, 0), rgb(153, 0, 0));
 
     &.show {
-    top: 205px;
-    padding: 0 10px;
+    top: 210px;
+    padding: 10px;
       @keyframes show-form {
            0% {
              opacity: 0;
@@ -32,8 +30,8 @@
            }
       }
       @include respond5(contentBreak){
-            top: 10px;
-            height: 540px;
+            top: 0px;
+            height: 100%;
             background-image: linear-gradient(to top, rgb(116, 0, 0), rgb(189, 0, 0));
         }
     }
@@ -42,7 +40,7 @@
 .enquiryForm_close {
        width: 100%;
        height: 45px;
-       display:flex;
+       display: flex;
        align-items: center;
        justify-content: center;
        flex-direction: row;
@@ -53,10 +51,12 @@
         @include respond5(contentBreak){
              border-bottom: 0;
              padding: 0;
+             height: 18px;
+             
         }
 
        & :nth-child(1) {
-       display:flex;
+       display: flex;
        align-items: center;
        justify-content: flex-start;
        width: 5%;
@@ -64,7 +64,7 @@
     }
 
        & :nth-child(2) {
-       display:flex;
+       display: flex;
        align-items: center;
        justify-content: center;
        width: 90%;
@@ -75,7 +75,7 @@
         }
 
        & :nth-child(1) {
-         display:flex;
+         display: flex;
        align-items: center;
        justify-content: flex-end;
          color: rgb(198, 184, 219);
@@ -83,7 +83,7 @@
        }
 
        & :nth-child(2) {
-         display:flex;
+         display: flex;
        align-items: center;
        justify-content: flex-start;
        font-weight: bold;
@@ -98,7 +98,7 @@
     }
 
        & :nth-child(3) {
-       display:flex;
+       display: flex;
        align-items: center;
        justify-content: flex-end;
        width: 5%;
@@ -120,7 +120,7 @@
       //  background-color: rgb(187, 171, 211);
       //  border-radius: 50%;
        @include respond5(contentBreak){
-            margin-top: 30px;
+            display:none;
         }
     }
   }
@@ -135,16 +135,17 @@
       @include respond5(contentBreak){
        display: flex;
        flex-direction: column;
+
       
-      & span {
-        margin-top: 10px;
-      }
+      
       .makeEnquiry {
         font-size: 1rem;
+        margin-top: 10px;
       }
       .estateName {
         font-weight: bold;
         letter-spacing: 2px;
+        margin-top: 10px;
       }
 }
 }
@@ -156,7 +157,7 @@
 
 .enquiryForm_inputfields {
        width: 100%;
-       display:flex;
+       display: flex;
        align-items: flex-start;
        justify-content: center;
        flex-direction: row;
@@ -169,7 +170,7 @@
         
        &_name2 {
          width: 50%;
-        display:flex;
+        display: flex;
         margin-right: 10px;
        align-items: center;
        justify-content: center;
@@ -182,7 +183,6 @@
        &_name {
          width: 50%;
         display:flex;
-         margin-left: 10px;
        align-items: center;
        justify-content: center;
        flex-direction: column;
@@ -195,7 +195,7 @@
        & button {
            width: 100%;
            height: 33px;
-           margin-top: 10px;
+           margin-top: 0px;
            border-style: none;
            outline: none;
            border-top: 1px solid rgb(255, 8, 8);
@@ -225,8 +225,8 @@
 
        & input {
          width: 100%;
-         margin-bottom: 20px;
-         margin-top: 12px;
+         margin-bottom: 30px;
+  
          height: 30px;
          padding-left: 5px;
          border-style: none;
@@ -243,7 +243,7 @@
   @include respond5(contentBreak){
               display: flex;
               width: 70px;
-              margin-top: 35px;
+              margin-top: 20px;
               -webkit-filter: drop-shadow(0px 3px 1px rgb(12, 0, 0));
               filter: drop-shadow(0px 2px 1px rgb(8, 0, 0));
             }
