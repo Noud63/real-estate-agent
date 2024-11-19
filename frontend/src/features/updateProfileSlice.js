@@ -28,7 +28,6 @@ const initialState = {
 }
 
 // Create slice
-
 export const updateProfileSlice = createSlice({
     name: 'updatedprofile',
     initialState,
