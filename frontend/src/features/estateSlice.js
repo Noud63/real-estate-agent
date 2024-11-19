@@ -4,9 +4,7 @@ import axios from 'axios'
 export const getRealEstates = createAsyncThunk(
     'realestate/getRealEstates', async (_, thunkAPI) => {
         try {
-              const response = await axios.get(
-                "https://real-estate-agent-api.vercel.app/castles"
-              );
+              const response = await axios.get('/castles')
                 return response.data
            
         } catch (error) {

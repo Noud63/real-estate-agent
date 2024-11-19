@@ -16,10 +16,7 @@ export const getAllUsers = createAsyncThunk(
                     'authorization': `Bearer ${token}`,
                 }
             }
-            const response = await axios.get(
-              "https://real-estate-agent-api.vercel.app/allUsers",
-              config
-            );
+            const response = await axios.get('allUsers', config)
             localStorage.setItem('allusers', JSON.stringify(response.data))
             return response.data
         } catch (error) {
@@ -48,10 +45,7 @@ export const deleteUser = createAsyncThunk(
                     'authorization': `Bearer ${token}`,
                 }
             }
-            const response = await axios.delete(
-              `https://real-estate-agent-api.vercel.app/deleteuser/${id}`,
-              config
-            );
+            const response = await axios.delete(`deleteuser/${id}`, config)
             return response.data
         } catch (error) {
             const message =

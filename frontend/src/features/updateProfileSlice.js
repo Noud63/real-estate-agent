@@ -3,10 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 // Register user
 const update = async (profile) => {
-    const response = await axios.post(
-      "https://real-estate-agent-api.vercel.app/updateProfile",
-      profile
-    );
+    const response = await axios.post('/updateProfile', profile)
     return response.data
 }
 

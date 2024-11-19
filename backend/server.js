@@ -34,6 +34,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json())
 
+app.use((req, res, next) => {
+  console.log(`CORS Origin: ${req.headers.origin}`);
+  next();
+});
+
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 

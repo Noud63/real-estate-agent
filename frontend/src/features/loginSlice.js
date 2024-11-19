@@ -3,10 +3,7 @@ import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit'
 
 
 const userLoginData = async (loginData) => {
-    const response = await axios.post(
-      "https://real-estate-agent-api.vercel.app/login",
-      loginData
-    );
+    const response = await axios.post('login', loginData )
     const token = response.data.token
     if (token) {
         localStorage.setItem('isAdmin', JSON.stringify(response.data.isAdmin))
