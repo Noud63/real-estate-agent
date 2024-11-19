@@ -6,7 +6,7 @@ const dotenv = require('dotenv')
 const router = express.Router()
 const colors = require('colors')
 const path = require('path')
-const PORT = process.env.REACT_APP_PORT || 5000
+const PORT = process.env.PORT || 5000
 const connectDB = require('./config/db')
 // const addDataToCollection = require('./seeder')
 const castleRoute = require('./routes/castleRoute')
@@ -22,22 +22,31 @@ const deleteEmailRoute = require('./routes/deleteEmailRoute')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware')
 const fs = require('fs')
 
+dotenv.config();
+
 const corsOptions = {
   origin: "https://real-estate-agent-nu.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"], // Adjust as per your API
-//   credentials: true, // If your frontend sends cookies or uses `Authorization` headers
+  credentials: true, // If your frontend sends cookies or uses `Authorization` headers
 };
 
 // Apply CORS middleware with the options
 app.use(cors(corsOptions));
 app.use(express.json())
-dotenv.config()
 
-const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY);
 
-connectDB().then(
-    app.listen(PORT, '0.0.0.0', () => { console.log(`Server running on port ${PORT}`.yellow) })
-)
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+connectDB()
+  .then(() => {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server running on port ${PORT}`.yellow);
+    });
+  })
+  .catch((err) => {
+    console.error("Database connection failed", err);
+    process.exit(1);
+  });
 
 // addDataToCollection()
 
@@ -47,7 +56,7 @@ app.get('/test', (req, res) => {
 
 app.get("/config", (req, res) => {
     res.send({
-        publishableKey: process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY,
+      publishableKey: process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY,
     });
 });
 
