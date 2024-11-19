@@ -24,14 +24,15 @@ const fs = require('fs')
 
 dotenv.config();
 
-const corsOptions = {
-  origin: "https://real-estate-agent-nu.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"], // Adjust as per your API
-  credentials: true, // If your frontend sends cookies or uses `Authorization` headers
-};
+// const corsOptions = {
+//   origin: "https://real-estate-agent-nu.vercel.app",
+//   methods: ["GET", "POST", "PUT", "DELETE"], // Adjust as per your API
+//   credentials: true, // If your frontend sends cookies or uses `Authorization` headers
+// };
 
 // Apply CORS middleware with the options
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json())
 
 app.use((req, res, next) => {
@@ -112,3 +113,4 @@ app.use(notFound)
 app.use(errorHandler)
 
 
+module.exports = app
