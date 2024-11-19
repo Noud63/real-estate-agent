@@ -11,7 +11,10 @@ const userProfileData = async (id) => {
             'authorization': `Bearer ${token}`,
         }
     }
-    const response = await axios.get(`userprofile/${id}`, config)
+    const response = await axios.get(
+      `https://real-estate-agent-api.vercel.app/userprofile/${id}`,
+      config
+    );
     localStorage.setItem('profile', JSON.stringify(response.data))
     return response.data
 }

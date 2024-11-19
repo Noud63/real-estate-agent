@@ -13,7 +13,11 @@ const addEmailData = async (email) => {
             'authorization': `Bearer ${token}`,
         }
     }
-    const response = await axios.post('addemail', email, config)
+    const response = await axios.post(
+      "https://real-estate-agent-api.vercel.app/addemail",
+      email,
+      config
+    );
     return response.data
 }
 
@@ -42,7 +46,10 @@ export const getAllEmails = createAsyncThunk(
                     'authorization': `Bearer ${token}`,
                 }
             }
-            const response = await axios.get('allemails', config)
+            const response = await axios.get(
+              "https://real-estate-agent-api.vercel.app/allemails",
+              config
+            );
             return response.data
         } catch (error) {
             const message =
@@ -70,7 +77,10 @@ export const removeEmail = createAsyncThunk(
                     'authorization': `Bearer ${token}`,
                 }
             }
-            const response = await axios.delete(`deleteemail/${id}`, config)
+            const response = await axios.delete(
+              `https://real-estate-agent-api.vercel.app/deleteemail/${id}`,
+              config
+            );
             return response.data
         } catch (error) {
             const message =
