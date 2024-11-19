@@ -24,9 +24,7 @@ export const loginUser = createAsyncThunk(
     }
 )
 
-
 export const logout = createAction('auth/logout')
-
 
 const initialState = {
     login: { username: "", password: ""},
