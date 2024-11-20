@@ -56,7 +56,7 @@ connectDB()
 
 // addDataToCollection()
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/test", (req, res) => res.json("Express on Vercel"));
 
 app.get("/config", (req, res) => {
     res.send({
