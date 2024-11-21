@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const ListItems = ({ newList, show}) => {
     
+    console.log(newList)
     return ( 
         <>
         {show ? newList.map((item, index) => {
